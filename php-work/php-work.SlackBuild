@@ -1,0 +1,197 @@
+#!/bin/sh
+
+# Slackware build script for php configured with required extensions needed for my work
+
+# Copyright 2012  MiRacLe.RPZ <miracle@rpz.name>
+# All rights reserved.
+#
+#   Permission to use, copy, modify, and distribute this software for
+#   any purpose with or without fee is hereby granted, provided that
+#   the above copyright notice and this permission notice appear in all
+#   copies.
+#
+#   THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESSED OR IMPLIED
+#   WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+#   MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+#   IN NO EVENT SHALL THE AUTHORS AND COPYRIGHT HOLDERS AND THEIR
+#   CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+#   SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+#   LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF
+#   USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+#   ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+#   OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
+#   OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+#   SUCH DAMAGE.
+
+PRGNAM=php
+PKGNAM=$(basename $0 .SlackBuild)
+VERSION=${VERSION:-5.4.6}
+BUILD=${BUILD:-6}
+TAG=${TAG:-_rpz}
+
+
+if [ -z "$ARCH" ]; then
+  case "$( uname -m )" in
+    i?86) ARCH=i486 ;;
+    arm*) ARCH=arm ;;
+       *) ARCH=$( uname -m ) ;;
+  esac
+fi
+
+if [ "$ARCH" = "i486" ]; then
+  SLKCFLAGS="-O2 -march=i486 -mtune=i686"
+  LIBDIRSUFFIX=""
+elif [ "$ARCH" = "i686" ]; then
+  SLKCFLAGS="-O2 -march=i686 -mtune=i686"
+  LIBDIRSUFFIX=""
+elif [ "$ARCH" = "x86_64" ]; then
+  SLKCFLAGS="-O2 -fPIC"
+  LIBDIRSUFFIX="64"
+else
+  SLKCFLAGS="-O2"
+  LIBDIRSUFFIX=""
+fi
+
+CPUCOUNT=$(lscpu -p=cpu | grep -v \# | wc -l)
+
+NUMJOBS=" -j${CPUCOUNT} "
+
+CWD=$(pwd)
+TMP=${TMP:-/tmp/rpz}
+PKG=$TMP/package-$PRGNAM
+OUTPUT=${OUTPUT:-/tmp}
+
+set -e
+
+rm -rf $PKG
+mkdir -p $TMP $PKG $OUTPUT
+cd $TMP
+rm -rf ${PRGNAM}-${VERSION}
+
+if [ ! -e $CWD/${PRGNAM}-${VERSION}.tar.bz2 ]; then
+    wget http://ru2.php.net/get/${PRGNAM}-${VERSION}.tar.bz2/from/uk3.php.net/mirror -O $CWD/${PRGNAM}-${VERSION}.tar.bz2
+fi
+
+tar jxf $CWD/${PRGNAM}-${VERSION}.tar.bz2
+
+cd ${PRGNAM}-${VERSION}/ext
+
+if [ ! -e $CWD/apc.tgz ]; then
+    wget "http://pecl.php.net/get/apc" -O "$CWD/apc.tgz"
+fi
+
+
+gzip -d < $CWD/apc.tgz | tar -xvf -
+
+mv APC-*.*.* apc
+
+if [ ! -e $CWD/ssh2.tgz ]; then
+    wget "http://pecl.php.net/get/ssh2" -O "$CWD/ssh2.tgz"
+fi
+
+gzip -d < $CWD/ssh2.tgz | tar -xvf -
+
+mv ssh2-*.*.* ssh2
+
+if [ ! -e $CWD/xdebug.tgz ]; then
+    wget "http://pecl.php.net/get/xdebug" -O "$CWD/xdebug.tgz"
+fi
+
+gzip -d < $CWD/xdebug.tgz | tar -xvf -
+
+mv xdebug-*.*.* xdebug
+
+cd ../
+
+rm configure
+
+./buildconf --force
+
+chown -R root:root .
+find . \
+ \( -perm 777 -o -perm 775 -o -perm 711 -o -perm 555 -o -perm 511 \) \
+ -exec chmod 755 {} \; -o \
+ \( -perm 666 -o -perm 664 -o -perm 600 -o -perm 444 -o -perm 440 -o -perm 400 \) \
+ -exec chmod 644 {} \;
+
+sed -i "s|build$|php54/build|" scripts/Makefile.frag
+sed -i "s|build\"$|php54/build\"|" scripts/phpize.in
+
+
+EXTENSION_DIR="/usr/lib${LIBDIRSUFFIX}/php54/ext" \
+CFLAGS="$SLKCFLAGS" \
+CXXFLAGS="$SLKCFLAGS" \
+./configure --prefix=/usr \
+    --libdir=/usr/lib${LIBDIRSUFFIX} \
+    --with-libdir=lib${LIBDIRSUFFIX} \
+    --build=$ARCH-slackware-linux \
+    --enable-fpm \
+    --with-fpm-user=apache \
+    --with-fpm-group=apache \
+    --with-gd \
+    --with-mssql --with-pdo-dblib \
+    --enable-mbstring --enable-soap \
+    --with-zlib --enable-bcmath \
+    --with-jpeg-dir=/usr --with-curl \
+    --with-openssl=shared \
+    --with-pdo-mysql=/usr/bin/mysql_config \
+    --with-mysql --without-pear \
+    --with-config-file-path=/etc/php54 \
+    --with-png-dir=/usr \
+    --without-pear --sysconfdir=/etc/php54 \
+    --disable-ipv6 --localstatedir=/var \
+    --with-mcrypt \
+    --enable-apc=shared \
+    --enable-ftp=shared \
+    --with-ssh2=shared \
+    --enable-xdebug=shared \
+    --enable-pcntl=shared \
+    --datarootdir=/usr/share \
+    --datadir=/usr/share \
+    --infodir=/usr/info \
+    --mandir=/usr/man \
+    --enable-static=no \
+    --with-gnu-ld \
+    --with-pic \
+  && make $NUMJOBS \
+  && make install INSTALL_ROOT=$PKG
+
+rm -f $PKG/usr/lib${LIBDIRSUFFIX}/php54/ext/*.a
+
+
+find $PKG | xargs file | grep -e "executable" -e "shared object" | grep ELF \
+  | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
+
+gzip -9 $PKG/usr/man/man?/*.?
+
+
+mkdir -p $PKG/etc/rc.d
+cat $CWD/rc.php-fpm > $PKG/etc/rc.d/rc.php-fpm.new
+
+mkdir -p $PKG/etc/php54
+cat $CWD/php.ini | sed "s|/usr/lib/php54/ext|/usr/lib${LIBDIRSUFFIX}/php54/ext|" > $PKG/etc/php54/php.ini.new
+cat $CWD/php-cli.ini | sed "s|/usr/lib/php54/ext|/usr/lib${LIBDIRSUFFIX}/php54/ext|" > $PKG/etc/php54/php-cli.ini.new
+cat $CWD/php-fpm.conf > $PKG/etc/php54/php-fpm.conf.new
+
+mkdir -p $PKG/var/log/php54
+
+mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
+
+cp -a \
+  LICENSE INSTALL NEWS UPGRADING \
+  $PKG/usr/doc/$PRGNAM-$VERSION
+
+cat $CWD/$PKGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PKGNAM.SlackBuild
+
+
+mkdir -p $PKG/install
+cat $CWD/slack-desc |sed "s|php-work:|${PKGNAM}:|" > $PKG/install/slack-desc
+cat $CWD/slack-required > $PKG/install/slack-required
+cat $CWD/slack-conflicts > $PKG/install/slack-conflicts
+
+cat $CWD/doinst.sh > $PKG/install/doinst.sh
+
+cd $PKG
+/sbin/makepkg -p -l y -c n $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-txz}
+
+
