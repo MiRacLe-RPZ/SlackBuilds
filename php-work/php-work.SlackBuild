@@ -26,9 +26,12 @@
 PRGNAM=php
 PKGNAM=$(basename $0 .SlackBuild)
 VERSION=${VERSION:-5.4.6}
-BUILD=${BUILD:-6}
+BUILD=${BUILD:-8}
 TAG=${TAG:-_rpz}
+DEVELOPMENT=${DEVELOPMENT:-no}
+EXTRA_OPTIONS=${EXTRA_OPTIONS:-}
 
+echo $EXTRA_OPTIONS
 
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
@@ -85,21 +88,19 @@ gzip -d < $CWD/apc.tgz | tar -xvf -
 
 mv APC-*.*.* apc
 
-if [ ! -e $CWD/ssh2.tgz ]; then
-    wget "http://pecl.php.net/get/ssh2" -O "$CWD/ssh2.tgz"
+XDEBUG=""
+
+if [ "yes" == $DEVELOPMENT ]; then
+
+    if [ ! -e $CWD/xdebug.tgz ]; then
+        wget "http://pecl.php.net/get/xdebug" -O "$CWD/xdebug.tgz"
+    fi
+
+    gzip -d < $CWD/xdebug.tgz | tar -xvf -
+
+    mv xdebug-*.*.* xdebug
+    XDEBUG=" --enable-xdebug=shared "
 fi
-
-gzip -d < $CWD/ssh2.tgz | tar -xvf -
-
-mv ssh2-*.*.* ssh2
-
-if [ ! -e $CWD/xdebug.tgz ]; then
-    wget "http://pecl.php.net/get/xdebug" -O "$CWD/xdebug.tgz"
-fi
-
-gzip -d < $CWD/xdebug.tgz | tar -xvf -
-
-mv xdebug-*.*.* xdebug
 
 cd ../
 
@@ -143,8 +144,6 @@ CXXFLAGS="$SLKCFLAGS" \
     --with-mcrypt \
     --enable-apc=shared \
     --enable-ftp=shared \
-    --with-ssh2=shared \
-    --enable-xdebug=shared \
     --enable-pcntl=shared \
     --datarootdir=/usr/share \
     --datadir=/usr/share \
@@ -152,7 +151,7 @@ CXXFLAGS="$SLKCFLAGS" \
     --mandir=/usr/man \
     --enable-static=no \
     --with-gnu-ld \
-    --with-pic \
+    --with-pic $XDEBUG $EXTRA_OPTIONS  \
   && make $NUMJOBS \
   && make install INSTALL_ROOT=$PKG
 
@@ -169,27 +168,47 @@ mkdir -p $PKG/etc/rc.d
 cat $CWD/rc.php-fpm > $PKG/etc/rc.d/rc.php-fpm.new
 
 mkdir -p $PKG/etc/php54
-cat $CWD/php.ini | sed "s|/usr/lib/php54/ext|/usr/lib${LIBDIRSUFFIX}/php54/ext|" > $PKG/etc/php54/php.ini.new
-cat $CWD/php-cli.ini | sed "s|/usr/lib/php54/ext|/usr/lib${LIBDIRSUFFIX}/php54/ext|" > $PKG/etc/php54/php-cli.ini.new
+cat $CWD/php.ini | sed "s|/usr/lib/php54/ext|/usr/lib${LIBDIRSUFFIX}/php54/ext|" > $PKG/etc/php54/php.ini.tmp
+cat $CWD/php-cli.ini | sed "s|/usr/lib/php54/ext|/usr/lib${LIBDIRSUFFIX}/php54/ext|" > $PKG/etc/php54/php-cli.ini.tmp
 cat $CWD/php-fpm.conf > $PKG/etc/php54/php-fpm.conf.new
+
+
+if [ "yes" == $DEVELOPMENT ]; then
+    cat $PKG/etc/php54/php.ini.tmp|sed "s|;zend_extension=/usr/lib${LIBDIRSUFFIX}/php54/ext/xdebug.so|zend_extension=/usr/lib${LIBDIRSUFFIX}/php54/ext/xdebug.so|" > $PKG/etc/php54/php.ini.new
+    cat $PKG/etc/php54/php-cli.ini.tmp|sed "s|;zend_extension=/usr/lib${LIBDIRSUFFIX}/php54/ext/xdebug.so|zend_extension=/usr/lib${LIBDIRSUFFIX}/php54/ext/xdebug.so|" > $PKG/etc/php54/php-cli.ini.new
+    rm -f $PKG/etc/php54/php*.ini.tmp
+else
+    mv $PKG/etc/php54/php.ini.tmp $PKG/etc/php54/php.ini.new
+    mv $PKG/etc/php54/php-cli.ini.tmp $PKG/etc/php54/php-cli.ini.new
+fi
+
+
+mkdir -p $PKG/etc/logrotate.d
+cat $CWD/php.logrotate > $PKG/etc/logrotate.d/php54
 
 mkdir -p $PKG/var/log/php54
 
-mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
+mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION/SlackBuild
 
 cp -a \
   LICENSE INSTALL NEWS UPGRADING \
   $PKG/usr/doc/$PRGNAM-$VERSION
-
-cat $CWD/$PKGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PKGNAM.SlackBuild
 
 
 mkdir -p $PKG/install
 cat $CWD/slack-desc |sed "s|php-work:|${PKGNAM}:|" > $PKG/install/slack-desc
 cat $CWD/slack-required > $PKG/install/slack-required
 cat $CWD/slack-conflicts > $PKG/install/slack-conflicts
-
 cat $CWD/doinst.sh > $PKG/install/doinst.sh
+
+cp -a \
+    $CWD/$PKGNAM.SlackBuild $CWD/slack-* $CWD/php-*.ini $CWD/rc.php-fpm $CWD/php-fpm.conf $CWD/php.logrotate $CWD/doinst.sh \
+    $PKG/usr/doc/$PRGNAM-$VERSION/SlackBuild
+
+
+if [ -x "$(which requiredbuilder 2>/dev/null)" ];then
+  requiredbuilder -y -v -s $CWD $PKG
+fi
 
 cd $PKG
 /sbin/makepkg -p -l y -c n $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-txz}
