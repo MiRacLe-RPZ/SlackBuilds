@@ -189,11 +189,11 @@ cat $CWD/php.logrotate > $PKG/etc/logrotate.d/php54
 
 mkdir -p $PKG/var/log/php54
 
-mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION/SlackBuild
+mkdir -p $PKG/usr/doc/$PKGNAM-$VERSION/SlackBuild
 
 cp -a \
   LICENSE INSTALL NEWS UPGRADING \
-  $PKG/usr/doc/$PRGNAM-$VERSION
+  $PKG/usr/doc/$PKGNAM-$VERSION
 
 
 mkdir -p $PKG/install
@@ -204,7 +204,7 @@ cat $CWD/doinst.sh > $PKG/install/doinst.sh
 
 cp -a \
     $CWD/$PKGNAM.SlackBuild $CWD/slack-* $CWD/php-*.ini $CWD/rc.php-fpm $CWD/php-fpm.conf $CWD/php.logrotate $CWD/doinst.sh \
-    $PKG/usr/doc/$PRGNAM-$VERSION/SlackBuild
+    $PKG/usr/doc/$PKGNAM-$VERSION/SlackBuild
 
 
 if [ -x "$(which requiredbuilder 2>/dev/null)" ];then
