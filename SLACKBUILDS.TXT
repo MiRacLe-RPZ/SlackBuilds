@@ -1,6 +1,6 @@
 SLACKBUILD NAME: freetds
 SLACKBUILD LOCATION: ./freetds
-SLACKBUILD FILES: doinst.sh freetds.SlackBuild freetds.info slack-desc
+SLACKBUILD FILES: doinst.sh freetds.SlackBuild freetds.info slack-desc slack-required
 SLACKBUILD VERSION: 0.91
 SLACKBUILD DOWNLOAD: ftp://ftp.freetds.org/pub/freetds/stable/freetds-0.91.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -27,4 +27,14 @@ SLACKBUILD DOWNLOAD_x86_64:
 SLACKBUILD MD5SUM: c9aa0f4996d1b91ee9e45afcfaeb5d2e
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD SHORT DESCRIPTION:  php (HTML-embedded scripting language)
+
+SLACKBUILD NAME: phpsh
+SLACKBUILD LOCATION: ./phpsh
+SLACKBUILD FILES: doinst.sh phpsh.SlackBuild phpsh.info slack-desc slack-required
+SLACKBUILD VERSION: 1.3
+SLACKBUILD DOWNLOAD: https://nodeload.github.com/facebook/phpsh/tarball/master
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: 33ed49f3318be631712ab9d765ec2043
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD SHORT DESCRIPTION:   An interactive shell for php
 
