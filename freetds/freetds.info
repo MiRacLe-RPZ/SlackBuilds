@@ -1,0 +1,5 @@
+PRGNAM="freetds"
+VERSION="0.91"
+HOMEPAGE="http://www.freetds.org"
+DOWNLOAD="ftp://ftp.freetds.org/pub/freetds/stable/freetds-0.91.tar.gz"
+MD5SUM="b14db5823980a32f0643d1a84d3ec3ad"

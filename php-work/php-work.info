@@ -1,0 +1,6 @@
+PRGNAM="php-work"
+VERSION="5.4.6"
+HOMEPAGE="http://www.php.net"
+DOWNLOAD="http://ru2.php.net/get/php-5.4.6.tar.bz2"
+MD5SUM="c9aa0f4996d1b91ee9e45afcfaeb5d2e"
+REQUIRES="freetds"

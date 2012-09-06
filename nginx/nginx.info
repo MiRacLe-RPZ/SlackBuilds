@@ -1,0 +1,5 @@
+PRGNAM="nginx"
+VERSION="1.2.3"
+HOMEPAGE="http://nginx.org/"
+DOWNLOAD="http://nginx.org/download/nginx-1.2.3.tar.gz"
+MD5SUM="0a986e60826d9e3b453dbefc36bf8f6c"

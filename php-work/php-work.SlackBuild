@@ -63,6 +63,7 @@ CWD=$(pwd)
 TMP=${TMP:-/tmp/rpz}
 PKG=$TMP/package-$PRGNAM
 OUTPUT=${OUTPUT:-/tmp}
+SOURCE="http://ru2.php.net/get/${PRGNAM}-${VERSION}.tar.bz2/from/uk3.php.net/mirror"
 
 set -e
 
@@ -72,7 +73,7 @@ cd $TMP
 rm -rf ${PRGNAM}-${VERSION}
 
 if [ ! -e $CWD/${PRGNAM}-${VERSION}.tar.bz2 ]; then
-    wget http://ru2.php.net/get/${PRGNAM}-${VERSION}.tar.bz2/from/uk3.php.net/mirror -O $CWD/${PRGNAM}-${VERSION}.tar.bz2
+    wget $SOURCE -O $CWD/${PRGNAM}-${VERSION}.tar.bz2
 fi
 
 tar jxf $CWD/${PRGNAM}-${VERSION}.tar.bz2
