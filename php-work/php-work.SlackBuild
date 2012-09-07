@@ -31,8 +31,6 @@ TAG=${TAG:-_rpz}
 DEVELOPMENT=${DEVELOPMENT:-no}
 EXTRA_OPTIONS=${EXTRA_OPTIONS:-}
 
-echo $EXTRA_OPTIONS
-
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
     i?86) ARCH=i486 ;;
@@ -172,7 +170,7 @@ mkdir -p $PKG/etc/php54
 cat $CWD/php.ini | sed "s|/usr/lib/php54/ext|/usr/lib${LIBDIRSUFFIX}/php54/ext|" > $PKG/etc/php54/php.ini.tmp
 cat $CWD/php-cli.ini | sed "s|/usr/lib/php54/ext|/usr/lib${LIBDIRSUFFIX}/php54/ext|" > $PKG/etc/php54/php-cli.ini.tmp
 cat $CWD/php-fpm.conf > $PKG/etc/php54/php-fpm.conf.new
-
+cp $CWD/php-lint /usr/bin/
 
 if [ "yes" == $DEVELOPMENT ]; then
     cat $PKG/etc/php54/php.ini.tmp|sed "s|;zend_extension=/usr/lib${LIBDIRSUFFIX}/php54/ext/xdebug.so|zend_extension=/usr/lib${LIBDIRSUFFIX}/php54/ext/xdebug.so|" > $PKG/etc/php54/php.ini.new
@@ -203,7 +201,7 @@ cat $CWD/slack-conflicts > $PKG/install/slack-conflicts
 cat $CWD/doinst.sh > $PKG/install/doinst.sh
 
 cp -a \
-    $CWD/$PKGNAM.SlackBuild $CWD/slack-* $CWD/php-*.ini $CWD/rc.php-fpm $CWD/php-fpm.conf $CWD/php.logrotate $CWD/doinst.sh \
+    $CWD/$PKGNAM.SlackBuild $CWD/slack-* $CWD/php-*.ini $CWD/rc.php-fpm $CWD/php-fpm.conf $CWD/php.logrotate $CWD/doinst.sh $CWD/php-lint \
     $PKG/usr/doc/$PKGNAM-$VERSION/SlackBuild
 
 

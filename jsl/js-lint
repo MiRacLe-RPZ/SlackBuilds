@@ -1,0 +1,2 @@
+#!/bin/sh
+/usr/bin/jsl -nologo -nofilelisting -context -process $1

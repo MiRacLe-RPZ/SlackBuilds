@@ -1,0 +1,6 @@
+#!/bin/sh
+if [ "x" != "x$1" ]; then
+    /usr/bin/php -l $1
+else
+    echo "Usage: $0 /path/to/php-script"
+fi
