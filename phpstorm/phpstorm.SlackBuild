@@ -40,24 +40,25 @@ TMP=${TMP:-/tmp/rpz}
 PKG=$TMP/package-$PKGNAM
 OUTPUT=${OUTPUT:-/tmp}
 
-if [ ! -e $CWD/$PRGNAM-EAP-$VERSION.tar.gz ]; then
-  if [ -e $CWD/$PRGNAM-5.0.tar.gz ]; then
-    mv $CWD/$PRGNAM-5.0.tar.gz $CWD/$PRGNAM-EAP-$VERSION.tar.gz
-  else
-    wget $SOURCE -O $CWD/$PRGNAM-EAP-$VERSION.tar.gz
-  fi
-fi
 
 rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
+
 cd $TMP
 rm -rf ${PRGNAM}-${VERSION}
 
 
-rm -rf $TMP
-mkdir -p $TMP $PKG $OUTPUT
+if [ ! -e $CWD/$PRGNAM-EAP-$VERSION.tar.gz ] && [ ! -e $CWD/$PRGNAM-5.0.tar.gz ]; then
+    wget $SOURCE -O $CWD/$PRGNAM-EAP-$VERSION.tar.gz
+fi
+
 cd $TMP
-tar xvf $CWD/$PRGNAM-EAP-$VERSION.tar.gz
+
+if [ -f $CWD/$PRGNAM-EAP-$VERSION.tar.gz ]; then
+    tar zxf $CWD/$PRGNAM-EAP-$VERSION.tar.gz
+else
+    tar zxf $CWD/$PRGNAM-5.0.tar.gz
+fi
 cd $PRGNAM-$VERSION
 
 chown -R root:root .
