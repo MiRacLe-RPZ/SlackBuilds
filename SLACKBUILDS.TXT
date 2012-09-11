@@ -20,7 +20,7 @@ SLACKBUILD SHORT DESCRIPTION:  JavaScript Lint
 
 SLACKBUILD NAME: kfilebox
 SLACKBUILD LOCATION: ./kfilebox
-SLACKBUILD FILES: doinst.sh kfilebox.SlackBuild kfilebox.info slack-desc slack-required
+SLACKBUILD FILES: doinst.sh kfilebox.SlackBuild kfilebox.desktop kfilebox.info slack-desc slack-required
 SLACKBUILD VERSION: 0.4.9
 SLACKBUILD DOWNLOAD: http://downloads.sourceforge.net/project/kdropbox/kfilebox-0.4.9/Source/kfilebox_0.4.9.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 

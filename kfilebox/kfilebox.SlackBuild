@@ -26,7 +26,7 @@
 PRGNAM=kfilebox
 PKGNAM=kfilebox
 VERSION=${VERSION:-0.4.9}
-BUILD=${BUILD:-3}
+BUILD=${BUILD:-4}
 TAG=${TAG:-_rpz}
 
 if [ -z "$ARCH" ]; then
@@ -84,11 +84,12 @@ cp bin/$PRGNAM $PKG/usr/bin/
 mkdir -p $PKG/usr/share/$PRGNAM
 cp img/$PRGNAM.png $PKG/usr/share/$PRGNAM
 
-mkdir -p $PKG/usr/share/apps/$PRGNAM
+mkdir -p $PKG/usr/share/apps/$PRGNAM $PKG/usr/share/autostart
 cp $PRGNAM.notifyrc $PKG/usr/share/apps/$PRGNAM
 
 mkdir -p $PKG/usr/share/applications/kde4
-cp $PRGNAM.desktop $PKG/usr/share/applications/kde4
+cp $CWD/$PRGNAM.desktop $PKG/usr/share/applications/kde4
+cp $CWD/$PRGNAM.desktop $PKG/usr/share/autostart/
 
 find $PKG | xargs file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
