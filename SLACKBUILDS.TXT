@@ -18,6 +18,16 @@ SLACKBUILD MD5SUM: 2b94ffa4fab07acabe0c5e73cd49bcdf
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD SHORT DESCRIPTION:  JavaScript Lint
 
+SLACKBUILD NAME: kdesudo
+SLACKBUILD LOCATION: ./kdesudo
+SLACKBUILD FILES: doinst.sh kdesudo.SlackBuild kdesudo.info slack-desc slack-required
+SLACKBUILD VERSION: 3.4.2.4
+SLACKBUILD DOWNLOAD: https://launchpad.net/kdesudo/3.x/3.4.2.4/+download/kdesudo-3.4.2.4.tar.gz
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: 9cae3b6f12edd6595a4d0554772e926e
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD SHORT DESCRIPTION:   KdeSudo is a frontend for sudo. 
+
 SLACKBUILD NAME: kfilebox
 SLACKBUILD LOCATION: ./kfilebox
 SLACKBUILD FILES: doinst.sh kfilebox.SlackBuild kfilebox.desktop kfilebox.info slack-desc slack-required

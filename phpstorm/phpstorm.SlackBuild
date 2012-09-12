@@ -123,9 +123,7 @@ ln -s /opt/$PKGNAM/bin/phpstorm.sh $PKG/usr/bin/$PKGNAM
 mkdir -p $PKG/install
 cat $CWD/slack-desc > $PKG/install/slack-desc
 
-if [ -e $CWD/slack-require ]; then
-    cat $CWD/slack-require > $PKG/install/slack-require
-elif [ -x "$(which requiredbuilder 2>/dev/null)" ]; then
+if [ ! -e $CWD/slack-required ] && [ -x "$(which requiredbuilder 2>/dev/null)" ]; then
   requiredbuilder -y -v -s $CWD $PKG
 fi
 
