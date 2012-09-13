@@ -19,6 +19,7 @@ do
     DOWNLOAD_x86_64=$(grep ^DOWNLOAD_x86_64= $TMP | cut -f2 -d\" )
     MD5SUM=$(grep ^MD5SUM= $TMP | cut -f2 -d\" )
     MD5SUM_x86_64=$(grep ^MD5SUM_x86_64= $TMP | cut -f2 -d\" )
+    REQUIRES=$(grep ^REQUIRES= $TMP | cut -f2 -d\" )
     VERSION=$(grep ^VERSION= $TMP | cut -f2 -d\" )
 
     echo "SLACKBUILD VERSION: $VERSION"
@@ -26,6 +27,10 @@ do
     echo "SLACKBUILD DOWNLOAD_x86_64: $DOWNLOAD_x86_64"
     echo "SLACKBUILD MD5SUM: $MD5SUM"
     echo "SLACKBUILD MD5SUM_x86_64: $MD5SUM_x86_64"
+
+    if [ "x${REQUIRES}" != "x" ]; then
+        echo "SLACKBUILD REQUIRES: $REQUIRES"
+    fi
 
     if [ -f $location/slack-desc ]; then
       SHORTDESC=$(grep ^$name: $location/slack-desc | head -n 1 | sed -re "s/^$name://")

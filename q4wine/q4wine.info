@@ -1,5 +1,6 @@
 PRGNAM="q4wine"
 VERSION="0.999-rc8"
 HOMEPAGE="http://q4wine.brezblock.org.ua/"
-DOWNLOAD="http://downloads.sourceforge.net/project/q4wine/q4wine/q4wine%200.999-rc7/q4wine-0.999-rc8.tar.bz2"
+DOWNLOAD="http://downloads.sourceforge.net/project/q4wine/q4wine/q4wine%200.999-rc8/q4wine-0.999-rc8.tar.bz2"
 MD5SUM="635ce6a70c3d6976ded950f6227c8d30"
+REQUIRES="icoutils"

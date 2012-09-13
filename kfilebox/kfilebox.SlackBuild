@@ -42,7 +42,7 @@ TMP=${TMP:-/tmp/rpz}
 PKG=$TMP/package-$PKGNAM
 OUTPUT=${OUTPUT:-/tmp}
 
-CPUCOUNT=$(lscpu -p=cpu | grep -v \# | wc -l)
+CPUCOUNT=$(lscpu -p cpu | grep -v \# | wc -l)
 
 NUMJOBS=" -j${CPUCOUNT} "
 

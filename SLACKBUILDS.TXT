@@ -11,10 +11,10 @@ SLACKBUILD SHORT DESCRIPTION:  FreeTDS (free implementation of the Tabular Data 
 SLACKBUILD NAME: icoutils
 SLACKBUILD LOCATION: ./icoutils
 SLACKBUILD FILES: icoutils.SlackBuild icoutils.info slack-desc slack-required
-SLACKBUILD VERSION: VERSION=0.30.0
-SLACKBUILD DOWNLOAD: DOWNLOAD=http://download.savannah.gnu.org/releases/icoutils/icoutils-0.30.0.tar.bz2
+SLACKBUILD VERSION: 0.30.0
+SLACKBUILD DOWNLOAD: http://download.savannah.gnu.org/releases/icoutils/icoutils-0.30.0.tar.bz2
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: MD5SUM=2574eb4ff5c0d3b2a59ad5a7d8848ced
+SLACKBUILD MD5SUM: 2574eb4ff5c0d3b2a59ad5a7d8848ced
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD SHORT DESCRIPTION:  icoutils (Windows Icon and Cursor Utilities)
 
@@ -36,6 +36,7 @@ SLACKBUILD DOWNLOAD: https://launchpad.net/kdesudo/3.x/3.4.2.4/+download/kdesudo
 SLACKBUILD DOWNLOAD_x86_64: 
 SLACKBUILD MD5SUM: 9cae3b6f12edd6595a4d0554772e926e
 SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD REQUIRES: qt kdelibs
 SLACKBUILD SHORT DESCRIPTION:   KdeSudo is a frontend for sudo. 
 
 SLACKBUILD NAME: kfilebox
@@ -46,6 +47,7 @@ SLACKBUILD DOWNLOAD: http://downloads.sourceforge.net/project/kdropbox/kfilebox-
 SLACKBUILD DOWNLOAD_x86_64: 
 SLACKBUILD MD5SUM: 4b40b7a2e52c0d3d126dd4f8c404efdd
 SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD REQUIRES: qt kdelibs
 SLACKBUILD SHORT DESCRIPTION:  KFilebox (KDE Dropbox client)
 
 SLACKBUILD NAME: nginx
@@ -66,6 +68,7 @@ SLACKBUILD DOWNLOAD: http://ru2.php.net/get/php-5.4.6.tar.bz2
 SLACKBUILD DOWNLOAD_x86_64: 
 SLACKBUILD MD5SUM: c9aa0f4996d1b91ee9e45afcfaeb5d2e
 SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD REQUIRES: freetds
 SLACKBUILD SHORT DESCRIPTION:  php (HTML-embedded scripting language)
 
 SLACKBUILD NAME: phpsh
@@ -76,6 +79,7 @@ SLACKBUILD DOWNLOAD: https://nodeload.github.com/facebook/phpsh/tarball/master
 SLACKBUILD DOWNLOAD_x86_64: 
 SLACKBUILD MD5SUM: 33ed49f3318be631712ab9d765ec2043
 SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD REQUIRES: php python
 SLACKBUILD SHORT DESCRIPTION:   An interactive shell for php
 
 SLACKBUILD NAME: phpstorm
@@ -86,15 +90,17 @@ SLACKBUILD DOWNLOAD: http://download.jetbrains.com/webide/PhpStorm-5.0.1.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
 SLACKBUILD MD5SUM: f0442ccc371d5263c5e4456f2448535d
 SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD REQUIRES: jdk
 SLACKBUILD SHORT DESCRIPTION:  PhpIDE based on JetBrain's IDEA
 
 SLACKBUILD NAME: q4wine
 SLACKBUILD LOCATION: ./q4wine
 SLACKBUILD FILES: doinst.sh q4wine.SlackBuild q4wine.info slack-desc slack-required
 SLACKBUILD VERSION: 0.999-rc8
-SLACKBUILD DOWNLOAD: http://downloads.sourceforge.net/project/q4wine/q4wine/q4wine%200.999-rc7/q4wine-0.999-rc8.tar.bz2
+SLACKBUILD DOWNLOAD: http://downloads.sourceforge.net/project/q4wine/q4wine/q4wine%200.999-rc8/q4wine-0.999-rc8.tar.bz2
 SLACKBUILD DOWNLOAD_x86_64: 
 SLACKBUILD MD5SUM: 635ce6a70c3d6976ded950f6227c8d30
 SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD REQUIRES: icoutils
 SLACKBUILD SHORT DESCRIPTION:  q4wine (Qt4 GUI for wine)
 

@@ -53,7 +53,7 @@ else
   LIBDIRSUFFIX=""
 fi
 
-CPUCOUNT=$(lscpu -p=cpu | grep -v \# | wc -l)
+CPUCOUNT=$(lscpu -p cpu | grep -v \# | wc -l)
 
 NUMJOBS=" -j${CPUCOUNT} "
 
