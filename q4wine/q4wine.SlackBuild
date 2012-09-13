@@ -1,0 +1,140 @@
+#!/bin/sh
+#
+# Slackware build script for q4wine
+#
+# Redistribution and use of this script, with or without modification, is
+# permitted provided that the following conditions are met:
+#
+# 1. Redistributions of this script must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+#
+# THIS SOFTWARE IS PROVIDED BY THE AUTHOR ''AS IS'' AND ANY EXPRESS OR IMPLIED
+# WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+# EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+# SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+# PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+# OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+# OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+# ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+PRGNAM=q4wine
+PKGNAM=$(basename $0 .SlackBuild)
+VERSION=${VERSION:-0.999-rc8}
+BUILD=${BUILD:-1}
+TAG=${TAG:-_rpz}
+
+if [ -z "$ARCH" ]; then
+  case "$( uname -m )" in
+    i?86) ARCH=i486 ;;
+    arm*) ARCH=arm ;;
+       *) ARCH=$( uname -m ) ;;
+  esac
+fi
+
+CWD=$(pwd)
+TMP=${TMP:-/tmp/rpz}
+PKG=$TMP/package-$PKGNAM
+OUTPUT=${OUTPUT:-/tmp}
+
+
+if [ "$ARCH" = "i486" ]; then
+  SLKCFLAGS="-O2 -march=i486 -mtune=i686"
+  LIBDIRSUFFIX=""
+elif [ "$ARCH" = "i686" ]; then
+  SLKCFLAGS="-O2 -march=i686 -mtune=i686"
+  LIBDIRSUFFIX=""
+elif [ "$ARCH" = "x86_64" ]; then
+  SLKCFLAGS="-O2 -fPIC"
+  LIBDIRSUFFIX="64"
+else
+  SLKCFLAGS="-O2"
+  LIBDIRSUFFIX=""
+fi
+
+CPUCOUNT=$(lscpu -p=cpu | grep -v \# | wc -l)
+
+NUMJOBS=" -j${CPUCOUNT} "
+
+SOURCE="http://downloads.sourceforge.net/project/${PRGNAM}/${PRGNAM}/${PRGNAM}%20${VERSION}/${PRGNAM}-${VERSION}.tar.bz2"
+
+set -e
+
+if [ -d /usr/lib${LIBDIRSUFFIX}/qt ]; then
+  export QTDIR=/usr/lib${LIBDIRSUFFIX}/qt
+  export QT4DIR=$QTDIR
+fi
+
+rm -rf $PKG
+mkdir -p $TMP $PKG $OUTPUT
+
+cd $TMP
+rm -rf $PRGNAM-$VERSION
+
+if [ ! -e $CWD/$PRGNAM-$VERSION.tar.bz2 ]; then
+    wget "${SOURCE}" -O "${CWD}/${PRGNAM}-${VERSION}.tar.bz2"
+fi
+
+tar jxf $CWD/$PRGNAM-$VERSION.tar.bz2 || exit 1
+cd $PRGNAM-$VERSION
+
+chown -R root:root .
+find . \
+ \( -perm 777 -o -perm 775 -o -perm 711 -o -perm 555 -o -perm 511 \) \
+ -exec chmod 755 {} \; -o \
+ \( -perm 666 -o -perm 664 -o -perm 600 -o -perm 444 -o -perm 440 -o -perm 400 \) \
+ -exec chmod 644 {} \;
+
+mkdir build
+cd build
+cmake \
+  -DCMAKE_C_FLAGS:STRING="$SLKCFLAGS" \
+  -DCMAKE_CXX_FLAGS:STRING="$SLKCFLAGS" \
+  -DCMAKE_LD_FLAGS:STRING="$SLKLDFLAGS" \
+  -DCMAKE_BUILD_TYPE=None \
+  -DCMAKE_INSTALL_PREFIX=/usr \
+  -DMAN_INSTALL_DIR=/usr/man \
+  -DUSE_GZIP=On \
+  -DUSE_BZIP2=On \
+  -DWITH_WINETRICKS=On \
+  -DWITH_SYSTEM_SINGLEAPP=On \
+  -DSYSCONF_INSTALL_DIR=/etc \
+  -DLIB_SUFFIX=${LIBDIRSUFFIX} \
+  ..
+make $NUMJOBS
+make DESTDIR=$PKG install/strip
+cd ..
+
+if [ -d $PKG/usr/share/man ]; then
+    mv $PKG/usr/share/man $PKG/usr
+fi
+
+if [ -d $PKG/usr/man ]; then
+( cd $PKG/usr/man
+  find -type f -exec gzip -9 {} \;
+  for i in $(find -type l); do ln -s $(readlink $i).gz $i.gz; rm $i; done
+)
+fi
+
+mkdir -p $PKG/usr/share/doc/$PKGNAM-$VERSION/SlackBuild
+cp -a ChangeLog INSTALL TODO README SEMDEBUG.TXT \
+    $PKG/usr/share/doc/$PKGNAM-$VERSION
+
+
+mkdir -p $PKG/install
+cp -a $CWD/$PKGNAM.SlackBuild $CWD/slack-* $CWD/doinst.sh \
+    $PKG/install
+
+
+cd $PKG
+
+chown root.root -R .
+
+if [ ! -e $CWD/slack-required ] && [ -x "$(which requiredbuilder 2>/dev/null)" ]; then
+  requiredbuilder -y -v -s $CWD $PKG
+fi
+
+
+/sbin/makepkg -l y -c n $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-txz}

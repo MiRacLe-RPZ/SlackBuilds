@@ -21,7 +21,7 @@ set -e
 
 PRGNAM=PhpStorm
 PKGNAM=phpstorm
-VERSION=${VERSION:-121.185}
+VERSION=${VERSION:-121.215}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 
@@ -33,7 +33,7 @@ if [ -z "$ARCH" ]; then
 fi
 
 #SOURCE="http://download.jetbrains.com/webide/$PRGNAM-EAP-$VERSION.tar.gz"
-SOURCE="http://download.jetbrains.com/webide/PhpStorm-5.0.tar.gz"
+SOURCE="http://download.jetbrains.com/webide/PhpStorm-5.0.1.tar.gz"
 
 CWD=$(pwd)
 TMP=${TMP:-/tmp/rpz}
@@ -57,7 +57,7 @@ cd $TMP
 if [ -f $CWD/$PRGNAM-EAP-$VERSION.tar.gz ]; then
     tar zxf $CWD/$PRGNAM-EAP-$VERSION.tar.gz
 else
-    tar zxf $CWD/$PRGNAM-5.0.tar.gz
+    tar zxf $CWD/$PRGNAM-5.0.1.tar.gz
 fi
 cd $PRGNAM-$VERSION
 
@@ -103,14 +103,13 @@ cp $PKG/opt/$PKGNAM/bin/webide.png $PKG/usr/share/pixmaps/$PKGNAM.png
 cp -a license/* Install-Linux-tar.txt \
   $PKG/usr/doc/$PKGNAM-$VERSION
 
-[ -e $PKG/opt/$PKGNAM/license ] && rm -rf $PKG/opt/$PKGNAM/license
+# [ -e $PKG/opt/$PKGNAM/license ] && rm -rf $PKG/opt/$PKGNAM/license
 [ -e $PKG/opt/$PKGNAM/Install-Linux-tar.txt ] && rm -f $PKG/opt/$PKGNAM/Install-Linux-tar.txt
 [ -e $PKG/opt/$PKGNAM/build.txt ] && rm -f $PKG/opt/$PKGNAM/build.txt
 
 
-for i in $CWD/$PKGNAM.SlackBuild $CWD/slack-*; do
-  cp -a $i $PKG/usr/doc/$PKGNAM-$VERSION/SlackBuild/
-done
+cp -a $CWD/$PKGNAM.SlackBuild $CWD/slack-* \
+   $PKG/usr/doc/$PKGNAM-$VERSION/SlackBuild/
 
 ln -s /opt/$PKGNAM/bin/phpstorm.sh $PKG/usr/bin/$PKGNAM
 

@@ -1,7 +1,6 @@
-attica >= 0.4.0
 bzip2 >= 1.0.6
-kdelibs >= 4.8.5
-qca >= 2.0.2
+coreutils >= 8.19
 qt >= 4.8.2
 util-linux >= 2.21.2
 zlib >= 1.2.6
+icoutils >= 0.30.0

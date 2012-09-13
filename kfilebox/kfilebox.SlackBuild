@@ -42,6 +42,11 @@ TMP=${TMP:-/tmp/rpz}
 PKG=$TMP/package-$PKGNAM
 OUTPUT=${OUTPUT:-/tmp}
 
+CPUCOUNT=$(lscpu -p=cpu | grep -v \# | wc -l)
+
+NUMJOBS=" -j${CPUCOUNT} "
+
+
 SOURCE="http://downloads.sourceforge.net/project/kdropbox/kfilebox-0.4.9/Source/kfilebox_0.4.9.tar.gz"
 
 set -e
@@ -74,7 +79,7 @@ find . \
  -exec chmod 644 {} \;
 
 qmake
-make
+make $NUMJOBS
 make install INSTALL_ROOT=$PKG
 
 # Weird.  As a normal user, this is installed, but not as root
