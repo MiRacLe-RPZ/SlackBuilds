@@ -20,6 +20,9 @@ do
     MD5SUM=$(grep ^MD5SUM= $TMP | cut -f2 -d\" )
     MD5SUM_x86_64=$(grep ^MD5SUM_x86_64= $TMP | cut -f2 -d\" )
     REQUIRES=$(grep ^REQUIRES= $TMP | cut -f2 -d\" )
+    MAINTAINER=$(grep ^MAINTAINER= $TMP | cut -f2 -d\" )
+    EMAIL=$(grep ^EMAIL= $TMP | cut -f2 -d\" )
+    
     VERSION=$(grep ^VERSION= $TMP | cut -f2 -d\" )
 
     echo "SLACKBUILD VERSION: $VERSION"
@@ -31,6 +34,11 @@ do
     if [ "x${REQUIRES}" != "x" ]; then
         echo "SLACKBUILD REQUIRES: $REQUIRES"
     fi
+
+    if [ "x${MAINTAINER}" != "x" ]; then
+        echo "SLACKBUILD MAINTAINER: $MAINTAINER <$EMAIL>"
+    fi
+
 
     if [ -f $location/slack-desc ]; then
       SHORTDESC=$(grep ^$name: $location/slack-desc | head -n 1 | sed -re "s/^$name://")

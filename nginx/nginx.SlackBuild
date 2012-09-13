@@ -43,9 +43,7 @@ TMP=${TMP:-/tmp/rpz}
 PKG=$TMP/package-$PKGNAME
 OUTPUT=${OUTPUT:-/tmp}
 
-CPUCOUNT=$(lscpu -p cpu | grep -v \# | wc -l)
-
-NUMJOBS=" -j${CPUCOUNT} "
+NUMJOBS=" -j$(lscpu|grep 'CPU(s):'|awk '{print $2 + 1}') "
 
 
 if [ ! -e $CWD/$PRGNAM-$VERSION.tar.gz ];then
@@ -130,7 +128,6 @@ mkdir -p $PKG/var/log/nginx
 chown $NGINXUSER:$NGINXGROUP $PKG/var/log/nginx
 chmod 750 $PKG/var/log/nginx
 
-# Documentations
 cp -r \
   CHANGES* LICENSE README \
   $PKG/usr/doc/$PKGNAME-$VERSION

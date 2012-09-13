@@ -46,9 +46,7 @@ else
   LIBDIRSUFFIX=""
 fi
 
-CPUCOUNT=$(lscpu -p cpu | grep -v \# | wc -l)
-
-NUMJOBS=" -j${CPUCOUNT} "
+NUMJOBS=" -j$(lscpu|grep 'CPU(s):'|awk '{print $2 + 1}') "
 
 CWD=$(pwd)
 TMP=${TMP:-/tmp/rpz}

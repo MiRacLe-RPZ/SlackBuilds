@@ -1,0 +1,8 @@
+PRGNAM="node"
+VERSION="0.8.7"
+HOMEPAGE="http://nodejs.org"
+DOWNLOAD="http://nodejs.org/dist/v0.8.7/node-v0.8.7.tar.gz"
+MD5SUM="44427fff86cbf865f9bb459b6024e9b7"
+MAINTAINER="MiRacLe.RPZ"
+REQUIRES="python"
+EMAIL="miracle@rpz.name"

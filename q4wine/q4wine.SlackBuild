@@ -54,9 +54,7 @@ else
   LIBDIRSUFFIX=""
 fi
 
-CPUCOUNT=$(lscpu -p cpu | grep -v \# | wc -l)
-
-NUMJOBS=" -j${CPUCOUNT} "
+NUMJOBS=" -j$(lscpu|grep 'CPU(s):'|awk '{print $2 + 1}') "
 
 SOURCE="http://downloads.sourceforge.net/project/${PRGNAM}/${PRGNAM}/${PRGNAM}%20${VERSION}/${PRGNAM}-${VERSION}.tar.bz2"
 

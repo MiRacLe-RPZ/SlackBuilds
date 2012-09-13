@@ -52,9 +52,8 @@ else
   LIBDIRSUFFIX=""
 fi
 
-CPUCOUNT=$(lscpu -p cpu | grep -v \# | wc -l)
 
-NUMJOBS=" -j${CPUCOUNT} "
+NUMJOBS=" -j$(lscpu|grep 'CPU(s):'|awk '{print $2 + 1}') "
 
 SOURCE="https://launchpad.net/${PRGNAM}/3.x/3.4.2.4/+download/${PRGNAM}-${VERSION}.tar.gz"
 

@@ -1,5 +1,4 @@
-glibc-debug >= 2.15_multilib-x86_64-3alien | glibc-solibs >= 2.15_multilib-x86_64-6alien
-libiodbc >= 3.52.7-x86_64-2
-ncurses >= 5.9-x86_64-1
-openssl >= 1.0.1c-x86_64-3 | openssl-solibs >= 1.0.1c-x86_64-3
-readline >= 5.2-x86_64-4
+libiodbc >= 3.52.7
+ncurses >= 5.9
+openssl >= 1.0 | openssl-solibs >= 1.0
+readline >= 5.2

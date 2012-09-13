@@ -1,9 +1,6 @@
 #!/bin/sh
 
 # Slackware build script for kfilebox
-
-# Copyright (c) 2012 MiRacLe.RPZ <miracle@rpz.name>
-# All rights reserved.
 #
 #   Permission to use, copy, modify, and distribute this software for
 #   any purpose with or without fee is hereby granted, provided that
@@ -42,10 +39,8 @@ TMP=${TMP:-/tmp/rpz}
 PKG=$TMP/package-$PKGNAM
 OUTPUT=${OUTPUT:-/tmp}
 
-CPUCOUNT=$(lscpu -p cpu | grep -v \# | wc -l)
 
-NUMJOBS=" -j${CPUCOUNT} "
-
+NUMJOBS=" -j$(lscpu|grep 'CPU(s):'|awk '{print $2 + 1}') "
 
 SOURCE="http://downloads.sourceforge.net/project/kdropbox/kfilebox-0.4.9/Source/kfilebox_0.4.9.tar.gz"
 
@@ -82,7 +77,6 @@ qmake
 make $NUMJOBS
 make install INSTALL_ROOT=$PKG
 
-# Weird.  As a normal user, this is installed, but not as root
 mkdir -p $PKG/usr/bin
 cp bin/$PRGNAM $PKG/usr/bin/
 

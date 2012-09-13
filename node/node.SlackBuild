@@ -3,7 +3,7 @@
 # Slackware build script for node
 
 PRGNAM=node
-PKGNAM=node
+PKGNAM=$(basename $0 .SlackBuild)
 VERSION=${VERSION:-0.8.7}
 BUILD=${BUILD:-2}
 TAG=${TAG:-_rpz}
@@ -18,7 +18,7 @@ fi
 
 CWD=$(pwd)
 TMP=${TMP:-/tmp/rpz}
-PKG=$TMP/package-$PRGNAM
+PKG=$TMP/package-$PKGNAM
 OUTPUT=${OUTPUT:-/tmp}
 
 if [ "$ARCH" = "i486" ]; then
@@ -35,10 +35,7 @@ else
   LIBDIRSUFFIX=""
 fi
 
-CPUCOUNT=$(lscpu -p cpu | grep -v \# | wc -l)
-
-NUMJOBS=" -j${CPUCOUNT} "
-
+NUMJOBS=" -j$(lscpu|grep 'CPU(s):'|awk '{print $2 + 1}') "
 
 set -eu
 
@@ -51,8 +48,17 @@ if [ ! -e $CWD/$PRGNAM-v$VERSION.tar.gz ]; then
 fi
 tar xvf $CWD/$PRGNAM-v$VERSION.tar.gz
 cd $PRGNAM-v$VERSION
+
+
 chown -R root:root .
-chmod -R u+w,go+r-w,a-s .
+find . \
+ \( -perm 777 -o -perm 775 -o -perm 711 -o -perm 555 -o -perm 511 \) \
+ -exec chmod 755 {} \; -o \
+ \( -perm 666 -o -perm 664 -o -perm 600 -o -perm 444 -o -perm 440 -o -perm 400 \) \
+ -exec chmod 644 {} \;
+
+
+
 
 # Fix man page path.
 #sed -i 's|/share||' wscript
@@ -101,12 +107,28 @@ export NODE_PATH=/usr/lib${LIBDIRSUFFIX}/node_modules
 EOF
 chmod 0755 $PKG/etc/profile.d/*
 
-mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
-cp -a AUTHORS ChangeLog LICENSE $PKG/usr/doc/$PRGNAM-$VERSION
-cat $CWD/$PRGNAM.SlackBuild > $PKG/usr/doc/$PRGNAM-$VERSION/$PRGNAM.SlackBuild
+mkdir -p $PKG/usr/doc/$PKGNAM-$VERSION/SlackBuild
+
+cp -a AUTHORS ChangeLog LICENSE \
+    $PKG/usr/doc/$PKGNAM-$VERSION
+
+cp -a $CWD/$PKGNAM.SlackBuild $CWD/slack-* $CWD/npm.sh \
+    $PKG/usr/doc/$PKGNAM-$VERSION/SlackBuild
+
 
 mkdir -p $PKG/install
 cat $CWD/slack-desc > $PKG/install/slack-desc
 
 cd $PKG
+
+chown root.root -R .
+
+if [ ! -e $CWD/slack-required ] && [ -x "$(which requiredbuilder 2>/dev/null)" ]; then
+  requiredbuilder -y -v -s $CWD $PKG
+fi
+
+
 /sbin/makepkg -l y -c n $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-txz}
+
+
+
