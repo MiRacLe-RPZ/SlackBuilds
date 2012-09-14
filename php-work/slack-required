@@ -1,15 +1,14 @@
 freetds >= 0.91
-curl >= 7.27.0-x86_64-2
-cyrus-sasl >= 2.1.23-x86_64-4
-glibc-debug >= 2.15_multilib-x86_64-3alien | glibc-solibs >= 2.15_multilib-x86_64-5alien
-libidn >= 1.25-x86_64-2
-libjpeg >= v8a-x86_64-1
-libmcrypt >= 2.5.8-x86_64-1
-libpng >= 1.4.12-x86_64-1
-libtool >= 2.4.2-x86_64-1
-libxml2 >= 2.8.0-x86_64-1
-mysql >= 5.5.25a-x86_64-2
-openldap-client >= 2.4.31-x86_64-2
-openssl >= 1.0.1c-x86_64-3 | openssl-solibs >= 1.0.1c-x86_64-3
+curl >= 7.27.0
+cyrus-sasl >= 2.1.23
+libidn >= 1.25
+libjpeg >= v8a
+libmcrypt >= 2.5.8
+libpng >= 1.4.12
+libtool >= 2.4.2
+libxml2 >= 2.8.0
+mysql >= 5.5
+openldap-client >= 2.4.31
+openssl >= 1.0 | openssl-solibs >= 1.0
+zlib >= 1.2.6glibc-debug >= 2.15_multilib-x86_64-3alien | glibc-solibs >= 2.15_multilib-x86_64-6alien
 xz >= 5.0.4-x86_64-1
-zlib >= 1.2.6-x86_64-1

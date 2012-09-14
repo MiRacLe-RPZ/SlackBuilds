@@ -25,8 +25,8 @@
 
 PRGNAM=php
 PKGNAM=$(basename $0 .SlackBuild)
-VERSION=${VERSION:-5.4.6}
-BUILD=${BUILD:-8}
+VERSION=${VERSION:-5.4.7}
+BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 DEVELOPMENT=${DEVELOPMENT:-no}
 EXTRA_OPTIONS=${EXTRA_OPTIONS:-}
@@ -85,7 +85,7 @@ gzip -d < $CWD/apc.tgz | tar -xvf -
 
 mv APC-*.*.* apc
 
-XDEBUG=""
+DEVEXT=""
 
 if [ "yes" == $DEVELOPMENT ]; then
 
@@ -96,7 +96,8 @@ if [ "yes" == $DEVELOPMENT ]; then
     gzip -d < $CWD/xdebug.tgz | tar -xvf -
 
     mv xdebug-*.*.* xdebug
-    XDEBUG=" --enable-xdebug=shared "
+
+    DEVEXT=" --enable-xdebug=shared --enable-pcntl=shared "
 fi
 
 cd ../
@@ -141,14 +142,15 @@ CXXFLAGS="$SLKCFLAGS" \
     --with-mcrypt \
     --enable-apc=shared \
     --enable-ftp=shared \
-    --enable-pcntl=shared \
     --datarootdir=/usr/share \
     --datadir=/usr/share \
     --infodir=/usr/info \
     --mandir=/usr/man \
     --enable-static=no \
+    --enable-xml --enable-dom --enable-simplexml \
+    --enable-filter --enable-ctype \
     --with-gnu-ld \
-    --with-pic $XDEBUG $EXTRA_OPTIONS  \
+    --with-pic $DEVEXT $EXTRA_OPTIONS  \
   && make $NUMJOBS \
   && make install INSTALL_ROOT=$PKG
 
