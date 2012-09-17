@@ -25,7 +25,7 @@
 
 PRGNAM=msvistawebfonts
 PKGNAM=$(basename $0 .SlackBuild)
-VERSION=${VERSION:-0.0.2}
+VERSION=${VERSION:-0.0.3}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 ARCH=noarch
@@ -71,8 +71,20 @@ find . \
 
 mkdir -p $PKG/usr/share/fonts/TTF
 
+wget "https://gist.github.com/gists/2479682/download" -O "ttc2ttf.tar.gz"
 
-for font in *.TTF; do mv "$font" $(echo $font|awk '{print(tolower($0));}'); done
+echo "0870a607686b265690c50d158092dab8 ttc2ttf.tar.gz" > ttc2ttf.md5
+
+md5sum --check ttc2ttf.md5
+
+tar -zxf ttc2ttf.tar.gz
+
+TOOLDIR=$(find ./ -type d -name "gist*")
+
+for font in *.TTC; do python $TOOLDIR/ttc2ttf.py $font; done
+
+for font in *.{TTF,ttf}; do mv "$font" $(echo $font|awk '{print(tolower($0));}'); done
+
 
 cp *.ttf $PKG/usr/share/fonts/TTF
 
