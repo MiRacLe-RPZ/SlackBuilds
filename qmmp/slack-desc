@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':'.
+
+    |-----handy-ruler------------------------------------------------------|
+qmmp: qmmp (audio-player with a Qt interface)
+qmmp:
+qmmp: This program is an audio-player, written with help of Qt library.
+qmmp: The user interface is similar to winamp or xmms.
+qmmp:
+qmmp:
+qmmp:
+qmmp:
+qmmp:
+qmmp: qmmp home: http://qmmp.ylsoftware.com/index_en.php
+qmmp:

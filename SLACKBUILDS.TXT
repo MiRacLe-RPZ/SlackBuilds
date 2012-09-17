@@ -126,3 +126,15 @@ SLACKBUILD REQUIRES: icoutils
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  q4wine (Qt4 GUI for wine)
 
+SLACKBUILD NAME: qmmp
+SLACKBUILD LOCATION: ./qmmp
+SLACKBUILD FILES: doinst.sh qmmp.SlackBuild qmmp.info slack-desc slack-required
+SLACKBUILD VERSION: 0.6.3
+SLACKBUILD DOWNLOAD: http://qmmp.ylsoftware.com/files/qmmp-0.6.3.tar.bz2
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: 684fbd819150ca474948cf876848a270
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD REQUIRES: faad2
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  qmmp (audio-player with a Qt interface)
+

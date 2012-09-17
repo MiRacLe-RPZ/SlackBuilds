@@ -31,6 +31,10 @@ TAG=${TAG:-_rpz}
 DEVELOPMENT=${DEVELOPMENT:-no}
 EXTRA_OPTIONS=${EXTRA_OPTIONS:-}
 
+DAEMONUSER=${DAEMONUSER:-apache}
+DAEMONGROUP=${DAEMONGROUP:-apache}
+
+
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
     i?86) ARCH=i486 ;;
@@ -125,11 +129,11 @@ CXXFLAGS="$SLKCFLAGS" \
     --with-libdir=lib${LIBDIRSUFFIX} \
     --build=$ARCH-slackware-linux \
     --enable-fpm \
-    --with-fpm-user=apache \
-    --with-fpm-group=apache \
+    --with-fpm-user=${DAEMONUSER} \
+    --with-fpm-group=${DAEMONGROUP} \
     --with-gd \
     --with-mssql --with-pdo-dblib \
-    --enable-mbstring --enable-soap \
+    --with-iconv --enable-mbstring --enable-soap \
     --with-zlib --enable-bcmath \
     --with-jpeg-dir=/usr --with-curl \
     --with-openssl=shared \
@@ -148,7 +152,7 @@ CXXFLAGS="$SLKCFLAGS" \
     --mandir=/usr/man \
     --enable-static=no \
     --enable-xml --enable-dom --enable-simplexml \
-    --enable-filter --enable-ctype \
+    --enable-filter --enable-ctype --enable-json \
     --with-gnu-ld \
     --with-pic $DEVEXT $EXTRA_OPTIONS  \
   && make $NUMJOBS \
@@ -164,12 +168,12 @@ gzip -9 $PKG/usr/man/man?/*.?
 
 
 mkdir -p $PKG/etc/rc.d
-cat $CWD/rc.php-fpm > $PKG/etc/rc.d/rc.php-fpm.new
+cat $CWD/rc.php-fpm | sed "s|php_fpm_USER=apache|php_fpm_USER=${DAEMONUSER}|" > $PKG/etc/rc.d/rc.php-fpm.new
 
 mkdir -p $PKG/etc/php54
 cat $CWD/php.ini | sed "s|/usr/lib/php54/ext|/usr/lib${LIBDIRSUFFIX}/php54/ext|" > $PKG/etc/php54/php.ini.tmp
 cat $CWD/php-cli.ini | sed "s|/usr/lib/php54/ext|/usr/lib${LIBDIRSUFFIX}/php54/ext|" > $PKG/etc/php54/php-cli.ini.tmp
-cat $CWD/php-fpm.conf > $PKG/etc/php54/php-fpm.conf.new
+cat $CWD/php-fpm.conf |sed "s|user = apache|user = ${DAEMONUSER}|" |sed "s|group = apache|group = ${DAEMONGROUP}|"  > $PKG/etc/php54/php-fpm.conf.new
 cp $CWD/php-lint /usr/bin/
 
 if [ "yes" == $DEVELOPMENT ]; then

@@ -3,7 +3,7 @@
 php_fpm_BIN=/usr/sbin/php-fpm
 php_fpm_CONF=/etc/php54/php-fpm.conf
 php_fpm_PID=/var/run/php-fpm.pid
-
+php_fpm_USER=apache
 
 php_opts="--fpm-config $php_fpm_CONF"
 
@@ -14,7 +14,7 @@ mk_tempdir () {
     if [ ! -d "$1" ]; then
 	mkdir -p "$1"
 	chmod 0770 "$1"
-	chown root:apache "$1"
+	chown root:${php_fpm_USER} "$1"
     fi    
 }
 

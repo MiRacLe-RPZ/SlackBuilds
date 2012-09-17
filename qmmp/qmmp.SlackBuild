@@ -20,9 +20,9 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
-PRGNAM=q4wine
+PRGNAM=qmmp
 PKGNAM=$(basename $0 .SlackBuild)
-VERSION=${VERSION:-0.999-rc8}
+VERSION=${VERSION:-0.6.3}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 
@@ -56,7 +56,7 @@ fi
 
 NUMJOBS=" -j$(lscpu|grep 'CPU(s):'|awk '{print $2 + 1}') "
 
-SOURCE="http://downloads.sourceforge.net/project/${PRGNAM}/${PRGNAM}/${PRGNAM}%20${VERSION}/${PRGNAM}-${VERSION}.tar.bz2"
+SOURCE="http://qmmp.ylsoftware.com/files/${PRGNAM}-${VERSION}.tar.bz2"
 
 set -e
 
@@ -85,22 +85,28 @@ find . \
  \( -perm 666 -o -perm 664 -o -perm 600 -o -perm 444 -o -perm 440 -o -perm 400 \) \
  -exec chmod 644 {} \;
 
-mkdir build
-cd build
+mkdir build && cd build 
+
 cmake \
-  -DCMAKE_C_FLAGS:STRING="$SLKCFLAGS" \
-  -DCMAKE_CXX_FLAGS:STRING="$SLKCFLAGS" \
-  -DCMAKE_LD_FLAGS:STRING="$SLKLDFLAGS" \
-  -DCMAKE_BUILD_TYPE=None \
-  -DCMAKE_INSTALL_PREFIX=/usr \
-  -DMAN_INSTALL_DIR=/usr/man \
-  -DUSE_GZIP=On \
-  -DUSE_BZIP2=On \
-  -DWITH_WINETRICKS=On \
-  -DWITH_SYSTEM_SINGLEAPP=On \
-  -DSYSCONF_INSTALL_DIR=/etc \
-  -DLIB_SUFFIX=${LIBDIRSUFFIX} \
-  ..
+    -DUSE_ALSA=TRUE \
+    -DUSE_FFMPEG=TRUE \
+    -DUSE_CDA=TRUE \
+    -DUSE_VORBIS=TRUE \
+    -DUSE_AAC=TRUE \
+    -DUSE_LADSPA=TRUE \
+    -DUSE_COVER=TRUE \
+    -DUSE_KDENOTIFY=TRUE \
+    -DUSE_ENCA=TRUE \
+    -DUSE_MPLAYER=TRUE \
+    -DUSE_FLAC=TRUE \
+    -DUSE_MPRIS=TRUE \
+    -DUSE_CURL=TRUE \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_BUILD_TYPE=RELEASE \
+    -DLIB_SUFFIX=${LIBDIRSUFFIX} \
+    -DCMAKE_C_FLAGS:STRING="$SLKCFLAGS" \
+    -DCMAKE_CXX_FLAGS:STRING="$SLKCFLAGS" \
+    ..
 make $NUMJOBS
 make DESTDIR=$PKG install/strip
 cd ..
@@ -117,16 +123,17 @@ if [ -d $PKG/usr/man ]; then
 fi
 
 mkdir -p $PKG/usr/share/doc/$PKGNAM-$VERSION/SlackBuild
-cp -a ChangeLog INSTALL TODO README SEMDEBUG.TXT \
+
+cp -a ChangeLog* README* AUTHORS COPYING \
     $PKG/usr/share/doc/$PKGNAM-$VERSION
 
 cp -a $CWD/$PKGNAM.SlackBuild $CWD/slack-* $CWD/doinst.sh \
     $PKG/usr/share/doc/$PKGNAM-$VERSION/SlackBuild
 
 mkdir -p $PKG/install
+
 cp -a $CWD/slack-* $CWD/doinst.sh \
     $PKG/install
-
 
 cd $PKG
 
