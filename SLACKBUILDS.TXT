@@ -39,7 +39,6 @@ SLACKBUILD DOWNLOAD: https://launchpad.net/kdesudo/3.x/3.4.2.4/+download/kdesudo
 SLACKBUILD DOWNLOAD_x86_64: 
 SLACKBUILD MD5SUM: 9cae3b6f12edd6595a4d0554772e926e
 SLACKBUILD MD5SUM_x86_64: 
-SLACKBUILD REQUIRES: qt kdelibs
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:   KdeSudo is a frontend for sudo. 
 
@@ -51,7 +50,6 @@ SLACKBUILD DOWNLOAD: http://downloads.sourceforge.net/project/kdropbox/kfilebox-
 SLACKBUILD DOWNLOAD_x86_64: 
 SLACKBUILD MD5SUM: 4b40b7a2e52c0d3d126dd4f8c404efdd
 SLACKBUILD MD5SUM_x86_64: 
-SLACKBUILD REQUIRES: qt kdelibs
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  KFilebox (KDE Dropbox client)
 
@@ -86,7 +84,6 @@ SLACKBUILD DOWNLOAD: http://nodejs.org/dist/v0.8.7/node-v0.8.7.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
 SLACKBUILD MD5SUM: 44427fff86cbf865f9bb459b6024e9b7
 SLACKBUILD MD5SUM_x86_64: 
-SLACKBUILD REQUIRES: python
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  Node (Evented I/O for V8 JavaScript)
 
@@ -110,7 +107,7 @@ SLACKBUILD DOWNLOAD: https://nodeload.github.com/facebook/phpsh/tarball/master
 SLACKBUILD DOWNLOAD_x86_64: 
 SLACKBUILD MD5SUM: 33ed49f3318be631712ab9d765ec2043
 SLACKBUILD MD5SUM_x86_64: 
-SLACKBUILD REQUIRES: python php | php-work
+SLACKBUILD REQUIRES: python, php | php-work
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:   An interactive shell for php
 

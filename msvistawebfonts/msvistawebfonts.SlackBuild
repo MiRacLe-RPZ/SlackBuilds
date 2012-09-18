@@ -73,7 +73,7 @@ mkdir -p $PKG/usr/share/fonts/TTF
 
 wget "https://gist.github.com/gists/2479682/download" -O "ttc2ttf.tar.gz"
 
-echo "0870a607686b265690c50d158092dab8 ttc2ttf.tar.gz" > ttc2ttf.md5
+echo "0870a607686b265690c50d158092dab8  ttc2ttf.tar.gz" > ttc2ttf.md5
 
 md5sum --check ttc2ttf.md5
 
