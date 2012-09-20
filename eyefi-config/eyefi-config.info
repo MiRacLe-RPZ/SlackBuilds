@@ -1,0 +1,8 @@
+PRGNAM="eyefi-config"
+VERSION="012dev"
+HOMEPAGE="http://www.sr71.net/projects/eyefi/"
+DOWNLOAD="git://git.sr71.net/eyefi-config.git"
+MD5SUM=""
+MAINTAINER="MiRacLe.RPZ"
+EMAIL="miracle@rpz.name"
+

@@ -1,3 +1,14 @@
+SLACKBUILD NAME: eyefi-config
+SLACKBUILD LOCATION: ./eyefi-config
+SLACKBUILD FILES: eyefi-config.SlackBuild eyefi-config.info slack-desc
+SLACKBUILD VERSION: 012dev
+SLACKBUILD DOWNLOAD: git://git.sr71.net/eyefi-config.git
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: 
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  Eye-Fi Configuration Tool
+
 SLACKBUILD NAME: freetds
 SLACKBUILD LOCATION: ./freetds
 SLACKBUILD FILES: doinst.sh freetds.SlackBuild freetds.info slack-desc slack-required
