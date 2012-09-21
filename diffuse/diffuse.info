@@ -1,0 +1,8 @@
+PKGNAM="diffuse"
+VERSION="0.4.6"
+HOMEPAGE="http://diffuse.sourceforge.net/"
+DOWNLOAD="http://downloads.sourceforge.net/project/diffuse/diffuse/0.4.6/diffuse-0.4.6.tar.bz2"
+MD5SUM="f9139d05601987d89bfbf1e71ea30eeb"
+MAINTAINER="MiRacLe.RPZ"
+EMAIL="miracle@rpz.name"
+
