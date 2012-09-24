@@ -23,7 +23,8 @@
 PRGNAM=q4wine
 PKGNAM=$(basename $0 .SlackBuild)
 VERSION=${VERSION:-0.999-rc8}
-BUILD=${BUILD:-1}
+PKGVER=${PKGVER:-0.999rc8}
+BUILD=${BUILD:-2}
 TAG=${TAG:-_rpz}
 
 if [ -z "$ARCH" ]; then
@@ -117,7 +118,7 @@ if [ -d $PKG/usr/man ]; then
 fi
 
 mkdir -p $PKG/usr/share/doc/$PKGNAM-$VERSION/SlackBuild
-cp -a ChangeLog INSTALL TODO README SEMDEBUG.TXT \
+cp -a ChangeLog INSTALL TODO README \
     $PKG/usr/share/doc/$PKGNAM-$VERSION
 
 cp -a $CWD/$PKGNAM.SlackBuild $CWD/slack-* $CWD/doinst.sh \
@@ -136,5 +137,4 @@ if [ ! -e $CWD/slack-required ] && [ -x "$(which requiredbuilder 2>/dev/null)" ]
   requiredbuilder -y -v -s $CWD $PKG
 fi
 
-
-/sbin/makepkg -l y -c n $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-txz}
+/sbin/makepkg -l y -c n $OUTPUT/$PKGNAM-$PKGVER-$ARCH-$BUILD$TAG.${PKGTYPE:-txz}

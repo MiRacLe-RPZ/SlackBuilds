@@ -31,6 +31,18 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  FreeTDS (free implementation of the Tabular Data Stream protocol)
 
+SLACKBUILD NAME: fuseiso
+SLACKBUILD LOCATION: ./fuseiso
+SLACKBUILD FILES: fuseiso.SlackBuild fuseiso.info slack-desc slack-required
+SLACKBUILD VERSION: 20070708
+SLACKBUILD DOWNLOAD: http://downloads.sourceforge.net/fuseiso/fuseiso-20070708.tar.bz2
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: 4bb50412b6d01f337565e28afddca3a5
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD REQUIRES: fuse
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  fuseiso (FUSE module to mount ISO filesystem images)
+
 SLACKBUILD NAME: icoutils
 SLACKBUILD LOCATION: ./icoutils
 SLACKBUILD FILES: icoutils.SlackBuild icoutils.info slack-desc slack-required
@@ -153,7 +165,7 @@ SLACKBUILD DOWNLOAD: http://downloads.sourceforge.net/project/q4wine/q4wine/q4wi
 SLACKBUILD DOWNLOAD_x86_64: 
 SLACKBUILD MD5SUM: 635ce6a70c3d6976ded950f6227c8d30
 SLACKBUILD MD5SUM_x86_64: 
-SLACKBUILD REQUIRES: icoutils
+SLACKBUILD REQUIRES: icoutils, fuseiso
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  q4wine (Qt4 GUI for wine)
 

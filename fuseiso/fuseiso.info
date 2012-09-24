@@ -1,0 +1,8 @@
+PRGNAM="fuseiso"
+VERSION="20070708"
+HOMEPAGE="http://sourceforge.net/projects/fuseiso/"
+DOWNLOAD="http://downloads.sourceforge.net/fuseiso/fuseiso-20070708.tar.bz2"
+MD5SUM="4bb50412b6d01f337565e28afddca3a5"
+REQUIRES="fuse"
+MAINTAINER="MiRacLe.RPZ"
+EMAIL="miracle@rpz.name"

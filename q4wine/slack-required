@@ -4,3 +4,4 @@ qt >= 4.8.2
 util-linux >= 2.21.2
 zlib >= 1.2.6
 icoutils >= 0.30.0
+fuseiso >= 20070708
