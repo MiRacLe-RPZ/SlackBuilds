@@ -29,7 +29,7 @@ VERSION=${VERSION:-0.0.3}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 ARCH=noarch
-
+PKGTYPE=${PKGTYPE:-txz}
 
 CWD=$(pwd)
 TMP=${TMP:-/tmp/rpz}
@@ -49,6 +49,22 @@ mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 
 rm -rf ${PRGNAM}-${VERSION}
+
+if [ "$1" == "netinstall" ]; then
+    mkdir -p $PKG/install $PKG/usr/share/doc/${PKGNAM}-${VERSION}/SlackBuild
+    cp -a $CWD/$PKGNAM.SlackBuild $CWD/slack-* $CWD/doinst.sh \
+      $PKG/usr/share/doc/${PKGNAM}-${VERSION}/SlackBuild/
+    cat > $PKG/install/doinst.sh  <<NETINSTALL
+        set -eu
+        cd usr/share/doc/${PKGNAM}-${VERSION}/SlackBuild/ && OUTPUT=/tmp sh ./${PKGNAM}.SlackBuild && /sbin/upgradepkg --install-new /tmp/${PKGNAM}-${VERSION}-${ARCH}-${BUILD}${TAG}.${PKGTYPE}
+NETINSTALL
+
+    cd $PKG
+    chown -R root:root $PKG
+    /sbin/makepkg -l y -c n $OUTPUT/$PKGNAM-$VERSION-noarch-netinstall.$PKGTYPE
+    exit 0
+fi
+
 
 if [ ! -e $CWD/PowerPointViewer.exe ]; then
     wget $SOURCE -O $CWD/PowerPointViewer.exe
@@ -102,5 +118,5 @@ cd $PKG
 
 chown -R root:root .
 
-/sbin/makepkg -p -l y -c n $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-txz}
+/sbin/makepkg -p -l y -c n $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE}
 

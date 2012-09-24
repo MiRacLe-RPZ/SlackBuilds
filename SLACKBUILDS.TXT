@@ -147,7 +147,7 @@ SLACKBUILD SHORT DESCRIPTION:   An interactive shell for php
 
 SLACKBUILD NAME: phpstorm
 SLACKBUILD LOCATION: ./phpstorm
-SLACKBUILD FILES: netinstall.sh phpstorm.SlackBuild phpstorm.info slack-desc slack-required
+SLACKBUILD FILES: phpstorm.SlackBuild phpstorm.info slack-desc slack-required
 SLACKBUILD VERSION: 121.252
 SLACKBUILD DOWNLOAD: http://download.jetbrains.com/webide/PhpStorm-EAP-121.252.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 

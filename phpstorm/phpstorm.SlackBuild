@@ -51,12 +51,15 @@ rm -rf ${PRGNAM}-${VERSION}
 if [ "$1" == "netinstall" ]; then
     mkdir -p $PKG/install $PKG/usr/share/doc/${PKGNAM}-${VERSION}/SlackBuild
     cp -a $CWD/$PKGNAM.SlackBuild $CWD/slack-* \
-	 $PKG/usr/share/doc/${PKGNAM}-${VERSION}/SlackBuild/
-    cat $CWD/slack-desc > $PKG/install/slack-desc
-    cat $CWD/netinstall.sh|sed "s|PKGNAM|${PKGNAM}|g"|sed "s|VERSION|${VERSION}|g"|sed "s|ARCH|${ARCH}|g"|sed "s|PKGTYPE|${PKGTYPE}|g" > $PKG/install/doinst.sh
+        $PKG/usr/share/doc/${PKGNAM}-${VERSION}/SlackBuild/
+    cat > $PKG/install/doinst.sh  <<NETINSTALL
+      set -eu
+      cd usr/share/doc/${PKGNAM}-${VERSION}/SlackBuild/ && OUTPUT=/tmp sh ./${PKGNAM}.SlackBuild && /sbin/upgradepkg --install-new /tmp/${PKGNAM}-${VERSION}-${ARCH}-${BUILD}${TAG}.${PKGTYPE}
+NETINSTALL
+
     cd $PKG
     chown -R root:root $PKG
-    /sbin/makepkg -l y -c n $OUTPUT/$PKGNAM-$VERSION-$ARCH-netinstall.$PKGTYPE
+    /sbin/makepkg -l y -c n $OUTPUT/$PKGNAM-$VERSION-noarch-netinstall.$PKGTYPE
     exit 0
 fi
 
