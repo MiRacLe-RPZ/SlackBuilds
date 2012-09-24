@@ -21,9 +21,10 @@ set -e
 
 PRGNAM=PhpStorm
 PKGNAM=phpstorm
-VERSION=${VERSION:-121.215}
+VERSION=${VERSION:-121.252}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
+PKGTYPE=${PKGTYPE:-txz}
 
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
@@ -32,8 +33,8 @@ if [ -z "$ARCH" ]; then
   esac
 fi
 
-#SOURCE="http://download.jetbrains.com/webide/$PRGNAM-EAP-$VERSION.tar.gz"
-SOURCE="http://download.jetbrains.com/webide/PhpStorm-5.0.1.tar.gz"
+SOURCE="http://download.jetbrains.com/webide/$PRGNAM-EAP-$VERSION.tar.gz"
+#SOURCE="http://download.jetbrains.com/webide/PhpStorm-5.0.1.tar.gz"
 
 CWD=$(pwd)
 TMP=${TMP:-/tmp/rpz}
@@ -46,6 +47,19 @@ mkdir -p $TMP $PKG $OUTPUT
 
 cd $TMP
 rm -rf ${PRGNAM}-${VERSION}
+
+if [ "$1" == "netinstall" ]; then
+    mkdir -p $PKG/install $PKG/usr/share/doc/${PKGNAM}-${VERSION}/SlackBuild
+    cp -a $CWD/$PKGNAM.SlackBuild $CWD/slack-* \
+	 $PKG/usr/share/doc/${PKGNAM}-${VERSION}/SlackBuild/
+    cat $CWD/slack-desc > $PKG/install/slack-desc
+    cat $CWD/netinstall.sh|sed "s|PKGNAM|${PKGNAM}|g"|sed "s|VERSION|${VERSION}|g"|sed "s|ARCH|${ARCH}|g"|sed "s|PKGTYPE|${PKGTYPE}|g" > $PKG/install/doinst.sh
+    cd $PKG
+    chown -R root:root $PKG
+    /sbin/makepkg -l y -c n $OUTPUT/$PKGNAM-$VERSION-$ARCH-netinstall.$PKGTYPE
+    exit 0
+fi
+
 
 
 if [ ! -e $CWD/$PRGNAM-EAP-$VERSION.tar.gz ] && [ ! -e $CWD/$PRGNAM-5.0.tar.gz ]; then
@@ -132,4 +146,4 @@ fi
 cd $PKG
 chown -R root:root $PKG
 
-/sbin/makepkg -l y -c n $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-txz}
+/sbin/makepkg -l y -c n $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE
