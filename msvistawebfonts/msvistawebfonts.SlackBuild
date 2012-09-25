@@ -51,12 +51,12 @@ cd $TMP
 rm -rf ${PRGNAM}-${VERSION}
 
 if [ "$1" == "netinstall" ]; then
-    mkdir -p $PKG/install $PKG/usr/share/doc/${PKGNAM}-${VERSION}/SlackBuild
+    mkdir -p $PKG/install $PKG/usr/doc/${PKGNAM}-${VERSION}/SlackBuild
     cp -a $CWD/$PKGNAM.SlackBuild $CWD/slack-* $CWD/doinst.sh \
-      $PKG/usr/share/doc/${PKGNAM}-${VERSION}/SlackBuild/
+      $PKG/usr/doc/${PKGNAM}-${VERSION}/SlackBuild/
     cat > $PKG/install/doinst.sh  <<NETINSTALL
         set -eu
-        cd usr/share/doc/${PKGNAM}-${VERSION}/SlackBuild/ && OUTPUT=/tmp sh ./${PKGNAM}.SlackBuild && /sbin/upgradepkg --install-new /tmp/${PKGNAM}-${VERSION}-${ARCH}-${BUILD}${TAG}.${PKGTYPE}
+        cd usr/doc/${PKGNAM}-${VERSION}/SlackBuild/ && OUTPUT=/tmp sh ./${PKGNAM}.SlackBuild && /sbin/upgradepkg --install-new /tmp/${PKGNAM}-${VERSION}-${ARCH}-${BUILD}${TAG}.${PKGTYPE}
 NETINSTALL
 
     cd $PKG
