@@ -26,7 +26,7 @@
 PRGNAM=cabextract
 PKGNAM=$(basename $0 .SlackBuild)
 VERSION=${VERSION:-1.4}
-BUILD=${BUILD:-1}
+BUILD=${BUILD:-2}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
 
@@ -95,13 +95,16 @@ CXXFLAGS="$SLKCFLAGS" \
 make
 make install DESTDIR=$PKG
 
+cp -a src/wince_* src/cabinfo src/cabsplit \
+    $PKG/usr/bin
+
 find $PKG | xargs file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
 
 mkdir -p $PKG/usr/doc/$PKGNAM-$VERSION/SlackBuild
 cp -a \
-  AUTHORS COPYING ChangeLog INSTALL NEWS README TODO \
-    $PKG/usr/doc/$PRGNAM-$VERSION
+  AUTHORS COPYING ChangeLog INSTALL NEWS README TODO doc/wince_cab_format.html doc/magic \
+    $PKG/usr/doc/$PKGNAM-$VERSION
 
 cp -a $CWD/$PKGNAM.SlackBuild $CWD/slack-* \
     $PKG/usr/doc/$PKGNAM-$VERSION/SlackBuild
