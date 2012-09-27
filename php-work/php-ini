@@ -1,0 +1,6 @@
+#!/bin/sh
+if [ ! -n "$1" ]; then
+    echo "Usage: $0 php.ini's directive"
+    exit 0
+fi
+/usr/bin/php -i|grep "$1"|awk '{print $3}'

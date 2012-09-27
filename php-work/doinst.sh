@@ -22,6 +22,8 @@ preserve_perms() {
 }
 
 preserve_perms etc/rc.d/rc.php-fpm.new
+preserve_perms etc/cron.hourly/php-sessiongc.new
+
 config etc/php54/php.ini.new
 config etc/php54/php-cli.ini.new
 config etc/php54/php-fpm.conf.new

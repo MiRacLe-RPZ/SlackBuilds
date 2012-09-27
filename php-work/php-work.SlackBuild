@@ -26,7 +26,7 @@
 PRGNAM=php
 PKGNAM=$(basename $0 .SlackBuild)
 VERSION=${VERSION:-5.4.7}
-BUILD=${BUILD:-1}
+BUILD=${BUILD:-3}
 TAG=${TAG:-_rpz}
 DEVELOPMENT=${DEVELOPMENT:-no}
 EXTRA_OPTIONS=${EXTRA_OPTIONS:-}
@@ -34,6 +34,13 @@ EXTRA_OPTIONS=${EXTRA_OPTIONS:-}
 DAEMONUSER=${DAEMONUSER:-apache}
 DAEMONGROUP=${DAEMONGROUP:-apache}
 
+CWD=$(pwd)
+TMP=${TMP:-/tmp/rpz}
+PKG=$TMP/package-$PRGNAM
+OUTPUT=${OUTPUT:-/tmp}
+SOURCE="${CWD}/${PRGNAM}-${VERSION}.tar.bz2"
+SRCURL="http://ru2.php.net/get/${PRGNAM}-${VERSION}.tar.bz2/from/uk3.php.net/mirror"
+EXTRACT_OPTS="jxf"
 
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
@@ -59,33 +66,43 @@ fi
 
 NUMJOBS=" -j$(lscpu|grep 'CPU(s):'|awk '{print $2 + 1}') "
 
-CWD=$(pwd)
-TMP=${TMP:-/tmp/rpz}
-PKG=$TMP/package-$PRGNAM
-OUTPUT=${OUTPUT:-/tmp}
-SOURCE="http://ru2.php.net/get/${PRGNAM}-${VERSION}.tar.bz2/from/uk3.php.net/mirror"
-
-set -e
+set -eu
 
 rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf ${PRGNAM}-${VERSION}
 
-if [ ! -e $CWD/${PRGNAM}-${VERSION}.tar.bz2 ]; then
-    wget $SOURCE -O $CWD/${PRGNAM}-${VERSION}.tar.bz2
-fi
 
-tar jxf $CWD/${PRGNAM}-${VERSION}.tar.bz2
+dnl() {
+    SOURCE=$1
+    SRCURL=$2
+    if [ ! -e $SOURCE ]; then
+       if ! [ "x${SRCURL}" == "x" ]; then
+         echo "Downloading '$(basename ${SOURCE})'."
+         wget --no-check-certificate -nv -T 30 -O "${SOURCE}" "${SRCURL}" || true
+         if [ $? -ne 0 -o ! -s "${SOURCE}" ]; then
+            echo "Downloading '$(basename ${SOURCE})' failed... aborting the build."
+            mv -f "${SOURCE}" "${SOURCE}.FAIL"
+            exit 1
+         fi
+         else
+             echo "File '${SOURCE}' not available... aborting the build."
+             exit 1
+         fi
+    fi
+}
+
+
+tar $EXTRACT_OPTS $SOURCE
+
+dnl "${SOURCE}" "${SRCURL}"
 
 cd ${PRGNAM}-${VERSION}/ext
 
-if [ ! -e $CWD/apc.tgz ]; then
-    wget "http://pecl.php.net/get/apc" -O "$CWD/apc.tgz"
-fi
+dnl "${CWD}/apc.tgz" "http://pecl.php.net/get/apc"
 
-
-gzip -d < $CWD/apc.tgz | tar -xvf -
+echo "unpacking apc" && gzip -d < $CWD/apc.tgz | tar -xvf - |tee -a ../patch-log.tx > /dev/null
 
 mv APC-*.*.* apc
 
@@ -93,11 +110,9 @@ DEVEXT=""
 
 if [ "yes" == $DEVELOPMENT ]; then
 
-    if [ ! -e $CWD/xdebug.tgz ]; then
-        wget "http://pecl.php.net/get/xdebug" -O "$CWD/xdebug.tgz"
-    fi
+    dnl "${CWD}/xdebug.tgz" "http://pecl.php.net/get/xdebug"
 
-    gzip -d < $CWD/xdebug.tgz | tar -xvf -
+    echo "unpacking xdebug" && gzip -d < $CWD/xdebug.tgz | tar -xvf - |tee -a ../patch-log.txt > /dev/null
 
     mv xdebug-*.*.* xdebug
 
@@ -108,7 +123,7 @@ cd ../
 
 rm configure
 
-./buildconf --force
+echo "rebuild configure" && ./buildconf --force |tee -a configure-log.txt > /dev/null
 
 chown -R root:root .
 find . \
@@ -124,6 +139,7 @@ sed -i "s|build\"$|php54/build\"|" scripts/phpize.in
 EXTENSION_DIR="/usr/lib${LIBDIRSUFFIX}/php54/ext" \
 CFLAGS="$SLKCFLAGS" \
 CXXFLAGS="$SLKCFLAGS" \
+echo "Configure" && \
 ./configure --prefix=/usr \
     --libdir=/usr/lib${LIBDIRSUFFIX} \
     --with-libdir=lib${LIBDIRSUFFIX} \
@@ -154,9 +170,11 @@ CXXFLAGS="$SLKCFLAGS" \
     --enable-xml --enable-dom --enable-simplexml \
     --enable-filter --enable-ctype --enable-json \
     --with-gnu-ld \
-    --with-pic $DEVEXT $EXTRA_OPTIONS  \
-  && make $NUMJOBS \
-  && make install INSTALL_ROOT=$PKG
+    --with-pic $DEVEXT $EXTRA_OPTIONS |tee -a configure-log.txt > /dev/null \
+  && echo "build" \
+  && make $NUMJOBS 2> build-log.txt |tee -a build-log.txt > /dev/null \
+  && echo "makepkg" \
+  && make install INSTALL_ROOT=$PKG |tee -a install-log.txt > /dev/null
 
 rm -f $PKG/usr/lib${LIBDIRSUFFIX}/php54/ext/*.a
 
@@ -174,7 +192,11 @@ mkdir -p $PKG/etc/php54
 cat $CWD/php.ini | sed "s|/usr/lib/php54/ext|/usr/lib${LIBDIRSUFFIX}/php54/ext|" > $PKG/etc/php54/php.ini.tmp
 cat $CWD/php-cli.ini | sed "s|/usr/lib/php54/ext|/usr/lib${LIBDIRSUFFIX}/php54/ext|" > $PKG/etc/php54/php-cli.ini.tmp
 cat $CWD/php-fpm.conf |sed "s|user = apache|user = ${DAEMONUSER}|" |sed "s|group = apache|group = ${DAEMONGROUP}|"  > $PKG/etc/php54/php-fpm.conf.new
-cp $CWD/php-lint /usr/bin/
+cp -a $CWD/php-lint $CWD/php-ini \
+   $PKG/usr/bin/
+
+mkdir -p $PKG/etc/cron.hourly
+cp $CWD/php-sessiongc $PKG/etc/cron.hourly/php-sessiongc.new
 
 if [ "yes" == $DEVELOPMENT ]; then
     cat $PKG/etc/php54/php.ini.tmp|sed "s|;zend_extension=/usr/lib${LIBDIRSUFFIX}/php54/ext/xdebug.so|zend_extension=/usr/lib${LIBDIRSUFFIX}/php54/ext/xdebug.so|" > $PKG/etc/php54/php.ini.new
@@ -205,7 +227,7 @@ cat $CWD/slack-conflicts > $PKG/install/slack-conflicts
 cat $CWD/doinst.sh > $PKG/install/doinst.sh
 
 cp -a \
-    $CWD/$PKGNAM.SlackBuild $CWD/slack-* $CWD/php-*.ini $CWD/rc.php-fpm $CWD/php-fpm.conf $CWD/php.logrotate $CWD/doinst.sh $CWD/php-lint \
+    $CWD/$PKGNAM.SlackBuild $CWD/slack-* $CWD/php-*.ini $CWD/rc.php-fpm $CWD/php-fpm.conf $CWD/php.logrotate $CWD/doinst.sh $CWD/php-lint $CWD/php-ini $CWD/php-sessiongc \
     $PKG/usr/doc/$PKGNAM-$VERSION/SlackBuild
 
 
