@@ -28,6 +28,7 @@ PKGNAM=$(basename $0 .SlackBuild)
 VERSION=${VERSION:-5.4.7}
 BUILD=${BUILD:-3}
 TAG=${TAG:-_rpz}
+PKGTYPE=${PKGTYPE:-txz}
 DEVELOPMENT=${DEVELOPMENT:-no}
 EXTRA_OPTIONS=${EXTRA_OPTIONS:-}
 
@@ -41,6 +42,7 @@ OUTPUT=${OUTPUT:-/tmp}
 SOURCE="${CWD}/${PRGNAM}-${VERSION}.tar.bz2"
 SRCURL="http://ru2.php.net/get/${PRGNAM}-${VERSION}.tar.bz2/from/uk3.php.net/mirror"
 EXTRACT_OPTS="jxf"
+P1=${1:-""}
 
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
@@ -66,12 +68,48 @@ fi
 
 NUMJOBS=" -j$(lscpu|grep 'CPU(s):'|awk '{print $2 + 1}') "
 
-set -eu
+set -e
+trap 'echo "$0 FAILED at line $LINENO!" | tee $OUTPUT/error-${PKGNAM}.log' ERR
+set -u
 
 rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf ${PRGNAM}-${VERSION}
+
+
+if [ "${P1}" == "--netinstall" ]; then
+    mkdir -p $PKG/install $PKG/usr/doc/${PKGNAM}-${VERSION}/SlackBuild
+    cp -a $CWD/$PKGNAM.SlackBuild $CWD/slack-* $CWD/php-fpm.conf \
+        $CWD/php-lint $CWD/php.ini $CWD/rc.php-fpm $CWD/doinst.sh \
+        $CWD/php-cli.ini $CWD/php-ini $CWD/php-sessiongc $CWD/php.logrotate \
+        $PKG/usr/doc/${PKGNAM}-${VERSION}/SlackBuild/
+    cat > $PKG/install/doinst.sh  <<NETINSTALL
+      set -eu
+      cd usr/doc/${PKGNAM}-${VERSION}/SlackBuild/ && OUTPUT=/tmp DEVELOPMENT=${DEVELOPMENT} DAEMONUSER=${DAEMONUSER} DAEMONGROUP=${DAEMONGROUP} EXTRA_OPTIONS=${EXTRA_OPTIONS:-" "}  sh ./${PKGNAM}.SlackBuild && /sbin/upgradepkg --install-new /tmp/${PKGNAM}-${VERSION}-${ARCH}-${BUILD}${TAG}.${PKGTYPE}
+NETINSTALL
+
+    cd $PKG
+    chown -R root:root $PKG
+    /sbin/makepkg -l y -c n $OUTPUT/$PKGNAM-$VERSION-noarch-netinstall.$PKGTYPE
+    exit 0
+fi
+
+
+check_installed() {
+    PACKAGE=${1}
+    ls -1 /var/log/packages | grep "^${PACKAGE}-[^-]*-[^-]*-[^-]*$" >/dev/null 2>&1
+    return $?
+}
+
+if [ -e $CWD/slack-required ]; then
+    for REQ in `cat $CWD/slack-required|cut -f 1 -d " "`;do
+        check_installed "$REQ" || {
+           echo "${0##*/}: Required package '$REQ' not installed."
+           exit 1
+       }
+    done
+fi
 
 
 dnl() {
@@ -102,7 +140,7 @@ cd ${PRGNAM}-${VERSION}/ext
 
 dnl "${CWD}/apc.tgz" "http://pecl.php.net/get/apc"
 
-echo "unpacking apc" && gzip -d < $CWD/apc.tgz | tar -xvf - |tee -a ../patch-log.tx > /dev/null
+echo "unpacking apc" && gzip -d < $CWD/apc.tgz | tar -xvf - 2>&1|tee -a $OUTPUT/$PKGNAM-patch.log > /dev/null
 
 mv APC-*.*.* apc
 
@@ -112,18 +150,18 @@ if [ "yes" == $DEVELOPMENT ]; then
 
     dnl "${CWD}/xdebug.tgz" "http://pecl.php.net/get/xdebug"
 
-    echo "unpacking xdebug" && gzip -d < $CWD/xdebug.tgz | tar -xvf - |tee -a ../patch-log.txt > /dev/null
+    echo "unpacking xdebug" && gzip -d < $CWD/xdebug.tgz | tar -xvf - 2>&1|tee $OUTPUT/$PKGNAM-patch.log > /dev/null
 
     mv xdebug-*.*.* xdebug
 
-    DEVEXT=" --enable-xdebug=shared --enable-pcntl=shared "
+    DEVEXT=" --enable-xdebug=shared --enable-pcntl=shared --enable-ftp=shared "
 fi
 
 cd ../
 
 rm configure
 
-echo "rebuild configure" && ./buildconf --force |tee -a configure-log.txt > /dev/null
+echo "rebuild configure" && ./buildconf --force 2>&1|tee $OUTPUT/$PKGNAM-configure.log > /dev/null
 
 chown -R root:root .
 find . \
@@ -161,7 +199,6 @@ echo "Configure" && \
     --disable-ipv6 --localstatedir=/var \
     --with-mcrypt \
     --enable-apc=shared \
-    --enable-ftp=shared \
     --datarootdir=/usr/share \
     --datadir=/usr/share \
     --infodir=/usr/info \
@@ -170,11 +207,11 @@ echo "Configure" && \
     --enable-xml --enable-dom --enable-simplexml \
     --enable-filter --enable-ctype --enable-json \
     --with-gnu-ld \
-    --with-pic $DEVEXT $EXTRA_OPTIONS |tee -a configure-log.txt > /dev/null \
+    --with-pic $DEVEXT $EXTRA_OPTIONS 2>&1 |tee  $OUTPUT/$PKGNAM-configure.log \
   && echo "build" \
-  && make $NUMJOBS 2> build-log.txt |tee -a build-log.txt > /dev/null \
+  && make $NUMJOBS 2>&1|tee $OUTPUT/$PKGNAM-build.log \
   && echo "makepkg" \
-  && make install INSTALL_ROOT=$PKG |tee -a install-log.txt > /dev/null
+  && make install INSTALL_ROOT=$PKG 2>&1|tee $OUTPUT/$PKGNAM-install.log
 
 rm -f $PKG/usr/lib${LIBDIRSUFFIX}/php54/ext/*.a
 
@@ -231,11 +268,19 @@ cp -a \
     $PKG/usr/doc/$PKGNAM-$VERSION/SlackBuild
 
 
-if [ -x "$(which requiredbuilder 2>/dev/null)" ];then
+if [ ! -e $CWD/slack-required ] && [ -x "$(which requiredbuilder 2>/dev/null)" ]; then
   requiredbuilder -y -v -s $CWD $PKG
 fi
 
+
 cd $PKG
-/sbin/makepkg -p -l y -c n $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-txz}
+/sbin/makepkg -p -l y -c n $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE |tee -a $OUTPUT/$PKGNAM-makepkg.log > /dev/null
 
+md5sum $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-txz} >  $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE.md5
+cat $PKG/install/slack-desc | grep "^${PKGNAM}" > $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE.txt
 
+rm -f $OUTPUT/$PKGNAM-*.log
+
+[ "${P1}" = "--cleanup" ] && {
+  rm -rf $PKG $TMP/$PRGNAME-$VERSION
+}

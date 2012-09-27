@@ -5,11 +5,8 @@ libidn >= 1.25
 libjpeg >= v8a
 libmcrypt >= 2.5.8
 libpng >= 1.4.12
-libtool >= 2.4.2
 libxml2 >= 2.8.0
 mysql >= 5.5
 openldap-client >= 2.4.31
 openssl >= 1.0 | openssl-solibs >= 1.0
 zlib >= 1.2.6
-glibc-debug >= 2.15_multilib-x86_64-3alien | glibc-solibs >= 2.15_multilib-x86_64-7alien
-xz >= 5.0.4-x86_64-1
