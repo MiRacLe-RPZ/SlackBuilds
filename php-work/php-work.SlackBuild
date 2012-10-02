@@ -131,10 +131,9 @@ dnl() {
     fi
 }
 
+dnl "${SOURCE}" "${SRCURL}"
 
 tar $EXTRACT_OPTS $SOURCE
-
-dnl "${SOURCE}" "${SRCURL}"
 
 cd ${PRGNAM}-${VERSION}/ext
 

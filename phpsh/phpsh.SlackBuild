@@ -51,7 +51,7 @@ cd $TMP
 rm -rf ${PRGNAM}-${VERSION}
 
 if [ ! -e $CWD/${PRGNAM}-${VERSION}.tar.gz ]; then
-    wget $SOURCE -O $CWD/${PRGNAM}-${VERSION}.tar.gz
+    wget --no-check-certificate $SOURCE -O $CWD/${PRGNAM}-${VERSION}.tar.gz
 fi
 
 tar zxf $CWD/${PRGNAM}-${VERSION}.tar.gz

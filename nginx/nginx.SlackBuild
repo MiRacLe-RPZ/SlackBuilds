@@ -20,7 +20,7 @@
 set -e
 
 PRGNAM=nginx
-PKGNAME=nginx
+PKGNAM=$(basename $0 .SlackBuild)
 VERSION=${VERSION:-1.2.3}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
@@ -36,19 +36,16 @@ if [ -z "$ARCH" ]; then
   esac
 fi
 
-SOURCE="http://nginx.org/download/${PKGNAME}-${VERSION}.tar.gz"
+SOURCE="http://nginx.org/download/${PKGNAM}-${VERSION}.tar.gz"
 
 CWD=$(pwd)
 TMP=${TMP:-/tmp/rpz}
-PKG=$TMP/package-$PKGNAME
+PKG=$TMP/package-$PKGNAM
 OUTPUT=${OUTPUT:-/tmp}
 
-NUMJOBS=" -j$(lscpu|grep 'CPU(s):'|awk '{print $2 + 1}') "
+CPUCOUNT="$(lscpu|grep 'CPU(s):'|awk '{print $2}')"
+NUMJOBS=" -j$(echo $CPUCOUNT|awk '{print $1 + 1}') "
 
-
-if [ ! -e $CWD/$PRGNAM-$VERSION.tar.gz ];then
-  wget $SOURCE -O $CWD/$PRGNAM-$VERSION.tar.gz
-fi
 
 
 CHOST="i486"
@@ -78,6 +75,11 @@ rm -rf ${PRGNAM}-${VERSION}
 rm -rf $TMP
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
+
+if [ ! -e $CWD/$PRGNAM-$VERSION.tar.gz ];then
+  wget $SOURCE -O $CWD/$PRGNAM-$VERSION.tar.gz
+fi
+
 tar xvf $CWD/$PRGNAM-$VERSION.tar.gz
 cd $PRGNAM-$VERSION
 
@@ -109,7 +111,7 @@ CXXFLAGS="$SLKCFLAGS" \
 make $NUMJOBS && \
 make install DESTDIR=$PKG
 
-mkdir -p $PKG/etc/rc.d $PKG/etc/nginx/conf.d $PKG/usr/doc/$PKGNAME-$VERSION/SlackBuild
+mkdir -p $PKG/etc/rc.d $PKG/etc/nginx/conf.d $PKG/usr/doc/$PKGNAM-$VERSION/SlackBuild
 cat $CWD/rc.nginx|sed "s|apache:apache|${NGINXUSER}:${NGINXGROUP}|" > $PKG/etc/rc.d/rc.nginx.new
 
 mkdir -p $PKG/etc/logrotate.d
@@ -130,10 +132,10 @@ chmod 750 $PKG/var/log/nginx
 
 cp -r \
   CHANGES* LICENSE README \
-  $PKG/usr/doc/$PKGNAME-$VERSION
+  $PKG/usr/doc/$PKGNAM-$VERSION
 
 for i in $CWD/doinst.sh $CWD/nginx.SlackBuild $CWD/nginx.conf $CWD/nginx.logrotate $CWD/rc.nginx $CWD/slack-*; do
-  cp -a $i $PKG/usr/doc/$PKGNAME-$VERSION/SlackBuild/
+  cp -a $i $PKG/usr/doc/$PKGNAM-$VERSION/SlackBuild/
 done
 
 if [ -d $PKG/usr/man ]; then
@@ -160,4 +162,4 @@ if [ -x "$(which requiredbuilder 2>/dev/null)" ];then
   requiredbuilder -y -v -s $CWD $PKG
 fi
 
-/sbin/makepkg -l y -c n $OUTPUT/$PKGNAME-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-txz}
+/sbin/makepkg -l y -c n $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-txz}
