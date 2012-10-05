@@ -1,0 +1,12 @@
+PKGNAM="cryptopp"
+VERSION="5.6.1"
+HOMEPAGE="http://www.cryptopp.com/"
+DOWNLOAD="http://www.cryptopp.com/cryptopp561.zip"
+MD5SUM="96cbeba0907562b077e26bcffb483828"
+MAINTAINER="MiRacLe.RPZ"
+EMAIL="miracle@rpz.name"
+
+
+
+
+
