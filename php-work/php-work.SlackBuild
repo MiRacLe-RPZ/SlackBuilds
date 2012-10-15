@@ -153,7 +153,7 @@ if [ "yes" == $DEVELOPMENT ]; then
 
     mv xdebug-*.*.* xdebug
 
-    DEVEXT=" --enable-xdebug=shared --enable-pcntl=shared --enable-ftp=shared "
+    DEVEXT=" --enable-xdebug=shared --enable-pcntl=shared --enable-ftp=shared --with-xsl"
 fi
 
 cd ../

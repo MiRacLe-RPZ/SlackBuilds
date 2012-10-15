@@ -1,0 +1,8 @@
+PKGNAM="vacuum"
+VERSION="1.2.0"
+HOMEPAGE="http://code.google.com/p/vacuum-im/"
+DOWNLOAD="http://vacuum-im.googlecode.com/files/vacuum-1.2.0.tar.gz"
+MD5SUM="ba8afa7ca74f6c491b74c4eafb936b53"
+MAINTAINER="MiRacLe.RPZ"
+EMAIL="miracle@rpz.name"
+
