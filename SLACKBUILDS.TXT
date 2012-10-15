@@ -1,6 +1,6 @@
 SLACKBUILD NAME: cabextract
 SLACKBUILD LOCATION: ./cabextract
-SLACKBUILD FILES: cabextract-1.4.tar.gz cabextract.SlackBuild cabextract.info slack-desc
+SLACKBUILD FILES: cabextract.SlackBuild cabextract.info slack-desc
 SLACKBUILD VERSION: 1.4
 SLACKBUILD DOWNLOAD: http://www.cabextract.org.uk/cabextract-1.4.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -145,7 +145,7 @@ SLACKBUILD SHORT DESCRIPTION:  Node (Evented I/O for V8 JavaScript)
 
 SLACKBUILD NAME: php-work
 SLACKBUILD LOCATION: ./php-work
-SLACKBUILD FILES: apc.tgz doinst.sh php-5.4.7.tar.bz2 php-cli.ini php-fpm.conf php-ini php-lint php-sessiongc php-work.SlackBuild php-work.info php.ini php.logrotate rc.php-fpm slack-conflicts slack-desc slack-required xdebug.tgz
+SLACKBUILD FILES: doinst.sh php-cli.ini php-fpm.conf php-ini php-lint php-sessiongc php-work.SlackBuild php-work.info php.ini php.logrotate rc.php-fpm slack-conflicts slack-desc slack-required
 SLACKBUILD VERSION: 5.4.7
 SLACKBUILD DOWNLOAD: http://ru2.php.net/get/php-5.4.7.tar.bz2
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -169,7 +169,7 @@ SLACKBUILD SHORT DESCRIPTION:   An interactive shell for php
 
 SLACKBUILD NAME: phpstorm
 SLACKBUILD LOCATION: ./phpstorm
-SLACKBUILD FILES: PhpStorm-EAP-121.285.tar.gz phpstorm.SlackBuild phpstorm.info slack-desc slack-required
+SLACKBUILD FILES: phpstorm.SlackBuild phpstorm.info slack-desc slack-required
 SLACKBUILD VERSION: 121.285
 SLACKBUILD DOWNLOAD: http://download.jetbrains.com/webide/PhpStorm-5.0.2.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -202,4 +202,15 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD REQUIRES: faad2
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  qmmp (audio-player with a Qt interface)
+
+SLACKBUILD NAME: vacuum
+SLACKBUILD LOCATION: ./vacuum
+SLACKBUILD FILES: slack-desc vacuum.SlackBuild vacuum.info
+SLACKBUILD VERSION: 1.2.0
+SLACKBUILD DOWNLOAD: http://vacuum-im.googlecode.com/files/vacuum-1.2.0.tar.gz
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: ba8afa7ca74f6c491b74c4eafb936b53
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  Crossplatform Jabber client
 
