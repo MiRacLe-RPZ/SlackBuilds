@@ -21,7 +21,7 @@ set -e
 
 PRGNAM=PhpStorm
 PKGNAM=phpstorm
-VERSION=${VERSION:-121.285}
+VERSION=${VERSION:-121.322}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
@@ -34,7 +34,7 @@ if [ -z "$ARCH" ]; then
 fi
 
 SOURCE="http://download.jetbrains.com/webide/$PRGNAM-EAP-$VERSION.tar.gz"
-SOURCE="http://download.jetbrains.com/webide/PhpStorm-5.0.2.tar.gz"
+#SOURCE="http://download.jetbrains.com/webide/PhpStorm-5.0.2.tar.gz"
 
 CWD=$(pwd)
 TMP=${TMP:-/tmp/rpz}
