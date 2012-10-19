@@ -25,8 +25,8 @@
 
 PRGNAM=php
 PKGNAM=$(basename $0 .SlackBuild)
-VERSION=${VERSION:-5.4.7}
-BUILD=${BUILD:-3}
+VERSION=${VERSION:-5.4.8}
+BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
 DEVELOPMENT=${DEVELOPMENT:-no}
@@ -153,7 +153,7 @@ if [ "yes" == $DEVELOPMENT ]; then
 
     mv xdebug-*.*.* xdebug
 
-    DEVEXT=" --enable-xdebug=shared --enable-pcntl=shared --enable-ftp=shared --with-xsl"
+    DEVEXT=" --enable-xdebug=shared --enable-pcntl=shared --enable-ftp=shared --with-xsl=shared --with-mysql=shared --enable-sockets=shared"
 fi
 
 cd ../
@@ -173,10 +173,10 @@ sed -i "s|build$|php54/build|" scripts/Makefile.frag
 sed -i "s|build\"$|php54/build\"|" scripts/phpize.in
 
 
+echo "Configure" && \
 EXTENSION_DIR="/usr/lib${LIBDIRSUFFIX}/php54/ext" \
 CFLAGS="$SLKCFLAGS" \
 CXXFLAGS="$SLKCFLAGS" \
-echo "Configure" && \
 ./configure --prefix=/usr \
     --libdir=/usr/lib${LIBDIRSUFFIX} \
     --with-libdir=lib${LIBDIRSUFFIX} \

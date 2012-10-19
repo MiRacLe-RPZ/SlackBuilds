@@ -39,7 +39,7 @@ nginx_start() {
 nginx_test_conf() {
   echo "Checking configuration for correct syntax and"
   echo "then trying to open files referenced in configuration..."
-  $BIN -t -c $CONF
+  $DAEMON -t -c $CONF
 }
 
 nginx_term() {
