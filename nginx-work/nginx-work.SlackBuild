@@ -21,7 +21,7 @@ set -e
 
 PRGNAM=nginx
 PKGNAM=$(basename $0 .SlackBuild)
-VERSION=${VERSION:-1.2.3}
+VERSION=${VERSION:-1.2.4}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 
@@ -36,12 +36,13 @@ if [ -z "$ARCH" ]; then
   esac
 fi
 
-SOURCE="http://nginx.org/download/${PKGNAM}-${VERSION}.tar.gz"
-
 CWD=$(pwd)
 TMP=${TMP:-/tmp/rpz}
 PKG=$TMP/package-$PKGNAM
 OUTPUT=${OUTPUT:-/tmp}
+SOURCE="${CWD}/${PRGNAM}-${VERSION}.tar.gz"
+SRCURL="http://nginx.org/download/${PRGNAM}-${VERSION}.tar.gz"
+
 
 CPUCOUNT="$(lscpu|grep 'CPU(s):'|awk '{print $2}')"
 NUMJOBS=" -j$(echo $CPUCOUNT|awk '{print $1 + 1}') "
@@ -70,15 +71,27 @@ mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf ${PRGNAM}-${VERSION}
 
+dnl() {
+    SOURCE=$1
+    SRCURL=$2
+    if [ ! -e $SOURCE ]; then
+       if ! [ "x${SRCURL}" == "x" ]; then
+         echo "Downloading '$(basename ${SOURCE})'."
+         wget --no-check-certificate -nv -T 30 -O "${SOURCE}" "${SRCURL}" || true
+         if [ $? -ne 0 -o ! -s "${SOURCE}" ]; then
+            echo "Downloading '$(basename ${SOURCE})' failed... aborting the build."
+            mv -f "${SOURCE}" "${SOURCE}.FAIL"
+            exit 1
+         fi
+         else
+             echo "File '${SOURCE}' not available... aborting the build."
+             exit 1
+         fi
+    fi
+}
 
 
-rm -rf $TMP
-mkdir -p $TMP $PKG $OUTPUT
-cd $TMP
-
-if [ ! -e $CWD/$PRGNAM-$VERSION.tar.gz ];then
-  wget $SOURCE -O $CWD/$PRGNAM-$VERSION.tar.gz
-fi
+dnl "$SOURCE" "$SOURCEURL"
 
 tar xvf $CWD/$PRGNAM-$VERSION.tar.gz
 cd $PRGNAM-$VERSION
@@ -152,14 +165,23 @@ fi
 )
 
 mkdir -p $PKG/install
-cat $CWD/slack-desc > $PKG/install/slack-desc
+cat $CWD/slack-desc |sed "s|nginx-work:|${PKGNAM}:|" > $PKG/install/slack-desc
+cat $CWD/slack-required > $PKG/install/slack-required
+cat $CWD/slack-conflicts > $PKG/install/slack-conflicts
+
 [ -e $CWD/doinst.sh ] && cat $CWD/doinst.sh > $PKG/install/doinst.sh
 
 cd $PKG
 chown -R root:root $PKG
 
-if [ -x "$(which requiredbuilder 2>/dev/null)" ];then
-  requiredbuilder -y -v -s $CWD $PKG
-fi
-
 /sbin/makepkg -l y -c n $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-txz}
+
+md5sum $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-txz} >  $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE.md5
+cat $PKG/install/slack-desc | grep "^${PKGNAM}" > $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE.txt
+
+rm -f $OUTPUT/$PKGNAM-*.log
+
+[ "${P1}" = "--cleanup" ] && {
+  rm -rf $PKG $TMP/$PRGNAM-$VERSION
+}
+

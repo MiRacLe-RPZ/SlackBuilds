@@ -1,0 +1,7 @@
+PRGNAM="nginx-work"
+VERSION="1.2.4"
+HOMEPAGE="http://nginx.org/"
+DOWNLOAD="http://nginx.org/download/nginx-1.2.4.tar.gz"
+MD5SUM="a7c9a515f632c8cbb07ab67392208088"
+MAINTAINER="MiRacLe.RPZ"
+EMAIL="miracle@rpz.name"

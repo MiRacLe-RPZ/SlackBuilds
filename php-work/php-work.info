@@ -1,7 +1,7 @@
 PRGNAM="php-work"
 VERSION="5.4.8"
 HOMEPAGE="http://www.php.net"
-DOWNLOAD="http://ru2.php.net/get/php-5.4.8.tar.bz2"
+DOWNLOAD="http://www.php.net/distributions/php-5.4.8.tar.bz2"
 MD5SUM="bb8c816a9299be8995255ef70c63b800"
 REQUIRES="freetds"
 MAINTAINER="MiRacLe.RPZ"
