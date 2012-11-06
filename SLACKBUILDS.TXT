@@ -170,10 +170,10 @@ SLACKBUILD SHORT DESCRIPTION:   An interactive shell for php
 SLACKBUILD NAME: phpstorm
 SLACKBUILD LOCATION: ./phpstorm
 SLACKBUILD FILES: phpstorm.SlackBuild phpstorm.info slack-desc slack-required
-SLACKBUILD VERSION: 121.351
-SLACKBUILD DOWNLOAD: http://download.jetbrains.com/webide/PhpStorm-5.0.3.tar.gz
+SLACKBUILD VERSION: 121.390
+SLACKBUILD DOWNLOAD: http://download.jetbrains.com/webide/PhpStorm-5.0.4.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 6022cd7d67660e6ac7604177c9f578f5
+SLACKBUILD MD5SUM: 3c85588bb0b89ff565c64b38da1eddc0
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD REQUIRES: jdk
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
