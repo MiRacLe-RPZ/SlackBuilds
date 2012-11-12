@@ -1,20 +1,19 @@
 # HOW TO EDIT THIS FILE:
 # The "handy ruler" below makes it easier to edit a package description.  Line
-# up the first '|' above the ':' following the base package name, and the '|'
-# on the right side marks the last column you can put a character in.  You must
-# make exactly 11 lines for the formatting to be correct.  It's also
-# customary to leave one space after the ':'.
+# up the first '|' above the ':' following the base package name, and the '|' on
+# the right side marks the last column you can put a character in.  You must make
+# exactly 11 lines for the formatting to be correct.  It's also customary to
+# leave one space after the ':'.
 
     |-----handy-ruler------------------------------------------------------|
-rats: A rough auditing tool for security
-rats: developed by Secure Software Inc. It is a tool for scanning C, C++, 
-rats: Perl, PHP, Python (and soon Ruby) source code and flagging common 
-rats: security related programming errors such as buffer overflows and 
-rats: Time Of Check, Time Of Use race conditions. As its name implies, 
-rats: the tool performs only a rough analysis of source code. It will not 
-rats: find every error and will also find things that are not errors. 
-rats: Manual inspection of your code is still necessary, but greatly aided 
-rats: with this tool.
-rats: 
-rats: homepage - http://code.google.com/p/rough-auditing-tool-for-security/
-rats: 
+rats: rats (Rough Auditing Tool for Security)
+rats:
+rats: RATS is a tool for scanning C, C++, Perl, PHP and Python source code
+rats: and flagging common security related programming errors such as
+rats: buffer overflows and TOCTOU (Time Of Check, Time Of Use) race
+rats: conditions.
+rats:
+rats: Homepage: http://code.google.com/p/rough-auditing-tool-for-security/
+rats:
+rats:
+rats:

@@ -81,27 +81,44 @@ find . \
  \( -perm 666 -o -perm 664 -o -perm 600 -o -perm 444 -o -perm 440 -o -perm 400 \) \
  -exec chmod 644 {} \;
 
-./configure --prefix=/usr --datadir=/usr/share/$PKGNAM-$VERSION/
+CFLAGS="$SLKCFLAGS" \
+CXXFLAGS="$SLKCFLAGS" \
+./configure \
+  --prefix=/usr \
+  --libdir=/usr/lib${LIBDIRSUFFIX} \
+  --sysconfdir=/etc \
+  --localstatedir=/var \
+  --mandir=/usr/man \
+  --includedir=/usr/include \
+  --build=$ARCH-slackware-linux
 
-make
+# it seems to be required to specify locations...
+make $NUMJOBS \
+  BINDIR=/usr/bin \
+  LIBDIR=/usr/lib${LIBDIRSUFFIX} \
+  MANDIR=/usr/man \
+  SHAREDIR=/usr/share/$PRGNAM-$VERSION
+make install \
+  BINDIR=$PKG/usr/bin \
+  LIBDIR=$PKG/usr/lib${LIBDIRSUFFIX} \
+  MANDIR=$PKG/usr/man \
+  SHAREDIR=$PKG/usr/share/$PRGNAM-$VERSION
 
-# <make install>
+# this directory seems to be not used
+rmdir $PKG/usr/lib${LIBDIRSUFFIX}
 
-mkdir -p $PKG/usr/bin $PKG/usr/man/man1 $PKG/usr/share/$PKGNAM-$VERSION
+( cd $PKG
+  find . | xargs file | grep "executable" | grep ELF | cut -f 1 -d : | \
+    xargs strip --strip-unneeded 2> /dev/null || true
+  find . | xargs file | grep "shared object" | grep ELF | cut -f 1 -d : | \
+    xargs strip --strip-unneeded 2> /dev/null || true
+)
 
-cp -a rats \
-  $PKG/usr/bin/
+( cd $PKG/usr/man
+  find . -type f -exec gzip -9 {} \;
+  for i in $( find . -type l ) ; do ln -s $( readlink $i ).gz $i.gz ; rm $i ; done
+)
 
-cp -a rats-*.xml \
-  $PKG/usr/share/$PKGNAM-$VERSION/
-
-
-cp -a rats.1 \
-    $PKG/usr/man/man1/
-
-
-
-# </make install>
 
 mkdir -p $PKG/install $PKG/usr/doc/$PKGNAM-$VERSION/SlackBuild
 
@@ -112,12 +129,6 @@ cp -a $CWD/slack-* $CWD/*.SlackBuild \
     $PKG/usr/doc/$PKGNAM-$VERSION/SlackBuild
 
 cp -a $CWD/slack-* $PKG/install
-
-gzip -9 $PKG/usr/man/man?/*.?
-
-
-find $PKG | xargs file | grep -e "executable" -e "shared object" | grep ELF \
-  | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
 
 cd $PKG
 
