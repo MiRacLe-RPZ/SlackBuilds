@@ -1,0 +1,8 @@
+PRGNAM="rats"
+VERSION="2.3"
+HOMEPAGE="http://code.google.com/p/rough-auditing-tool-for-security"
+DOWNLOAD="http://rough-auditing-tool-for-security.googlecode.com/files/rats-2.3.tar.gz"
+MD5SUM="339ebe60fc61789808a457f6f967d226"
+MAINTAINER="MiRacLe.RPZ"
+EMAIL="miracle@rpz.name"
+

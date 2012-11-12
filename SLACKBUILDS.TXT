@@ -215,6 +215,17 @@ SLACKBUILD REQUIRES: faad2
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  qmmp (audio-player with a Qt interface)
 
+SLACKBUILD NAME: rats
+SLACKBUILD LOCATION: ./rats
+SLACKBUILD FILES: rats.SlackBuild rats.info slack-desc
+SLACKBUILD VERSION: 2.3
+SLACKBUILD DOWNLOAD: http://rough-auditing-tool-for-security.googlecode.com/files/rats-2.3.tar.gz
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: 339ebe60fc61789808a457f6f967d226
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  A rough auditing tool for security
+
 SLACKBUILD NAME: vacuum
 SLACKBUILD LOCATION: ./vacuum
 SLACKBUILD FILES: slack-desc vacuum.SlackBuild vacuum.info
