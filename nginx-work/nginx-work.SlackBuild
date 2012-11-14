@@ -21,7 +21,7 @@ set -e
 
 PRGNAM=nginx
 PKGNAM=$(basename $0 .SlackBuild)
-VERSION=${VERSION:-1.2.4}
+VERSION=${VERSION:-1.2.5}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 
@@ -73,9 +73,9 @@ rm -rf ${PRGNAM}-${VERSION}
 
 dnl() {
     SOURCE=$1
-    SRCURL=$2
+    SRCURL=$2    
     if [ ! -e $SOURCE ]; then
-       if ! [ "x${SRCURL}" == "x" ]; then
+       if  [ "x${SRCURL}" != "x" ]; then
          echo "Downloading '$(basename ${SOURCE})'."
          wget --no-check-certificate -nv -T 30 -O "${SOURCE}" "${SRCURL}" || true
          if [ $? -ne 0 -o ! -s "${SOURCE}" ]; then
@@ -83,15 +83,15 @@ dnl() {
             mv -f "${SOURCE}" "${SOURCE}.FAIL"
             exit 1
          fi
-         else
-             echo "File '${SOURCE}' not available... aborting the build."
-             exit 1
-         fi
+       else
+           echo "File '${SOURCE}' not available... aborting the build."
+           exit 1
+       fi
     fi
 }
 
 
-dnl "$SOURCE" "$SOURCEURL"
+dnl "$SOURCE" "$SRCURL"
 
 tar xvf $CWD/$PRGNAM-$VERSION.tar.gz
 cd $PRGNAM-$VERSION
@@ -137,7 +137,8 @@ for file in fastcgi_params fastcgi.conf mime.types \
 done
 
 rm -f $PKG/etc/nginx/nginx.conf
-cat $CWD/nginx.conf|sed "s|worker_processes  1;|worker_processes  ${CPUCOUNT};|" > $PKG/etc/nginx/nginx.conf.new
+cp -a $CWD/nginx.conf \
+  $PKG/etc/nginx/nginx.conf.new
 
 mkdir -p $PKG/var/log/nginx
 chown $NGINXUSER:$NGINXGROUP $PKG/var/log/nginx
@@ -147,7 +148,7 @@ cp -r \
   CHANGES* LICENSE README \
   $PKG/usr/doc/$PKGNAM-$VERSION
 
-for i in $CWD/doinst.sh $CWD/nginx.SlackBuild $CWD/nginx.conf $CWD/nginx.logrotate $CWD/rc.nginx $CWD/slack-*; do
+for i in $CWD/doinst.sh $CWD/$PKGNAM.SlackBuild $CWD/nginx.conf $CWD/nginx.logrotate $CWD/rc.nginx $CWD/slack-*; do
   cp -a $i $PKG/usr/doc/$PKGNAM-$VERSION/SlackBuild/
 done
 
