@@ -4,8 +4,8 @@
 
 PRGNAM=node
 PKGNAM=$(basename $0 .SlackBuild)
-VERSION=${VERSION:-0.8.7}
-BUILD=${BUILD:-2}
+VERSION=${VERSION:-0.8.14}
+BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 
 if [ -z "$ARCH" ]; then
