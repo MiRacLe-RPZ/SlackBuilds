@@ -22,8 +22,9 @@ set -e
 PRGNAM=nginx
 PKGNAM=$(basename $0 .SlackBuild)
 VERSION=${VERSION:-1.2.5}
-BUILD=${BUILD:-1}
+BUILD=${BUILD:-2}
 TAG=${TAG:-_rpz}
+PKGTYPE=${PKGTYPE:-txz}
 
 NGINXUSER=${NGINXUSER:-apache}
 NGINXGROUP=${NGINXGROUP:-apache}
@@ -175,7 +176,7 @@ cat $CWD/slack-conflicts > $PKG/install/slack-conflicts
 cd $PKG
 chown -R root:root $PKG
 
-/sbin/makepkg -l y -c n $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-txz}
+/sbin/makepkg -l y -c n $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE
 
 md5sum $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-txz} >  $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE.md5
 cat $PKG/install/slack-desc | grep "^${PKGNAM}" > $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE.txt
