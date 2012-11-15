@@ -1,0 +1,55 @@
+This packages required for running skype binaries under x86_64 arch:
+
+aaa_elflibs-compat32
+alsa-lib-compat32
+bzip2-compat32
+expat-compat32
+glib2-compat32
+cxxlibs-compat32
+fontconfig-compat32
+freetype-compat32
+glib2-compat32
+glibc-solibs
+gst-plugins-base-compat32
+gstreamer-compat32
+libICE-compat32
+libSM-compat32
+libX11-compat32
+libXScrnSaver-compat32
+libXau-compat32
+libXdmcp-compat32
+libXext-compat32
+libXrender-compat32
+libXv-compat32
+libpng-compat32
+libxcb-compat32
+libxml2-compat32
+qt-compat32
+sqlite-compat32
+util-linux-compat32
+xz-compat32
+zlib-compat32
+
+1. Read about multilib packages on slackware's site: http://docs.slackware.com/slackware:multilib
+
+2. Install requirements:
+
+CWD=$(pwd)
+cd /tmp && \
+mkdir multilib && \
+cd multilib && \
+lftp -c 'open http://slackware.com/~alien/multilib/ ; mirror 14.0' && \
+cd 14.0 && \
+upgradepkg --reinstall --install-new *.t?z && \
+cd slackware64-compat32 && \
+upgradepkg --install-new *-compat32/*.t?z && \
+cd ../../ && \
+wget http://mirror.yandex.ru/slackware/slackware-14.0/slackware/ap/sqlite-3.7.13-i486-1.txz && \
+convertpkg-compat32 -i sqlite-3.7.13-i486-1.txz && \
+installpkg sqlite-compat32-3.7.13-x86_64-1.txz && \
+wget http://mirror.yandex.ru/slackware/slackware-14.0/slackware/a/xz-5.0.4-i486-1.tgz && \
+convertpkg-compat32 -i xz-5.0.4-i486-1.tgz && \
+installpkg xz-compat32-5.0.4-x86_64-1.txz && \
+cd $CWD
+
+3. Install skype
