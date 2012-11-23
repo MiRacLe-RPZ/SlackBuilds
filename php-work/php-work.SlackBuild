@@ -275,11 +275,19 @@ fi
 cd $PKG
 /sbin/makepkg -p -l y -c n $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE |tee -a $OUTPUT/$PKGNAM-makepkg.log > /dev/null
 
-md5sum $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-txz} >  $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE.md5
-cat $PKG/install/slack-desc | grep "^${PKGNAM}" > $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE.txt
 
-rm -f $OUTPUT/$PKGNAM-*.log
+cd $OUTPUT
+md5sum $PKGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-txz} >  $PKGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE.md5
+cat $PKG/install/slack-desc | grep "^${PKGNAM}" > $PKGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE.txt
+
+
 
 [ "${P1}" = "--cleanup" ] && {
-  rm -rf $PKG $TMP/$PRGNAM-$VERSION
+  rm -rf $PKG $TMP/$PRGNAM-$VERSION|tee -a $OUTPUT/${PKGNAM}-cleanup.log > /dev/null
 }
+
+rm -f "${OUTPUT}/${PKGNAM}-*.log"|tee -a $OUTPUT/${PKGNAM}-cleanup.log > /dev/null
+
+cd $CWD
+
+exit 0
