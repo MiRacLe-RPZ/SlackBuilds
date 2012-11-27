@@ -23,9 +23,9 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 PRGNAM=google-chrome
-PKGNAM=$(basename $0 .SlackBuild)
+PKGNAM=${PKGNAM:-$(basename $0 .SlackBuild)}
 RELEASE=${RELEASE:-stable}    # stable, beta, or unstable
-VERSION=${VERSION:-23.0.1271.64}
+VERSION=${VERSION:-23.0.1271.91}
 BUILD=${BUILD:-4}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
@@ -97,15 +97,15 @@ ln -s /opt/google/chrome/google-chrome.desktop \
   $PKG/usr/share/applications/google-chrome.desktop
 
 mkdir -p $PKG/install
-cat $CWD/slack-desc > $PKG/install/slack-desc
+cp -a $CWD/slack-* $CWD/doinst.sh \
+  $PKG/install
 
 mkdir -p $PKG/usr/share/doc/google-chrome/SlackBuild
-cp -a $CWD/$PKGNAM.SlackBuild $CWD/google-chrome-updater \
+cp -a $CWD/$PKGNAM.SlackBuild $CWD/google-chrome-updater $CWD/slack-* $CWD/doinst.sh \
   $PKG/usr/share/doc/google-chrome/SlackBuild
 
 mkdir -p $PKG/etc/cron.daily
-cp -a $CWD/google-chrome-updater \
-  $PKG/etc/cron.daily/
+cp $CWD/google-chrome-updater $PKG/etc/cron.daily/google-chrome-updater.new
 
 
 cd $PKG

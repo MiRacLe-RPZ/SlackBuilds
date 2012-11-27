@@ -15,7 +15,8 @@ CURRENT=$(ls /var/log/packages/ -1|grep google-chrome|grep -v pam-solibs|cut -d"
 if [ "x$LATEST" != "x$CURRENT" ]; then
     BUILD="1"
     TAG="_auto"
-    ( cd /usr/share/doc/google-chrome/SlackBuild
+    PKGNAM=$(basename $0 -updater)
+    ( cd /usr/share/doc/google-chrome/SlackBuild \
       && source ./google-chrome.SlackBuild \
       && /sbin/upgradepkg /tmp/google-chrome-$LATEST-$ARCH-$BUILD$TAG.txz \
       && rm $(basename google-chrome-$RELEASE_*_$DEBARCH.deb)
