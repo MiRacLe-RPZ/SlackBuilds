@@ -155,6 +155,17 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  Node (Evented I/O for V8 JavaScript)
 
+SLACKBUILD NAME: photo
+SLACKBUILD LOCATION: ./photo
+SLACKBUILD FILES: doinst.sh photo.SlackBuild photo.info slack-desc
+SLACKBUILD VERSION: 0.8.1.2
+SLACKBUILD DOWNLOAD: http://photoqt.org/pkgs/photo-0.8.1.2.tar.gz
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: 860ddadd9705cc6af1d869a57b493bf4
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  Photo (Qt Graphic Viewer)
+
 SLACKBUILD NAME: php-work
 SLACKBUILD LOCATION: ./php-work
 SLACKBUILD FILES: doinst.sh php-cli.ini php-fpm.conf php-ini php-lint php-sessiongc php-work.SlackBuild php-work.info php.ini php.logrotate rc.php-fpm slack-conflicts slack-desc slack-required
