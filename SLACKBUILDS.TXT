@@ -68,11 +68,11 @@ SLACKBUILD SHORT DESCRIPTION:  fuseiso (FUSE module to mount ISO filesystem imag
 SLACKBUILD NAME: google-chrome
 SLACKBUILD LOCATION: ./google-chrome
 SLACKBUILD FILES: doinst.sh google-chrome-updater google-chrome.SlackBuild google-chrome.info slack-desc
-SLACKBUILD VERSION: 23.0.1271.94
-SLACKBUILD DOWNLOAD: http://dl.google.com/linux/deb/pool/main/g/google-chrome-stable/google-chrome-stable_23.0.1271.95-r169798_i386.deb
-SLACKBUILD DOWNLOAD_x86_64: http://dl.google.com/linux/deb/pool/main/g/google-chrome-stable/google-chrome-stable_23.0.1271.95-r169798_amd64.deb
-SLACKBUILD MD5SUM: 06d4451a0390a47403a4f311cc5b55e1
-SLACKBUILD MD5SUM_x86_64: d097227b8993b96a57d9c365682a527e
+SLACKBUILD VERSION: 23.0.1271.97
+SLACKBUILD DOWNLOAD: http://dl.google.com/linux/deb/pool/main/g/google-chrome-stable/google-chrome-stable_23.0.1271.97-r171054_i386.deb
+SLACKBUILD DOWNLOAD_x86_64: http://dl.google.com/linux/deb/pool/main/g/google-chrome-stable/google-chrome-stable_23.0.1271.97-r171054_amd64.deb
+SLACKBUILD MD5SUM: 4380d95eade20f81e7c6f77b3d1231e6
+SLACKBUILD MD5SUM_x86_64: bf9dfc0b3b5d57ba57826d0a169250f3
 SLACKBUILD REQUIRES: google-chrome-pam-solibs
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  google-chrome (Google Chrome web browser)
