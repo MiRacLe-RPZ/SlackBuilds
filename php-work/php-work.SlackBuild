@@ -26,7 +26,7 @@
 PRGNAM=php
 PKGNAM=$(basename $0 .SlackBuild)
 VERSION=${VERSION:-5.4.10}
-BUILD=${BUILD:-1}
+BUILD=${BUILD:-2}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
 DEVELOPMENT=${DEVELOPMENT:-no}
@@ -153,7 +153,7 @@ if [ "yes" == $DEVELOPMENT ]; then
 
     mv xdebug-*.*.* xdebug
 
-    DEVEXT=" --enable-xdebug=shared --enable-pcntl=shared --enable-ftp=shared --with-xsl=shared --with-mysql=shared --enable-sockets=shared"
+    DEVEXT=" --enable-xdebug=shared --enable-pcntl=shared --enable-ftp=shared --with-xsl=shared --with-mysql=shared --enable-sockets=shared --with-openssl=shared --with-pdo-mysql=shared,/usr/bin/mysql_config --with-curl=shared"
 fi
 
 cd ../
@@ -184,29 +184,29 @@ CXXFLAGS="$SLKCFLAGS" \
     --enable-fpm \
     --with-fpm-user=${DAEMONUSER} \
     --with-fpm-group=${DAEMONGROUP} \
-    --with-gd \
-    --with-mssql --with-pdo-dblib \
-    --with-iconv --enable-mbstring --enable-soap \
-    --with-zlib --enable-bcmath \
-    --with-jpeg-dir=/usr --with-curl \
-    --with-openssl=shared \
-    --with-pdo-mysql=/usr/bin/mysql_config \
-    --with-mysql --without-pear \
+    --sysconfdir=/etc/php54 \
     --with-config-file-path=/etc/php54 \
-    --with-png-dir=/usr \
-    --without-pear --sysconfdir=/etc/php54 \
-    --disable-ipv6 --localstatedir=/var \
-    --with-mcrypt \
-    --enable-apc=shared \
     --datarootdir=/usr/share \
     --datadir=/usr/share \
     --infodir=/usr/info \
     --mandir=/usr/man \
+    --localstatedir=/var \
+    --with-gd --with-png-dir=/usr --with-jpeg-dir=/usr \
+    --with-mssql --with-pdo-dblib \
+    --with-iconv --enable-mbstring \
+    --enable-soap \
+    --with-zlib \
+    --enable-bcmath \
+    --enable-apc=shared \
+    --with-mcrypt \
+    --without-pear \
     --enable-static=no \
     --enable-xml --enable-dom --enable-simplexml \
-    --enable-filter --enable-ctype --enable-json \
-    --with-gnu-ld \
-    --with-pic $DEVEXT $EXTRA_OPTIONS 2>&1 |tee  $OUTPUT/$PKGNAM-configure.log \
+    --enable-filter \
+    --enable-ctype \
+    --enable-json \
+    --disable-ipv6 \
+    --with-gnu-ld --with-pic $DEVEXT $EXTRA_OPTIONS 2>&1 |tee  $OUTPUT/$PKGNAM-configure.log \
   && echo "build" \
   && make $NUMJOBS 2>&1|tee $OUTPUT/$PKGNAM-build.log \
   && echo "makepkg" \

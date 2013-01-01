@@ -1,0 +1,9 @@
+PKGNAM="gearmand"
+VERSION="1.1.4"
+HOMEPAGE="http://gearman.org/"
+DOWNLOAD="https://launchpad.net/gearmand/1.2/1.1.4/+download/gearmand-1.1.4.tar.gz"
+MD5SUM="a4580c2d408fb0b3570f6cb6c1b14d28"
+MAINTAINER="MiRacLe.RPZ"
+EMAIL="miracle@rpz.name"
+REQUIRES="libevent >= 2.0"
+
