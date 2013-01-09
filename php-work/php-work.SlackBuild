@@ -26,7 +26,7 @@
 PRGNAM=php
 PKGNAM=$(basename $0 .SlackBuild)
 VERSION=${VERSION:-5.4.10}
-BUILD=${BUILD:-2}
+BUILD=${BUILD:-3}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
 DEVELOPMENT=${DEVELOPMENT:-no}
@@ -153,7 +153,10 @@ if [ "yes" == $DEVELOPMENT ]; then
 
     mv xdebug-*.*.* xdebug
 
-    DEVEXT=" --enable-xdebug=shared --enable-pcntl=shared --enable-ftp=shared --with-xsl=shared --with-mysql=shared --enable-sockets=shared --with-openssl=shared --with-pdo-mysql=shared,/usr/bin/mysql_config --with-curl=shared"
+    IMAPLIBDIR=$TMP/$PRGNAM-$VERSION/imaplib ARCH=$ARCH TMP=$TMP CWD=$CWD sh $CWD/imap-c-client-build.sh
+
+
+    DEVEXT=" --enable-xdebug=shared --enable-pcntl=shared --enable-ftp=shared --with-xsl=shared --with-mysql=shared --enable-sockets=shared --with-openssl=shared --with-pdo-mysql=shared  --with-pdo-dblib=shared --with-curl=shared --with-gettext=shared --with-imap=shared,$TMP/$PRGNAM-$VERSION/imaplib --with-imap-ssl=/usr"
 fi
 
 cd ../
@@ -192,7 +195,7 @@ CXXFLAGS="$SLKCFLAGS" \
     --mandir=/usr/man \
     --localstatedir=/var \
     --with-gd --with-png-dir=/usr --with-jpeg-dir=/usr \
-    --with-mssql --with-pdo-dblib \
+    --with-mssql  \
     --with-iconv --enable-mbstring \
     --enable-soap \
     --with-zlib \
