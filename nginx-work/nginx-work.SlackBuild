@@ -178,12 +178,21 @@ chown -R root:root $PKG
 
 /sbin/makepkg -l y -c n $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE
 
-md5sum $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE >  $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE.md5
-cat $PKG/install/slack-desc | grep "^${PKGNAM}" > $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE.txt
+cd $OUTPUT
+
+md5sum $PKGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE >  $PKGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE.md5
+cat $PKG/install/slack-desc | grep "^${PKGNAM}" > $PKGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE.txt
 
 rm -f $OUTPUT/$PKGNAM-*.log
 
 [ "${P1}" = "--cleanup" ] && {
   rm -rf $PKG $TMP/$PRGNAM-$VERSION
 }
+
+rm -f "${PKGNAM}-*.log"|tee -a ${PKGNAM}-cleanup.log > /dev/null
+
+cd $CWD
+
+exit 0
+
 
