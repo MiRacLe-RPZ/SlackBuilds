@@ -19,6 +19,7 @@ if [ "x$LATEST" != "x$CURRENT" ]; then
     ( cd /usr/share/doc/google-chrome/SlackBuild \
       && source ./google-chrome.SlackBuild \
       && /sbin/upgradepkg /tmp/google-chrome-$LATEST-$ARCH-$BUILD$TAG.txz \
+      && cd /usr/share/doc/google-chrome/SlackBuild \
       && rm $(basename google-chrome-${RELEASE}_*_${DEBARCH}.deb)
     )
 fi
