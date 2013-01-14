@@ -263,10 +263,10 @@ SLACKBUILD SHORT DESCRIPTION:  Skype (a P2P Voice Over IP program)
 SLACKBUILD NAME: vacuum
 SLACKBUILD LOCATION: ./vacuum
 SLACKBUILD FILES: slack-desc vacuum.SlackBuild vacuum.info
-SLACKBUILD VERSION: 1.2.0
-SLACKBUILD DOWNLOAD: http://vacuum-im.googlecode.com/files/vacuum-1.2.0.tar.gz
+SLACKBUILD VERSION: 1.2.1
+SLACKBUILD DOWNLOAD: http://vacuum-im.googlecode.com/files/vacuum-1.2.1.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: ba8afa7ca74f6c491b74c4eafb936b53
+SLACKBUILD MD5SUM: 5f84fadcc09dba56c7e169546d8879c1
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  Crossplatform Jabber client
