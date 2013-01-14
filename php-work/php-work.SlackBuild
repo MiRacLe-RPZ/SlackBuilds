@@ -156,7 +156,7 @@ if [ "yes" == $DEVELOPMENT ]; then
     IMAPLIBDIR=$TMP/$PRGNAM-$VERSION/imaplib ARCH=$ARCH TMP=$TMP CWD=$CWD sh $CWD/imap-c-client-build.sh
 
 
-    DEVEXT=" --enable-xdebug=shared --enable-pcntl=shared --enable-ftp=shared --with-xsl=shared --with-mysql=shared --enable-sockets=shared --with-openssl=shared --with-pdo-mysql=shared  --with-pdo-dblib=shared --with-curl=shared --with-gettext=shared --with-imap=shared,$TMP/$PRGNAM-$VERSION/imaplib --with-imap-ssl=/usr"
+    DEVEXT=" --enable-xdebug=shared --enable-pcntl=shared --enable-ftp=shared --with-xsl=shared --with-mysql=shared --enable-sockets=shared --with-openssl=shared --with-pdo-mysql=shared  --with-pdo-dblib=shared --with-curl=shared --with-gettext=shared --with-imap=shared,$TMP/$PRGNAM-$VERSION/imaplib --with-imap-ssl=/usr --with-ldap=shared"
 fi
 
 cd ../
