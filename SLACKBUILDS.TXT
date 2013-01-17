@@ -181,10 +181,10 @@ SLACKBUILD SHORT DESCRIPTION:  Photo (Qt Graphic Viewer)
 SLACKBUILD NAME: php-work
 SLACKBUILD LOCATION: ./php-work
 SLACKBUILD FILES: doinst.sh imap-c-client-build.sh php-cli.ini php-fpm.conf php-ini php-lint php-sessiongc php-work.SlackBuild php-work.info php.ini php.logrotate rc.php-fpm slack-conflicts slack-desc slack-required
-SLACKBUILD VERSION: 5.4.10
-SLACKBUILD DOWNLOAD: http://www.php.net/distributions/php-5.4.10.tar.bz2
+SLACKBUILD VERSION: 5.4.11
+SLACKBUILD DOWNLOAD: http://www.php.net/distributions/php-5.4.11.tar.bz2
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: cb716b657a30570b9b468b9e7bc551a1
+SLACKBUILD MD5SUM: 9975e68c22b86b013b934743ad2d2276
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD REQUIRES: freetds
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
