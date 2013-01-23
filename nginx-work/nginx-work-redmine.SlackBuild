@@ -1,0 +1,209 @@
+#!/bin/sh
+
+# Redistribution and use of this script, with or without modification, is
+# permitted provided that the following conditions are met:
+#
+# 1. Redistributions of this script must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+#
+# THIS SOFTWARE IS PROVIDED BY THE AUTHOR ''AS IS'' AND ANY EXPRESS OR IMPLIED
+# WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+# EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+# SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+# PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+# OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+# OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+# ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+set -e
+
+PRGNAM=nginx
+PKGNAM=$(basename $0 .SlackBuild)
+VERSION=${VERSION:-1.2.6}
+BUILD=${BUILD:-2}
+TAG=${TAG:-_rpz}
+PKGTYPE=${PKGTYPE:-txz}
+
+NGINXUSER=${NGINXUSER:-apache}
+NGINXGROUP=${NGINXGROUP:-apache}
+
+if [ -z "$ARCH" ]; then
+  case "$( uname -m )" in
+    i?86) ARCH=i486 ;;
+    arm*) ARCH=arm ;;
+       *) ARCH=$( uname -m ) ;;
+  esac
+fi
+
+CWD=$(pwd)
+TMP=${TMP:-/tmp/rpz}
+PKG=$TMP/package-$PKGNAM
+OUTPUT=${OUTPUT:-/tmp}
+SOURCE="${CWD}/${PRGNAM}-${VERSION}.tar.gz"
+SRCURL="http://nginx.org/download/${PRGNAM}-${VERSION}.tar.gz"
+
+
+CPUCOUNT="$(lscpu|grep 'CPU(s):'|awk '{print $2}')"
+NUMJOBS=" -j$(echo $CPUCOUNT|awk '{print $1 + 1}') "
+
+
+
+CHOST="i486"
+if [ "$ARCH" = "i486" ]; then
+  SLKCFLAGS="-O2 -march=i486 -mtune=i686"
+  LIBDIRSUFFIX=""
+elif [ "$ARCH" = "i586" ]; then
+  SLKCFLAGS="-O2 -march=i586 -mtune=i686"
+  LIBDIRSUFFIX=""
+elif [ "$ARCH" = "i686" ]; then
+  SLKCFLAGS="-O2 -march=i686 -mtune=i686"
+  LIBDIRSUFFIX=""
+elif [ "$ARCH" = "x86_64" ]; then
+  SLKCFLAGS="-O2 -fPIC"
+  LIBDIRSUFFIX="64"
+  CHOST="x86_64"
+fi
+
+
+rm -rf $PKG
+mkdir -p $TMP $PKG $OUTPUT
+cd $TMP
+rm -rf ${PRGNAM}-${VERSION}
+
+dnl() {
+    SOURCE=$1
+    SRCURL=$2    
+    if [ ! -e $SOURCE ]; then
+       if  [ "x${SRCURL}" != "x" ]; then
+         echo "Downloading '$(basename ${SOURCE})'."
+         wget --no-check-certificate -nv -T 30 -O "${SOURCE}" "${SRCURL}" || true
+         if [ $? -ne 0 -o ! -s "${SOURCE}" ]; then
+            echo "Downloading '$(basename ${SOURCE})' failed... aborting the build."
+            mv -f "${SOURCE}" "${SOURCE}.FAIL"
+            exit 1
+         fi
+       else
+           echo "File '${SOURCE}' not available... aborting the build."
+           exit 1
+       fi
+    fi
+}
+
+
+dnl "$SOURCE" "$SRCURL"
+
+tar xvf $CWD/$PRGNAM-$VERSION.tar.gz
+cd $PRGNAM-$VERSION
+
+chown -R root:root .
+find . \
+ \( -perm 666 -o -perm 664 -o -perm 600 -o -perm 444 -o -perm 400 -o -perm 440 \) -exec chmod 644 {} \; -o \
+ \( -perm 777 -o -perm 775 -o -perm 511 -o -perm 711 -o -perm 555 \) -exec chmod 755 {} \;
+
+
+
+PATH=/srv/redmine.lan/.rvm/gems/ree-1.8.7-2012.02@redmine/bin:/srv/redmine.lan/.rvm/gems/ree-1.8.7-2012.02@global/bin:/srv/redmine.lan/.rvm/rubies/ree-1.8.7-2012.02/bin:/srv/redmine.lan/.rvm/bin:$PATH
+GEM_HOME="/srv/redmine.lan/.rvm/gems/ree-1.8.7-2012.02@redmine"
+GEM_PATH="/srv/redmine.lan/.rvm/gems/ree-1.8.7-2012.02@redmine:/srv/redmine.lan/.rvm/gems/ree-1.8.7-2012.02@global"
+
+[[ -s "/srv/redmine.lan/.rvm/scripts/rvm" ]] && source "/srv/redmine.lan/.rvm/scripts/rvm"
+
+
+GEM_HOME="$GEM_HOME" \
+GEM_PATH="$GEM_PATH" \
+CFLAGS="$SLKCFLAGS" \
+CXXFLAGS="$SLKCFLAGS" \
+rvm_path="/srv/redmine.lan/.rvm" \
+/srv/redmine.lan/.rvm/gems/ree-1.8.7-2012.02@redmine/bin/passenger-install-nginx-module --nginx-source-dir=`pwd` --auto --prefix=/usr --extra-configure-flags=" \
+  --prefix=/usr \
+  --sbin-path=/usr/sbin/nginx \
+  --conf-path=/etc/nginx/nginx.conf \
+  --pid-path=/var/run/nginx.pid \
+  --lock-path=/var/lock/nginx \
+  --user=${NGINXUSER} \
+  --group=${NGINXGROUP} \
+  --error-log-path=/var/log/nginx/error.log \
+  --http-log-path=/var/log/nginx/access.log \
+  --with-http_realip_module \
+  --with-http_gzip_static_module \
+  --with-http_secure_link_module \
+  --with-http_stub_status_module \
+  --http-client-body-temp-path=/tmp/nginx/client_body \
+  --http-proxy-temp-path=/tmp/nginx/proxy \
+  --http-fastcgi-temp-path=/dev/shm" && \
+make $NUMJOBS && \
+make install DESTDIR=$PKG
+
+mkdir -p $PKG/etc/rc.d $PKG/etc/nginx/conf.d $PKG/usr/doc/$PKGNAM-$VERSION/SlackBuild
+cat $CWD/rc.nginx|sed "s|apache:apache|${NGINXUSER}:${NGINXGROUP}|" > $PKG/etc/rc.d/rc.nginx.new
+
+mkdir -p $PKG/etc/logrotate.d
+cat $CWD/nginx.logrotate > $PKG/etc/logrotate.d/nginx
+
+
+for file in fastcgi_params fastcgi.conf mime.types \
+            koi-utf koi-win scgi_params uwsgi_params win-utf ; do
+            mv $PKG/etc/nginx/$file $PKG/etc/nginx/$file.new ;
+done
+
+rm -f $PKG/etc/nginx/nginx.conf
+cp -a $CWD/nginx.conf \
+  $PKG/etc/nginx/nginx.conf.new
+
+mkdir -p $PKG/var/log/nginx
+chown $NGINXUSER:$NGINXGROUP $PKG/var/log/nginx
+chmod 750 $PKG/var/log/nginx
+
+cp -r \
+  CHANGES* LICENSE README \
+  $PKG/usr/doc/$PKGNAM-$VERSION
+
+for i in $CWD/doinst.sh $CWD/$PKGNAM.SlackBuild $CWD/nginx.conf $CWD/nginx.logrotate $CWD/rc.nginx $CWD/slack-*; do
+  cp -a $i $PKG/usr/doc/$PKGNAM-$VERSION/SlackBuild/
+done
+
+if [ -d $PKG/usr/man ]; then
+    ( cd $PKG/usr/man
+      find . -type f -exec gzip -9 {} \;
+      for i in $( find . -type l ) ; do ln -s $( readlink $i ).gz $i.gz ; rm $i ; done
+    )
+fi
+
+( cd $PKG
+  find . | xargs file | grep "executable" | grep ELF | cut -f 1 -d : | xargs -r strip --strip-unneeded 2> /dev/null || true
+  find . | xargs file | grep "shared object" | grep ELF | cut -f 1 -d : | xargs -r strip --strip-unneeded 2> /dev/null || true
+  find . | xargs file | grep "current ar archive" | cut -f 1 -d : | xargs -r strip --strip-unneeded 2> /dev/null || true
+)
+
+mkdir -p $PKG/install
+cat $CWD/slack-desc |sed "s|nginx-work:|${PKGNAM}:|" > $PKG/install/slack-desc
+cat $CWD/slack-required > $PKG/install/slack-required
+cat $CWD/slack-conflicts > $PKG/install/slack-conflicts
+
+[ -e $CWD/doinst.sh ] && cat $CWD/doinst.sh > $PKG/install/doinst.sh
+
+cd $PKG
+chown -R root:root $PKG
+
+/sbin/makepkg -l y -c n $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE
+
+cd $OUTPUT
+
+md5sum $PKGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE >  $PKGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE.md5
+cat $PKG/install/slack-desc | grep "^${PKGNAM}" > $PKGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE.txt
+
+rm -f $OUTPUT/$PKGNAM-*.log
+
+[ "${P1}" = "--cleanup" ] && {
+  rm -rf $PKG $TMP/$PRGNAM-$VERSION
+}
+
+rm -f "${PKGNAM}-*.log"|tee -a ${PKGNAM}-cleanup.log > /dev/null
+
+cd $CWD
+
+exit 0
+
+

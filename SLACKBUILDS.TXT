@@ -80,11 +80,11 @@ SLACKBUILD SHORT DESCRIPTION:  Gearman(A framework to farm out work)
 SLACKBUILD NAME: google-chrome
 SLACKBUILD LOCATION: ./google-chrome
 SLACKBUILD FILES: doinst.sh google-chrome-updater google-chrome.SlackBuild google-chrome.info slack-desc
-SLACKBUILD VERSION: 24.0.1312.52
-SLACKBUILD DOWNLOAD: http://dl.google.com/linux/deb/pool/main/g/google-chrome-stable/google-chrome-stable_24.0.1312.52-r175374_i386.deb
-SLACKBUILD DOWNLOAD_x86_64: http://dl.google.com/linux/deb/pool/main/g/google-chrome-stable/google-chrome-stable_24.0.1312.52-r175374_amd64.deb
-SLACKBUILD MD5SUM: 53f7be667a704a844b1c7d80bc3c79c5
-SLACKBUILD MD5SUM_x86_64: 2bb3721917d7da6c4a48185e1b256728
+SLACKBUILD VERSION: 24.0.1312.56
+SLACKBUILD DOWNLOAD: http://dl.google.com/linux/deb/pool/main/g/google-chrome-stable/google-chrome-stable_24.0.1312.56-r177594_i386.deb
+SLACKBUILD DOWNLOAD_x86_64: http://dl.google.com/linux/deb/pool/main/g/google-chrome-stable/google-chrome-stable_24.0.1312.56-r177594_amd64.deb
+SLACKBUILD MD5SUM: 7dbb0f88c592e8c55395f9da074eb860
+SLACKBUILD MD5SUM_x86_64: 205704cc3ba2c4b9251674bf0b24590e
 SLACKBUILD REQUIRES: google-chrome-pam-solibs
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  google-chrome (Google Chrome web browser)
@@ -147,7 +147,7 @@ SLACKBUILD SHORT DESCRIPTION:  msvistawebfonts
 
 SLACKBUILD NAME: nginx-work
 SLACKBUILD LOCATION: ./nginx-work
-SLACKBUILD FILES: doinst.sh nginx-work.SlackBuild nginx-work.info nginx.conf nginx.logrotate rc.nginx slack-conflicts slack-desc slack-required
+SLACKBUILD FILES: doinst.sh nginx-work-redmine.SlackBuild nginx-work.SlackBuild nginx-work.info nginx.conf nginx.logrotate rc.nginx slack-conflicts slack-desc slack-required
 SLACKBUILD VERSION: 1.2.6
 SLACKBUILD DOWNLOAD: http://nginx.org/download/nginx-1.2.6.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 

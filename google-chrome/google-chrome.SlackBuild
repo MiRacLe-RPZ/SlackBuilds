@@ -25,8 +25,8 @@
 PRGNAM=google-chrome
 PKGNAM=${PKGNAM:-$(basename $0 .SlackBuild)}
 RELEASE=${RELEASE:-stable}    # stable, beta, or unstable
-VERSION=${VERSION:-23.0.1271.97}
-BUILD=${BUILD:-4}
+VERSION=${VERSION:-24.0.1312.56}
+BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
 
