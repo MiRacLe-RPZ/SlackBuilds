@@ -80,11 +80,11 @@ SLACKBUILD SHORT DESCRIPTION:  Gearman(A framework to farm out work)
 SLACKBUILD NAME: google-chrome
 SLACKBUILD LOCATION: ./google-chrome
 SLACKBUILD FILES: doinst.sh google-chrome-updater google-chrome.SlackBuild google-chrome.info slack-desc
-SLACKBUILD VERSION: 24.0.1312.56
-SLACKBUILD DOWNLOAD: http://dl.google.com/linux/deb/pool/main/g/google-chrome-stable/google-chrome-stable_24.0.1312.56-r177594_i386.deb
-SLACKBUILD DOWNLOAD_x86_64: http://dl.google.com/linux/deb/pool/main/g/google-chrome-stable/google-chrome-stable_24.0.1312.56-r177594_amd64.deb
-SLACKBUILD MD5SUM: 7dbb0f88c592e8c55395f9da074eb860
-SLACKBUILD MD5SUM_x86_64: 205704cc3ba2c4b9251674bf0b24590e
+SLACKBUILD VERSION: 25.0.1364.97
+SLACKBUILD DOWNLOAD: http://dl.google.com/linux/deb/pool/main/g/google-chrome-stable/google-chrome-stable_25.0.1364.97-r183676_i386.deb
+SLACKBUILD DOWNLOAD_x86_64: http://dl.google.com/linux/deb/pool/main/g/google-chrome-stable/google-chrome-stable_25.0.1364.97-r183676_amd64.deb
+SLACKBUILD MD5SUM: 5476d64a96b7287b82a5370e434b175b
+SLACKBUILD MD5SUM_x86_64: e62c61240f24ec4dc6616dfc32fa30ff
 SLACKBUILD REQUIRES: google-chrome-pam-solibs
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  google-chrome (Google Chrome web browser)
@@ -192,10 +192,10 @@ SLACKBUILD SHORT DESCRIPTION:  Photo (Qt Graphic Viewer)
 SLACKBUILD NAME: php-work
 SLACKBUILD LOCATION: ./php-work
 SLACKBUILD FILES: doinst.sh imap-c-client-build.sh php-cli.ini php-fpm.conf php-ini php-lint php-sessiongc php-work.SlackBuild php-work.info php.ini php.logrotate rc.php-fpm slack-conflicts slack-desc slack-required
-SLACKBUILD VERSION: 5.4.11
-SLACKBUILD DOWNLOAD: http://www.php.net/distributions/php-5.4.11.tar.bz2
+SLACKBUILD VERSION: 5.4.12
+SLACKBUILD DOWNLOAD: http://www.php.net/distributions/php-5.4.12.tar.bz2
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 9975e68c22b86b013b934743ad2d2276
+SLACKBUILD MD5SUM: 5c7b614242ae12e9cacca21c8ab84818
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD REQUIRES: freetds
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
