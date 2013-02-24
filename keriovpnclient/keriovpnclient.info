@@ -1,0 +1,7 @@
+PKGNAM="keriovpnclient"
+VERSION="7.4.1"
+HOMEPAGE="http://kerio.com/"
+DOWNLOAD="http://download.kerio.com/eu/dwn/kerio-control-vpnclient-linux.deb"
+MD5SUM="9825c1403faf43dd3b6a19e84ec48c8b"
+MAINTAINER="MiRacLe.RPZ"
+EMAIL="miracle@rpz.name"

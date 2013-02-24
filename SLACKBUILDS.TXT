@@ -122,6 +122,17 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:   KdeSudo is a frontend for sudo. 
 
+SLACKBUILD NAME: keriovpnclient
+SLACKBUILD LOCATION: ./keriovpnclient
+SLACKBUILD FILES: kerio-kvc.conf.example keriovpnclient.SlackBuild keriovpnclient.info rc.kerio-kvc slack-desc
+SLACKBUILD VERSION: 7.4.1
+SLACKBUILD DOWNLOAD: http://download.kerio.com/eu/dwn/kerio-control-vpnclient-linux.deb
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: 9825c1403faf43dd3b6a19e84ec48c8b
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  Kerio VPN client
+
 SLACKBUILD NAME: kfilebox
 SLACKBUILD LOCATION: ./kfilebox
 SLACKBUILD FILES: doinst.sh kfilebox.SlackBuild kfilebox.desktop kfilebox.info slack-desc slack-required
@@ -237,6 +248,17 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD REQUIRES: faad2
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  qmmp (audio-player with a Qt interface)
+
+SLACKBUILD NAME: qwinff
+SLACKBUILD LOCATION: ./qwinff
+SLACKBUILD FILES: qwinff.SlackBuild qwinff.info slack-desc slack-required
+SLACKBUILD VERSION: 0.1.8
+SLACKBUILD DOWNLOAD: http://qwinff.googlecode.com/files/qwinff_0.1.8.tar.bz2
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: 2b8e4a7cd8de4ad6145939102577109a
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:   easy-to-use media converter frontend to FFmpeg
 
 SLACKBUILD NAME: rats
 SLACKBUILD LOCATION: ./rats
