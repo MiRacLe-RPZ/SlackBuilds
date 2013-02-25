@@ -271,6 +271,18 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  rats (Rough Auditing Tool for Security)
 
+SLACKBUILD NAME: rubymine
+SLACKBUILD LOCATION: ./rubymine
+SLACKBUILD FILES: rubymine.SlackBuild rubymine.info slack-desc slack-required
+SLACKBUILD VERSION: 125.65
+SLACKBUILD DOWNLOAD: http://download.jetbrains.com/ruby/RubyMine-5.0.1.tar.gz
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: 27f8dcd9a7ac56e186c64623b89a5bb5
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD REQUIRES: jdk
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  RubyIDE based on JetBrain's IDEA
+
 SLACKBUILD NAME: skype
 SLACKBUILD LOCATION: ./skype
 SLACKBUILD FILES: README.SLACKWARE_64 doinst.sh skype.SlackBuild skype.info slack-desc

@@ -1,0 +1,152 @@
+#!/bin/sh
+
+# Redistribution and use of this script, with or without modification, is
+# permitted provided that the following conditions are met:
+#
+# 1. Redistributions of this script must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+#
+# THIS SOFTWARE IS PROVIDED BY THE AUTHOR ''AS IS'' AND ANY EXPRESS OR IMPLIED
+# WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+# EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+# SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+# PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+# OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+# OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+# ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+set -e
+
+PRGNAM=RubyMine
+PKGNAM=rubymine
+VERSION=${VERSION:-125.65}
+BUILD=${BUILD:-1}
+TAG=${TAG:-_rpz}
+PKGTYPE=${PKGTYPE:-txz}
+
+if [ -z "$ARCH" ]; then
+  case "$( uname -m )" in
+    i?86) ARCH=i486 ;;
+       *) ARCH=$( uname -m ) ;;
+  esac
+fi
+
+#SOURCE="http://download.jetbrains.com/ruby/$PRGNAM-EAP-$VERSION.tar.gz"
+SOURCE="http://download.jetbrains.com/ruby/$PRGNAM-5.0.1.tar.gz"
+
+CWD=$(pwd)
+TMP=${TMP:-/tmp/rpz}
+PKG=$TMP/package-$PKGNAM
+OUTPUT=${OUTPUT:-/tmp}
+
+
+rm -rf $PKG
+mkdir -p $TMP $PKG $OUTPUT
+
+cd $TMP
+rm -rf ${PRGNAM}-${VERSION}
+
+if [ "$1" == "netinstall" ]; then
+    mkdir -p $PKG/install $PKG/usr/doc/${PKGNAM}-${VERSION}/SlackBuild
+    cp -a $CWD/$PKGNAM.SlackBuild $CWD/slack-* \
+        $PKG/usr/doc/${PKGNAM}-${VERSION}/SlackBuild/
+    cat > $PKG/install/doinst.sh  <<NETINSTALL
+      set -eu
+      cd usr/doc/${PKGNAM}-${VERSION}/SlackBuild/ && OUTPUT=/tmp sh ./${PKGNAM}.SlackBuild && /sbin/upgradepkg --install-new /tmp/${PKGNAM}-${VERSION}-${ARCH}-${BUILD}${TAG}.${PKGTYPE}
+NETINSTALL
+
+    cd $PKG
+    chown -R root:root $PKG
+    /sbin/makepkg -l y -c n $OUTPUT/$PKGNAM-$VERSION-noarch-netinstall.$PKGTYPE
+    exit 0
+fi
+
+
+
+if [ ! -e $CWD/$PRGNAM-EAP-$VERSION.tar.gz ] && [ ! -e $CWD/$PRGNAM-5.0.tar.gz ]; then
+    wget $SOURCE -O $CWD/$PRGNAM-EAP-$VERSION.tar.gz
+fi
+
+cd $TMP
+
+if [ -f $CWD/$PRGNAM-EAP-$VERSION.tar.gz ]; then
+    tar zxf $CWD/$PRGNAM-EAP-$VERSION.tar.gz
+else
+    tar zxf $CWD/$PRGNAM-5.0.1.tar.gz
+fi
+cd $PRGNAM-5.0
+
+chown -R root:root .
+find . \
+ \( -perm 666 -o -perm 664 -o -perm 600 -o -perm 444 -o -perm 400 -o -perm 440 \) -exec chmod 644 {} \; -o \
+ \( -perm 777 -o -perm 775 -o -perm 511 -o -perm 711 -o -perm 555 \) -exec chmod 755 {} \;
+
+
+mkdir -p $PKG/opt/$PKGNAM $PKG/usr/bin $PKG/usr/share/applications $PKG/usr/share/pixmaps $PKG/usr/doc/$PKGNAM-$VERSION/SlackBuild
+
+cp -R * $PKG/opt/$PKGNAM
+
+if [ "$ARCH" = "x86_64" ]; then
+    rm -f $PKG/opt/$PKGNAM/bin/libyjpagent-linux.so
+    rm -f $PKG/opt/$PKGNAM/bin/fsnotifier
+    rm -f $PKG/opt/$PKGNAM/bin/rubymine.vmoptions
+else
+    rm -f $PKG/opt/$PKGNAM/bin/libyjpagent-linux64.so
+    rm -f $PKG/opt/$PKGNAM/bin/fsnotifier64
+    rm -f $PKG/opt/$PKGNAM/bin/rubymine64.vmoptions
+fi
+
+(
+cat <<EOF
+[Desktop Entry]
+Version=${VERSION}
+Name=${PRGNAM}
+Icon=${PKGNAM}
+GenericName=${PRGNAM}
+Comment=Ruby IDE based on JetBrain's IDEA, trial version
+Exec=/opt/${PKGNAM}/bin/rubymine.sh
+Terminal=false
+Type=Application
+Categories=Development;IDE;
+StartupNotify=true
+StartupWMClass=${PRGNAM}
+EOF
+) > $PKG/usr/share/applications/rubymine.desktop
+
+mv $PKG/opt/$PKGNAM/bin/rubymine.png $PKG/usr/share/pixmaps/$PKGNAM.png
+
+cp -a license/* Install-Linux-tar.txt \
+  $PKG/usr/doc/$PKGNAM-$VERSION
+
+# [ -e $PKG/opt/$PKGNAM/license ] && rm -rf $PKG/opt/$PKGNAM/license
+[ -e $PKG/opt/$PKGNAM/Install-Linux-tar.txt ] && rm -f $PKG/opt/$PKGNAM/Install-Linux-tar.txt
+[ -e $PKG/opt/$PKGNAM/build.txt ] && rm -f $PKG/opt/$PKGNAM/build.txt
+
+
+cp -a $CWD/$PKGNAM.SlackBuild $CWD/slack-* \
+   $PKG/usr/doc/$PKGNAM-$VERSION/SlackBuild/
+
+ln -s /opt/$PKGNAM/bin/phpstorm.sh $PKG/usr/bin/$PKGNAM
+
+( cd $PKG
+  find . | xargs file | grep "executable" | grep ELF | cut -f 1 -d : | xargs -r strip --strip-unneeded 2> /dev/null || true
+  find . | xargs file | grep "shared object" | grep ELF | cut -f 1 -d : | xargs -r strip --strip-unneeded 2> /dev/null || true
+  find . | xargs file | grep "current ar archive" | cut -f 1 -d : | xargs -r strip --strip-unneeded 2> /dev/null || true
+)
+
+mkdir -p $PKG/install
+cat $CWD/slack-desc > $PKG/install/slack-desc
+
+if [ ! -e $CWD/slack-required ] && [ -x "$(which requiredbuilder 2>/dev/null)" ]; then
+  requiredbuilder -y -v -s $CWD $PKG
+fi
+
+
+[ -e $CWD/doinst.sh ] && cat $CWD/doinst.sh > $PKG/install/doinst.sh
+
+cd $PKG
+chown -R root:root $PKG
+
+/sbin/makepkg -l y -c n $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE
