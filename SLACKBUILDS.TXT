@@ -124,7 +124,7 @@ SLACKBUILD SHORT DESCRIPTION:   KdeSudo is a frontend for sudo.
 
 SLACKBUILD NAME: keriovpnclient
 SLACKBUILD LOCATION: ./keriovpnclient
-SLACKBUILD FILES: README kerio-kvc.conf.example keriovpnclient.SlackBuild keriovpnclient.info rc.kerio-kvc slack-desc
+SLACKBUILD FILES: kerio-kvc.conf.example kerio-setup keriovpnclient.SlackBuild keriovpnclient.info rc.kerio-kvc slack-desc
 SLACKBUILD VERSION: 7.4.1
 SLACKBUILD DOWNLOAD: http://download.kerio.com/eu/dwn/kerio-control-vpnclient-linux.deb
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -216,10 +216,10 @@ SLACKBUILD SHORT DESCRIPTION:   An interactive shell for php
 SLACKBUILD NAME: phpstorm
 SLACKBUILD LOCATION: ./phpstorm
 SLACKBUILD FILES: phpstorm.SlackBuild phpstorm.info slack-desc slack-required
-SLACKBUILD VERSION: 126.339
-SLACKBUILD DOWNLOAD: http://download.jetbrains.com/webide/PhpStorm-EAP-126.339.tar.gz
+SLACKBUILD VERSION: 129.91
+SLACKBUILD DOWNLOAD: http://download.jetbrains.com/webide/PhpStorm-EAP-129.91.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 78612c739607755e05bdaed28975c0c1
+SLACKBUILD MD5SUM: a23f259a2f95d0406aa4a5daeeccd8b7
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD REQUIRES: jdk
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
@@ -274,8 +274,8 @@ SLACKBUILD SHORT DESCRIPTION:  rats (Rough Auditing Tool for Security)
 SLACKBUILD NAME: rubymine
 SLACKBUILD LOCATION: ./rubymine
 SLACKBUILD FILES: rubymine.SlackBuild rubymine.info slack-desc slack-required
-SLACKBUILD VERSION: 125.65
-SLACKBUILD DOWNLOAD: http://download.jetbrains.com/ruby/RubyMine-5.0.1.tar.gz
+SLACKBUILD VERSION: 125.94
+SLACKBUILD DOWNLOAD: http://download.jetbrains.com/ruby/RubyMine-5.0.2.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
 SLACKBUILD MD5SUM: 27f8dcd9a7ac56e186c64623b89a5bb5
 SLACKBUILD MD5SUM_x86_64: 
