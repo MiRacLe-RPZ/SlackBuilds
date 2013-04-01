@@ -21,7 +21,7 @@ set -e
 
 PRGNAM=nginx
 PKGNAM=$(basename $0 .SlackBuild)
-VERSION=${VERSION:-1.2.6}
+VERSION=${VERSION:-1.2.7}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
