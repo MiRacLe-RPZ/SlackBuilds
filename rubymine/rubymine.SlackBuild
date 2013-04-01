@@ -33,8 +33,13 @@ if [ -z "$ARCH" ]; then
   esac
 fi
 
+<<<<<<< HEAD
 SOURCE="http://download.jetbrains.com/ruby/$PRGNAM-EAP-$VERSION.tar.gz"
 #SOURCE="http://download.jetbrains.com/ruby/$PRGNAM-5.0.1.tar.gz"
+=======
+#SOURCE="http://download.jetbrains.com/ruby/$PRGNAM-EAP-$VERSION.tar.gz"
+SOURCE="http://download.jetbrains.com/ruby/$PRGNAM-5.0.2.tar.gz"
+>>>>>>> 4a64556c08e3ee4ad6c82ae69b4df2d11567eeb7
 
 CWD=$(pwd)
 TMP=${TMP:-/tmp/rpz}
