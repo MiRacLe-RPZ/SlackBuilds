@@ -21,7 +21,7 @@ set -e
 
 PRGNAM=RubyMine
 PKGNAM=rubymine
-VERSION=${VERSION:-129.107}
+VERSION=${VERSION:-129.241}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
@@ -33,13 +33,8 @@ if [ -z "$ARCH" ]; then
   esac
 fi
 
-<<<<<<< HEAD
-SOURCE="http://download.jetbrains.com/ruby/$PRGNAM-EAP-$VERSION.tar.gz"
-#SOURCE="http://download.jetbrains.com/ruby/$PRGNAM-5.0.1.tar.gz"
-=======
-#SOURCE="http://download.jetbrains.com/ruby/$PRGNAM-EAP-$VERSION.tar.gz"
-SOURCE="http://download.jetbrains.com/ruby/$PRGNAM-5.0.2.tar.gz"
->>>>>>> 4a64556c08e3ee4ad6c82ae69b4df2d11567eeb7
+#SOURCE="http://download.jetbrains.com/ruby/$PRGNAM-$VERSION.tar.gz"
+SOURCE="http://download.jetbrains.com/ruby/$PRGNAM-5.4.tar.gz"
 
 CWD=$(pwd)
 TMP=${TMP:-/tmp/rpz}
@@ -70,18 +65,18 @@ fi
 
 
 
-if [ ! -e $CWD/$PRGNAM-EAP-$VERSION.tar.gz ] && [ ! -e $CWD/$PRGNAM-5.0.tar.gz ]; then
-    wget $SOURCE -O $CWD/$PRGNAM-EAP-$VERSION.tar.gz
+if [ ! -e $CWD/$PRGNAM-$VERSION.tar.gz ] && [ ! -e $CWD/$PRGNAM-5.4.tar.gz ]; then
+    wget $SOURCE -O $CWD/$PRGNAM-$VERSION.tar.gz
 fi
 
 cd $TMP
 
-if [ -f $CWD/$PRGNAM-EAP-$VERSION.tar.gz ]; then
-    tar zxf $CWD/$PRGNAM-EAP-$VERSION.tar.gz
+if [ -f $CWD/$PRGNAM-$VERSION.tar.gz ]; then
+    tar zxf $CWD/$PRGNAM-$VERSION.tar.gz
 else
-    tar zxf $CWD/$PRGNAM-5.0.1.tar.gz
+    tar zxf $CWD/$PRGNAM-5.4.tar.gz
 fi
-cd $PRGNAM-5.0
+cd $PRGNAM-5.4
 
 chown -R root:root .
 find . \
