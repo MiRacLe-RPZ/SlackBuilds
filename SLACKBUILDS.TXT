@@ -79,7 +79,7 @@ SLACKBUILD SHORT DESCRIPTION:  Gearman(A framework to farm out work)
 
 SLACKBUILD NAME: google-chrome
 SLACKBUILD LOCATION: ./google-chrome
-SLACKBUILD FILES: doinst.sh google-chrome-updater google-chrome.SlackBuild google-chrome.info slack-desc
+SLACKBUILD FILES: doinst.sh google-chrome-stable_current_amd64.deb google-chrome-updater google-chrome.SlackBuild google-chrome.info slack-desc
 SLACKBUILD VERSION: 25.0.1364.152
 SLACKBUILD DOWNLOAD: http://dl.google.com/linux/deb/pool/main/g/google-chrome-stable/google-chrome-stable_25.0.1364.152-r185281_i386.deb
 SLACKBUILD DOWNLOAD_x86_64: http://dl.google.com/linux/deb/pool/main/g/google-chrome-stable/google-chrome-stable_25.0.1364.152-r185281_amd64.deb
@@ -215,11 +215,11 @@ SLACKBUILD SHORT DESCRIPTION:   An interactive shell for php
 
 SLACKBUILD NAME: phpstorm
 SLACKBUILD LOCATION: ./phpstorm
-SLACKBUILD FILES: phpstorm.SlackBuild phpstorm.info slack-desc slack-required
-SLACKBUILD VERSION: 129.91
-SLACKBUILD DOWNLOAD: http://download.jetbrains.com/webide/PhpStorm-EAP-129.91.tar.gz
+SLACKBUILD FILES: PhpStorm-EAP-129.91.tar.gz phpstorm.SlackBuild phpstorm.info slack-desc slack-required
+SLACKBUILD VERSION: 129.291
+SLACKBUILD DOWNLOAD: http://download.jetbrains.com/webide/PhpStorm-6.0.1.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: a23f259a2f95d0406aa4a5daeeccd8b7
+SLACKBUILD MD5SUM: 3355fad6d66cc5375791f08fc6b72015
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD REQUIRES: jdk
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
@@ -274,10 +274,10 @@ SLACKBUILD SHORT DESCRIPTION:  rats (Rough Auditing Tool for Security)
 SLACKBUILD NAME: rubymine
 SLACKBUILD LOCATION: ./rubymine
 SLACKBUILD FILES: rubymine.SlackBuild rubymine.info slack-desc slack-required
-SLACKBUILD VERSION: 129.107
-SLACKBUILD DOWNLOAD: http://download.jetbrains.com/ruby/RubyMine-129.107.tar.gz
+SLACKBUILD VERSION: 129.220
+SLACKBUILD DOWNLOAD: http://download.jetbrains.com/ruby/RubyMine-129.220.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: ef54adbf42e51696ac2e1ef3e5a3aa83
+SLACKBUILD MD5SUM: 322e435017def4810841233285578531
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD REQUIRES: jdk
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
