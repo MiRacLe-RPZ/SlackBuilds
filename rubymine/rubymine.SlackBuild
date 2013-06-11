@@ -74,9 +74,9 @@ cd $TMP
 if [ -f $CWD/$PRGNAM-$VERSION.tar.gz ]; then
     tar zxf $CWD/$PRGNAM-$VERSION.tar.gz
 else
-    tar zxf $CWD/$PRGNAM-5.4.tar.gz
+    tar zxf $CWD/$PRGNAM-5.4.2.tar.gz
 fi
-cd $PRGNAM-5.4
+cd $PRGNAM-5.4.2
 
 chown -R root:root .
 find . \

@@ -192,10 +192,10 @@ SLACKBUILD SHORT DESCRIPTION:  Photo (Qt Graphic Viewer)
 SLACKBUILD NAME: php-work
 SLACKBUILD LOCATION: ./php-work
 SLACKBUILD FILES: doinst.sh imap-c-client-build.sh php-cli.ini php-fpm.conf php-ini php-lint php-sessiongc php-work.SlackBuild php-work.info php.ini php.logrotate rc.php-fpm slack-conflicts slack-desc slack-required
-SLACKBUILD VERSION: 5.4.15
-SLACKBUILD DOWNLOAD: http://www.php.net/distributions/php-5.4.15.tar.bz2
+SLACKBUILD VERSION: 5.4.16
+SLACKBUILD DOWNLOAD: http://www.php.net/distributions/php-5.4.16.tar.bz2
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 145ea5e845e910443ff1eddb3dbcf56a
+SLACKBUILD MD5SUM: 3d2c694d28861d707b2622c3cc941cff
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD REQUIRES: freetds
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
@@ -216,10 +216,10 @@ SLACKBUILD SHORT DESCRIPTION:   An interactive shell for php
 SLACKBUILD NAME: phpstorm
 SLACKBUILD LOCATION: ./phpstorm
 SLACKBUILD FILES: phpstorm.SlackBuild phpstorm.info slack-desc slack-required
-SLACKBUILD VERSION: 129.291
-SLACKBUILD DOWNLOAD: http://download.jetbrains.com/webide/PhpStorm-6.0.1.tar.gz
+SLACKBUILD VERSION: 129.672
+SLACKBUILD DOWNLOAD: http://download.jetbrains.com/webide/PhpStorm-EAP-129.672.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 3355fad6d66cc5375791f08fc6b72015
+SLACKBUILD MD5SUM: 1e1ad2eaedc0b2cc601bbdca5965ed5e
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD REQUIRES: jdk
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
