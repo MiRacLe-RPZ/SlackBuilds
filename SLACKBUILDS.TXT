@@ -170,8 +170,8 @@ SLACKBUILD SHORT DESCRIPTION:  nginx (http/imap/pop3 proxy)
 SLACKBUILD NAME: node
 SLACKBUILD LOCATION: ./node
 SLACKBUILD FILES: node.SlackBuild node.info npm.sh slack-desc slack-required
-SLACKBUILD VERSION: 0.10.0
-SLACKBUILD DOWNLOAD: http://nodejs.org/dist/v0.10.0/node-v0.10.0.tar.gz
+SLACKBUILD VERSION: 0.10.12
+SLACKBUILD DOWNLOAD: http://nodejs.org/dist/v0.10.12/node-v0.10.12.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
 SLACKBUILD MD5SUM: 23df2c1aeb9dcf17284047f2530b0525
 SLACKBUILD MD5SUM_x86_64: 
@@ -216,10 +216,10 @@ SLACKBUILD SHORT DESCRIPTION:   An interactive shell for php
 SLACKBUILD NAME: phpstorm
 SLACKBUILD LOCATION: ./phpstorm
 SLACKBUILD FILES: phpstorm.SlackBuild phpstorm.info slack-desc slack-required
-SLACKBUILD VERSION: 129.672
-SLACKBUILD DOWNLOAD: http://download.jetbrains.com/webide/PhpStorm-EAP-129.672.tar.gz
+SLACKBUILD VERSION: 130.1176
+SLACKBUILD DOWNLOAD: http://download.jetbrains.com/webide/PhpStorm-EAP-130.1176.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 1e1ad2eaedc0b2cc601bbdca5965ed5e
+SLACKBUILD MD5SUM: fedc4729b9e60ed10adac07bbcf338f2
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD REQUIRES: jdk
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
@@ -293,6 +293,16 @@ SLACKBUILD MD5SUM: fe41f6b36e96730161c0f9332b001575
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  Skype (a P2P Voice Over IP program)
+
+SLACKBUILD NAME: teamviewer
+SLACKBUILD LOCATION: ./teamviewer
+SLACKBUILD FILES: README doinst.sh rc.teamviewerd slack-desc teamviewer.SlackBuild teamviewer.info
+SLACKBUILD VERSION: 8.0.17147
+SLACKBUILD DOWNLOAD: https://www.teamviewer.com/download/teamviewer_linux.deb
+SLACKBUILD DOWNLOAD_x86_64: http://www.teamviewer.com/download/version/teamviewer_linux_x64.deb
+SLACKBUILD MD5SUM: 47790ed345a7b7970fc1f2ac50c97002
+SLACKBUILD MD5SUM_x86_64: a252c5cbb8703eed113b51ce0fe66419
+SLACKBUILD SHORT DESCRIPTION:  teamviewer (remote control application)
 
 SLACKBUILD NAME: vacuum
 SLACKBUILD LOCATION: ./vacuum
