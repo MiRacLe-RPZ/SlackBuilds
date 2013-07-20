@@ -159,10 +159,10 @@ SLACKBUILD SHORT DESCRIPTION:  msvistawebfonts
 SLACKBUILD NAME: nginx-work
 SLACKBUILD LOCATION: ./nginx-work
 SLACKBUILD FILES: doinst.sh nginx-work-redmine.SlackBuild nginx-work.SlackBuild nginx-work.info nginx.conf nginx.logrotate rc.nginx slack-conflicts slack-desc slack-required
-SLACKBUILD VERSION: 1.2.7
-SLACKBUILD DOWNLOAD: http://nginx.org/download/nginx-1.2.7.tar.gz
+SLACKBUILD VERSION: 1.4.1
+SLACKBUILD DOWNLOAD: http://nginx.org/download/nginx-1.4.1.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: d252f5c689a14a668e241c744ccf5f06
+SLACKBUILD MD5SUM: fea7dfab995545ce27fe4c49dc21a972
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  nginx (http/imap/pop3 proxy)
@@ -274,8 +274,8 @@ SLACKBUILD SHORT DESCRIPTION:  rats (Rough Auditing Tool for Security)
 SLACKBUILD NAME: rubymine
 SLACKBUILD LOCATION: ./rubymine
 SLACKBUILD FILES: rubymine.SlackBuild rubymine.info slack-desc slack-required
-SLACKBUILD VERSION: 129.512
-SLACKBUILD DOWNLOAD: http://download.jetbrains.com/ruby/RubyMine-5.4.2.tar.gz
+SLACKBUILD VERSION: 129.861
+SLACKBUILD DOWNLOAD: http://download.jetbrains.com/ruby/RubyMine-5.4.3.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
 SLACKBUILD MD5SUM: a8b05b8a4a596ea058dc590aef6f5637
 SLACKBUILD MD5SUM_x86_64: 
@@ -293,16 +293,6 @@ SLACKBUILD MD5SUM: fe41f6b36e96730161c0f9332b001575
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  Skype (a P2P Voice Over IP program)
-
-SLACKBUILD NAME: teamviewer
-SLACKBUILD LOCATION: ./teamviewer
-SLACKBUILD FILES: README doinst.sh rc.teamviewerd slack-desc teamviewer.SlackBuild teamviewer.info
-SLACKBUILD VERSION: 8.0.17147
-SLACKBUILD DOWNLOAD: https://www.teamviewer.com/download/teamviewer_linux.deb
-SLACKBUILD DOWNLOAD_x86_64: http://www.teamviewer.com/download/version/teamviewer_linux_x64.deb
-SLACKBUILD MD5SUM: 47790ed345a7b7970fc1f2ac50c97002
-SLACKBUILD MD5SUM_x86_64: a252c5cbb8703eed113b51ce0fe66419
-SLACKBUILD SHORT DESCRIPTION:  teamviewer (remote control application)
 
 SLACKBUILD NAME: vacuum
 SLACKBUILD LOCATION: ./vacuum
