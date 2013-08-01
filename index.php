@@ -15,7 +15,9 @@
         if ($is_github()) {
             $payload = json_decode($_REQUEST['payload']);
             chdir(__DIR__);
+            fastcgi_finish_request();_
             `git pull > /dev/null 2>&1 &`;
+            exit;
         }
     } else {
         $text = file_get_contents('README.md');
