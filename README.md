@@ -1,6 +1,9 @@
 SlackBuilds
 ------------------
 
+All packages tested on -current(14.1) version
+
+
 0. Install [slapt-src](http://software.jaos.org/#slapt-src)
 1. Add source to */etc/slapt-get/slapt-srcrc*
 
