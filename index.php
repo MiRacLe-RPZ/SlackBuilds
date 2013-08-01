@@ -1,7 +1,7 @@
 <?php
     require 'vendor/autoload.php';
     use \Michelf\Markdown;
-
+    
     if ('POST' == $_SERVER['REQUEST_METHOD']) {
         $is_github = function() {
              foreach (array('204.232.175.64/27','192.30.252.0/22') as $cidr) {
@@ -18,7 +18,6 @@
             `git pull > /dev/null 2>&1 &`;
         }
     } else {
-        # Read file and pass content through the Markdown parser
         $text = file_get_contents('README.md');
         $html = Markdown::defaultTransform($text);
     }
