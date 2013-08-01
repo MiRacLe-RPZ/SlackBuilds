@@ -1,7 +1,7 @@
 <?php
     require 'vendor/autoload.php';
     use \Michelf\Markdown;
-    
+
     if ('POST' == $_SERVER['REQUEST_METHOD']) {
         $is_github = function() {
              foreach (array('204.232.175.64/27','192.30.252.0/22') as $cidr) {
