@@ -3,6 +3,7 @@
     use \Michelf\Markdown;
 
     if ('POST' == $_SERVER['REQUEST_METHOD']) {
+        fastcgi_finish_request();
         if (false !== ($lock = fopen(__DIR__.DIRECTORY_SEPARATOR.'.lock','w+'))) {
             if (flock($lock,LOCK_EX)) {
                 $is_github = function() {
@@ -16,7 +17,6 @@
                     return false;
                 };
                 if ($is_github()) {
-                    fastcgi_finish_request();
                     chdir(__DIR__);
                     `git pull > /dev/null 2>&1 &`;
                 }
