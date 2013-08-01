@@ -7,6 +7,6 @@ SlackBuilds
            SOURCE=http://slackware.rpz.name/
            
 2. Use *slapt-src* for build and install packages, ex:
-
+           #slapt-src --update
            #slapt-src --install phpstorm
 
