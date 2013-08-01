@@ -27,6 +27,9 @@
 <html>
     <head>
         <title>MiRacLe's SlackBuilds</title>
+        <style type="text/css">
+         body {background-color: #eee;}
+        </style>
     </head>
     <body>
     <?php
