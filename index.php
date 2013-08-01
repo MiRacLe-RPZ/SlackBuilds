@@ -22,7 +22,6 @@
     } else {
         $text = file_get_contents('README.md');
         $html = Markdown::defaultTransform($text);
-    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -36,3 +35,6 @@
     ?>
     </body>
 </html>
+<?php
+    }
+?>
