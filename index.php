@@ -15,7 +15,7 @@
         if ($is_github()) {
             $payload = json_decode($_REQUEST['payload']);
             chdir(__DIR__);
-            fastcgi_finish_request();_
+            fastcgi_finish_request();
             `git pull > /dev/null 2>&1 &`;
             exit;
         }
