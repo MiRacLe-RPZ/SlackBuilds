@@ -192,10 +192,10 @@ SLACKBUILD SHORT DESCRIPTION:  Photo (Qt Graphic Viewer)
 SLACKBUILD NAME: php-work
 SLACKBUILD LOCATION: ./php-work
 SLACKBUILD FILES: doinst.sh imap-c-client-build.sh php-cli.ini php-fpm.conf php-ini php-lint php-sessiongc php-work.SlackBuild php-work.info php.ini php.logrotate rc.php-fpm slack-conflicts slack-desc slack-required
-SLACKBUILD VERSION: 5.4.16
-SLACKBUILD DOWNLOAD: http://www.php.net/distributions/php-5.4.16.tar.bz2
+SLACKBUILD VERSION: 5.4.19
+SLACKBUILD DOWNLOAD: http://www.php.net/distributions/php-5.4.19.tar.bz2
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 3d2c694d28861d707b2622c3cc941cff
+SLACKBUILD MD5SUM: f06f99b9872b503758adab5ba7a7e755
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD REQUIRES: freetds
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
@@ -203,13 +203,13 @@ SLACKBUILD SHORT DESCRIPTION:  php (HTML-embedded scripting language)
 
 SLACKBUILD NAME: phpsh
 SLACKBUILD LOCATION: ./phpsh
-SLACKBUILD FILES: doinst.sh phpsh.SlackBuild phpsh.info slack-desc slack-required
+SLACKBUILD FILES: doinst.sh phpsh-1.3.tar.gz phpsh.SlackBuild phpsh.info slack-desc slack-required
 SLACKBUILD VERSION: 1.3
-SLACKBUILD DOWNLOAD: https://nodeload.github.com/facebook/phpsh/tarball/master
+SLACKBUILD DOWNLOAD: https://github.com/facebook/phpsh/archive/1.3.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 33ed49f3318be631712ab9d765ec2043
+SLACKBUILD MD5SUM: 2043f5aa13139702a41635abde20f52a
 SLACKBUILD MD5SUM_x86_64: 
-SLACKBUILD REQUIRES: python, php | php-work
+SLACKBUILD REQUIRES: python, php
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:   An interactive shell for php
 
@@ -274,10 +274,10 @@ SLACKBUILD SHORT DESCRIPTION:  rats (Rough Auditing Tool for Security)
 SLACKBUILD NAME: rubymine
 SLACKBUILD LOCATION: ./rubymine
 SLACKBUILD FILES: rubymine.SlackBuild rubymine.info slack-desc slack-required
-SLACKBUILD VERSION: 129.861
-SLACKBUILD DOWNLOAD: http://download.jetbrains.com/ruby/RubyMine-5.4.3.tar.gz
+SLACKBUILD VERSION: 132.104
+SLACKBUILD DOWNLOAD: http://download.jetbrains.com/ruby/RubyMine-132.104.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: bc1feb819147b754f85e3685bf53aef3
+SLACKBUILD MD5SUM: 8f22457b00286f022408d14287f6930a
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD REQUIRES: jdk
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
@@ -294,16 +294,6 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  Skype (a P2P Voice Over IP program)
 
-SLACKBUILD NAME: teamviewer
-SLACKBUILD LOCATION: ./teamviewer
-SLACKBUILD FILES: README doinst.sh rc.teamviewerd slack-desc teamviewer.SlackBuild teamviewer.info
-SLACKBUILD VERSION: 8.0.17147
-SLACKBUILD DOWNLOAD: https://www.teamviewer.com/download/teamviewer_linux.deb
-SLACKBUILD DOWNLOAD_x86_64: http://www.teamviewer.com/download/version/teamviewer_linux_x64.deb
-SLACKBUILD MD5SUM: 47790ed345a7b7970fc1f2ac50c97002
-SLACKBUILD MD5SUM_x86_64: a252c5cbb8703eed113b51ce0fe66419
-SLACKBUILD SHORT DESCRIPTION:  teamviewer (remote control application)
-
 SLACKBUILD NAME: vacuum
 SLACKBUILD LOCATION: ./vacuum
 SLACKBUILD FILES: slack-desc vacuum.SlackBuild vacuum.info
@@ -314,4 +304,15 @@ SLACKBUILD MD5SUM: 7e375a84538af0dcfcefe8ec6baa9bd0
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  Crossplatform Jabber client
+
+SLACKBUILD NAME: vagrant
+SLACKBUILD LOCATION: ./vagrant
+SLACKBUILD FILES: slack-desc vagrant.SlackBuild vagrant.info vagrant_1.2.7_x86_64.deb
+SLACKBUILD VERSION: 1.2.7
+SLACKBUILD DOWNLOAD: http://files.vagrantup.com/packages/7ec0ee1d00a916f80b109a298bab08e391945243/vagrant_1.2.7_i686.deb
+SLACKBUILD DOWNLOAD_x86_64: http://files.vagrantup.com/packages/7ec0ee1d00a916f80b109a298bab08e391945243/vagrant_1.2.7_x86_64.deb
+SLACKBUILD MD5SUM: 08c7e74994a6d4d951d8a5e788e80abe
+SLACKBUILD MD5SUM_x86_64: 8d0a8eb39635baa6cdb7fc00cc54ee64
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  vagrant (Development environments made easy.)
 

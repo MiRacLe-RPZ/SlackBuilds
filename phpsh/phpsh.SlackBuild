@@ -26,7 +26,7 @@
 PRGNAM=phpsh
 PKGNAM=$(basename $0 .SlackBuild)
 VERSION=${VERSION:-1.3}
-BUILD=${BUILD:-1}
+BUILD=${BUILD:-2}
 TAG=${TAG:-_rpz}
 
 if [ -z "$ARCH" ]; then
@@ -41,7 +41,7 @@ CWD=$(pwd)
 TMP=${TMP:-/tmp/rpz}
 PKG=$TMP/package-$PRGNAM
 OUTPUT=${OUTPUT:-/tmp}
-SOURCE="https://nodeload.github.com/facebook/phpsh/tarball/master"
+SOURCE="https://github.com/hugochinchilla/phpsh/archive/1.3.tar.gz"
 
 set -e
 
@@ -56,7 +56,7 @@ fi
 
 tar zxf $CWD/${PRGNAM}-${VERSION}.tar.gz
 
-cd facebook-phpsh-e839d58
+cd ${PRGNAM}-${VERSION}
 
 chown -R root:root .
 find . \
