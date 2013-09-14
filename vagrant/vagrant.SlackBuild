@@ -1,0 +1,37 @@
+#!/bin/sh
+
+PRGNAM=vagrant
+
+ARCH=${ARCH:-$(uname -m)}
+VERSION=${VERSION:-1.2.7}
+BUILD=${BUILD:-1}
+TAG=${TAG:-rpz}
+
+case "$ARCH" in
+  i?86) LIBDIRSUFFIX="" ; ARCH=i386 ;;
+  x86_64) LIBDIRSUFFIX="64" ;;
+  *) echo "Package for $(uname -m) architecture is not available." ; exit 1 ;;
+esac
+
+CWD=$(pwd)
+TMP=${TMP:-/tmp/$TAG}
+PKG=$TMP/package-$PRGNAM
+OUTPUT=${OUTPUT:-/tmp}
+
+rm -rf $PKG
+mkdir -p $TMP $PKG $OUTPUT
+cd $PKG
+
+
+ar p $CWD/vagrant_${VERSION}_$ARCH.deb data.tar.gz | gunzip | tar xv || exit 1
+chown -R root:root .
+chmod -R u+w,go+r-w,a-s .
+
+# Make sure top-level perms are correct:
+chmod 0755 .
+
+mkdir -p $PKG/install
+cp $CWD/slack-desc $PKG/install/
+
+cd $PKG
+/sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.txz

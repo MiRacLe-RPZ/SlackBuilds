@@ -203,7 +203,7 @@ SLACKBUILD SHORT DESCRIPTION:  php (HTML-embedded scripting language)
 
 SLACKBUILD NAME: phpsh
 SLACKBUILD LOCATION: ./phpsh
-SLACKBUILD FILES: doinst.sh phpsh-1.3.tar.gz phpsh.SlackBuild phpsh.info slack-desc slack-required
+SLACKBUILD FILES: doinst.sh phpsh.SlackBuild phpsh.info slack-desc slack-required
 SLACKBUILD VERSION: 1.3
 SLACKBUILD DOWNLOAD: https://github.com/facebook/phpsh/archive/1.3.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -307,7 +307,7 @@ SLACKBUILD SHORT DESCRIPTION:  Crossplatform Jabber client
 
 SLACKBUILD NAME: vagrant
 SLACKBUILD LOCATION: ./vagrant
-SLACKBUILD FILES: slack-desc vagrant.SlackBuild vagrant.info vagrant_1.2.7_x86_64.deb
+SLACKBUILD FILES: slack-desc vagrant.SlackBuild vagrant.info
 SLACKBUILD VERSION: 1.2.7
 SLACKBUILD DOWNLOAD: http://files.vagrantup.com/packages/7ec0ee1d00a916f80b109a298bab08e391945243/vagrant_1.2.7_i686.deb
 SLACKBUILD DOWNLOAD_x86_64: http://files.vagrantup.com/packages/7ec0ee1d00a916f80b109a298bab08e391945243/vagrant_1.2.7_x86_64.deb
