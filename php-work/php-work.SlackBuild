@@ -25,12 +25,11 @@
 
 PRGNAM=php
 PKGNAM=$(basename $0 .SlackBuild)
-VERSION=${VERSION:-5.4.19}
+VERSION=${VERSION:-0.9}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
-DEVELOPMENT=${DEVELOPMENT:-no}
-EXTRA_OPTIONS=${EXTRA_OPTIONS:-}
+INI=$(php -i 2>/dev/null|grep 'Scan this dir for additional .ini files'|awk '{print $NF}')
 
 DAEMONUSER=${DAEMONUSER:-apache}
 DAEMONGROUP=${DAEMONGROUP:-apache}
@@ -39,10 +38,6 @@ CWD=$(pwd)
 TMP=${TMP:-/tmp/rpz}
 PKG=$TMP/package-$PRGNAM
 OUTPUT=${OUTPUT:-/tmp}
-SOURCE="${CWD}/${PRGNAM}-${VERSION}.tar.bz2"
-SRCURL="http://www.php.net/distributions/${PRGNAM}-${VERSION}.tar.bz2"
-EXTRACT_OPTS="jxf"
-P1=${1:-""}
 
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
@@ -78,23 +73,6 @@ cd $TMP
 rm -rf ${PRGNAM}-${VERSION}
 
 
-if [ "${P1}" == "--netinstall" ]; then
-    mkdir -p $PKG/install $PKG/usr/doc/${PKGNAM}-${VERSION}/SlackBuild
-    cp -a $CWD/$PKGNAM.SlackBuild $CWD/slack-* $CWD/php-fpm.conf \
-        $CWD/php-lint $CWD/php.ini $CWD/rc.php-fpm $CWD/doinst.sh \
-        $CWD/php-cli.ini $CWD/php-ini $CWD/php-sessiongc $CWD/php.logrotate \
-        $PKG/usr/doc/${PKGNAM}-${VERSION}/SlackBuild/
-    cat > $PKG/install/doinst.sh  <<NETINSTALL
-      set -eu
-      cd usr/doc/${PKGNAM}-${VERSION}/SlackBuild/ && OUTPUT=/tmp DEVELOPMENT=${DEVELOPMENT} DAEMONUSER=${DAEMONUSER} DAEMONGROUP=${DAEMONGROUP} EXTRA_OPTIONS=${EXTRA_OPTIONS:-" "}  sh ./${PKGNAM}.SlackBuild && /sbin/upgradepkg --install-new /tmp/${PKGNAM}-${VERSION}-${ARCH}-${BUILD}${TAG}.${PKGTYPE}
-NETINSTALL
-
-    cd $PKG
-    chown -R root:root $PKG
-    /sbin/makepkg -l y -c n $OUTPUT/$PKGNAM-$VERSION-noarch-netinstall.$PKGTYPE
-    exit 0
-fi
-
 
 check_installed() {
     PACKAGE=${1}
@@ -111,162 +89,44 @@ if [ -e $CWD/slack-required ]; then
     done
 fi
 
-
-dnl() {
-    SOURCE=$1
-    SRCURL=$2
-    if [ ! -e $SOURCE ]; then
-       if ! [ "x${SRCURL}" == "x" ]; then
-         echo "Downloading '$(basename ${SOURCE})'."
-         wget --no-check-certificate -nv -T 30 -O "${SOURCE}" "${SRCURL}" || true
-         if [ $? -ne 0 -o ! -s "${SOURCE}" ]; then
-            echo "Downloading '$(basename ${SOURCE})' failed... aborting the build."
-            mv -f "${SOURCE}" "${SOURCE}.FAIL"
-            exit 1
-         fi
-         else
-             echo "File '${SOURCE}' not available... aborting the build."
-             exit 1
-         fi
-    fi
-}
-
-dnl "${SOURCE}" "${SRCURL}"
-
-tar $EXTRACT_OPTS $SOURCE
-
-cd ${PRGNAM}-${VERSION}/ext
-
-dnl "${CWD}/apc.tgz" "http://pecl.php.net/get/apc"
-
-echo "unpacking apc" && gzip -d < $CWD/apc.tgz | tar -xvf - 2>&1|tee -a $OUTPUT/$PKGNAM-patch.log > /dev/null
-
-mv APC-*.*.* apc
-
-DEVEXT=""
-
-if [ "yes" == $DEVELOPMENT ]; then
-
-    dnl "${CWD}/xdebug.tgz" "http://pecl.php.net/get/xdebug"
-
-    echo "unpacking xdebug" && gzip -d < $CWD/xdebug.tgz | tar -xvf - 2>&1|tee $OUTPUT/$PKGNAM-patch.log > /dev/null
-
-    mv xdebug-*.*.* xdebug
-
-    IMAPLIBDIR=$TMP/$PRGNAM-$VERSION/imaplib ARCH=$ARCH TMP=$TMP CWD=$CWD sh $CWD/imap-c-client-build.sh
-
-
-    DEVEXT=" --enable-xdebug=shared --enable-pcntl=shared --enable-ftp=shared --with-xsl=shared --with-mysql=shared --enable-sockets=shared --with-openssl=shared --with-pdo-mysql=shared  --with-pdo-dblib=shared --with-curl=shared --with-gettext=shared --with-imap=shared,$TMP/$PRGNAM-$VERSION/imaplib --with-imap-ssl=/usr --with-ldap=shared"
+if [ -e $CWD/slack-conflicts ]; then
+    for REQ in `cat $CWD/slack-conflicts|cut -f 1 -d " "`;do
+        ! check_installed "$REQ" || {
+           echo "${0##*/}: Conflict package '$REQ' was installed."
+           exit 1
+       }
+    done
 fi
-
-cd ../
-
-rm configure
-
-echo "rebuild configure" && ./buildconf --force 2>&1|tee $OUTPUT/$PKGNAM-configure.log > /dev/null
-
-chown -R root:root .
-find . \
- \( -perm 777 -o -perm 775 -o -perm 711 -o -perm 555 -o -perm 511 \) \
- -exec chmod 755 {} \; -o \
- \( -perm 666 -o -perm 664 -o -perm 600 -o -perm 444 -o -perm 440 -o -perm 400 \) \
- -exec chmod 644 {} \;
-
-sed -i "s|build$|php54/build|" scripts/Makefile.frag
-sed -i "s|build\"$|php54/build\"|" scripts/phpize.in
-
-
-echo "Configure" && \
-EXTENSION_DIR="/usr/lib${LIBDIRSUFFIX}/php54/ext" \
-CFLAGS="$SLKCFLAGS" \
-CXXFLAGS="$SLKCFLAGS" \
-./configure --prefix=/usr \
-    --libdir=/usr/lib${LIBDIRSUFFIX} \
-    --with-libdir=lib${LIBDIRSUFFIX} \
-    --build=$ARCH-slackware-linux \
-    --enable-fpm \
-    --with-fpm-user=${DAEMONUSER} \
-    --with-fpm-group=${DAEMONGROUP} \
-    --sysconfdir=/etc/php54 \
-    --with-config-file-path=/etc/php54 \
-    --datarootdir=/usr/share \
-    --datadir=/usr/share \
-    --infodir=/usr/info \
-    --mandir=/usr/man \
-    --localstatedir=/var \
-    --with-gd --with-png-dir=/usr --with-jpeg-dir=/usr \
-    --with-mssql  \
-    --with-iconv --enable-mbstring \
-    --enable-soap \
-    --with-zlib \
-    --enable-bcmath \
-    --enable-apc=shared \
-    --with-mcrypt \
-    --without-pear \
-    --enable-static=no \
-    --enable-xml --enable-dom --enable-simplexml \
-    --enable-filter \
-    --enable-ctype \
-    --enable-json \
-    --disable-ipv6 \
-    --with-gnu-ld --with-pic $DEVEXT $EXTRA_OPTIONS 2>&1 |tee  $OUTPUT/$PKGNAM-configure.log \
-  && echo "build" \
-  && make $NUMJOBS 2>&1|tee $OUTPUT/$PKGNAM-build.log \
-  && echo "makepkg" \
-  && make install INSTALL_ROOT=$PKG 2>&1|tee $OUTPUT/$PKGNAM-install.log
-
-rm -f $PKG/usr/lib${LIBDIRSUFFIX}/php54/ext/*.a
-
-
-find $PKG | xargs file | grep -e "executable" -e "shared object" | grep ELF \
-  | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
-
-gzip -9 $PKG/usr/man/man?/*.?
-
 
 mkdir -p $PKG/etc/rc.d
 cat $CWD/rc.php-fpm | sed "s|php_fpm_USER=apache|php_fpm_USER=${DAEMONUSER}|" > $PKG/etc/rc.d/rc.php-fpm.new
 
-mkdir -p $PKG/etc/php54
-cat $CWD/php.ini | sed "s|/usr/lib/php54/ext|/usr/lib${LIBDIRSUFFIX}/php54/ext|" > $PKG/etc/php54/php.ini.tmp
-cat $CWD/php-cli.ini | sed "s|/usr/lib/php54/ext|/usr/lib${LIBDIRSUFFIX}/php54/ext|" > $PKG/etc/php54/php-cli.ini.tmp
-cat $CWD/php-fpm.conf |sed "s|user = apache|user = ${DAEMONUSER}|" |sed "s|group = apache|group = ${DAEMONGROUP}|"  > $PKG/etc/php54/php-fpm.conf.new
+mkdir -p ${PKG}/${INI}
+cat $CWD/php-cli.ini | sed "s|/usr/lib/php/extensions|/usr/lib${LIBDIRSUFFIX}/php/extensions|" > ${PKG}/${INI}/php-cli.ini.new
+cat $CWD/php-fpm.conf |sed "s|user = apache|user = ${DAEMONUSER}|" |sed "s|group = apache|group = ${DAEMONGROUP}|"  > ${PKG}/${INI}/php-fpm.conf.new
+
+mkdir -p $PKG/usr/bin
 cp -a $CWD/php-lint $CWD/php-ini \
    $PKG/usr/bin/
 
 mkdir -p $PKG/etc/cron.hourly
 cp $CWD/php-sessiongc $PKG/etc/cron.hourly/php-sessiongc.new
 
-if [ "yes" == $DEVELOPMENT ]; then
-    cat $PKG/etc/php54/php.ini.tmp|sed "s|;zend_extension=/usr/lib${LIBDIRSUFFIX}/php54/ext/xdebug.so|zend_extension=/usr/lib${LIBDIRSUFFIX}/php54/ext/xdebug.so|" > $PKG/etc/php54/php.ini.new
-    cat $PKG/etc/php54/php-cli.ini.tmp|sed "s|;zend_extension=/usr/lib${LIBDIRSUFFIX}/php54/ext/xdebug.so|zend_extension=/usr/lib${LIBDIRSUFFIX}/php54/ext/xdebug.so|" > $PKG/etc/php54/php-cli.ini.new
-    rm -f $PKG/etc/php54/php*.ini.tmp
-else
-    mv $PKG/etc/php54/php.ini.tmp $PKG/etc/php54/php.ini.new
-    mv $PKG/etc/php54/php-cli.ini.tmp $PKG/etc/php54/php-cli.ini.new
-fi
-
-
 mkdir -p $PKG/etc/logrotate.d
-cat $CWD/php.logrotate > $PKG/etc/logrotate.d/php54
+cat $CWD/php.logrotate > $PKG/etc/logrotate.d/php
 
-mkdir -p $PKG/var/log/php54
-
+mkdir -p $PKG/var/log/php
+mkdir -p $PKG/tmp/php
 mkdir -p $PKG/usr/doc/$PKGNAM-$VERSION/SlackBuild
-
-cp -a \
-  LICENSE INSTALL NEWS UPGRADING \
-  $PKG/usr/doc/$PKGNAM-$VERSION
 
 
 mkdir -p $PKG/install
 cat $CWD/slack-desc |sed "s|php-work:|${PKGNAM}:|" > $PKG/install/slack-desc
 cat $CWD/slack-required > $PKG/install/slack-required
-cat $CWD/slack-conflicts > $PKG/install/slack-conflicts
 cat $CWD/doinst.sh > $PKG/install/doinst.sh
 
 cp -a \
-    $CWD/$PKGNAM.SlackBuild $CWD/slack-* $CWD/php-*.ini $CWD/rc.php-fpm $CWD/php-fpm.conf $CWD/php.logrotate $CWD/doinst.sh $CWD/php-lint $CWD/php-ini $CWD/php-sessiongc \
+    $CWD/$PKGNAM.SlackBuild $CWD/slack-* $CWD/*.ini $CWD/rc.* $CWD/php-* $CWD/doinst.sh \
     $PKG/usr/doc/$PKGNAM-$VERSION/SlackBuild
 
 
@@ -276,18 +136,13 @@ fi
 
 
 cd $PKG
-/sbin/makepkg -p -l y -c n $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE |tee -a $OUTPUT/$PKGNAM-makepkg.log > /dev/null
+/sbin/makepkg -p -l y -c n $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE |tee -a $OUTPUT/$PKGNAM-makepkg.log
 
 
 cd $OUTPUT
 md5sum $PKGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-txz} >  $PKGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE.md5
 cat $PKG/install/slack-desc | grep "^${PKGNAM}" > $PKGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE.txt
 
-
-
-[ "${P1}" = "--cleanup" ] && {
-  rm -rf $PKG $TMP/$PRGNAM-$VERSION|tee -a $OUTPUT/${PKGNAM}-cleanup.log > /dev/null
-}
 
 rm -f "${OUTPUT}/${PKGNAM}-*.log"|tee -a $OUTPUT/${PKGNAM}-cleanup.log > /dev/null
 

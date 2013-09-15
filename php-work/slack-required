@@ -1,12 +1,12 @@
+php >= 5.4.19
 freetds >= 0.91
-curl >= 7.27.0
-cyrus-sasl >= 2.1.23
+php-apc >= 3.1.13 | php-apcu >= 4.0.2
+php-mssql >= 5.4.19
 libidn >= 1.25
 libjpeg >= v8a
 libmcrypt >= 2.5.8
 libpng >= 1.4.12
 libxml2 >= 2.8.0
-mysql >= 5.5
 openldap-client >= 2.4.31
 openssl >= 1.0 | openssl-solibs >= 1.0
 zlib >= 1.2.6

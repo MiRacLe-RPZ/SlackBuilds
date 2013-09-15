@@ -1,7 +1,7 @@
 #! /bin/sh
 
 php_fpm_BIN=/usr/sbin/php-fpm
-php_fpm_CONF=/etc/php54/php-fpm.conf
+php_fpm_CONF=/etc/php/php-fpm.conf
 php_fpm_PID=/var/run/php-fpm.pid
 php_fpm_USER=apache
 
@@ -49,13 +49,13 @@ wait_for_pid () {
 
 case "$1" in
 	start)
-		mk_tempdir /tmp/php54/php
-		mk_tempdir /tmp/php54/upload
-		mk_tempdir /tmp/php54/sessions
+		mk_tempdir /tmp/php/php
+		mk_tempdir /tmp/php/upload
+		mk_tempdir /tmp/php/sessions
 		
 		echo -n "Starting php-fpm "
 
-		TEMP=/tmp/php54/php TMP=/tmp/php54/php $php_fpm_BIN $php_opts
+		TEMP=/tmp/php/php TMP=/tmp/php/php $php_fpm_BIN $php_opts
 
 		if [ "$?" != 0 ] ; then
 			echo " failed"
