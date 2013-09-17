@@ -73,7 +73,6 @@ SLACKBUILD DOWNLOAD: https://launchpad.net/gearmand/1.2/1.1.9/+download/gearmand
 SLACKBUILD DOWNLOAD_x86_64: 
 SLACKBUILD MD5SUM: 027ffbad53b9f763e41a12166e2212e5
 SLACKBUILD MD5SUM_x86_64: 
-SLACKBUILD REQUIRES: libevent >= 2.0
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  Gearman(A framework to farm out work)
 

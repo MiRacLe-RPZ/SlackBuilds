@@ -5,5 +5,4 @@ DOWNLOAD="https://launchpad.net/gearmand/1.2/1.1.9/+download/gearmand-1.1.9.tar.
 MD5SUM="027ffbad53b9f763e41a12166e2212e5"
 MAINTAINER="MiRacLe.RPZ"
 EMAIL="miracle@rpz.name"
-REQUIRES="libevent >= 2.0"
 
