@@ -223,6 +223,18 @@ SLACKBUILD REQUIRES: php
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php-apcu (Advanced PHP Cache)
 
+SLACKBUILD NAME: php-gearman
+SLACKBUILD LOCATION: ./php-gearman
+SLACKBUILD FILES: doinst.sh gearman.ini php-gearman.SlackBuild php-gearman.info slack-desc slack-required
+SLACKBUILD VERSION: 1.1.2
+SLACKBUILD DOWNLOAD: http://pecl.php.net/package/gearman/1.1.2
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: 03c985e71eed6dda15ae391e98a899d4
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD REQUIRES: php
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  php-gearman (binding for libgearman)
+
 SLACKBUILD NAME: php-mssql
 SLACKBUILD LOCATION: ./php-mssql
 SLACKBUILD FILES: doinst.sh mssql.ini php-mssql.SlackBuild php-mssql.info slack-desc slack-required
