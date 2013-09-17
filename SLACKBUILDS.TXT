@@ -68,10 +68,10 @@ SLACKBUILD SHORT DESCRIPTION:  fuseiso (FUSE module to mount ISO filesystem imag
 SLACKBUILD NAME: gearmand
 SLACKBUILD LOCATION: ./gearmand
 SLACKBUILD FILES: doinst.sh gearmand.SlackBuild gearmand.info rc.gearmand slack-desc slack-required
-SLACKBUILD VERSION: 1.1.6
-SLACKBUILD DOWNLOAD: https://launchpad.net/gearmand/1.2/1.1.6/+download/gearmand-1.1.6.tar.gz
+SLACKBUILD VERSION: 1.1.9
+SLACKBUILD DOWNLOAD: https://launchpad.net/gearmand/1.2/1.1.9/+download/gearmand-1.1.9.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 9358f6c97b47ac53a0fe095c2f7da546
+SLACKBUILD MD5SUM: 027ffbad53b9f763e41a12166e2212e5
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD REQUIRES: libevent >= 2.0
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>

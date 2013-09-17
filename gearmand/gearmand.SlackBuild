@@ -21,7 +21,7 @@
 
 PRGNAM=gearmand
 PKGNAM=$(basename $0 .SlackBuild)
-VERSION=1.1.6
+VERSION=1.1.9
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
