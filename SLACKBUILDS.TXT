@@ -341,6 +341,17 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  rats (Rough Auditing Tool for Security)
 
+SLACKBUILD NAME: redis
+SLACKBUILD LOCATION: ./redis
+SLACKBUILD FILES: doinst.sh rc.redis.new redis.SlackBuild redis.info redis.logrotate slack-desc
+SLACKBUILD VERSION: 2.6.16
+SLACKBUILD DOWNLOAD: http://download.redis.io/releases/redis-2.6.16.tar.gz
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: ca1b81bd56fe0c5e2c8ec443a95c908d
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  Redis (Key-Value Store)
+
 SLACKBUILD NAME: rubymine
 SLACKBUILD LOCATION: ./rubymine
 SLACKBUILD FILES: rubymine.SlackBuild rubymine.info slack-desc slack-required
