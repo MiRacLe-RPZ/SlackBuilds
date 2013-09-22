@@ -22,9 +22,9 @@
 
 PRGNAM=q4wine
 PKGNAM=$(basename $0 .SlackBuild)
-VERSION=${VERSION:-0.999-rc8}
-PKGVER=${PKGVER:-0.999rc8}
-BUILD=${BUILD:-2}
+VERSION=${VERSION:-1.0-r3}
+PKGVER=${PKGVER:-1.0r3}
+BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 
 if [ -z "$ARCH" ]; then
