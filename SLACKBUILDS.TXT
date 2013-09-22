@@ -301,7 +301,7 @@ SLACKBUILD FILES: doinst.sh q4wine.SlackBuild q4wine.info slack-desc slack-requi
 SLACKBUILD VERSION: 1.0-r3
 SLACKBUILD DOWNLOAD: http://downloads.sourceforge.net/project/q4wine/q4wine/q4wine%201.0-r3/q4wine-1.0-r3.tar.bz2
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 635ce6a70c3d6976ded950f6227c8d30
+SLACKBUILD MD5SUM: 29bb4b51334a78191611f49c050950d1
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  q4wine (Qt4 GUI for wine)
