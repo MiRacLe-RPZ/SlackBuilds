@@ -1,12 +1,12 @@
 #!/bin/sh
 
-PRGNAM=photo
+PRGNAM=photoqt
 PKGNAM=$(basename $0 .SlackBuild)
-VERSION=${VERSION:-0.8.1.2}
+VERSION=${VERSION:-1.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
-SOURCE="http://photoqt.org/pkgs/${PRGNAM}-${VERSION}.tar.gz"
+SRCURL="http://photoqt.org/pkgs/${PRGNAM}-${VERSION}.tar.gz"
 
 
 if [ -z "$ARCH" ]; then
@@ -22,6 +22,7 @@ TMP=${TMP:-/tmp/rpz}
 PKG=$TMP/package-$PKGNAM
 OUTPUT=${OUTPUT:-/tmp}
 
+SOURCE="${CWD}/${PRGNAM}-${VERSION}.tar.gz"
 
 if [ "$ARCH" = "i486" ]; then
   SLKCFLAGS="-O2 -march=i486 -mtune=i686"
@@ -37,7 +38,7 @@ else
   LIBDIRSUFFIX=""
 fi
 
-NUMJOBS=" -j$(lscpu|grep 'CPU(s):'|awk '{print $2 + 1}') "
+NUMJOBS=${NUMJOBS:-$(( $(getconf _NPROCESSORS_ONLN) + 1 ))}
 
 set -e
 
@@ -52,11 +53,11 @@ mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf $PRGNAM-$VERSION
 
-if [ ! -e $CWD/$PRGNAM-$VERSION.tar.gz ]; then
-    wget "${SOURCE}" -O "${CWD}/${PRGNAM}-${VERSION}.tar.gz"
+if [ ! -e $SOURCE ]; then
+    wget "${SRCURL}" -O "${SOURCE}"
 fi
 
-tar zxf $CWD/$PRGNAM-$VERSION.tar.gz || exit 1
+tar zxf $SOURCE || exit 1
 cd $PRGNAM-`echo "$VERSION"|cut -c -5`
 
 chown -R root:root .
@@ -75,7 +76,7 @@ cmake \
     -DCMAKE_C_FLAGS:STRING="$SLKCFLAGS" \
     -DCMAKE_CXX_FLAGS:STRING="$SLKCFLAGS" \
     ..
-make $NUMJOBS
+make -j$NUMJOBS
 make DESTDIR=$PKG install/strip
 cd ..
 
