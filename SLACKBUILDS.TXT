@@ -181,7 +181,7 @@ SLACKBUILD NAME: node
 SLACKBUILD LOCATION: ./node
 SLACKBUILD FILES: node.SlackBuild node.info npm.sh slack-desc slack-required
 SLACKBUILD VERSION: 0.10.18
-SLACKBUILD DOWNLOAD: http://nodejs.org/dist/v0.10.12/node-v0.10.18.tar.gz
+SLACKBUILD DOWNLOAD: http://nodejs.org/dist/v0.10.18/node-v0.10.18.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
 SLACKBUILD MD5SUM: 8b905b6013b82fb7076b02a6c881f9a6
 SLACKBUILD MD5SUM_x86_64: 
