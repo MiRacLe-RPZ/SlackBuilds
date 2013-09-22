@@ -22,7 +22,7 @@
 
 PRGNAM=qmmp
 PKGNAM=$(basename $0 .SlackBuild)
-VERSION=${VERSION:-0.6.6}
+VERSION=${VERSION:-0.7.2}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 
