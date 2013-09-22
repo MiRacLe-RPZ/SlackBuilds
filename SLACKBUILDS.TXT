@@ -91,10 +91,10 @@ SLACKBUILD SHORT DESCRIPTION:  google-chrome (Google Chrome web browser)
 SLACKBUILD NAME: icoutils
 SLACKBUILD LOCATION: ./icoutils
 SLACKBUILD FILES: icoutils.SlackBuild icoutils.info slack-desc slack-required
-SLACKBUILD VERSION: 0.30.0
-SLACKBUILD DOWNLOAD: http://download.savannah.gnu.org/releases/icoutils/icoutils-0.30.0.tar.bz2
+SLACKBUILD VERSION: 0.31.0
+SLACKBUILD DOWNLOAD: http://download.savannah.gnu.org/releases/icoutils/icoutils-0.31.0.tar.bz2
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 2574eb4ff5c0d3b2a59ad5a7d8848ced
+SLACKBUILD MD5SUM: fe12dcfb7796cb6cb4ac9bb0720ae362
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  icoutils (Windows Icon and Cursor Utilities)
