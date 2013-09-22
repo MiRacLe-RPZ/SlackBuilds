@@ -26,7 +26,13 @@
         }
     } else {
         $text = file_get_contents('README.md');
-        $html = Markdown::defaultTransform($text);
+        $readme = Markdown::defaultTransform($text);
+        $files = glob('*/*.info');
+        $packages = array();
+        foreach ($files as $file) {
+            $info = parse_ini_file($file);
+            $packages[] = $info;
+        }
 ?>
 <!DOCTYPE html>
 <html>
@@ -34,13 +40,26 @@
         <title>MiRacLe's SlackBuilds</title>
         <style type="text/css">
          body {background-color: #eee;}
+         span.pkgnam {font-weight: bold;}
+         span.version {color: gray;}
+         a.home { background-image: url('http://icons.iconarchive.com/icons/artua/mac/16/Home-icon.png'); background-position: 0 0; background-repeat: no-repeat; color: transparent; width: 20px; display: inline-block; }
         </style>
     </head>
     <body>
     <?php
         # Put HTML content in the document
-        echo $html;
+        echo $readme;
     ?>
+    <div id="packages">
+    <h3>Available packages</h3>
+     <ul>
+       <?php
+          foreach ($packages as $pkg) {
+              echo sprintf('<li><a class="home" href="%s">homepage</a><span class="pkgnam">%s</span> <span class="version">%s</span></li>',$pkg['HOMEPAGE'], isset($pkg['PKGNAM']) ? $pkg['PKGNAM'] : $pkg['PRGNAM'] ,$pkg['VERSION']);
+          }
+       ?>
+     </ul>
+    </div>
     </body>
 </html>
 <?php
