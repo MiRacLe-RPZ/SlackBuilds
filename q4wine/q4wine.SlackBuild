@@ -55,11 +55,57 @@ else
   LIBDIRSUFFIX=""
 fi
 
-NUMJOBS=" -j$(lscpu|grep 'CPU(s):'|awk '{print $2 + 1}') "
+NUMJOBS=${NUMJOBS:-$(( $(getconf _NPROCESSORS_ONLN) + 1 ))}
 
-SOURCE="http://downloads.sourceforge.net/project/${PRGNAM}/${PRGNAM}/${PRGNAM}%20${VERSION}/${PRGNAM}-${VERSION}.tar.bz2"
+SRCURL="http://downloads.sourceforge.net/project/${PRGNAM}/${PRGNAM}/${PRGNAM}%20${VERSION}/${PRGNAM}-${VERSION}.tar.bz2"
+SOURCE="${CWD}/${PRGNAM}-${VERSION}.tar.bz2"
 
-set -e
+check_installed() {
+    PACKAGE=${1}
+    ls -1 /var/log/packages | grep "^${PACKAGE}-[^-]*-[^-]*-[^-]*$" >/dev/null 2>&1
+    return $?
+}
+
+if [ -e $CWD/slack-required ]; then
+    for REQ in `cat $CWD/slack-required|cut -f 1 -d " "`;do
+        check_installed "$REQ" || {
+           echo "${0##*/}: Required package '$REQ' not installed."
+           exit 1
+       }
+    done
+fi
+
+if [ -e $CWD/slack-conflicts ]; then
+    for REQ in `cat $CWD/slack-conflicts|cut -f 1 -d " "`;do
+        ! check_installed "$REQ" || {
+           echo "${0##*/}: Conflict package '$REQ' was installed."
+           exit 1
+       }
+    done
+fi
+
+dnl() {
+    SOURCE=$1
+    SRCURL=$2
+    if [ ! -e $SOURCE ]; then
+       if ! [ "x${SRCURL}" == "x" ]; then
+         echo "Downloading '$(basename ${SOURCE})'."
+         wget --no-check-certificate -nv -T 30 -O "${SOURCE}" "${SRCURL}" || true
+         if [ $? -ne 0 -o ! -s "${SOURCE}" ]; then
+            echo "Downloading '$(basename ${SOURCE})' failed... aborting the build."
+            mv -f "${SOURCE}" "${SOURCE}.FAIL"
+            exit 1
+         fi
+         else
+             echo "File '${SOURCE}' not available... aborting the build."
+             exit 1
+         fi
+    fi
+}
+
+set -eu
+
+dnl "${SOURCE}" "${SRCURL}"
 
 if [ -d /usr/lib${LIBDIRSUFFIX}/qt ]; then
   export QTDIR=/usr/lib${LIBDIRSUFFIX}/qt
@@ -72,11 +118,7 @@ mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf $PRGNAM-$VERSION
 
-if [ ! -e $CWD/$PRGNAM-$VERSION.tar.bz2 ]; then
-    wget "${SOURCE}" -O "${CWD}/${PRGNAM}-${VERSION}.tar.bz2"
-fi
-
-tar jxf $CWD/$PRGNAM-$VERSION.tar.bz2 || exit 1
+tar jxf $SOURCE || exit 1
 cd $PRGNAM-$VERSION
 
 chown -R root:root .
@@ -102,7 +144,7 @@ cmake \
   -DSYSCONF_INSTALL_DIR=/etc \
   -DLIB_SUFFIX=${LIBDIRSUFFIX} \
   ..
-make $NUMJOBS
+make -j$NUMJOBS
 make DESTDIR=$PKG install/strip
 cd ..
 
