@@ -322,10 +322,10 @@ SLACKBUILD SHORT DESCRIPTION:  qmmp (audio-player with a Qt interface)
 SLACKBUILD NAME: qwinff
 SLACKBUILD LOCATION: ./qwinff
 SLACKBUILD FILES: qwinff.SlackBuild qwinff.info slack-desc slack-required
-SLACKBUILD VERSION: 0.1.8
-SLACKBUILD DOWNLOAD: http://qwinff.googlecode.com/files/qwinff_0.1.8.tar.bz2
+SLACKBUILD VERSION: 0.1.9
+SLACKBUILD DOWNLOAD: http://sourceforge.net/projects/qwinff/files/release/v0.1.9/qwinff_0.1.9.tar.bz2
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 2b8e4a7cd8de4ad6145939102577109a
+SLACKBUILD MD5SUM: 0448fb3df6886194c7d44aba50fad20f
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:   easy-to-use media converter frontend to FFmpeg

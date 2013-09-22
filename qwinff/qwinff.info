@@ -1,8 +1,8 @@
 PKGNAM="qwinff"
-VERSION="0.1.8"
+VERSION="0.1.9"
 HOMEPAGE="http://qwinff.blogspot.com/"
-DOWNLOAD="http://qwinff.googlecode.com/files/qwinff_0.1.8.tar.bz2"
-MD5SUM="2b8e4a7cd8de4ad6145939102577109a"
+DOWNLOAD="http://sourceforge.net/projects/qwinff/files/release/v0.1.9/qwinff_0.1.9.tar.bz2"
+MD5SUM="0448fb3df6886194c7d44aba50fad20f"
 MAINTAINER="MiRacLe.RPZ"
 EMAIL="miracle@rpz.name"
 

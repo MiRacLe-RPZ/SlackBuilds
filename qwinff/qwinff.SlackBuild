@@ -25,7 +25,7 @@
 
 PRGNAM=qwinff
 PKGNAM=$(basename $0 .SlackBuild)
-VERSION=${VERSION:-0.1.8}
+VERSION=${VERSION:-0.1.9}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
@@ -37,6 +37,7 @@ PKG=$TMP/package-$PRGNAM
 OUTPUT=${OUTPUT:-/tmp}
 SOURCE="${CWD}/${PRGNAM}-${VERSION}.tar.bz2"
 SRCURL="http://qwinff.googlecode.com/files/${PRGNAM}_${VERSION}.tar.bz2"
+SRCURL="http://sourceforge.net/projects/qwinff/files/release/v${VERSION}/qwinff_${VERSION}.tar.bz2"
 EXTRACT_OPTS="jxf"
 
 
