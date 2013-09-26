@@ -43,6 +43,30 @@ PKG=$TMP/package-$PRGNAM
 OUTPUT=${OUTPUT:-/tmp}
 SOURCE="https://github.com/hugochinchilla/phpsh/archive/1.3.tar.gz"
 
+check_installed() {
+    PACKAGE=${1}
+    ls -1 /var/log/packages | grep "^${PACKAGE}-[^-]*-[^-]*-[^-]*$" >/dev/null 2>&1
+    return $?
+}
+
+if [ -e $CWD/slack-required ]; then
+    for REQ in `cat $CWD/slack-required|cut -f 1 -d " "`;do
+        check_installed "$REQ" || {
+           echo "${0##*/}: Required package '$REQ' not installed."
+           exit 1
+       }
+    done
+fi
+
+if [ -e $CWD/slack-conflicts ]; then
+    for REQ in `cat $CWD/slack-conflicts|cut -f 1 -d " "`;do
+        ! check_installed "$REQ" || {
+           echo "${0##*/}: Conflict package '$REQ' was installed."
+           exit 1
+       }
+    done
+fi
+
 set -e
 
 rm -rf $PKG
