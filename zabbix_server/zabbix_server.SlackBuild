@@ -1,0 +1,196 @@
+#!/bin/sh
+
+PRGNAM=zabbix_server
+VERSION=${VERSION:-2.0.8}
+BUILD=${BUILD:-1}
+TAG=${TAG:-_rpz}
+
+if [ -z "$ARCH" ]; then
+  case "$( uname -m )" in
+    i?86) ARCH=i486 ;;
+    arm*) ARCH=arm ;;
+       *) ARCH=$( uname -m ) ;;
+  esac
+fi
+
+PRGSHORT=zabbix
+
+DOCROOT=${DOCROOT:-/var/www/htdocs}
+PHPUSER=${PHPUSER:-apache}
+PHPGROUP=${PHPGROUP:-apache}
+
+ZABBIXUSER=${ZABBIXUSER:-zabbix}
+ZABBIXGROUP=${ZABBIXGROUP:-zabbix}
+ZABBIXUID=${ZABBIXUID:-228}
+ZABBIXGID=${ZABBIXGID:-228}
+
+CWD=$(pwd)
+TMP=${TMP:-/tmp/rpz}
+PKG=$TMP/package-$PRGNAM
+OUTPUT=${OUTPUT:-/tmp}
+SOURCE="${CWD}/${PRGSHORT}-${VERSION}.tar.gz"
+SRCURL="http://downloads.sourceforge.net/${PRGSHORT}/${PRGSHORT}-${VERSION}.tar.gz"
+set -e
+
+# Bail out if user or group isn't valid on your system
+# For slackbuilds.org, assigned zabbix uid/gid are 228/228
+# See http://slackbuilds.org/uid_gid.txt
+if [ "$(grep ^$ZABBIXUSER: /etc/passwd)" = "" -o "$(grep ^$ZABBIXGROUP: /etc/group)" = "" ] ; then
+    echo "  You must have a \"$ZABBIXGROUP\" group and user to run this script."
+    echo "    # groupadd -g $ZABBIXGID $ZABBIXGROUP"
+    echo "    # useradd -u $ZABBIXUID -g $ZABBIXGROUP -d /dev/null -s /bin/false $ZABBIXUSER"
+    exit 1
+fi
+
+if [ "$ARCH" = "i486" ]; then
+    SLKCFLAGS="-O2 -march=i486 -mtune=i686"
+    LIBDIRSUFFIX=""
+elif [ "$ARCH" = "i686" ]; then
+    SLKCFLAGS="-O2 -march=i686 -mtune=i686"
+    LIBDIRSUFFIX=""
+elif [ "$ARCH" = "x86_64" ]; then
+    SLKCFLAGS="-O2 -fPIC"
+    LIBDIRSUFFIX="64"
+else
+    SLKCFLAGS="-O2"
+    LIBDIRSUFFIX=""
+fi
+
+rm -rf $PKG
+mkdir -p $TMP $PKG $OUTPUT
+cd $TMP
+rm -rf $PRGSHORT-$VERSION
+
+
+check_installed() {
+    PACKAGE=${1}
+    ls -1 /var/log/packages | grep "^${PACKAGE}-[^-]*-[^-]*-[^-]*$" >/dev/null 2>&1
+    return $?
+}
+
+if [ -e $CWD/slack-required ]; then
+    for REQ in `cat $CWD/slack-required|cut -f 1 -d " "`;do
+        check_installed "$REQ" || {
+           echo "${0##*/}: Required package '$REQ' not installed."
+           exit 1
+       }
+    done
+fi
+
+if [ -e $CWD/slack-conflicts ]; then
+    for REQ in `cat $CWD/slack-conflicts|cut -f 1 -d " "`;do
+        ! check_installed "$REQ" || {
+           echo "${0##*/}: Conflict package '$REQ' was installed."
+           exit 1
+       }
+    done
+fi
+
+dnl() {
+    SOURCE=$1
+    SRCURL=$2
+    if [ ! -e $SOURCE ]; then
+       if ! [ "x${SRCURL}" == "x" ]; then
+         echo "Downloading '$(basename ${SOURCE})'."
+         wget --no-check-certificate -nv -T 30 -O "${SOURCE}" "${SRCURL}" || true
+         if [ $? -ne 0 -o ! -s "${SOURCE}" ]; then
+            echo "Downloading '$(basename ${SOURCE})' failed... aborting the build."
+            mv -f "${SOURCE}" "${SOURCE}.FAIL"
+            exit 1
+         fi
+         else
+             echo "File '${SOURCE}' not available... aborting the build."
+             exit 1
+         fi
+    fi
+}
+
+dnl "${SOURCE}" "${SRCURL}"
+
+tar xvf $SOURCE
+cd $PRGSHORT-$VERSION
+chown -R root:root .
+
+find . \
+ \( -perm 777 -o -perm 775 -o -perm 711 -o -perm 555 -o -perm 511 \) \
+ -exec chmod 755 {} \; -o \
+ \( -perm 666 -o -perm 664 -o -perm 600 -o -perm 444 -o -perm 440 -o -perm 400 \) \
+ -exec chmod 644 {} \;
+
+CFLAGS="$SLKCFLAGS" \
+CXXFLAGS="$SLKCFLAGS" \
+./configure \
+  --prefix=/usr \
+  --sysconfdir=/etc/zabbix \
+  --datadir=/etc \
+  --localstatedir=/var/lib \
+  --mandir=/usr/man \
+  --docdir=/usr/doc/$PRGNAM-$VERSION \
+  --libdir=/usr/lib${LIBDIRSUFFIX} \
+  --enable-server \
+  --with-mysql \
+  --with-jabber \
+  --with-libcurl \
+  --with-net-snmp \
+  --with-ssh2 \
+  --with-ldap \
+  --build=$ARCH-slackware-linux
+
+make -j$NUMJOBS
+make install DESTDIR=$PKG
+
+find $PKG | xargs file | grep -e "executable" -e "shared object" | grep ELF \
+  | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
+
+find $PKG/usr/man -type f -exec gzip -9 {} \;
+for i in $( find $PKG/usr/man -type l ) ; do ln -s $( readlink $i ).gz $i.gz ; rm $i ; done
+
+
+mkdir -p $PKG/$DOCROOT/$PRGSHORT
+cp -a frontends/php/* \
+  $PKG/$DOCROOT/$PRGSHORT/
+chown -R $PHPUSER:$PHPGROUP $PKG/$DOCROOT/$PRGSHORT
+
+
+mkdir -p $PKG/usr/share/$PRGNAM/database/mysql
+cp -a database/mysql \
+  $PKG/usr/share/$PRGNAM/database/
+cp -a upgrades/dbpatches \
+  $PKG/usr/share/$PRGNAM/upgrades/
+
+
+mkdir -p $PKG/var/log/$PRGSHORT
+touch $PKG/var/log/$PRGSHORT/$PRGNAM.log.new
+chown -R $ZABBIXUSER:$ZABBIXGROUP $PKG/var/log/$PRGSHORT
+chmod g+w $PKG/var/log/$PRGSHORT
+
+
+mkdir -p $PKG/var/run/$PRGSHORT
+chown -R $ZABBIXUSER:$ZABBIXGROUP $PKG/var/run/$PRGSHORT
+chmod g+w $PKG/var/run/$PRGSHORT
+
+
+sed -e "s,# PidFile=/tmp/,PidFile=/var/run/$PRGSHORT/," \
+    -e "s,# DBSocket=/tmp/,DBSocket=/var/run/mysql/," \
+    -e "s,LogFile=/tmp/,LogFile=/var/log/$PRGSHORT/," \
+    $PKG/etc/$PRGSHORT/$PRGNAM.conf > $PKG/etc/$PRGSHORT/$PRGNAM.conf.new
+rm -f $PKG/etc/$PRGSHORT/$PRGNAM.conf
+
+
+mkdir -p $PKG/etc/rc.d
+cat $CWD/rc.$PRGNAM > $PKG/etc/rc.d/rc.$PRGNAM.new
+
+mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION/SlackBuild
+cp -a AUTHORS COPYING ChangeLog INSTALL NEWS README \
+  $PKG/usr/doc/$PRGNAM-$VERSION
+cp -a $CWD/$PRGNAM.SlackBuild $CWD/$PRGNAM.info $CWD/slack-* $CWD/rc.* $CWD/doinst.sh \
+  $PKG/usr/doc/$PRGNAM-$VERSION/SlackBuild/
+
+
+mkdir -p $PKG/install
+
+cp -a $CWD/slack-* $CWD/doinst.sh \
+  $PKG/install
+
+cd $PKG
+/sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-txz}

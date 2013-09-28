@@ -372,16 +372,6 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  Skype (a P2P Voice Over IP program)
 
-SLACKBUILD NAME: teamviewer
-SLACKBUILD LOCATION: ./teamviewer
-SLACKBUILD FILES: README doinst.sh rc.teamviewerd slack-desc teamviewer.SlackBuild teamviewer.info
-SLACKBUILD VERSION: 8.0.17147
-SLACKBUILD DOWNLOAD: https://www.teamviewer.com/download/teamviewer_linux.deb
-SLACKBUILD DOWNLOAD_x86_64: http://www.teamviewer.com/download/version/teamviewer_linux_x64.deb
-SLACKBUILD MD5SUM: 47790ed345a7b7970fc1f2ac50c97002
-SLACKBUILD MD5SUM_x86_64: a252c5cbb8703eed113b51ce0fe66419
-SLACKBUILD SHORT DESCRIPTION:  teamviewer (remote control application)
-
 SLACKBUILD NAME: vacuum
 SLACKBUILD LOCATION: ./vacuum
 SLACKBUILD FILES: slack-desc vacuum.SlackBuild vacuum.info
@@ -403,4 +393,16 @@ SLACKBUILD MD5SUM: 545a6ce591bb48db197ad2d804f9ad06
 SLACKBUILD MD5SUM_x86_64: 13ce8827d8e239e54e800897c7cc1611
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  vagrant (Development environments made easy.)
+
+SLACKBUILD NAME: zabbix_server
+SLACKBUILD LOCATION: ./zabbix_server
+SLACKBUILD FILES: doinst.sh rc.zabbix_server slack-conflicts slack-desc slack-required zabbix_server.SlackBuild zabbix_server.info
+SLACKBUILD VERSION: 2.0.8
+SLACKBUILD DOWNLOAD: http://downloads.sourceforge.net/zabbix/zabbix-2.0.8.tar.gz
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: 8fef9e6f499295211dd9b2a9db96464b
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD REQUIRES: iksemel libssh2
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  zabbix_server (enterprise-class distributed monitoring solution)
 
