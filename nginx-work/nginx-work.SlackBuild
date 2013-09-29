@@ -21,7 +21,7 @@ set -e
 
 PRGNAM=nginx
 PKGNAM=$(basename $0 .SlackBuild)
-VERSION=${VERSION:-1.4.1}
+VERSION=${VERSION:-1.4.2}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
@@ -149,7 +149,7 @@ cp -r \
   CHANGES* LICENSE README \
   $PKG/usr/doc/$PKGNAM-$VERSION
 
-for i in $CWD/doinst.sh $CWD/$PKGNAM.SlackBuild $CWD/nginx.conf $CWD/nginx.logrotate $CWD/rc.nginx $CWD/slack-*; do
+for i in $CWD/doinst.sh $CWD/$PKGNAM.SlackBuild $CWD/nginx.conf $CWD/nginx.logrotate $CWD/rc.nginx $CWD/slack-* $CWD/monit.* ; do
   cp -a $i $PKG/usr/doc/$PKGNAM-$VERSION/SlackBuild/
 done
 

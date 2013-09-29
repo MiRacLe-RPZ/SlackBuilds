@@ -18,6 +18,12 @@ mk_tempdir () {
     fi    
 }
 
+monit_signal() {
+  if [ -x /etc/rc.d/rc.monit ]; then
+    sh /etc/rc.d/rc.monit $1 php-fpm
+  fi
+}
+
 wait_for_pid () {
 	try=0
 
@@ -68,6 +74,7 @@ case "$1" in
 			echo " failed"
 			exit 1
 		else
+			monit_signal monitor
 			echo " done"
 		fi
 	;;
@@ -88,6 +95,7 @@ case "$1" in
 			echo " failed. Use force-quit"
 			exit 1
 		else
+			monit_signal unmonitor
 			echo " done"
 		fi
 	;;
@@ -108,6 +116,7 @@ case "$1" in
 			echo " failed"
 			exit 1
 		else
+			monit_signal monitor
 			echo " done"
 		fi
 	;;

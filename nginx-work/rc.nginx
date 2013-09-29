@@ -14,6 +14,11 @@ mk_tempdir() {
     fi
 }
 
+monit_signal() {
+  if [ -x /etc/rc.d/rc.monit ]; then
+    sh /etc/rc.d/rc.monit $1 nginx
+  fi
+}
 
 
 nginx_start() {
@@ -36,6 +41,7 @@ nginx_start() {
     mk_tempdir /tmp/nginx/proxy
     mk_tempdir /tmp/nginx/client_body
     $DAEMON -c $CONF
+    monit_signal monitor
   fi
 }
 
@@ -48,11 +54,13 @@ nginx_test_conf() {
 nginx_term() {
   echo "Shutdown Nginx quickly..."
   kill -TERM $(cat $PID)
+  monit_signal unmonitor
 }
 
 nginx_stop() {
   echo "Shutdown Nginx gracefully..."
   kill -QUIT $(cat $PID)
+  monit_signal unmonitor
 }
 
 nginx_reload() {

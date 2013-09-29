@@ -1,0 +1,4 @@
+check process nginx with pidfile /var/run/nginx.pid
+  start program = "/bin/sh /etc/rc.d/rc.nginx start"
+  stop program  = "/bin/sh /etc/rc.d/rc.nginx stop"
+  group apache

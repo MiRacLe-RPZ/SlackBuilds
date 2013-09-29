@@ -126,7 +126,7 @@ cat $CWD/slack-required > $PKG/install/slack-required
 cat $CWD/doinst.sh > $PKG/install/doinst.sh
 
 cp -a \
-    $CWD/$PKGNAM.SlackBuild $CWD/slack-* $CWD/*.ini $CWD/rc.* $CWD/php-* $CWD/doinst.sh \
+    $CWD/$PKGNAM.SlackBuild $CWD/slack-* $CWD/*.ini $CWD/rc.* $CWD/php-* $CWD/doinst.sh $CWD/monit.* \
     $PKG/usr/doc/$PKGNAM-$VERSION/SlackBuild
 
 

@@ -28,3 +28,8 @@ config etc/php54/php.ini.new
 config etc/php54/php-cli.ini.new
 config etc/php54/php-fpm.conf.new
 
+if [ -d /etc/monit.d/ ]; then
+    if [ ! -r /etc/monit.d/php-fpm ]; then
+        cp /usr/doc/php-work-5.4.20/monit.php-fpm /etc/monit.d/php-fpm
+    fi
+fi
