@@ -24,9 +24,12 @@ nginx_start() {
   fi
 
   if [ -s $PID ]; then
-    echo "Nginx appears to already be running?"
-    exit 1
-  fi
+    PIDPROC=$(ps -p `cat $PID`|tail -n1|awk '{print $4}')
+    if [ "x$PIDPROC" = "xnginx" ]; then
+       echo "Nginx appears to already be running?"
+       exit 1
+    fi
+  fi  
 
   echo "Starting Nginx server daemon..."
   if [ -x $DAEMON ]; then
