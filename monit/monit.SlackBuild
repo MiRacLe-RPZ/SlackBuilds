@@ -1,0 +1,150 @@
+#!/bin/sh
+#
+
+PRGNAM=monit
+PKGNAM=monit
+VERSION=5.6
+BUILD=${BUILD:-1}
+TAG=${TAG:-_rpz}
+
+# Automatically determine the architecture we're building on:
+if [ -z "$ARCH" ]; then
+  case "$( uname -m )" in
+    i?86) ARCH=i486 ;;
+    arm*) ARCH=arm ;;
+    # Unless $ARCH is already set, use uname -m for all other archs:
+       *) ARCH=$( uname -m ) ;;
+  esac
+fi
+
+CWD=$(pwd)
+TMP=${TMP:-/tmp/rpz}
+PKG=$TMP/package-$PRGNAM
+OUTPUT=${OUTPUT:-/tmp}
+NUMJOBS=${NUMJOBS:-$(( $(getconf _NPROCESSORS_ONLN) + 1 ))}
+
+SRCURL="http://mmonit.com/monit/dist/${PRGNAM}-${VERSION}.tar.gz"
+SOURCE="${CWD}/${PRGNAM}-${VERSION}.tar.gz"
+
+
+if [ "$ARCH" = "i486" ]; then
+  SLKCFLAGS="-O2 -march=i486 -mtune=i686"
+  LIBDIRSUFFIX=""
+elif [ "$ARCH" = "i686" ]; then
+  SLKCFLAGS="-O2 -march=i686 -mtune=i686"
+  LIBDIRSUFFIX=""
+elif [ "$ARCH" = "x86_64" ]; then
+  SLKCFLAGS="-O2 -fPIC"
+  LIBDIRSUFFIX="64"
+else
+  SLKCFLAGS="-O2"
+  LIBDIRSUFFIX=""
+fi
+
+set -e
+
+rm -rf $PKG
+mkdir -p $TMP $PKG $OUTPUT
+cd $TMP
+rm -rf $PRGNAM-$VERSION
+
+check_installed() {
+    PACKAGE=${1}
+    ls -1 /var/log/packages | grep "^${PACKAGE}-[^-]*-[^-]*-[^-]*$" >/dev/null 2>&1
+    return $?
+}
+
+if [ -e $CWD/slack-required ]; then
+    for REQ in `cat $CWD/slack-required|cut -f 1 -d " "`;do
+        check_installed "$REQ" || {
+           echo "${0##*/}: Required package '$REQ' not installed."
+           exit 1
+       }
+    done
+fi
+
+if [ -e $CWD/slack-conflicts ]; then
+    for REQ in `cat $CWD/slack-conflicts|cut -f 1 -d " "`;do
+        ! check_installed "$REQ" || {
+           echo "${0##*/}: Conflict package '$REQ' was installed."
+           exit 1
+       }
+    done
+fi
+
+dnl() {
+    SOURCE=$1
+    SRCURL=$2
+    if [ ! -e $SOURCE ]; then
+       if ! [ "x${SRCURL}" == "x" ]; then
+         echo "Downloading '$(basename ${SOURCE})'."
+         wget --no-check-certificate -nv -T 30 -O "${SOURCE}" "${SRCURL}" || true
+         if [ $? -ne 0 -o ! -s "${SOURCE}" ]; then
+            echo "Downloading '$(basename ${SOURCE})' failed... aborting the build."
+            mv -f "${SOURCE}" "${SOURCE}.FAIL"
+            exit 1
+         fi
+         else
+             echo "File '${SOURCE}' not available... aborting the build."
+             exit 1
+         fi
+    fi
+}
+
+dnl "${SOURCE}" "${SRCURL}"
+
+
+tar xvf $SOURCE
+cd $PRGNAM-$VERSION
+chown -R root:root .
+chmod -R u+w,go+r-w,a-s .
+
+CFLAGS="$SLKCFLAGS" \
+CXXFLAGS="$SLKCFLAGS" \
+./configure \
+  --prefix=/usr \
+  --libdir=/usr/lib$LIBDIRSUFFIX \
+  --mandir=/usr/man \
+  --docdir=/usr/doc/$PRGNAM-$VERSION \
+  --without-pam \
+  --build=$ARCH-slackware-linux
+
+make -j$NUMJOBS
+make install DESTDIR=$PKG
+
+mkdir -p $PKG/etc/rc.d
+cat $CWD/rc.monit > $PKG/etc/rc.d/rc.monit.new
+chmod 0755 $PKG/etc/rc.d/rc.monit.new
+
+mkdir -p $PKG/etc/monit.d/
+
+PASSWD=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 8 | head -n 1`
+
+cat monitrc|sed -r 's/#\s+include/include/' \
+ |sed -r "s/\s+allow admin:monit/    allow admin:${PASSWD}/" \
+ |sed -r 's/\s+allow @monit/#   allow @monit/' \
+ |sed -r 's/\s+allow @users/#   allow @users/' > $PKG/etc/monit.conf.new
+chmod 0600 $PKG/etc/monitrc.new
+
+find $PKG | xargs file | grep -e "executable" -e "shared object" \
+  | grep ELF | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null
+
+if [ -d $PKG/usr/man ]; then
+( cd $PKG/usr/man
+  find . -type f -exec gzip -9 {} \;
+  for i in $(find . -type l) ; do ln -s $(readlink $i).gz $i.gz ; rm $i ; done
+)
+fi
+
+mkdir -p $PKG/usr/doc/$PKGNAM-$VERSION/SlackBuild
+cp -a COPYING README CHANGES doc/*  $PKG/usr/doc/$PRGNAM-$VERSION
+
+cp -a $CWD/$PKGNAM.SlackBuild $CWD/slack-* $CWD/rc.* $CWD/doinst.sh \
+  $PKG/usr/doc/$PKGNAM-$VERSION/SlackBuild/
+
+mkdir -p $PKG/install
+cp -a $CWD/slack-* $CWD/doinst.sh \
+  $PKG/install
+
+cd $PKG
+/sbin/makepkg -c n -l y -p $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-txz}

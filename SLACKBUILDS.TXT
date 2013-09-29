@@ -154,6 +154,17 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  KFilebox (KDE Dropbox client)
 
+SLACKBUILD NAME: monit
+SLACKBUILD LOCATION: ./monit
+SLACKBUILD FILES: doinst.sh monit.SlackBuild monit.info rc.monit slack-desc
+SLACKBUILD VERSION: 5.6
+SLACKBUILD DOWNLOAD: http://mmonit.com/monit/dist/monit-5.6.tar.gz
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: 19dfc1ce8512e832134d06eedd96ba50
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  monit (Unix System Management)
+
 SLACKBUILD NAME: msvistawebfonts
 SLACKBUILD LOCATION: ./msvistawebfonts
 SLACKBUILD FILES: doinst.sh msvistawebfonts.SlackBuild msvistawebfonts.info slack-desc slack-required
