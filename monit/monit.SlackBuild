@@ -124,7 +124,7 @@ cat monitrc|sed -r 's/#\s+include/include/' \
  |sed -r "s/\s+allow admin:monit/    allow admin:${PASSWD}/" \
  |sed -r 's/\s+allow @monit/#   allow @monit/' \
  |sed -r 's/\s+allow @users/#   allow @users/' > $PKG/etc/monit.conf.new
-chmod 0600 $PKG/etc/monitrc.new
+chmod 0600 $PKG/etc/monit.conf.new
 
 find $PKG | xargs file | grep -e "executable" -e "shared object" \
   | grep ELF | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null
