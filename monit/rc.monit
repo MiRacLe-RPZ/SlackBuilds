@@ -45,7 +45,7 @@ reload() {
 }
 
 status() {
-  PIDS=$(pidof $prog)
+  PIDS=$(pgrep $prog)
   if [ "$PIDS" == "" ]; then
     echo "$prog is not running!"
   else
@@ -55,14 +55,14 @@ status() {
 }
 
 monitor() {
-   PIDS=$(pidof $prog)
+   PIDS=$(pgrep $prog)
    if [ "x$PIDS" != "x" ]; then
        $prog -c $CONFIG monitor $1
    fi
 }
 
 unmonitor() {
-   PIDS=$(pidof $prog)
+   PIDS=$(pgrep $prog)
    if [ "x$PIDS" != "x" ]; then
        $prog -c $CONFIG unmonitor $1
    fi
