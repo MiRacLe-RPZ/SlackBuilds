@@ -238,7 +238,7 @@ SLACKBUILD FILES: doinst.sh gearman.ini php-gearman.SlackBuild php-gearman.info 
 SLACKBUILD VERSION: 1.1.2
 SLACKBUILD DOWNLOAD: http://pecl.php.net/package/gearman/1.1.2
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 03c985e71eed6dda15ae391e98a899d4
+SLACKBUILD MD5SUM: fb3bc8df2d017048726d5654459e8433
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php-gearman (binding for libgearman)
