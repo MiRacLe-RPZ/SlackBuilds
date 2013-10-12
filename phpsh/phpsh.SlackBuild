@@ -26,7 +26,7 @@
 PRGNAM=phpsh
 PKGNAM=$(basename $0 .SlackBuild)
 VERSION=${VERSION:-1.3}
-BUILD=${BUILD:-2}
+BUILD=${BUILD:-3}
 TAG=${TAG:-_rpz}
 
 if [ -z "$ARCH" ]; then
@@ -41,7 +41,9 @@ CWD=$(pwd)
 TMP=${TMP:-/tmp/rpz}
 PKG=$TMP/package-$PRGNAM
 OUTPUT=${OUTPUT:-/tmp}
-SOURCE="https://github.com/hugochinchilla/phpsh/archive/1.3.tar.gz"
+SRCURL="https://codeload.github.com/hugochinchilla/phpsh/tar.gz/master"
+SOURCE="${CWD}/${PRGNAM}-${VERSION}.tar.gz"
+MD5SUM="a8699f6a812db0120eec59c0b1d16c07"
 
 check_installed() {
     PACKAGE=${1}
@@ -67,6 +69,35 @@ if [ -e $CWD/slack-conflicts ]; then
     done
 fi
 
+dnl() {
+    SOURCE=$1
+    SRCURL=$2
+    MD5SUM=$3
+    if [ ! -e $SOURCE ]; then
+       if ! [ "x${SRCURL}" == "x" ]; then
+         echo "Downloading '$(basename ${SOURCE})'."
+         wget --no-check-certificate -nv -T 30 -O "${SOURCE}" "${SRCURL}" || true
+
+         if [ $? -ne 0 -o ! -s "${SOURCE}" ]; then
+            echo "Downloading '$(basename ${SOURCE})' failed... aborting the build."
+            mv -f "${SOURCE}" "${SOURCE}.FAIL"
+            exit 1
+         fi
+       else
+           echo "File '${SOURCE}' not available... aborting the build."
+           exit 1
+       fi
+    fi
+    if ! [ "x${MD5SUM}" == "x" ]; then
+        CHECKSUM=`md5sum $SOURCE|awk '{print $1}'`
+        if [ ${MD5SUM} != ${CHECKSUM} ]; then
+             echo "checksum mismatch"
+             exit 1
+        fi
+    fi
+}
+
+
 set -e
 
 rm -rf $PKG
@@ -74,11 +105,11 @@ mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf ${PRGNAM}-${VERSION}
 
-if [ ! -e $CWD/${PRGNAM}-${VERSION}.tar.gz ]; then
-    wget --no-check-certificate $SOURCE -O $CWD/${PRGNAM}-${VERSION}.tar.gz
-fi
+dnl "${SOURCE}" "${SRCURL}" "${MD5SUM}"
 
-tar zxf $CWD/${PRGNAM}-${VERSION}.tar.gz
+tar zxf ${SOURCE}
+
+mv -f ${PRGNAM}-master ${PRGNAM}-${VERSION}
 
 cd ${PRGNAM}-${VERSION}
 
