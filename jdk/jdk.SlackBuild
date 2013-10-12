@@ -53,7 +53,7 @@ else
   LIB_ARCH=i386
   LIBDIRSUFFIX=""
   SRC_ARCH="i586"
-  SRC_MD5SUM=""
+  SRC_MD5SUM="0079cecc8c4d0f088ace5d0ea99d0c5c"
 fi
 
 SRCURL="http://download.oracle.com/otn-pub/java/${SRCNAM}/${VERSION}-${PATCHLEVEL}/${SRCNAM}-${VERSION}-linux-${SRC_ARCH}.tar.gz"
