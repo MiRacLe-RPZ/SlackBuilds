@@ -84,6 +84,13 @@ case "$1" in
   status)
     status
     ;;
+  monitor)
+    monitor $2
+    ;;
+  unmonitor)
+    unmonitor $2
+    ;;
+    
   *)
     echo "Usage: $0 {start|stop|restart|reload|status|monitor SERVICENAME|unmonitor SERVICENAME}"
 esac
