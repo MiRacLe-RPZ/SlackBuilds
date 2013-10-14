@@ -356,12 +356,11 @@ SLACKBUILD SHORT DESCRIPTION:  Redis (Key-Value Store)
 SLACKBUILD NAME: rubymine
 SLACKBUILD LOCATION: ./rubymine
 SLACKBUILD FILES: rubymine.SlackBuild rubymine.info slack-desc slack-required
-SLACKBUILD VERSION: 132.104
-SLACKBUILD DOWNLOAD: http://download.jetbrains.com/ruby/RubyMine-132.104.tar.gz
+SLACKBUILD VERSION: 132.498
+SLACKBUILD DOWNLOAD: http://download.jetbrains.com/ruby/RubyMine-132.498.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 8f22457b00286f022408d14287f6930a
+SLACKBUILD MD5SUM: cb0e24f8db9716c2f9a79e4d529bffd3
 SLACKBUILD MD5SUM_x86_64: 
-SLACKBUILD REQUIRES: jdk
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  RubyIDE based on JetBrain's IDEA
 
@@ -376,15 +375,16 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  Skype (a P2P Voice Over IP program)
 
-SLACKBUILD NAME: teamviewer
-SLACKBUILD LOCATION: ./teamviewer
-SLACKBUILD FILES: README doinst.sh rc.teamviewerd slack-desc teamviewer.SlackBuild teamviewer.info
-SLACKBUILD VERSION: 8.0.17147
-SLACKBUILD DOWNLOAD: https://www.teamviewer.com/download/teamviewer_linux.deb
-SLACKBUILD DOWNLOAD_x86_64: http://www.teamviewer.com/download/version/teamviewer_linux_x64.deb
-SLACKBUILD MD5SUM: 47790ed345a7b7970fc1f2ac50c97002
-SLACKBUILD MD5SUM_x86_64: a252c5cbb8703eed113b51ce0fe66419
-SLACKBUILD SHORT DESCRIPTION:  teamviewer (remote control application)
+SLACKBUILD NAME: treb
+SLACKBUILD LOCATION: ./treb
+SLACKBUILD FILES: slack-desc treb.SlackBuild treb.info
+SLACKBUILD VERSION: 0.0.1
+SLACKBUILD DOWNLOAD: http://citylan.dl.sourceforge.net/project/treb/treb-source-0.0.1.tar.gz
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: fa49e79472b4236e330d20e6938490c9
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  An application that allows you to run mobile or small web pages in your system notification area. 
 
 SLACKBUILD NAME: vacuum
 SLACKBUILD LOCATION: ./vacuum

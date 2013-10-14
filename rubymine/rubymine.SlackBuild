@@ -21,7 +21,7 @@ set -e
 
 PRGNAM=RubyMine
 PKGNAM=rubymine
-VERSION=${VERSION:-132.104}
+VERSION=${VERSION:-132.498}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
@@ -33,7 +33,8 @@ if [ -z "$ARCH" ]; then
   esac
 fi
 
-SOURCE="http://download.jetbrains.com/ruby/$PRGNAM-$VERSION.tar.gz"
+SRCURL="http://download.jetbrains.com/ruby/$PRGNAM-$VERSION.tar.gz"
+SOURCE="${CWD}/${PRGNAM}-${VERSION}.tar.gz"
 #SOURCE="http://download.jetbrains.com/ruby/$PRGNAM-5.4.3.tar.gz"
 
 CWD=$(pwd)
@@ -44,9 +45,58 @@ OUTPUT=${OUTPUT:-/tmp}
 
 rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
-
 cd $TMP
 rm -rf ${PRGNAM}-${VERSION}
+
+set -e
+
+check_installed() {
+    PACKAGE=${1}
+    ls -1 /var/log/packages | grep "^${PACKAGE}-[^-]*-[^-]*-[^-]*$" >/dev/null 2>&1
+    return $?
+}
+
+if [ -e $CWD/slack-required ]; then
+    for REQ in `cat $CWD/slack-required|cut -f 1 -d " "`;do
+        check_installed "$REQ" || {
+           echo "${0##*/}: Required package '$REQ' not installed."
+           exit 1
+       }
+    done
+fi
+
+if [ -e $CWD/slack-conflicts ]; then
+    for REQ in `cat $CWD/slack-conflicts|cut -f 1 -d " "`;do
+        ! check_installed "$REQ" || {
+           echo "${0##*/}: Conflict package '$REQ' was installed."
+           exit 1
+       }
+    done
+fi
+
+
+dnl() {
+    SOURCE=$1
+    SRCURL=$2
+    if [ ! -e $SOURCE ]; then
+       if ! [ "x${SRCURL}" == "x" ]; then
+         echo "Downloading '$(basename ${SOURCE})'."
+         wget --no-check-certificate -nv -T 30 -O "${SOURCE}" "${SRCURL}" || true
+         if [ $? -ne 0 -o ! -s "${SOURCE}" ]; then
+            echo "Downloading '$(basename ${SOURCE})' failed... aborting the build."
+            mv -f "${SOURCE}" "${SOURCE}.FAIL"
+            exit 1
+         fi
+         else
+             echo "File '${SOURCE}' not available... aborting the build."
+             exit 1
+         fi
+    fi
+}
+
+
+
+
 
 if [ "$1" == "netinstall" ]; then
     mkdir -p $PKG/install $PKG/usr/doc/${PKGNAM}-${VERSION}/SlackBuild
@@ -64,16 +114,11 @@ NETINSTALL
 fi
 
 
-
-if [ ! -e $CWD/$PRGNAM-$VERSION.tar.gz ]; then
-    wget $SOURCE -O $CWD/$PRGNAM-$VERSION.tar.gz
-fi
+dnl "${SOURCE}" "${SRCURL}"
 
 cd $TMP
 
-if [ -f $CWD/$PRGNAM-$VERSION.tar.gz ]; then
-    tar zxf $CWD/$PRGNAM-$VERSION.tar.gz
-fi
+tar zxf $SOURCE
 
 cd $PRGNAM-$VERSION
 
