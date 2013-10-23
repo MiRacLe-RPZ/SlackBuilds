@@ -33,7 +33,7 @@ SLACKBUILD SHORT DESCRIPTION:  diffuse (tool for merging and comparing text file
 
 SLACKBUILD NAME: eyefi-config
 SLACKBUILD LOCATION: ./eyefi-config
-SLACKBUILD FILES: eyefi-config.SlackBuild eyefi-config.info slack-desc
+SLACKBUILD FILES: Linux-PAM-1.1.8.tar.bz2 eyefi-config.SlackBuild eyefi-config.info pam-redhat-0.99.10-1.tar.bz2 rh-modules.patch.gz slack-desc
 SLACKBUILD VERSION: 012dev
 SLACKBUILD DOWNLOAD: git://git.sr71.net/eyefi-config.git
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -198,6 +198,17 @@ SLACKBUILD MD5SUM: 8b905b6013b82fb7076b02a6c881f9a6
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  Node (Evented I/O for V8 JavaScript)
+
+SLACKBUILD NAME: pam
+SLACKBUILD LOCATION: ./pam
+SLACKBUILD FILES: pam.SlackBuild pam.info slack-desc
+SLACKBUILD VERSION: 1.1.8
+SLACKBUILD DOWNLOAD: 
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: 
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  pam (Pluggable Authentication Modules)
 
 SLACKBUILD NAME: photoqt
 SLACKBUILD LOCATION: ./photoqt
