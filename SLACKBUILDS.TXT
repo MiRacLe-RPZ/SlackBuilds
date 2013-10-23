@@ -33,7 +33,7 @@ SLACKBUILD SHORT DESCRIPTION:  diffuse (tool for merging and comparing text file
 
 SLACKBUILD NAME: eyefi-config
 SLACKBUILD LOCATION: ./eyefi-config
-SLACKBUILD FILES: Linux-PAM-1.1.8.tar.bz2 eyefi-config.SlackBuild eyefi-config.info pam-redhat-0.99.10-1.tar.bz2 rh-modules.patch.gz slack-desc
+SLACKBUILD FILES: eyefi-config.SlackBuild eyefi-config.info slack-desc
 SLACKBUILD VERSION: 012dev
 SLACKBUILD DOWNLOAD: git://git.sr71.net/eyefi-config.git
 SLACKBUILD DOWNLOAD_x86_64: 

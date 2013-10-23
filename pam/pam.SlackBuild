@@ -91,14 +91,14 @@ mkdir -p $TMP $PKG $OUTPUT
 cd $TMP || exit 1
 rm -rf *
 
-SOURCE="$CWD/$(basename $SRCPAM)"
+SOURCE="$TMP/$(basename $SRCPAM)"
 
 dnl $SOURCE  $SRCPAM
 
 tar -jxf $SOURCE
 cd $SRCNAM-$VERSION || exit 1
 
-SOURCE="$CWD/$(basename $SRCRH)"
+SOURCE="$TMP/$(basename $SRCRH)"
 
 dnl $SOURCE $SRCRH
 
@@ -106,7 +106,7 @@ tar -jxf $SOURCE
 mv pam-redhat-$RHVERSION/{CHANGELOG*,COPYING*,README*} .
 mv pam-redhat-$RHVERSION/* modules
 
-SOURCE="${CWD}/rh-modules.patch.gz"
+SOURCE="${TMP}/rh-modules.patch.gz"
 
 dnl $SOURCE "http://mirror.yandex.ru/slackware/slackware-14.0/extra/source/pam/patches/pam-1.0.90-redhat-modules.patch.gz"
 
@@ -191,27 +191,7 @@ cat $CWD/slack-desc > $PKG/install/slack-desc
 cd $PKG
 /sbin/makepkg -l y -c n $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-txz}
 
-PAMINSTALLED=$(ls /var/log/packages/|grep -c ^pam-)
-
 /sbin/upgradepkg --install-new $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-txz}
-
-
-
-rebuild() {
-    echo "Rebuild $1"
-    PKG=$(basename $1)
-    cd $TMP
-    rsync -avz "rsync://mirror.yandex.ru/slackware/slackware${LIBDIRSUFFIX}-current/source/${1}" .
-    cd $PKG
-    BLD=$(cat $PKG.SlackBuild|grep "BUILD="|cut -d "-" -f2|sed "s/}//")
-    if [ "x$2" != "x" ]; then
-        replace "$2" "$3" -- $PKG.SlackBuild
-    fi
-    TMP=$TMP BUILD="${BLD}${TAG}" sh $PKG.SlackBuild
-    cd $TMP
-    PACKAGE=$(echo ${PKG}-*-${BLD}${TAG}.txz)
-    mv $PACKAGE $OUTPUT/$PACKAGE
-}
 
 rebuild "a/shadow" "./configure " "./configure --with-libpam"
 rebuild "ap/sudo" "--with-pam=no" "--with-pam --with-pam-login"
@@ -221,6 +201,8 @@ rebuild "n/openssh" "--without-pam" "--with-pam"
 rebuild "l/ConsoleKit" "--enable-pam-module=no" "--enable-pam-module"
 rebuild "xap/xlockmore" "./configure" "./configure --enable-pam "
 rebuild "xap/xscreensaver" "./configure" "./configure --with-pam "
+rebuild "a/libcgroup" "--disable-pam" "--enable-pam"
+rebuild "n/samba" "--without-pam" "--with-pam"
 
 if [ "x$PAMINSTALLED" = "x0" ]; then
     /sbin/removepkg $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-txz}
