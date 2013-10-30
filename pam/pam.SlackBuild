@@ -108,8 +108,6 @@ mkdir -p $TMP $PKG $OUTPUT
 cd $TMP || exit 1
 rm -rf *
 
-if false; then
-
 SOURCE="$TMP/$(basename $SRCPAM)"
 
 dnl $SOURCE  $SRCPAM
@@ -222,8 +220,6 @@ rebuild "xap/xlockmore" "./configure" "./configure --enable-pam "
 rebuild "xap/xscreensaver" "./configure" "./configure --with-pam "
 rebuild "a/libcgroup" "--disable-pam" "--enable-pam"
 rebuild "n/samba" "--without-pam" "--with-pam"
-
-fi
 
 rebuild_kdm
 
