@@ -1,13 +1,13 @@
 #!/bin/sh
 
-PKGNAM=${PKGNAM:-pam}
+PAMPKGNAM=${PKGNAM:-pam}
 SRCNAM=Linux-PAM
 VERSION=${VERSION:-1.1.8}
 RHVERSION=${RHVERSION:-0.99.10-1}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_pam}
 
-PAMINSTALLED=$(ls /var/log/packages/|grep -c ^pam-)
+PAMINSTALLED=$(ls /var/log/packages/|grep -c ^${PAMPKGNAM}-)
 
 SRCPAM="http://pkgs.fedoraproject.org/repo/pkgs/pam/Linux-PAM-${VERSION}.tar.bz2/35b6091af95981b1b2cd60d813b5e4ee/Linux-PAM-${VERSION}.tar.bz2"
 SRCRH="http://pkgs.fedoraproject.org/repo/pkgs/pam/pam-redhat-${RHVERSION}.tar.bz2/c115640346a987356f6b76ec1d425185/pam-redhat-${RHVERSION}.tar.bz2"
@@ -23,7 +23,7 @@ fi
 
 CWD=$(pwd)
 TMP=${TMP:-/tmp/rpz}
-PKG=$TMP/package-$PKGNAM
+PKG=$TMP/package-$PAMPKGNAM
 OUTPUT=${OUTPUT:-/tmp/pam-pkgs}
 SOURCE="${CWD}/${SRCNAM}-${VERSION}.tar.gz"
 NUMJOBS=${NUMJOBS:-$(( $(getconf _NPROCESSORS_ONLN) + 1 ))}
@@ -80,16 +80,35 @@ rebuild() {
     mv $PACKAGE $OUTPUT/$PACKAGE
 }
 
+rebuild_kdm() {
+    echo "Rebuild kdm"
+    PKG="kde-workspace"
+    cd $TMP
+    rsync --progress -avz --exclude="src" --exclude="slack-desc" --exclude="doinst.sh"  --exclude="kde-deps-build"  --exclude="pre-install"  "rsync://mirror.yandex.ru/slackware/slackware${LIBDIRSUFFIX}-current/source/kde" .
+    mkdir kde/doinst.sh && rsync --progress -avz  --include="*/" --include="${PKG}" --exclude="*" "rsync://mirror.yandex.ru/slackware/slackware${LIBDIRSUFFIX}-current/source/kde/doinst.sh" kde/doinst.sh/
+    mkdir kde/slack-desc && rsync --progress -avz --include="*/" --include="${PKG}"  --exclude="*" "rsync://mirror.yandex.ru/slackware/slackware${LIBDIRSUFFIX}-current/source/kde/slack-desc" kde/slack-desc/
+    mkdir kde/src && rsync --progress -avz  --include="*/" --include="${PKG}-*" --exclude="*" "rsync://mirror.yandex.ru/slackware/slackware${LIBDIRSUFFIX}-current/source/kde/src" kde/src/
+    cd kde
+    BLD="cat build/${PKG}"
+    TMP=$TMP BUILD="${BLD}${TAG}" sh KDE.SlackBuild kdebase:$PKG
+    cd $TMP
+    PACKAGE=$(echo ${PKG}-*-${BLD}${TAG}.txz)
+    mv $PACKAGE $OUTPUT/$PACKAGE
+}
+
 
 
 set -e
-trap 'echo "$0 FAILED at line $LINENO!" | tee $OUTPUT/error-${PKGNAM}.log' ERR
+trap 'echo "$0 FAILED at line $LINENO!" | tee $OUTPUT/error-${PAMPKGNAM}.log' ERR
 set -u
+
 
 rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP || exit 1
 rm -rf *
+
+if false; then
 
 SOURCE="$TMP/$(basename $SRCPAM)"
 
@@ -132,7 +151,7 @@ CXXFLAGS="$SLKCFLAGS" \
   --datarootdir=/usr/share \
   --localstatedir=/var \
   --mandir=/usr/man \
-  --docdir=/usr/doc/$PKGNAM-$VERSION \
+  --docdir=/usr/doc/$PANPKGNAM-$VERSION \
   --enable-read-both-confs \
   --disable-prelude \
   --disable-selinux \
@@ -166,32 +185,32 @@ if [ -d $PKG/usr/man ]; then
   )
 fi
 
-mkdir -p $PKG/usr/doc/$PKGNAM-$VERSION
+mkdir -p $PKG/usr/doc/$PAMPKGNAM-$VERSION
 cp -a \
   AUTHORS COPYING* Copyright NEWS README* \
-  $PKG/usr/doc/$PKGNAM-$VERSION
+  $PKG/usr/doc/$PAMPKGNAM-$VERSION
 
 # If there's a ChangeLog, installing at least part of the recent history
 # is useful, but don't let it get totally out of control:
 if [ -r ChangeLog ]; then
-  DOCSDIR=$(echo $PKG/usr/doc/${PKGNAM}-$VERSION)
+  DOCSDIR=$(echo $PKG/usr/doc/${PAMPKGNAM}-$VERSION)
   cat ChangeLog | head -n 1000 > $DOCSDIR/ChangeLog
   touch -r ChangeLog $DOCSDIR/ChangeLog
 fi
 if [ -r CHANGELOG ]; then
-  DOCSDIR=$(echo $PKG/usr/doc/${PKGNAM}-$VERSION)
+  DOCSDIR=$(echo $PKG/usr/doc/${PAMPKGNAM}-$VERSION)
   cat CHANGELOG | head -n 1000 > $DOCSDIR/CHANGELOG
   touch -r CHANGELOG $DOCSDIR/CHANGELOG
 fi
-rm -f $PKG/usr/doc/$PKGNAM-$VERSION/index.html
+rm -f $PKG/usr/doc/$PAMPKGNAM-$VERSION/index.html
 
 mkdir -p $PKG/install
 cat $CWD/slack-desc > $PKG/install/slack-desc
 
 cd $PKG
-/sbin/makepkg -l y -c n $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-txz}
+/sbin/makepkg -l y -c n $OUTPUT/$PAMPKGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-txz}
 
-/sbin/upgradepkg --install-new $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-txz}
+/sbin/upgradepkg --install-new $OUTPUT/$PAMPKGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-txz}
 
 rebuild "a/shadow" "./configure " "./configure --with-libpam"
 rebuild "ap/sudo" "--with-pam=no" "--with-pam --with-pam-login"
@@ -204,6 +223,10 @@ rebuild "xap/xscreensaver" "./configure" "./configure --with-pam "
 rebuild "a/libcgroup" "--disable-pam" "--enable-pam"
 rebuild "n/samba" "--without-pam" "--with-pam"
 
+fi
+
+rebuild_kdm
+
 if [ "x$PAMINSTALLED" = "x0" ]; then
-    /sbin/removepkg $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-txz}
+    /sbin/removepkg $OUTPUT/$PAMPKGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-txz}
 fi
