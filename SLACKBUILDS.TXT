@@ -301,10 +301,10 @@ SLACKBUILD SHORT DESCRIPTION:   An interactive shell for php
 SLACKBUILD NAME: phpstorm
 SLACKBUILD LOCATION: ./phpstorm
 SLACKBUILD FILES: phpstorm.SlackBuild phpstorm.info slack-desc slack-required
-SLACKBUILD VERSION: 131.235
-SLACKBUILD DOWNLOAD: http://download.jetbrains.com/webide/PhpStorm-EAP-131.235.tar.gz
+SLACKBUILD VERSION: 131.441
+SLACKBUILD DOWNLOAD: http://download.jetbrains.com/webide/PhpStorm-EAP-131.441.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 714f8f1c462816ff5eb3a49151511fab
+SLACKBUILD MD5SUM: 8ec12a15f2b953758f4185fd552d846f
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  PhpIDE based on JetBrain's IDEA
@@ -385,6 +385,16 @@ SLACKBUILD MD5SUM: fe41f6b36e96730161c0f9332b001575
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  Skype (a P2P Voice Over IP program)
+
+SLACKBUILD NAME: teamviewer
+SLACKBUILD LOCATION: ./teamviewer
+SLACKBUILD FILES: README doinst.sh rc.teamviewerd slack-desc teamviewer.SlackBuild teamviewer.info
+SLACKBUILD VERSION: 8.0.17147
+SLACKBUILD DOWNLOAD: https://www.teamviewer.com/download/teamviewer_linux.deb
+SLACKBUILD DOWNLOAD_x86_64: http://www.teamviewer.com/download/version/teamviewer_linux_x64.deb
+SLACKBUILD MD5SUM: 47790ed345a7b7970fc1f2ac50c97002
+SLACKBUILD MD5SUM_x86_64: a252c5cbb8703eed113b51ce0fe66419
+SLACKBUILD SHORT DESCRIPTION:  teamviewer (remote control application)
 
 SLACKBUILD NAME: treb
 SLACKBUILD LOCATION: ./treb
