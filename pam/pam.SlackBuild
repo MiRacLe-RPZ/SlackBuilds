@@ -92,7 +92,7 @@ rebuild_kdm() {
     BLD="cat build/${PKG}"
     TMP=$TMP BUILD="${BLD}${TAG}" sh KDE.SlackBuild kdebase:$PKG
     cd $TMP
-    PACKAGE=$(echo ${PKG}-*-${BLD}${TAG}.txz)
+    PACKAGE=$(echo $TMP/kde-build/${PKG}/${PKG}-*-${BLD}${TAG}.txz)
     mv $PACKAGE $OUTPUT/$PACKAGE
 }
 
