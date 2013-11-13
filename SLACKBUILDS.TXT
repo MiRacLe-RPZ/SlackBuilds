@@ -135,10 +135,10 @@ SLACKBUILD SHORT DESCRIPTION:   KdeSudo is a frontend for sudo.
 SLACKBUILD NAME: keriovpnclient
 SLACKBUILD LOCATION: ./keriovpnclient
 SLACKBUILD FILES: kerio-kvc.conf.example kerio-setup keriovpnclient.SlackBuild keriovpnclient.info rc.kerio-kvc slack-desc
-SLACKBUILD VERSION: 8.1.1
+SLACKBUILD VERSION: 8.2.0
 SLACKBUILD DOWNLOAD: http://download.kerio.com/eu/dwn/kerio-control-vpnclient-linux.deb
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 5a7609224f2940e74a38123b0d09f6b4
+SLACKBUILD MD5SUM: ad9027aa45da6f0c4c3c26c7737cb2e0
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  Kerio VPN client
