@@ -12,10 +12,10 @@ SLACKBUILD SHORT DESCRIPTION:  cabextract (Extract Microsoft cabinet files)
 SLACKBUILD NAME: cryptopp
 SLACKBUILD LOCATION: ./cryptopp
 SLACKBUILD FILES: cryptopp.SlackBuild cryptopp.info slack-desc
-SLACKBUILD VERSION: 5.6.1
-SLACKBUILD DOWNLOAD: http://www.cryptopp.com/cryptopp561.zip
+SLACKBUILD VERSION: 5.6.2
+SLACKBUILD DOWNLOAD: http://www.cryptopp.com/cryptopp562.zip
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 96cbeba0907562b077e26bcffb483828
+SLACKBUILD MD5SUM: 7ed022585698df48e65ce9218f6c6a67
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  cryptopp (library of cryptographic schemes)
@@ -23,10 +23,10 @@ SLACKBUILD SHORT DESCRIPTION:  cryptopp (library of cryptographic schemes)
 SLACKBUILD NAME: diffuse
 SLACKBUILD LOCATION: ./diffuse
 SLACKBUILD FILES: diffuse.SlackBuild diffuse.info doinst.sh slack-desc
-SLACKBUILD VERSION: 0.4.6
-SLACKBUILD DOWNLOAD: http://downloads.sourceforge.net/project/diffuse/diffuse/0.4.6/diffuse-0.4.6.tar.bz2
+SLACKBUILD VERSION: 0.4.7
+SLACKBUILD DOWNLOAD: http://downloads.sourceforge.net/project/diffuse/diffuse/0.4.7/diffuse-0.4.7.tar.bz2
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: f9139d05601987d89bfbf1e71ea30eeb
+SLACKBUILD MD5SUM: 1cbee487cdfdf37a0d1a94f2f57d89e5
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  diffuse (tool for merging and comparing text files)
@@ -68,10 +68,10 @@ SLACKBUILD SHORT DESCRIPTION:  fuseiso (FUSE module to mount ISO filesystem imag
 SLACKBUILD NAME: gearmand
 SLACKBUILD LOCATION: ./gearmand
 SLACKBUILD FILES: doinst.sh gearmand.SlackBuild gearmand.info rc.gearmand slack-desc slack-required
-SLACKBUILD VERSION: 1.1.9
-SLACKBUILD DOWNLOAD: https://launchpad.net/gearmand/1.2/1.1.9/+download/gearmand-1.1.9.tar.gz
+SLACKBUILD VERSION: 1.1.11
+SLACKBUILD DOWNLOAD: https://launchpad.net/gearmand/1.2/1.1.11/+download/gearmand-1.1.11.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 027ffbad53b9f763e41a12166e2212e5
+SLACKBUILD MD5SUM: 5048ff0a366f7c37e0abf86d88e7cb9c
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  Gearman(A framework to farm out work)
@@ -79,11 +79,11 @@ SLACKBUILD SHORT DESCRIPTION:  Gearman(A framework to farm out work)
 SLACKBUILD NAME: google-chrome
 SLACKBUILD LOCATION: ./google-chrome
 SLACKBUILD FILES: doinst.sh google-chrome-updater google-chrome.SlackBuild google-chrome.info slack-desc
-SLACKBUILD VERSION: 29.0.1547.76
-SLACKBUILD DOWNLOAD: http://dl.google.com/linux/deb/pool/main/g/google-chrome-stable/google-chrome-stable_29.0.1547.76-r223446_i386.deb
-SLACKBUILD DOWNLOAD_x86_64: http://dl.google.com/linux/deb/pool/main/g/google-chrome-stable/google-chrome-stable_29.0.1547.76-r223446_amd64.deb
-SLACKBUILD MD5SUM: 851e85dfb53f3f44f593c028e34963cd
-SLACKBUILD MD5SUM_x86_64: e4ab342703de87ec117cfea3951acce8
+SLACKBUILD VERSION: 31.0.1650.57
+SLACKBUILD DOWNLOAD: http://dl.google.com/linux/deb/pool/main/g/google-chrome-stable/google-chrome-stable_31.0.1650.57-1_i386.deb
+SLACKBUILD DOWNLOAD_x86_64: http://dl.google.com/linux/deb/pool/main/g/google-chrome-stable/google-chrome-stable_31.0.1650.57-1_amd64.deb
+SLACKBUILD MD5SUM: d8fa57226eb5cbd2bf7fcb9d523a96d9
+SLACKBUILD MD5SUM_x86_64: 71b197df869c71ec662732b830e4e98d
 SLACKBUILD REQUIRES: google-chrome-pam-solibs
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  google-chrome (Google Chrome web browser)
@@ -102,11 +102,11 @@ SLACKBUILD SHORT DESCRIPTION:  icoutils (Windows Icon and Cursor Utilities)
 SLACKBUILD NAME: jdk
 SLACKBUILD LOCATION: ./jdk
 SLACKBUILD FILES: jdk.SlackBuild jdk.info profile.d/jdk.csh profile.d/jdk.sh slack-desc
-SLACKBUILD VERSION: 7u40
+SLACKBUILD VERSION: 7u45
 SLACKBUILD DOWNLOAD: 
 SLACKBUILD DOWNLOAD_x86_64: 
 SLACKBUILD MD5SUM: 
-SLACKBUILD MD5SUM_x86_64: 511ea34e4a42955bc03c28afa4b8f6cf
+SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  jdk (Java(TM) 2 Platform Standard Edition Development Kit)
 
@@ -257,10 +257,10 @@ SLACKBUILD SHORT DESCRIPTION:  php-gearman (binding for libgearman)
 SLACKBUILD NAME: php-mssql
 SLACKBUILD LOCATION: ./php-mssql
 SLACKBUILD FILES: doinst.sh mssql.ini php-mssql.SlackBuild php-mssql.info slack-desc slack-required
-SLACKBUILD VERSION: 5.4.20
-SLACKBUILD DOWNLOAD: http://www.php.net/distributions/php-5.4.20.tar.bz2
+SLACKBUILD VERSION: 5.4.22
+SLACKBUILD DOWNLOAD: http://www.php.net/distributions/php-5.4.22.tar.bz2
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: e25db5592ed14842b4239be9d990cce8
+SLACKBUILD MD5SUM: 0a7400d1d7f1f55b2b36285bf1a00762
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php-mssql (php MS SQL extension)
@@ -268,10 +268,10 @@ SLACKBUILD SHORT DESCRIPTION:  php-mssql (php MS SQL extension)
 SLACKBUILD NAME: php-work
 SLACKBUILD LOCATION: ./php-work
 SLACKBUILD FILES: doinst.sh monit.php-fpm php-cli.ini php-fpm.conf php-ini php-lint php-sessiongc php-work.SlackBuild php-work.info php.logrotate rc.php-fpm slack-desc slack-required
-SLACKBUILD VERSION: 5.4.20
-SLACKBUILD DOWNLOAD: http://www.php.net/distributions/php-5.4.20.tar.bz2
+SLACKBUILD VERSION: 5.4.22
+SLACKBUILD DOWNLOAD: http://www.php.net/distributions/php-5.4.22.tar.bz2
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: e25db5592ed14842b4239be9d990cce8
+SLACKBUILD MD5SUM: 0a7400d1d7f1f55b2b36285bf1a00762
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php (HTML-embedded scripting language)
@@ -301,10 +301,10 @@ SLACKBUILD SHORT DESCRIPTION:   An interactive shell for php
 SLACKBUILD NAME: phpstorm
 SLACKBUILD LOCATION: ./phpstorm
 SLACKBUILD FILES: phpstorm.SlackBuild phpstorm.info slack-desc slack-required
-SLACKBUILD VERSION: 131.441
-SLACKBUILD DOWNLOAD: http://download.jetbrains.com/webide/PhpStorm-EAP-131.441.tar.gz
+SLACKBUILD VERSION: 131.487
+SLACKBUILD DOWNLOAD: http://download.jetbrains.com/webide/PhpStorm-EAP-131.487.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 8ec12a15f2b953758f4185fd552d846f
+SLACKBUILD MD5SUM: 46d531d9f2fca9d3d69cc262418f9a9a
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  PhpIDE based on JetBrain's IDEA
@@ -367,10 +367,10 @@ SLACKBUILD SHORT DESCRIPTION:  Redis (Key-Value Store)
 SLACKBUILD NAME: rubymine
 SLACKBUILD LOCATION: ./rubymine
 SLACKBUILD FILES: rubymine.SlackBuild rubymine.info slack-desc slack-required
-SLACKBUILD VERSION: 132.498
-SLACKBUILD DOWNLOAD: http://download.jetbrains.com/ruby/RubyMine-132.498.tar.gz
+SLACKBUILD VERSION: 132.1053
+SLACKBUILD DOWNLOAD: http://download.jetbrains.com/ruby/RubyMine-132.1053.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: cb0e24f8db9716c2f9a79e4d529bffd3
+SLACKBUILD MD5SUM: 0561243d9d257b107cfb9760b9012dd9
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  RubyIDE based on JetBrain's IDEA
@@ -378,10 +378,10 @@ SLACKBUILD SHORT DESCRIPTION:  RubyIDE based on JetBrain's IDEA
 SLACKBUILD NAME: skype
 SLACKBUILD LOCATION: ./skype
 SLACKBUILD FILES: README.SLACKWARE_64 doinst.sh skype.SlackBuild skype.info slack-desc
-SLACKBUILD VERSION: 4.1.0.20
-SLACKBUILD DOWNLOAD: http://download.skype.com/linux/skype-4.1.0.20.tar.bz2
-SLACKBUILD DOWNLOAD_x86_64: UNSUPPORTED
-SLACKBUILD MD5SUM: fe41f6b36e96730161c0f9332b001575
+SLACKBUILD VERSION: 4.2.0.11
+SLACKBUILD DOWNLOAD: http://download.skype.com/linux/skype-4.2.0.11.tar.bz2
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: 6e9553a6368853c647b1c5ad7f3cc99b
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  Skype (a P2P Voice Over IP program)
@@ -400,10 +400,10 @@ SLACKBUILD SHORT DESCRIPTION:  An application that allows you to run mobile or s
 SLACKBUILD NAME: vacuum
 SLACKBUILD LOCATION: ./vacuum
 SLACKBUILD FILES: slack-desc vacuum.SlackBuild vacuum.info
-SLACKBUILD VERSION: 1.2.2
-SLACKBUILD DOWNLOAD: http://vacuum-im.googlecode.com/files/vacuum-1.2.2.tar.gz
+SLACKBUILD VERSION: 1.2.3
+SLACKBUILD DOWNLOAD: http://vacuum-im.googlecode.com/files/vacuum-1.2.3.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 7e375a84538af0dcfcefe8ec6baa9bd0
+SLACKBUILD MD5SUM: bfa9db37f619b74fb879fc6a6cc70ffc
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  Crossplatform Jabber client
@@ -411,11 +411,11 @@ SLACKBUILD SHORT DESCRIPTION:  Crossplatform Jabber client
 SLACKBUILD NAME: vagrant
 SLACKBUILD LOCATION: ./vagrant
 SLACKBUILD FILES: slack-desc vagrant.SlackBuild vagrant.info
-SLACKBUILD VERSION: 1.3.3
-SLACKBUILD DOWNLOAD: http://files.vagrantup.com/packages/db8e7a9c79b23264da129f55cf8569167fc22415/vagrant_1.3.3_i686.deb
-SLACKBUILD DOWNLOAD_x86_64: http://files.vagrantup.com/packages/db8e7a9c79b23264da129f55cf8569167fc22415/vagrant_1.3.3_x86_64.deb
-SLACKBUILD MD5SUM: 545a6ce591bb48db197ad2d804f9ad06
-SLACKBUILD MD5SUM_x86_64: 13ce8827d8e239e54e800897c7cc1611
+SLACKBUILD VERSION: 1.3.5
+SLACKBUILD DOWNLOAD: http://files.vagrantup.com/packages/a40522f5fabccb9ddabad03d836e120ff5d14093/vagrant_1.3.5_i686.deb
+SLACKBUILD DOWNLOAD_x86_64: http://files.vagrantup.com/packages/a40522f5fabccb9ddabad03d836e120ff5d14093/vagrant_1.3.5_x86_64.deb
+SLACKBUILD MD5SUM: 6dfb56147684541eef29ef2958ba7b84
+SLACKBUILD MD5SUM_x86_64: 371dcbb9c98523925197cd6ac2bb4e79
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  vagrant (Development environments made easy.)
 

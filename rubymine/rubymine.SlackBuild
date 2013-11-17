@@ -21,7 +21,7 @@ set -e
 
 PRGNAM=RubyMine
 PKGNAM=rubymine
-VERSION=${VERSION:-132.498}
+VERSION=${VERSION:-132.1053}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
@@ -33,14 +33,16 @@ if [ -z "$ARCH" ]; then
   esac
 fi
 
-SRCURL="http://download.jetbrains.com/ruby/$PRGNAM-$VERSION.tar.gz"
-SOURCE="${CWD}/${PRGNAM}-${VERSION}.tar.gz"
-#SOURCE="http://download.jetbrains.com/ruby/$PRGNAM-5.4.3.tar.gz"
 
 CWD=$(pwd)
 TMP=${TMP:-/tmp/rpz}
 PKG=$TMP/package-$PKGNAM
 OUTPUT=${OUTPUT:-/tmp}
+
+SRCURL="http://download.jetbrains.com/ruby/$PRGNAM-$VERSION.tar.gz"
+SOURCE="${CWD}/${PRGNAM}-${VERSION}.tar.gz"
+#SOURCE="http://download.jetbrains.com/ruby/$PRGNAM-5.4.3.tar.gz"
+
 
 
 rm -rf $PKG

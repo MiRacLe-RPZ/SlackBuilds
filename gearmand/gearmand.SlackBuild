@@ -21,13 +21,14 @@
 
 PRGNAM=gearmand
 PKGNAM=$(basename $0 .SlackBuild)
-VERSION=1.1.9
+VERSION=1.1.11
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
 
 SOURCE="${PRGNAM}-${VERSION}.tar.gz"
 SRCURL="https://launchpad.net/${PRGNAM}/1.2/${VERSION}/+download/${SOURCE}"
+
 
 if [ -z "$ARCH" ]; then
   case "$( uname -m )" in
@@ -103,7 +104,6 @@ dnl() {
     fi
 }
 
-dnl $SOURCE $SRCURL
 
 set -eu
 
@@ -112,10 +112,14 @@ mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf $PRGNAM-$VERSION
 
+SOURCE="${CWD}/${SOURCE}"
 
-tar xvf $CWD/$SOURCE
+dnl "${SOURCE}" $SRCURL
+
+tar zxf $SOURCE
 
 cd $PRGNAM-$VERSION
+
 chown -R root:root .
 chmod -R u+w,go+r-w,a-s .
 

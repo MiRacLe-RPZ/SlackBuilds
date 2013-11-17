@@ -38,18 +38,18 @@ CWD=$(pwd)
 cd /tmp && \
 mkdir multilib && \
 cd multilib && \
-lftp -c 'open http://slackware.com/~alien/multilib/ ; mirror 14.0' && \
-cd 14.0 && \
+lftp -c 'open http://slackware.com/~alien/multilib/ ; mirror 14.1' && \
+cd 14.1 && \
 upgradepkg --reinstall --install-new *.t?z && \
 cd slackware64-compat32 && \
 upgradepkg --install-new *-compat32/*.t?z && \
 cd ../../ && \
-wget http://mirror.yandex.ru/slackware/slackware-14.0/slackware/ap/sqlite-3.7.13-i486-1.txz && \
-convertpkg-compat32 -i sqlite-3.7.13-i486-1.txz && \
-installpkg sqlite-compat32-3.7.13-x86_64-1.txz && \
-wget http://mirror.yandex.ru/slackware/slackware-14.0/slackware/a/xz-5.0.4-i486-1.tgz && \
-convertpkg-compat32 -i xz-5.0.4-i486-1.tgz && \
-installpkg xz-compat32-5.0.4-x86_64-1.txz && \
+wget http://mirror.yandex.ru/slackware/slackware-14.1/slackware/ap/sqlite-3.7.17-i486-1.txz && \
+convertpkg-compat32 -i sqlite-3.7.17-i486-1.txz && \
+installpkg sqlite-compat32-3.7.17-x86_64-1.txz && \
+wget http://mirror.yandex.ru/slackware/slackware-14.1/slackware/a/xz-5.0.5-i486-1.tgz && \
+convertpkg-compat32 -i xz-5.0.5-i486-1.tgz && \
+installpkg xz-compat32-5.0.5-x86_64-1.txz && \
 cd $CWD
 
 3. Install skype

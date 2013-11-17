@@ -2,7 +2,7 @@
 
 # Slackware build script for diffuse
 
-# Copyright 2012  MiRacLe.RPZ <miracle@rpz.name>
+# Copyright 2012-2013  MiRacLe.RPZ <miracle@rpz.name>
 # All rights reserved.
 #
 #   Permission to use, copy, modify, and distribute this software for
@@ -25,7 +25,7 @@
 
 PRGNAM=diffuse
 PKGNAM=$(basename $0 .SlackBuild)
-VERSION=${VERSION:-0.4.6}
+VERSION=${VERSION:-0.4.7}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 
@@ -71,11 +71,33 @@ else
   LIBDIRSUFFIX=""
 fi
 
+dnl() {
+    SOURCE=$1
+    SRCURL=$2
+    if [ ! -e $SOURCE ]; then
+       if ! [ "x${SRCURL}" == "x" ]; then
+         echo "Downloading '$(basename ${SOURCE})'."
+         wget --no-check-certificate -nv -T 30 -O "${SOURCE}" "${SRCURL}" || true
+         if [ $? -ne 0 -o ! -s "${SOURCE}" ]; then
+            echo "Downloading '$(basename ${SOURCE})' failed... aborting the build."
+            mv -f "${SOURCE}" "${SOURCE}.FAIL"
+            exit 1
+         fi
+         else
+             echo "File '${SOURCE}' not available... aborting the build."
+             exit 1
+         fi
+    fi
+}
+
+
 CWD=$(pwd)
 TMP=${TMP:-/tmp/rpz}
 PKG=$TMP/package-$PKGNAM
 OUTPUT=${OUTPUT:-/tmp}
-SOURCE="http://downloads.sourceforge.net/project/${PRGNAM}/${PRGNAM}/${VERSION}/${PRGNAM}-${VERSION}.tar.bz2"
+SRCURL="http://downloads.sourceforge.net/project/${PRGNAM}/${PRGNAM}/${VERSION}/${PRGNAM}-${VERSION}.tar.bz2"
+SOURCE="${CWD}/${PRGNAM}-${VERSION}.tar.bz2"
+
 
 set -e
 
@@ -84,12 +106,12 @@ mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf $PRGNAM-$VERSION
 
-if [ ! -e $CWD/${PRGNAM}-${VERSION}.tar.bz2 ]; then
-    wget $SOURCE -O $CWD/${PRGNAM}-${VERSION}.tar.bz2
-fi
+dnl $SOURCE $SRCURL
 
-tar -jxf $CWD/${PRGNAM}-${VERSION}.tar.bz2
+tar -jxf $SOURCE
+
 cd $PRGNAM-$VERSION
+
 chown -R root:root .
 find . \
  \( -perm 777 -o -perm 775 -o -perm 711 -o -perm 555 -o -perm 511 \) \
