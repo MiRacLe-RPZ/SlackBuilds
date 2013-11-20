@@ -8,7 +8,7 @@ do
   if [ -f $location/$name.info ]; then
     echo "SLACKBUILD NAME: $name"
     echo "SLACKBUILD LOCATION: $location"
-    files=$(cd $location && find .  -type f -printf '%P\n' | sort | xargs)
+    files=$(cd $location && find .  -type f -printf '%P\n'|grep -v 'untrack' | sort | xargs)
     echo "SLACKBUILD FILES: $files"
 
     # remove those pesky multi line listings for each interesting field
