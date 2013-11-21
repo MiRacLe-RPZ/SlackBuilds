@@ -1,0 +1,8 @@
+PKGNAM="k5start"
+VERSION="4.1"
+HOMEPAGE="http://www.eyrie.org/~eagle/software/kstart/"
+DOWNLOAD="http://archives.eyrie.org/software/kerberos/kstart-4.1.tar.gz"
+MD5SUM="313e6f120d2e6f2e79ab20b1a4ec8be5"
+MAINTAINER="MiRacLe.RPZ"
+EMAIL="miracle@rpz.name"
+

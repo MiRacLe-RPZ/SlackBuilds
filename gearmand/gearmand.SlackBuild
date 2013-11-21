@@ -57,7 +57,8 @@ else
   LIBDIRSUFFIX=""
 fi
 
-NUMJOBS=" -j$(lscpu|grep 'CPU(s):'|awk '{print $2 + 1}') "
+NUMJOBS=${NUMJOBS:-$(( $(getconf _NPROCESSORS_ONLN) + 1 ))}
+
 
 check_installed() {
     PACKAGE=${1}
@@ -134,7 +135,7 @@ CFLAGS="$SLKCFLAGS" \
   --enable-static=no \
   --build=$ARCH-slackware-linux
 
-make $NUMJOBS
+make -j$NUMJOBS
 make install-strip DESTDIR=$PKG
 
 find $PKG/usr/man -type f -exec gzip -9 {} \;

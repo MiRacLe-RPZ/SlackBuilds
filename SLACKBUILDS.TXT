@@ -121,6 +121,17 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  JavaScript Lint
 
+SLACKBUILD NAME: k5start
+SLACKBUILD LOCATION: ./k5start
+SLACKBUILD FILES: k5start.SlackBuild k5start.info slack-desc slack-required
+SLACKBUILD VERSION: 4.1
+SLACKBUILD DOWNLOAD: http://archives.eyrie.org/software/kerberos/kstart-4.1.tar.gz
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: 313e6f120d2e6f2e79ab20b1a4ec8be5
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  k5start is a modified version of kinit that can use keytabs to authenticate, 
+
 SLACKBUILD NAME: kdesudo
 SLACKBUILD LOCATION: ./kdesudo
 SLACKBUILD FILES: doinst.sh kdesudo.SlackBuild kdesudo.info slack-desc slack-required

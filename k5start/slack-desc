@@ -1,0 +1,7 @@
+k5start: k5start is a modified version of kinit that can use keytabs to authenticate, 
+k5start: can run as a daemon and wake up periodically to refresh a ticket, 
+k5start: and can run single commands with their own authentication credentials 
+k5start: and refresh those credentials until the command exits.
+k5start:
+k5start:  http://www.eyrie.org/~eagle/software/kstart/
+k5start:
