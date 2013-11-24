@@ -21,7 +21,7 @@ set -e
 
 PRGNAM=RubyMine
 PKGNAM=rubymine
-VERSION=${VERSION:-132.1053}
+VERSION=${VERSION:-133.84}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
@@ -122,7 +122,8 @@ cd $TMP
 
 tar zxf $SOURCE
 
-cd $PRGNAM-$VERSION
+#cd $PRGNAM-$VERSION
+cd $PRGNAM-6.0
 
 chown -R root:root .
 find . \
