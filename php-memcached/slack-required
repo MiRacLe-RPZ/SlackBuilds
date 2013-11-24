@@ -1,0 +1,3 @@
+libmemcached >= 1.0.15
+php >= 5.4.22
+
