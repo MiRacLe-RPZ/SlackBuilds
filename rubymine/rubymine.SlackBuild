@@ -135,14 +135,19 @@ mkdir -p $PKG/opt/$PKGNAM $PKG/usr/bin $PKG/usr/share/applications $PKG/usr/shar
 
 cp -R * $PKG/opt/$PKGNAM
 
+rm -rf $PKG/opt/$PKGNAM/libpty/macosx
+rm -rf $PKG/opt/$PKGNAM/libpty/win
+
 if [ "$ARCH" = "x86_64" ]; then
     rm -f $PKG/opt/$PKGNAM/bin/libyjpagent-linux.so
     rm -f $PKG/opt/$PKGNAM/bin/fsnotifier
     rm -f $PKG/opt/$PKGNAM/bin/rubymine.vmoptions
+    rm -rf $PKG/opt/$PKGNAM/libpty/linux/x86
 else
     rm -f $PKG/opt/$PKGNAM/bin/libyjpagent-linux64.so
     rm -f $PKG/opt/$PKGNAM/bin/fsnotifier64
     rm -f $PKG/opt/$PKGNAM/bin/rubymine64.vmoptions
+    rm -rf $PKG/opt/$PKGNAM/libpty/linux/x86_64
 fi
 
 (
