@@ -21,7 +21,7 @@ set -e
 
 PRGNAM=RubyMine
 PKGNAM=rubymine
-VERSION=${VERSION:-133.84}
+VERSION=${VERSION:-133.100}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
@@ -39,9 +39,10 @@ TMP=${TMP:-/tmp/rpz}
 PKG=$TMP/package-$PKGNAM
 OUTPUT=${OUTPUT:-/tmp}
 
-SRCURL="http://download.jetbrains.com/ruby/$PRGNAM-$VERSION.tar.gz"
-SOURCE="${CWD}/${PRGNAM}-${VERSION}.tar.gz"
-#SOURCE="http://download.jetbrains.com/ruby/$PRGNAM-5.4.3.tar.gz"
+#SRCURL="http://download.jetbrains.com/ruby/$PRGNAM-$VERSION.tar.gz"
+#SOURCE="${CWD}/${PRGNAM}-${VERSION}.tar.gz"
+SOURCE="${CWD}/${PRGNAM}-6.0.tar.gz"
+SRCURL="http://download.jetbrains.com/ruby/$PRGNAM-6.0.tar.gz"
 
 
 
