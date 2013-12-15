@@ -21,7 +21,8 @@ set -e
 
 PRGNAM=RubyMine
 PKGNAM=rubymine
-VERSION=${VERSION:-133.100}
+VERSION=${VERSION:-133.211}
+SRCVER=${SRCVER:-6.0.1}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
@@ -41,8 +42,8 @@ OUTPUT=${OUTPUT:-/tmp}
 
 #SRCURL="http://download.jetbrains.com/ruby/$PRGNAM-$VERSION.tar.gz"
 #SOURCE="${CWD}/${PRGNAM}-${VERSION}.tar.gz"
-SOURCE="${CWD}/${PRGNAM}-6.0.tar.gz"
-SRCURL="http://download.jetbrains.com/ruby/$PRGNAM-6.0.tar.gz"
+SOURCE="${CWD}/${PRGNAM}-${SRCVER}.tar.gz"
+SRCURL="http://download.jetbrains.com/ruby/$PRGNAM-${SRCVER}.tar.gz"
 
 
 
@@ -124,7 +125,7 @@ cd $TMP
 tar zxf $SOURCE
 
 #cd $PRGNAM-$VERSION
-cd $PRGNAM-6.0
+cd $PRGNAM-$SRCVER
 
 chown -R root:root .
 find . \
