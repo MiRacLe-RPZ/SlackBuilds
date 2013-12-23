@@ -444,11 +444,11 @@ SLACKBUILD SHORT DESCRIPTION:  Crossplatform Jabber client
 SLACKBUILD NAME: vagrant
 SLACKBUILD LOCATION: ./vagrant
 SLACKBUILD FILES: slack-desc vagrant.SlackBuild vagrant.info
-SLACKBUILD VERSION: 1.4.0
-SLACKBUILD DOWNLOAD: https://dl.bintray.com/mitchellh/vagrant/vagrant_1.4.0_i686.deb
-SLACKBUILD DOWNLOAD_x86_64: https://dl.bintray.com/mitchellh/vagrant/vagrant_1.4.0_x86_64.deb
-SLACKBUILD MD5SUM: 08b9bcf0fe438dd3a933878932b15dca
-SLACKBUILD MD5SUM_x86_64: 9b7d866e6993ccbace7424571889aa23
+SLACKBUILD VERSION: 1.4.1
+SLACKBUILD DOWNLOAD: https://dl.bintray.com/mitchellh/vagrant/vagrant_1.4.1_i686.deb
+SLACKBUILD DOWNLOAD_x86_64: https://dl.bintray.com/mitchellh/vagrant/vagrant_1.4.1_x86_64.deb
+SLACKBUILD MD5SUM: 8c0492b107c368155e0f897c72fad825
+SLACKBUILD MD5SUM_x86_64: 70f4e1d39fd1c926f41a3ce337319067
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  vagrant (Development environments made easy.)
 
