@@ -400,10 +400,10 @@ SLACKBUILD SHORT DESCRIPTION:  Redis (Key-Value Store)
 SLACKBUILD NAME: rubymine
 SLACKBUILD LOCATION: ./rubymine
 SLACKBUILD FILES: rubymine.SlackBuild rubymine.info slack-desc slack-required
-SLACKBUILD VERSION: 133.211
-SLACKBUILD DOWNLOAD: http://download.jetbrains.com/ruby/RubyMine-6.0.1.tar.gz
+SLACKBUILD VERSION: 133.408
+SLACKBUILD DOWNLOAD: http://download.jetbrains.com/ruby/RubyMine-6.0.2.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 48ee615db2e1eb833a7bdc2b366cb26c
+SLACKBUILD MD5SUM: 1335240ada325f4060d8ae09183587ed
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  RubyIDE based on JetBrain's IDEA
