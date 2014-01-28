@@ -25,7 +25,7 @@
 
 PRGNAM=msvistawebfonts
 PKGNAM=$(basename $0 .SlackBuild)
-VERSION=${VERSION:-0.0.3}
+VERSION=${VERSION:-0.0.4}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 ARCH=noarch
@@ -87,22 +87,27 @@ find . \
 
 mkdir -p $PKG/usr/share/fonts/TTF
 
-wget "https://gist.github.com/gists/2479682/download" -O "ttc2ttf.tar.gz"
+TOOLNAME="ttc2ttf.py"
 
-echo "0870a607686b265690c50d158092dab8  ttc2ttf.tar.gz" > ttc2ttf.md5
+wget "https://gist.github.com/kayahr/2479682/raw/90319a19fa695f0abca7cd2672b0bb8535e8721a/ttc2ttf.py" -O $TOOLNAME
 
-md5sum --check ttc2ttf.md5
+TOOLCHECKSUM=`md5sum ${TOOLNAME}|awk '{print $1}'`
 
-tar -zxf ttc2ttf.tar.gz
+if [ "x${TOOLCHECKSUM}" != "xbccfc1fda1d8227beb25b4cfdc62c837" ]; then
+    echo "Checksum for ${TOOLNAME} failed"
+    exit 1
+fi
 
-TOOLDIR=$(find ./ -type d -name "gist*")
 
-for font in *.TTC; do python $TOOLDIR/ttc2ttf.py $font; done
+for font in *.TTC; do python $TOOLNAME $font; done
 
 for font in *.{TTF,ttf}; do mv "$font" $(echo $font|awk '{print(tolower($0));}'); done
 
 
 cp *.ttf $PKG/usr/share/fonts/TTF
+
+wget "http://gnome-vista-aero-theme-automated.googlecode.com/svn/trunk/vista/font/seguibd.ttf" -O $PKG/usr/share/fonts/TTF/seguibd.ttf
+wget "http://gnome-vista-aero-theme-automated.googlecode.com/svn/trunk/vista/font/seguibk.ttf" -O $PKG/usr/share/fonts/TTF/seguibk.ttf
 
 mkdir -p $PKG/install $PKG/usr/doc/$PKGNAM-$VERSION/SlackBuild
 
