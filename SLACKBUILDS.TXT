@@ -179,7 +179,7 @@ SLACKBUILD SHORT DESCRIPTION:  monit (Unix System Management)
 SLACKBUILD NAME: msvistawebfonts
 SLACKBUILD LOCATION: ./msvistawebfonts
 SLACKBUILD FILES: doinst.sh msvistawebfonts.SlackBuild msvistawebfonts.info slack-desc slack-required
-SLACKBUILD VERSION: 0.0.2
+SLACKBUILD VERSION: 0.0.4
 SLACKBUILD DOWNLOAD: http://download.microsoft.com/download/f/5/a/f5a3df76-d856-4a61-a6bd-722f52a5be26/PowerPointViewer.exe
 SLACKBUILD DOWNLOAD_x86_64: 
 SLACKBUILD MD5SUM: 9b4b476488674ae103d2e97cd88cd222
