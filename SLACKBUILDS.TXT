@@ -123,7 +123,7 @@ SLACKBUILD SHORT DESCRIPTION:  JavaScript Lint
 
 SLACKBUILD NAME: k5start
 SLACKBUILD LOCATION: ./k5start
-SLACKBUILD FILES: k5start.SlackBuild k5start.info slack-desc slack-required
+SLACKBUILD FILES: k5start.SlackBuild k5start.info kstart-4.1.tar.gz slack-desc slack-required
 SLACKBUILD VERSION: 4.1
 SLACKBUILD DOWNLOAD: http://archives.eyrie.org/software/kerberos/kstart-4.1.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -429,6 +429,17 @@ SLACKBUILD MD5SUM: 6e9553a6368853c647b1c5ad7f3cc99b
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  Skype (a P2P Voice Over IP program)
+
+SLACKBUILD NAME: subversion
+SLACKBUILD LOCATION: ./subversion
+SLACKBUILD FILES: slack-desc subversion.SlackBuild subversion.info
+SLACKBUILD VERSION: 1.7.14
+SLACKBUILD DOWNLOAD: http://www.eu.apache.org/dist/subversion/subversion-1.7.14.tar.bz2
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: cfff541f079f3b4b30795e08ee7aafa7
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  a version control system (kwallet-enabled without html-docs)
 
 SLACKBUILD NAME: treb
 SLACKBUILD LOCATION: ./treb
