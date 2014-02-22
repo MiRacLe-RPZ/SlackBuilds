@@ -25,7 +25,7 @@
 PRGNAM=google-chrome
 PKGNAM=${PKGNAM:-$(basename $0 .SlackBuild)}
 RELEASE=${RELEASE:-stable}    # stable, beta, or unstable
-VERSION=${VERSION:-31.0.1650.57}
+VERSION=${VERSION:-25.0.1364.152}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
@@ -91,9 +91,6 @@ done
 
 # Install a .desktop launcher:
 sed -i -e "s#Icon=google-chrome#Icon=/opt/google/chrome/product_logo_256.png#" \
-  $PKG/opt/google/chrome/google-chrome.desktop
-mkdir -p $PKG/usr/share/applications
-ln -s /opt/google/chrome/google-chrome.desktop \
   $PKG/usr/share/applications/google-chrome.desktop
 
 mkdir -p $PKG/install

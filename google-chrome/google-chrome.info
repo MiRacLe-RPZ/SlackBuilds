@@ -1,10 +1,10 @@
 PKGNAM="google-chrome"
-VERSION="31.0.1650.57"
+VERSION="33.0.1750.117"
 HOMEPAGE="http://chrome.google.com/"
-DOWNLOAD="http://dl.google.com/linux/deb/pool/main/g/google-chrome-stable/google-chrome-stable_31.0.1650.57-1_i386.deb"
-MD5SUM="d8fa57226eb5cbd2bf7fcb9d523a96d9
-DOWNLOAD_x86_64="http://dl.google.com/linux/deb/pool/main/g/google-chrome-stable/google-chrome-stable_31.0.1650.57-1_amd64.deb"
-MD5SUM_x86_64="71b197df869c71ec662732b830e4e98d
+DOWNLOAD="http://dl.google.com/linux/deb/pool/main/g/google-chrome-stable/google-chrome-stable_33.0.1750.117-1_i386.deb"
+MD5SUM="8159f0484cf3fab3e768d1665aa58871"
+DOWNLOAD_x86_64="http://dl.google.com/linux/deb/pool/main/g/google-chrome-stable/google-chrome-stable_33.0.1750.117-1_amd64.deb"
+MD5SUM_x86_64="a5c986f948ca72db015236fb9b6bb986"
 REQUIRES="google-chrome-pam-solibs"
 MAINTAINER="MiRacLe.RPZ"
 EMAIL="miracle@rpz.name"

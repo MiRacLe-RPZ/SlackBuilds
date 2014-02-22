@@ -79,11 +79,11 @@ SLACKBUILD SHORT DESCRIPTION:  Gearman(A framework to farm out work)
 SLACKBUILD NAME: google-chrome
 SLACKBUILD LOCATION: ./google-chrome
 SLACKBUILD FILES: doinst.sh google-chrome-updater google-chrome.SlackBuild google-chrome.info slack-desc
-SLACKBUILD VERSION: 31.0.1650.57
-SLACKBUILD DOWNLOAD: http://dl.google.com/linux/deb/pool/main/g/google-chrome-stable/google-chrome-stable_31.0.1650.57-1_i386.deb
-SLACKBUILD DOWNLOAD_x86_64: http://dl.google.com/linux/deb/pool/main/g/google-chrome-stable/google-chrome-stable_31.0.1650.57-1_amd64.deb
-SLACKBUILD MD5SUM: d8fa57226eb5cbd2bf7fcb9d523a96d9
-SLACKBUILD MD5SUM_x86_64: 71b197df869c71ec662732b830e4e98d
+SLACKBUILD VERSION: 33.0.1750.117
+SLACKBUILD DOWNLOAD: http://dl.google.com/linux/deb/pool/main/g/google-chrome-stable/google-chrome-stable_33.0.1750.117-1_i386.deb
+SLACKBUILD DOWNLOAD_x86_64: http://dl.google.com/linux/deb/pool/main/g/google-chrome-stable/google-chrome-stable_33.0.1750.117-1_amd64.deb
+SLACKBUILD MD5SUM: 8159f0484cf3fab3e768d1665aa58871
+SLACKBUILD MD5SUM_x86_64: a5c986f948ca72db015236fb9b6bb986
 SLACKBUILD REQUIRES: google-chrome-pam-solibs
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  google-chrome (Google Chrome web browser)
@@ -123,7 +123,7 @@ SLACKBUILD SHORT DESCRIPTION:  JavaScript Lint
 
 SLACKBUILD NAME: k5start
 SLACKBUILD LOCATION: ./k5start
-SLACKBUILD FILES: k5start.SlackBuild k5start.info kstart-4.1.tar.gz slack-desc slack-required
+SLACKBUILD FILES: k5start.SlackBuild k5start.info slack-desc slack-required
 SLACKBUILD VERSION: 4.1
 SLACKBUILD DOWNLOAD: http://archives.eyrie.org/software/kerberos/kstart-4.1.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
