@@ -106,7 +106,9 @@ set -u
 rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP || exit 1
+export GLOBIGNORE=slack-desc
 rm -rf *
+export GLOBIGNORE=
 
 SOURCE="$TMP/$(basename $SRCPAM)"
 
