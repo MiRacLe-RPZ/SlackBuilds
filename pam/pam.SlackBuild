@@ -77,7 +77,7 @@ rebuild() {
     TMP=$TMP BUILD="${BLD}${TAG}" sh $PKG.SlackBuild
     cd $TMP
     PACKAGE=$(echo ${PKG}-*-${BLD}${TAG}.txz)
-    if [ `realpath .` ne `realpath $OUTPUT` ]; then
+    if [ `realpath .` -ne `realpath $OUTPUT` ]; then
         mv $PACKAGE $OUTPUT/$PACKAGE
     fi
 }
@@ -95,7 +95,7 @@ rebuild_kdm() {
     TMP=$TMP BUILD="${BLD}${TAG}" sh KDE.SlackBuild kdebase:$PKG
     cd $TMP
     PACKAGE=$(echo $TMP/kde-build/${PKG}/${PKG}-*-${BLD}${TAG}.txz)
-    if [ `realpath .` ne `realpath $OUTPUT` ]; then
+    if [ `realpath .` -ne `realpath $OUTPUT` ]; then
         mv $PACKAGE $OUTPUT/$PACKAGE
     fi
 }
