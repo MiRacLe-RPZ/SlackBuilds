@@ -147,6 +147,7 @@ CFLAGS="$SLKCFLAGS" \
   --with-pic \
   --with-ssl \
   --with-kwallet \
+  --with-gnome-keyring \
   --build=$ARCH-slackware-linux
 
 
