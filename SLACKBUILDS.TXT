@@ -123,7 +123,7 @@ SLACKBUILD SHORT DESCRIPTION:  JavaScript Lint
 
 SLACKBUILD NAME: k5start
 SLACKBUILD LOCATION: ./k5start
-SLACKBUILD FILES: k5start.SlackBuild k5start.info slack-desc slack-required
+SLACKBUILD FILES: k5start.SlackBuild k5start.info kstart-4.1.tar.gz slack-desc slack-required
 SLACKBUILD VERSION: 4.1
 SLACKBUILD DOWNLOAD: http://archives.eyrie.org/software/kerberos/kstart-4.1.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -466,11 +466,11 @@ SLACKBUILD SHORT DESCRIPTION:  Crossplatform Jabber client
 SLACKBUILD NAME: vagrant
 SLACKBUILD LOCATION: ./vagrant
 SLACKBUILD FILES: slack-desc vagrant.SlackBuild vagrant.info
-SLACKBUILD VERSION: 1.4.2
-SLACKBUILD DOWNLOAD: https://dl.bintray.com/mitchellh/vagrant/vagrant_1.4.2_i686.deb
-SLACKBUILD DOWNLOAD_x86_64: https://dl.bintray.com/mitchellh/vagrant/vagrant_1.4.2_x86_64.deb
-SLACKBUILD MD5SUM: 43892725d4939e4b4c5f0d9b55de74a8
-SLACKBUILD MD5SUM_x86_64: 6d57979b770f8fdb3a6685f422d20cf0
+SLACKBUILD VERSION: 1.4.3
+SLACKBUILD DOWNLOAD: https://dl.bintray.com/mitchellh/vagrant/vagrant_1.4.3_i686.deb
+SLACKBUILD DOWNLOAD_x86_64: https://dl.bintray.com/mitchellh/vagrant/vagrant_1.4.3_x86_64.deb
+SLACKBUILD MD5SUM: e2aaba084cc809abf03f2b3f854f741e
+SLACKBUILD MD5SUM_x86_64: 6c75947851222e1b19636443050ffa14
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  vagrant (Development environments made easy.)
 
