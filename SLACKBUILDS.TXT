@@ -123,7 +123,7 @@ SLACKBUILD SHORT DESCRIPTION:  JavaScript Lint
 
 SLACKBUILD NAME: k5start
 SLACKBUILD LOCATION: ./k5start
-SLACKBUILD FILES: k5start.SlackBuild k5start.info kstart-4.1.tar.gz slack-desc slack-required
+SLACKBUILD FILES: k5start.SlackBuild k5start.info slack-desc slack-required
 SLACKBUILD VERSION: 4.1
 SLACKBUILD DOWNLOAD: http://archives.eyrie.org/software/kerberos/kstart-4.1.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -411,10 +411,10 @@ SLACKBUILD SHORT DESCRIPTION:  Redis (Key-Value Store)
 SLACKBUILD NAME: rubymine
 SLACKBUILD LOCATION: ./rubymine
 SLACKBUILD FILES: rubymine.SlackBuild rubymine.info slack-desc slack-required
-SLACKBUILD VERSION: 133.408
-SLACKBUILD DOWNLOAD: http://download.jetbrains.com/ruby/RubyMine-6.0.2.tar.gz
+SLACKBUILD VERSION: 134.1146
+SLACKBUILD DOWNLOAD: http://download.jetbrains.com/ruby/RubyMine-134.1146.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 1335240ada325f4060d8ae09183587ed
+SLACKBUILD MD5SUM: 80538d237451d1383ae1cbb4a9e008fd
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  RubyIDE based on JetBrain's IDEA
