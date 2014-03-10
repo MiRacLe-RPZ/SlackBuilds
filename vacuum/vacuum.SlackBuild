@@ -22,7 +22,7 @@
 
 PRGNAM=vacuum
 PKGNAM=$(basename $0 .SlackBuild)
-VERSION=${VERSION:-1.2.3}
+VERSION=${VERSION:-1.2.4}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 
@@ -42,7 +42,7 @@ OUTPUT=${OUTPUT:-/tmp}
 
 NUMJOBS=" -j$(lscpu|grep 'CPU(s):'|awk '{print $2 + 1}') "
 
-SOURCE="http://vacuum-im.googlecode.com/files/vacuum-${VERSION}.tar.gz"
+SOURCE="https://googledrive.com/host/0B7A5K_290X8-NE5nLUx5Yl9BTkk/vacuum-${VERSION}.tar.gz"
 
 set -e
 
