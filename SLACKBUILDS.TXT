@@ -190,7 +190,7 @@ SLACKBUILD SHORT DESCRIPTION:  nginx (http/imap/pop3 proxy)
 
 SLACKBUILD NAME: node
 SLACKBUILD LOCATION: ./node
-SLACKBUILD FILES: node-v0.10.26.tar.gz node.SlackBuild node.info npm.sh slack-desc slack-required
+SLACKBUILD FILES: node.SlackBuild node.info npm.sh slack-desc slack-required
 SLACKBUILD VERSION: 0.10.26
 SLACKBUILD DOWNLOAD: http://nodejs.org/dist/v0.10.26/node-v0.10.26.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -445,7 +445,7 @@ SLACKBUILD NAME: vacuum
 SLACKBUILD LOCATION: ./vacuum
 SLACKBUILD FILES: slack-desc vacuum.SlackBuild vacuum.info
 SLACKBUILD VERSION: 1.2.4
-SLACKBUILD DOWNLOAD: 
+SLACKBUILD DOWNLOAD: https://googledrive.com/host/0B7A5K_290X8-NE5nLUx5Yl9BTkk/vacuum-1.2.4.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
 SLACKBUILD MD5SUM: be949999dfe05695f2d1434096d46717
 SLACKBUILD MD5SUM_x86_64: 
