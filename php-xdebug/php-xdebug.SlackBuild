@@ -100,18 +100,23 @@ dnl() {
     SOURCE=$1
     SRCURL=$2
     if [ ! -e $SOURCE ]; then
-       if ! [ "x${SRCURL}" == "x" ]; then
-         echo "Downloading '$(basename ${SOURCE})'."
-         wget --no-check-certificate -nv -T 30 -O "${SOURCE}" "${SRCURL}" || true
-         if [ $? -ne 0 -o ! -s "${SOURCE}" ]; then
-            echo "Downloading '$(basename ${SOURCE})' failed... aborting the build."
-            mv -f "${SOURCE}" "${SOURCE}.FAIL"
-            exit 1
-         fi
-         else
+       XSOURCE="$(dirname ${SOURCE})/$(basename ${SRCURL})"
+       if [ ! -e $XSOURCE ]; then
+           if ! [ "x${SRCURL}" == "x" ]; then
+             echo "Downloading '$(basename ${SOURCE})'."
+             wget --no-check-certificate -nv -T 30 -O "${SOURCE}" "${SRCURL}" || true
+             if [ $? -ne 0 -o ! -s "${SOURCE}" ]; then
+                echo "Downloading '$(basename ${SOURCE})' failed... aborting the build."
+                mv -f "${SOURCE}" "${SOURCE}.FAIL"
+                exit 1
+             fi
+           else
              echo "File '${SOURCE}' not available... aborting the build."
              exit 1
-         fi
+           fi
+       else
+            mv $XSOURCE $SOURCE
+       fi
     fi
 }
 
