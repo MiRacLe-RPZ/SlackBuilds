@@ -25,7 +25,7 @@
 
 PRGNAM=qwinff
 PKGNAM=$(basename $0 .SlackBuild)
-VERSION=${VERSION:-0.1.9}
+VERSION=${VERSION:-0.2.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
@@ -142,7 +142,7 @@ rm -rf $PKG/usr/share/man
 mkdir -p $PKG/usr/doc/$PKGNAM-$VERSION/SlackBuild
 
 cp -a \
-    CHANGELOG.txt README.txt INSTALL.txt COPYING.txt COPYING-v3.txt \
+    CHANGELOG.txt README.md INSTALL.txt COPYING.txt \
     $PKG/usr/doc/$PKGNAM-$VERSION/
 
 cp -a $CWD/$PKGNAM.SlackBuild $CWD/slack-* \
