@@ -88,6 +88,18 @@ SLACKBUILD REQUIRES: google-chrome-pam-solibs
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  google-chrome (Google Chrome web browser)
 
+SLACKBUILD NAME: graylog2-server
+SLACKBUILD LOCATION: ./graylog2-server
+SLACKBUILD FILES: graylog2-server.SlackBuild graylog2-server.info slack-desc
+SLACKBUILD VERSION: 0.20.1
+SLACKBUILD DOWNLOAD: https://github.com/Graylog2/graylog2-server/releases/download/0.20.1/graylog2-server-0.20.1.tgz
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: 7202d0fc0f91ec09b127199d1b6d5948
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD REQUIRES: jdk
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  Field-tested open source data analytics system used and trusted 
+
 SLACKBUILD NAME: icoutils
 SLACKBUILD LOCATION: ./icoutils
 SLACKBUILD FILES: icoutils.SlackBuild icoutils.info slack-desc slack-required
@@ -190,7 +202,7 @@ SLACKBUILD SHORT DESCRIPTION:  nginx (http/imap/pop3 proxy)
 
 SLACKBUILD NAME: node
 SLACKBUILD LOCATION: ./node
-SLACKBUILD FILES: node-v0.10.26.tar.gz node.SlackBuild node.info npm.sh slack-desc slack-required
+SLACKBUILD FILES: node.SlackBuild node.info npm.sh slack-desc slack-required
 SLACKBUILD VERSION: 0.10.26
 SLACKBUILD DOWNLOAD: http://nodejs.org/dist/v0.10.26/node-v0.10.26.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 

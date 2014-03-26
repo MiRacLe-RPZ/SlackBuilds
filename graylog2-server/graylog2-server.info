@@ -1,0 +1,8 @@
+PKGNAM="graylog2-server"
+VERSION="0.20.1"
+HOMEPAGE="http://graylog2.org/"
+DOWNLOAD="https://github.com/Graylog2/graylog2-server/releases/download/0.20.1/graylog2-server-0.20.1.tgz"
+MD5SUM="7202d0fc0f91ec09b127199d1b6d5948"
+REQUIRES="jdk"
+MAINTAINER="MiRacLe.RPZ"
+EMAIL="miracle@rpz.name"
