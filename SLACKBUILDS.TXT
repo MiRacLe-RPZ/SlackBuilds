@@ -202,7 +202,7 @@ SLACKBUILD SHORT DESCRIPTION:  nginx (http/imap/pop3 proxy)
 
 SLACKBUILD NAME: node
 SLACKBUILD LOCATION: ./node
-SLACKBUILD FILES: node.SlackBuild node.info npm.sh slack-desc slack-required
+SLACKBUILD FILES: node-v0.10.26.tar.gz node.SlackBuild node.info npm.sh slack-desc slack-required
 SLACKBUILD VERSION: 0.10.26
 SLACKBUILD DOWNLOAD: http://nodejs.org/dist/v0.10.26/node-v0.10.26.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -401,10 +401,10 @@ SLACKBUILD SHORT DESCRIPTION:  rats (Rough Auditing Tool for Security)
 SLACKBUILD NAME: redis
 SLACKBUILD LOCATION: ./redis
 SLACKBUILD FILES: doinst.sh rc.redis.new redis.SlackBuild redis.info redis.logrotate slack-desc
-SLACKBUILD VERSION: 2.8.7
-SLACKBUILD DOWNLOAD: http://download.redis.io/releases/redis-2.8.7.tar.gz
+SLACKBUILD VERSION: 2.8.8
+SLACKBUILD DOWNLOAD: http://download.redis.io/releases/redis-2.8.8.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 3fc0bcdf6aef491ca2f08e62e4de7bc2
+SLACKBUILD MD5SUM: f3af82ca88b9d84c81d0b77614d07426
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  Redis (Key-Value Store)
