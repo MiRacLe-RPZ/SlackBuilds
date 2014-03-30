@@ -35,10 +35,9 @@ CWD=$(pwd)
 TMP=${TMP:-/tmp/rpz}
 PKG=$TMP/package-$PRGNAM
 OUTPUT=${OUTPUT:-/tmp}
-SOURCE="${CWD}/${PRGNAM}-${VERSION}.tar.bz2"
-SRCURL="http://qwinff.googlecode.com/files/${PRGNAM}_${VERSION}.tar.bz2"
-SRCURL="http://sourceforge.net/projects/qwinff/files/release/v${VERSION}/qwinff_${VERSION}.tar.bz2"
-EXTRACT_OPTS="jxf"
+SOURCE="${CWD}/v${VERSION}.tar.gz"
+SRCURL="https://github.com/qwinff/${PRGNAM}/archive/v${VERSION}.tar.gz"
+EXTRACT_OPTS="zxf"
 
 
 if [ -z "$ARCH" ]; then
@@ -114,7 +113,6 @@ dnl() {
 dnl "${SOURCE}" "${SRCURL}"
 
 tar $EXTRACT_OPTS $SOURCE
-
 
 cd $PRGNAM-$VERSION
 

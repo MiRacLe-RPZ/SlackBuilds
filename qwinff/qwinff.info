@@ -1,8 +1,8 @@
 PKGNAM="qwinff"
 VERSION="0.2.0"
-HOMEPAGE="http://qwinff.blogspot.com/"
-DOWNLOAD="http://sourceforge.net/projects/qwinff/files/release/v0.2.0/qwinff_0.2.0.tar.bz2"
-MD5SUM="edec2c4e0d879c90ee442de5f4205736"
+HOMEPAGE="http://qwinff.github.io/"
+DOWNLOAD="https://github.com/qwinff/qwinff/archive/v0.2.0.tar.gz"
+MD5SUM="280f87c62a30e6c2597091281dabfa7b"
 MAINTAINER="MiRacLe.RPZ"
 EMAIL="miracle@rpz.name"
 

@@ -380,9 +380,9 @@ SLACKBUILD NAME: qwinff
 SLACKBUILD LOCATION: ./qwinff
 SLACKBUILD FILES: qwinff.SlackBuild qwinff.info slack-desc slack-required
 SLACKBUILD VERSION: 0.2.0
-SLACKBUILD DOWNLOAD: http://sourceforge.net/projects/qwinff/files/release/v0.2.0/qwinff_0.2.0.tar.bz2
+SLACKBUILD DOWNLOAD: https://github.com/qwinff/qwinff/archive/v0.2.0.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: edec2c4e0d879c90ee442de5f4205736
+SLACKBUILD MD5SUM: 280f87c62a30e6c2597091281dabfa7b
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:   easy-to-use media converter frontend to FFmpeg
