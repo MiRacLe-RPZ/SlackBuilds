@@ -3,7 +3,7 @@
 
 PRGNAM=monit
 PKGNAM=monit
-VERSION=5.7
+VERSION=5.8
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 
