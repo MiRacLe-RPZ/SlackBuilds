@@ -41,7 +41,7 @@ fi
 
 CWD=$(pwd)
 TMP=${TMP:-/tmp/rpz}
-PKG=$TMP/package-jdk
+PKG=$TMP/package-$PKGNAM
 OUTPUT=${OUTPUT:-/tmp}
 
 if [ "$ARCH" = "x86_64" ]; then
