@@ -38,7 +38,7 @@ DAEMON_ARGS="-Xms${JAVA_MIN_MEM} -Xmx${JAVA_MAX_MEM} -Dhttp.port='${HTTP_PORT}' 
 make_dir() {
     DIR=$(dirname $1)
     if [ ! -e $DIR ]; then
-        mkdir /var/run/graylog2
+        mkdir -p $DIR
         chown ${GRAYLOG2_USER}:${GRAYLOG2_GROUP} ${DIR}
     fi
 }

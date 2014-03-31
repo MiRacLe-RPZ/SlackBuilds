@@ -24,7 +24,7 @@ GRAYLOG2_GROUP=graylog2
 make_dir() {
     DIR=$(dirname $1)
     if [ ! -e $DIR ]; then
-        mkdir /var/run/graylog2
+        mkdir -p $DIR
         chown ${GRAYLOG2_USER}:${GRAYLOG2_GROUP} ${DIR}
     fi
 }
