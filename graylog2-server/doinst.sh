@@ -25,5 +25,3 @@ if [ ! -e /etc/graylog2/server/node-id ]; then
     uuidgen > /etc/graylog2/server/node-id
     chown graylog2:graylog2 /etc/graylog2/server/node-id
 fi
-
-ln -s /etc/graylog2/web /usr/share/graylog2/web/conf

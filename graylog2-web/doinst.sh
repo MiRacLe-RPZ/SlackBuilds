@@ -20,3 +20,5 @@ fi
 
 config etc/rc.d/rc.graylog2-web.new
 config etc/graylog2/web/graylog2-web-interface.conf.new
+
+ln -s /etc/graylog2/web /usr/share/graylog2/web/conf
