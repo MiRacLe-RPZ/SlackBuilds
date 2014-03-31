@@ -174,18 +174,18 @@ cp -a $PKG/usr/lib${LIBDIRSUFFIX}/java/jre/lib/desktop/mime/packages \
   $PKG/usr/share/mime/
 
 # Java may not expect compressed manpages, so don't compress them.
-mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
+mkdir -p $PKG/usr/doc/$PKGNAM-$VERSION
 cp -a \
   $PKG/usr/lib${LIBDIRSUFFIX}/java/THIRDPARTYLICENSEREADME.txt \
   $PKG/usr/lib${LIBDIRSUFFIX}/java/LICENSE \
   $PKG/usr/lib${LIBDIRSUFFIX}/java/COPYRIGHT \
   $PKG/usr/lib${LIBDIRSUFFIX}/java/README.html \
   $PKG/usr/doc/$PRGNAM-$VERSION
-mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION/SlackBuild/profile.d
-cp -a $CWD/$PRGNAM.SlackBuild $CWD/$PRGNAM.info $CWD/slack-* \
-  $PKG/usr/doc/$PRGNAM-$VERSION/SlackBuild/
+mkdir -p $PKG/usr/doc/$PKGNAM-$VERSION/SlackBuild/profile.d
+cp -a $CWD/$PKGNAM.SlackBuild $CWD/$PKGNAM.info $CWD/slack-* \
+  $PKG/usr/doc/$PKGNAM-$VERSION/SlackBuild/
 
-cp $CWD/profile.d/* $PKG/usr/doc/$PRGNAM-$VERSION/SlackBuild/profile.d/
+cp $CWD/profile.d/* $PKG/usr/doc/$PKGNAM-$VERSION/SlackBuild/profile.d/
 
 cd $PKG
-/sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-txz}
+/sbin/makepkg -l y -c n $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-txz}
