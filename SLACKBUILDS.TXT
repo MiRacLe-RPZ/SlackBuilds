@@ -96,7 +96,7 @@ SLACKBUILD DOWNLOAD: https://github.com/Graylog2/graylog2-server/releases/downlo
 SLACKBUILD DOWNLOAD_x86_64: 
 SLACKBUILD MD5SUM: 7202d0fc0f91ec09b127199d1b6d5948
 SLACKBUILD MD5SUM_x86_64: 
-SLACKBUILD REQUIRES: jdk-work|jdk
+SLACKBUILD REQUIRES: jdk-work
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  Field-tested open source data analytics system used and trusted 
 
@@ -108,7 +108,7 @@ SLACKBUILD DOWNLOAD: https://github.com/Graylog2/graylog2-web-interface/releases
 SLACKBUILD DOWNLOAD_x86_64: 
 SLACKBUILD MD5SUM: 0e31c1508f7171d38435e90a1c4e7ff2
 SLACKBUILD MD5SUM_x86_64: 
-SLACKBUILD REQUIRES: jdk-work|jdk
+SLACKBUILD REQUIRES: jdk-work
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  Web interface for Graylog2, an open source syslog implementation
 
