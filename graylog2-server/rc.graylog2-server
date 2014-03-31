@@ -6,7 +6,7 @@ JAR_FILE=/usr/share/graylog2/server/graylog2-server.jar
 DAEMON=$(/bin/which java)
 PIDFILE=/var/run/graylog2/$NAME.pid
 LOGFILE=/var/log/graylog2/$NAME.log
-DAEMON_ARGS="-jar $JAR_FILE -p $PIDFILE -f /etc/graylog2/server/server.conf"
+DAEMON_ARGS="-Djava.net.preferIPv4Stack=true -jar $JAR_FILE -p $PIDFILE -f /etc/graylog2/server/server.conf"
 SCRIPTNAME=/etc/rc.d/rc.$NAME
 GRAYLOG2_USER=graylog2
 GRAYLOG2_GROUP=graylog2
