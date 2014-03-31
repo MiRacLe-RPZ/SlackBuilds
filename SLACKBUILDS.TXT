@@ -100,6 +100,18 @@ SLACKBUILD REQUIRES: jdk
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  Field-tested open source data analytics system used and trusted 
 
+SLACKBUILD NAME: graylog2-web
+SLACKBUILD LOCATION: ./graylog2-web
+SLACKBUILD FILES: README.Slackware doinst.sh graylog2-web-interface.conf graylog2-web-logger.xml graylog2-web.SlackBuild graylog2-web.info rc.graylog2-web slack-desc
+SLACKBUILD VERSION: 0.20.1
+SLACKBUILD DOWNLOAD: https://github.com/Graylog2/graylog2-web-interface/releases/download/0.20.1/graylog2-web-interface-0.20.1.tgz
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: 0e31c1508f7171d38435e90a1c4e7ff2
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD REQUIRES: jdk
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  Web interface for Graylog2, an open source syslog implementation
+
 SLACKBUILD NAME: icoutils
 SLACKBUILD LOCATION: ./icoutils
 SLACKBUILD FILES: icoutils.SlackBuild icoutils.info slack-desc slack-required
@@ -202,7 +214,7 @@ SLACKBUILD SHORT DESCRIPTION:  nginx (http/imap/pop3 proxy)
 
 SLACKBUILD NAME: node
 SLACKBUILD LOCATION: ./node
-SLACKBUILD FILES: node-v0.10.26.tar.gz node.SlackBuild node.info npm.sh slack-desc slack-required
+SLACKBUILD FILES: node.SlackBuild node.info npm.sh slack-desc slack-required
 SLACKBUILD VERSION: 0.10.26
 SLACKBUILD DOWNLOAD: http://nodejs.org/dist/v0.10.26/node-v0.10.26.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 

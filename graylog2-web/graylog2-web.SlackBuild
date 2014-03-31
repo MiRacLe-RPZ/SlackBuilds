@@ -19,10 +19,10 @@
 
 set -e
 
-PRGNAM=graylog2-server
-PKGNAM=graylog2-server
+PRGNAM=graylog2-web-interface
+PKGNAM=graylog2-web
 VERSION=${VERSION:-0.20.1}
-BUILD=${BUILD:-2}
+BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
 ARCH="noarch"
@@ -62,8 +62,6 @@ rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf ${PRGNAM}-${VERSION}
-
-
 
 
 set -e
@@ -120,6 +118,14 @@ dnl() {
     fi
 }
 
+if [ -f /etc/timezone ]; then
+    OLSONTZ=`cat /etc/timezone`
+elif [ -h /etc/localtime ]; then
+    OLSONTZ=`readlink /etc/localtime | sed "s/\/usr\/share\/zoneinfo\///"`
+else
+    checksum=`md5sum /etc/localtime|cut -d' ' -f1`
+    OLSONTZ=`find /usr/share/zoneinfo/ -type f -exec md5sum {} \; | grep "^$checksum" | sed "s/.*\/usr\/share\/zoneinfo\///" | tail -n 1`
+fi
 
 dnl "${SOURCE}" "${SRCURL}"
 
@@ -135,19 +141,16 @@ find . \
  \( -perm 777 -o -perm 775 -o -perm 511 -o -perm 711 -o -perm 555 \) -exec chmod 755 {} \;
 
 
-GRAYLOG_HOME=${PKG}/usr/share/graylog2/server
+GRAYLOG_HOME=${PKG}/usr/share/graylog2/web
 
 mkdir -p ${GRAYLOG_HOME}
 
 
-cp -r plugin ${GRAYLOG_HOME}
-
-cp graylog2-server.jar ${GRAYLOG_HOME}
-
+cp -r {lib,share} ${GRAYLOG_HOME}
 
 mkdir -p $PKG/usr/doc/$PKGNAM-$VERSION
 
-cp -a README.markdown COPYING \
+cp -a README.md \
   $PKG/usr/doc/$PKGNAM-$VERSION
 
 mkdir -p $PKG/usr/doc/$PKGNAM-$VERSION/SlackBuild/
@@ -156,21 +159,27 @@ cp -a $CWD/$PKGNAM.SlackBuild $CWD/slack-* $CWD/$PKGNAM.info $CWD/*.conf $CWD/rc
    $PKG/usr/doc/$PKGNAM-$VERSION/SlackBuild/
 
 
-mkdir -p $PKG/etc/graylog2/server
+mkdir -p $PKG/etc/graylog2/web
+
+
 
 SECRET_PLACEHOLDER="##SECRET##"
 SECRET=$(strings /dev/urandom | grep -o '[[:alnum:]]' | head -n 96 | tr -d '\n'; echo)
 
-SHA_PASSWORD_PLACEHOLDER="##SHA_PASSWORD##"
-SHA_PASSWORD=$(echo -n $ADMIN_PASSWORD | shasum -a 256 |cut -d ' ' -f1)
+TIMEZONE_PLACEHOLDER="##TIMEZONE##"
+
+cat $CWD/graylog2-web-interface.conf|sed -e "s/$SECRET_PLACEHOLDER/$SECRET/"| \
+    sed -e "s@$TIMEZONE_PLACEHOLDER@$OLSONTZ@"  \
+     > $PKG/etc/graylog2/web/graylog2-web-interface.conf.new
 
 
-cat $CWD/server.conf|sed -e "s/$SECRET_PLACEHOLDER/$SECRET/"|sed -e "s/$SHA_PASSWORD_PLACEHOLDER/$SHA_PASSWORD/"   > $PKG/etc/graylog2/server/server.conf.new
+cp -a conf/application.conf conf/play.plugins $CWD/graylog2-web-logger.xml \
+    $PKG/etc/graylog2/web/
 
 mkdir -p $PKG/etc/rc.d
 
-cp -a $CWD/rc.graylog2-server \
-    $PKG/etc/rc.d/rc.graylog2-server.new
+cp -a $CWD/rc.graylog2-web \
+    $PKG/etc/rc.d/rc.graylog2-web.new
 
 cd $CWD
 
