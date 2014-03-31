@@ -73,6 +73,37 @@ do_stop()
     fi
 }
 
+cfg_input()
+{
+    printf "Admin password please: "
+    stty -echo
+    read pass
+    stty echo
+    printf '\n'
+
+    GRAYLOG2_URL="http://admin:${pass}@127.0.0.1:12900"
+
+    GRAYLOG2_INPUT_GELF_UDP='
+    {
+          "global": "true",
+          "title": "Gelf UDP",
+          "configuration": {
+            "port": 12201,
+            "bind_address": "0.0.0.0"
+          },
+          "creator_user_id": "admin",
+          "type": "org.graylog2.inputs.gelf.udp.GELFUDPInput"
+    }'
+
+
+    INPUTS=$(curl -X GET -H "Content-Type: application/json" ${GRAYLOG2_URL}/system/inputs 2>/dev/null)
+
+    if [ $(echo $INPUTS | grep -c "GELF UDP") != "1" ]; then
+        curl -X POST -H "Content-Type: application/json" -d "${GRAYLOG2_INPUT_GELF_UDP}" ${GRAYLOG2_URL}/system/inputs > /dev/null
+    fi
+    success
+}
+
 case "$1" in
   start)
         [ "$VERBOSE" != no ] && echo -n "Starting $DESC" "$NAME"
@@ -92,6 +123,9 @@ case "$1" in
         ;;
   status)
        status -p "${PIDFILE}" "$DAEMON" "$NAME" && exit 0 || exit $?
+       ;;
+  setup)
+       cfg_input
        ;;
   restart|force-reload)
         echo "Restarting $DESC" "$NAME"
