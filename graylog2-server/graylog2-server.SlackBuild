@@ -22,27 +22,32 @@ set -e
 PRGNAM=graylog2-server
 PKGNAM=graylog2-server
 VERSION=${VERSION:-0.20.1}
-BUILD=${BUILD:-1}
+BUILD=${BUILD:-2}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
+ARCH="noarch"
 
-if [ -z "$ARCH" ]; then
-  case "$( uname -m )" in
-    i?86) ARCH=i486 ;;
-       *) ARCH=$( uname -m ) ;;
-  esac
+GL_USER=${GL_USER:-graylog2}
+GL_UID=${GL_UID:-311}
+GL_GROUP=${GL_GROUP:-graylog2}
+GL_GID=${GL_GID:-311}
+
+ADMIN_PASSWORD=${ADMIN_PASSWORD:-yourpassword}
+
+bailout() {
+  printf "\n  You must have a \"${GL_USER}\" user and group in order to run this script.
+  Add them with something like this:
+     groupadd -g $GL_GID $GL_GROUP
+     useradd -u $GL_UID -g $GL_GROUP -s /bin/false -d /usr/share/graylog2 $GL_USER\n"
+  exit 1
+}
+
+# Check for graylog2 user and group availability
+if ! getent group $GL_USER 2>&1 > /dev/null; then
+  bailout ;
+elif ! getent passwd $GL_USER 2>&1 > /dev/null; then
+  bailout ;
 fi
-
-
-if [ "$ARCH" = "x86_64" ]; then
-  LIBDIRSUFFIX="64"
-else
-  LIBDIRSUFFIX=""
-fi
-
-
-
-
 
 CWD=$(pwd)
 TMP=${TMP:-/tmp/rpz}
@@ -57,6 +62,9 @@ rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf ${PRGNAM}-${VERSION}
+
+
+
 
 set -e
 
@@ -102,6 +110,14 @@ dnl() {
              exit 1
          fi
     fi
+    if [ -r "${CWD}/${PKGNAM}.info" ]; then
+        . "${CWD}/${PKGNAM}.info"
+        CHECKSUM=`md5sum ${SOURCE}|cut -d' ' -f1`
+        if [ "x${CHECKSUM}" != "x${MD5SUM}" ]; then
+            echo "Checksum for ${SOURCE} failed"
+            exit 1
+        fi
+    fi
 }
 
 
@@ -119,12 +135,14 @@ find . \
  \( -perm 777 -o -perm 775 -o -perm 511 -o -perm 711 -o -perm 555 \) -exec chmod 755 {} \;
 
 
-mkdir -p ${PKG}/usr/lib${LIBDIRSUFFIX}/graylog2/
+GRAYLOG_HOME=${PKG}/usr/share/graylog2/server
+
+mkdir -p ${GRAYLOG_HOME}
 
 
-cp -r plugin ${PKG}/usr/lib${LIBDIRSUFFIX}/graylog2/
+cp -r plugin ${GRAYLOG_HOME}
 
-cp graylog2-server.jar ${PKG}/usr/lib${LIBDIRSUFFIX}/graylog2/graylog2-server.jar
+cp graylog2-server.jar ${GRAYLOG_HOME}
 
 
 mkdir -p $PKG/usr/doc/$PKGNAM-$VERSION
@@ -132,21 +150,27 @@ mkdir -p $PKG/usr/doc/$PKGNAM-$VERSION
 cp -a README.markdown COPYING \
   $PKG/usr/doc/$PKGNAM-$VERSION
 
-
 mkdir -p $PKG/usr/doc/$PKGNAM-$VERSION/SlackBuild/
 
-cp -a $CWD/$PKGNAM.SlackBuild $CWD/slack-* $CWD/$PKGNAM.info \
+cp -a $CWD/$PKGNAM.SlackBuild $CWD/slack-* $CWD/$PKGNAM.info $CWD/*.conf $CWD/rc.$PKGNAM \
    $PKG/usr/doc/$PKGNAM-$VERSION/SlackBuild/
 
 
-mkdir -p $PKG/etc/
+mkdir -p $PKG/etc/graylog2/server
 
-cp -a graylog2.conf.example \
-    $PKG/etc
+SECRET_PLACEHOLDER="##SECRET##"
+SECRET=$(strings /dev/urandom | grep -o '[[:alnum:]]' | head -n 96 | tr -d '\n'; echo)
+
+SHA_PASSWORD_PLACEHOLDER="##SHA_PASSWORD##"
+SHA_PASSWORD=$(echo -n $ADMIN_PASSWORD | shasum -a 256 |cut -d ' ' -f1)
+
+
+cat $CWD/server.conf|sed -e "s/$SECRET_PLACEHOLDER/$SECRET/"|sed -e "s/$SHA_PASSWORD_PLACEHOLDER/$SHA_PASSWORD/"   > $PKG/etc/graylog2/server/server.conf.new
 
 mkdir -p $PKG/etc/rc.d
 
-cat bin/graylog2ctl |sed "s/GRAYLOG2CTL_DIR=.*/GRAYLOG2CTL_DIR=\/usr\/lib${LIBDIRSUFFIX}\/graylog2/" > $PKG/etc/rc.d/rc.graylog2-server.new
+cp -a $CWD/rc.graylog2-server \
+    $PKG/etc/rc.d/rc.graylog2-server.new
 
 cd $CWD
 
@@ -155,7 +179,7 @@ mkdir -p $PKG/install
 cp -a slack-* \
   $PKG/install
 
-[ -e $CWD/doinst.sh ] && cat $CWD/doinst.sh > $PKG/install/doinst.sh
+[ -e $CWD/doinst.sh ] && cat $CWD/doinst.sh |sed -e "s/graylog2:graylog2/$GL_USER:$GL_GROUP/" > $PKG/install/doinst.sh
 
 cd $PKG
 chown -R root:root $PKG
