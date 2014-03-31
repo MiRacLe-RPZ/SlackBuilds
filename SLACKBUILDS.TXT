@@ -123,9 +123,9 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  icoutils (Windows Icon and Cursor Utilities)
 
-SLACKBUILD NAME: jdk
-SLACKBUILD LOCATION: ./jdk
-SLACKBUILD FILES: jdk.SlackBuild jdk.info profile.d/jdk.csh profile.d/jdk.sh slack-desc
+SLACKBUILD NAME: jdk-work
+SLACKBUILD LOCATION: ./jdk-work
+SLACKBUILD FILES: jdk-work.SlackBuild jdk-work.info profile.d/jdk.csh profile.d/jdk.sh slack-desc
 SLACKBUILD VERSION: 7u51
 SLACKBUILD DOWNLOAD: 
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -214,7 +214,7 @@ SLACKBUILD SHORT DESCRIPTION:  nginx (http/imap/pop3 proxy)
 
 SLACKBUILD NAME: node
 SLACKBUILD LOCATION: ./node
-SLACKBUILD FILES: node.SlackBuild node.info npm.sh slack-desc slack-required
+SLACKBUILD FILES: node-v0.10.26.tar.gz node.SlackBuild node.info npm.sh slack-desc slack-required
 SLACKBUILD VERSION: 0.10.26
 SLACKBUILD DOWNLOAD: http://nodejs.org/dist/v0.10.26/node-v0.10.26.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
