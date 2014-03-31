@@ -180,7 +180,7 @@ cp -a \
   $PKG/usr/lib${LIBDIRSUFFIX}/java/LICENSE \
   $PKG/usr/lib${LIBDIRSUFFIX}/java/COPYRIGHT \
   $PKG/usr/lib${LIBDIRSUFFIX}/java/README.html \
-  $PKG/usr/doc/$PRGNAM-$VERSION
+  $PKG/usr/doc/$PKGNAM-$VERSION
 mkdir -p $PKG/usr/doc/$PKGNAM-$VERSION/SlackBuild/profile.d
 cp -a $CWD/$PKGNAM.SlackBuild $CWD/$PKGNAM.info $CWD/slack-* \
   $PKG/usr/doc/$PKGNAM-$VERSION/SlackBuild/
