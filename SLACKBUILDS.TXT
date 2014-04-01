@@ -446,13 +446,13 @@ SLACKBUILD SHORT DESCRIPTION:  Skype (a P2P Voice Over IP program)
 SLACKBUILD NAME: subversion
 SLACKBUILD LOCATION: ./subversion
 SLACKBUILD FILES: slack-desc subversion.SlackBuild subversion.info
-SLACKBUILD VERSION: 1.7.14
-SLACKBUILD DOWNLOAD: http://www.eu.apache.org/dist/subversion/subversion-1.7.14.tar.bz2
+SLACKBUILD VERSION: 1.7.16
+SLACKBUILD DOWNLOAD: 
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: cfff541f079f3b4b30795e08ee7aafa7
+SLACKBUILD MD5SUM: 
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
-SLACKBUILD SHORT DESCRIPTION:  a version control system (kwallet-enabled without html-docs)
+SLACKBUILD SHORT DESCRIPTION:  a version control system 
 
 SLACKBUILD NAME: treb
 SLACKBUILD LOCATION: ./treb

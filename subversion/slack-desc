@@ -6,7 +6,9 @@
 # leave one space after the ':'.
 
           |-----handy-ruler------------------------------------------------------|
-subversion: a version control system (kwallet-enabled without html-docs)
+subversion: a version control system 
+subversion: 
+subversion: !! kwallet & gnome-keyring enabled !!
 subversion:
 subversion: Subversion is a version control system which allows you to keep old
 subversion: versions of files and directories (usually source code), and keep a

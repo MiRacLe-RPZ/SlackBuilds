@@ -1,8 +1,8 @@
 PKGNAM="subversion"
-VERSION="1.7.14"
+VERSION="1.7.16"
 HOMEPAGE="https://subversion.apache.org"
-DOWNLOAD="http://www.eu.apache.org/dist/subversion/subversion-1.7.14.tar.bz2"
-MD5SUM="cfff541f079f3b4b30795e08ee7aafa7"
+DOWNLOAD=""
+MD5SUM=""
 MAINTAINER="MiRacLe.RPZ"
 EMAIL="miracle@rpz.name"
 
