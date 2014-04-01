@@ -39,6 +39,9 @@ make_dir() {
     DIR=$(dirname $1)
     if [ ! -e $DIR ]; then
         mkdir -p $DIR
+    fi
+    RIGHTS=$(stat -c "%U:%G" $DIR)
+    if [ "$RIGHTS" != "${GRAYLOG2_USER}:${GRAYLOG2_GROUP}" ]; then
         chown ${GRAYLOG2_USER}:${GRAYLOG2_GROUP} ${DIR}
     fi
 }
