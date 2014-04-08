@@ -4,6 +4,11 @@ DESC="Graylog2 Web Interface"
 NAME=graylog2-web
 GRAYLOG2_WEB_HOME=/usr/share/graylog2/web
 JAR_DIRECTORY="${GRAYLOG2_WEB_HOME}/lib"
+
+if [ -e /etc/profile.d/jdk.sh ]; then
+    source /etc/profile.d/jdk.sh
+fi
+
 DAEMON=$(which java)
 PIDFILE=/var/run/graylog2/$NAME.pid
 LOGFILE=/var/log/graylog2/$NAME.log
