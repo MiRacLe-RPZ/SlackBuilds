@@ -1,0 +1,8 @@
+PRGNAM="ansible"
+VERSION="1.5.4"
+HOMEPAGE="http://ansible.cc"
+DOWNLOAD="https://github.com/ansible/ansible/archive/v1.5.4.tar.gz"
+MD5SUM="1cf7970cec1891265116511af3797649"
+REQUIRES="paramiko PyYAML Jinja2"
+MAINTAINER="MiRacLe.RPZ"
+EMAIL="miracle@rpz.name"
