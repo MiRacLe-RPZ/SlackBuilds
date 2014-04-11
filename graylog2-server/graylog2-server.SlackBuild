@@ -55,7 +55,7 @@ PKG=$TMP/package-$PKGNAM
 OUTPUT=${OUTPUT:-/tmp}
 
 SRCURL="https://github.com/Graylog2/${PRGNAM}/releases/download/${VERSION}/${PRGNAM}-${VERSION}.tgz"
-SOURCE="${CWD}/${PRGNAM}-${VERSION}.tgz"
+SOURCE="${CWD}/${PRGNAM}-${VERSION}.tar.gz"
 
 
 rm -rf $PKG

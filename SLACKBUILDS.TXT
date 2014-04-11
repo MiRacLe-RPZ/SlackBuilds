@@ -1,3 +1,15 @@
+SLACKBUILD NAME: ansible
+SLACKBUILD LOCATION: ./ansible
+SLACKBUILD FILES: ansible.SlackBuild ansible.info doinst.sh slack-desc slack-required
+SLACKBUILD VERSION: 1.5.4
+SLACKBUILD DOWNLOAD: https://github.com/ansible/ansible/archive/v1.5.4.tar.gz
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: 1cf7970cec1891265116511af3797649
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD REQUIRES: paramiko PyYAML Jinja2
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  Ansible (a ssh-based config management framework)
+
 SLACKBUILD NAME: cabextract
 SLACKBUILD LOCATION: ./cabextract
 SLACKBUILD FILES: cabextract.SlackBuild cabextract.info slack-desc

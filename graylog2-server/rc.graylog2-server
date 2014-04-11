@@ -14,8 +14,8 @@ PIDFILE=/var/run/graylog2/$NAME.pid
 LOGFILE=/var/log/graylog2/$NAME.log
 DAEMON_ARGS="-Djava.net.preferIPv4Stack=true -jar $JAR_FILE -p $PIDFILE -f /etc/graylog2/server/server.conf"
 SCRIPTNAME=/etc/rc.d/rc.$NAME
-GRAYLOG2_USER=graylog2
-GRAYLOG2_GROUP=graylog2
+DAEMON_USER=graylog2
+DAEMON_GROUP=graylog2
 
 [ -r /etc/default/$NAME ] && . /etc/default/$NAME
 
@@ -33,8 +33,8 @@ make_dir() {
         mkdir -p $DIR
     fi
     RIGHTS=$(stat -c "%U:%G" $DIR)
-    if [ "$RIGHTS" != "${GRAYLOG2_USER}:${GRAYLOG2_GROUP}" ]; then
-        chown ${GRAYLOG2_USER}:${GRAYLOG2_GROUP} ${DIR}
+    if [ "$RIGHTS" != "${DAEMON_USER}:${DAEMON_GROUP}" ]; then
+        chown ${DAEMON_USER}:${DAEMON_GROUP} ${DIR}
     fi
 }
 
@@ -59,7 +59,7 @@ do_start()
         success "apparently already running"
         return 1
     else
-        su -s /bin/bash -c "nohup $DAEMON $DAEMON_ARGS >> $LOGFILE 2>&1 &" ${GRAYLOG2_USER} || return 2
+        su -s /bin/bash -c "$DAEMON $DAEMON_ARGS >> $LOGFILE 2>&1 &" ${DAEMON_USER} || return 2
         sleep 2
         if running ; then
             return 0
@@ -131,7 +131,17 @@ case "$1" in
         esac
         ;;
   status)
-       status -p "${PIDFILE}" "$DAEMON" "$NAME" && exit 0 || exit $?
+        if running ; then
+          echo "${NAME} running as pid $(cat $PIDFILE)"
+        else
+          echo "${NAME} is not running"
+          if [ -f "$PIDFILE" ]; then
+            echo "Stale pid file with $(cat $PIDFILE) - removing..."
+            rm -f $PIDFILE
+            exit 2
+          fi
+        fi
+        exit 0
        ;;
   setup)
        cfg_input
