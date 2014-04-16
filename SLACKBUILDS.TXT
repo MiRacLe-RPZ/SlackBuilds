@@ -223,17 +223,6 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  nginx (http/imap/pop3 proxy)
 
-SLACKBUILD NAME: node
-SLACKBUILD LOCATION: ./node
-SLACKBUILD FILES: node.SlackBuild node.info npm.sh slack-desc slack-required
-SLACKBUILD VERSION: 0.10.26
-SLACKBUILD DOWNLOAD: http://nodejs.org/dist/v0.10.26/node-v0.10.26.tar.gz
-SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 15e9018dadc63a2046f61eb13dfd7bd6
-SLACKBUILD MD5SUM_x86_64: 
-SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
-SLACKBUILD SHORT DESCRIPTION:  Node (Evented I/O for V8 JavaScript)
-
 SLACKBUILD NAME: pam
 SLACKBUILD LOCATION: ./pam
 SLACKBUILD FILES: pam.SlackBuild pam.info slack-desc
@@ -435,10 +424,10 @@ SLACKBUILD SHORT DESCRIPTION:  Redis (Key-Value Store)
 SLACKBUILD NAME: rubymine
 SLACKBUILD LOCATION: ./rubymine
 SLACKBUILD FILES: rubymine.SlackBuild rubymine.info slack-desc slack-required
-SLACKBUILD VERSION: 135.433
-SLACKBUILD DOWNLOAD: http://download.jetbrains.com/ruby/RubyMine-135.433.tar.gz
+SLACKBUILD VERSION: 135.588
+SLACKBUILD DOWNLOAD: http://download.jetbrains.com/ruby/RubyMine-6.3.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 5459c5a5ccd058f52276aecb7aa03c67
+SLACKBUILD MD5SUM: 7cfce21f1c0cbdf83b9f0e6dbbd1d1f0
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  RubyIDE based on JetBrain's IDEA

@@ -1,7 +1,0 @@
-PRGNAM="node"
-VERSION="0.10.26"
-HOMEPAGE="http://nodejs.org"
-DOWNLOAD="http://nodejs.org/dist/v0.10.26/node-v0.10.26.tar.gz"
-MD5SUM="15e9018dadc63a2046f61eb13dfd7bd6"
-MAINTAINER="MiRacLe.RPZ"
-EMAIL="miracle@rpz.name"

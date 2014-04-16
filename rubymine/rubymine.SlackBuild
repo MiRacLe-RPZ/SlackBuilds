@@ -21,8 +21,8 @@ set -e
 
 PRGNAM=RubyMine
 PKGNAM=rubymine
-VERSION=${VERSION:-135.433}
-SRCVER=${SRCVER:-6.0.3}
+VERSION=${VERSION:-135.588}
+SRCVER=${SRCVER:-6.3}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
@@ -40,12 +40,10 @@ TMP=${TMP:-/tmp/rpz}
 PKG=$TMP/package-$PKGNAM
 OUTPUT=${OUTPUT:-/tmp}
 
-SRCURL="http://download.jetbrains.com/ruby/$PRGNAM-$VERSION.tar.gz"
-SOURCE="${CWD}/${PRGNAM}-${VERSION}.tar.gz"
-#SOURCE="${CWD}/${PRGNAM}-${SRCVER}.tar.gz"
-#SRCURL="http://download.jetbrains.com/ruby/$PRGNAM-${SRCVER}.tar.gz"
-
-
+#SRCURL="http://download.jetbrains.com/ruby/$PRGNAM-$VERSION.tar.gz"
+#SOURCE="${CWD}/${PRGNAM}-${VERSION}.tar.gz"
+SOURCE="${CWD}/${PRGNAM}-${SRCVER}.tar.gz"
+SRCURL="http://download.jetbrains.com/ruby/$PRGNAM-${SRCVER}.tar.gz"
 
 rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
@@ -124,8 +122,8 @@ cd $TMP
 
 tar zxf $SOURCE
 
-cd $PRGNAM-$VERSION
-#cd $PRGNAM-$SRCVER
+#cd $PRGNAM-$VERSION
+cd $PRGNAM-$SRCVER
 
 chown -R root:root .
 find . \
