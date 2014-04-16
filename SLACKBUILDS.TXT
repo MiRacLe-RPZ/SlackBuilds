@@ -137,7 +137,7 @@ SLACKBUILD SHORT DESCRIPTION:  icoutils (Windows Icon and Cursor Utilities)
 SLACKBUILD NAME: jdk-work
 SLACKBUILD LOCATION: ./jdk-work
 SLACKBUILD FILES: jdk-work.SlackBuild jdk-work.info profile.d/jdk.csh profile.d/jdk.sh slack-desc
-SLACKBUILD VERSION: 7u51
+SLACKBUILD VERSION: 7u55
 SLACKBUILD DOWNLOAD: 
 SLACKBUILD DOWNLOAD_x86_64: 
 SLACKBUILD MD5SUM: 
