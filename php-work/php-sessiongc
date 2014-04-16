@@ -1,5 +1,0 @@
-#!/bin/sh
-set -e
-SAVEPATH=`/usr/bin/php-ini "session.save_path"`
-MAXLIFETIME=$((`/usr/bin/php-ini "session.gc_maxlifetime"`/60))
-[ -d $SAVEPATH ] && find $SAVEPATH -type f -name "sess_*" -amin +$MAXLIFETIME -print0|xargs -r -0 rm
