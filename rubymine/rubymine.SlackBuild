@@ -42,8 +42,9 @@ OUTPUT=${OUTPUT:-/tmp}
 
 #SRCURL="http://download.jetbrains.com/ruby/$PRGNAM-$VERSION.tar.gz"
 #SOURCE="${CWD}/${PRGNAM}-${VERSION}.tar.gz"
-SOURCE="${CWD}/${PRGNAM}-${SRCVER}.tar.gz"
+
 SRCURL="http://download.jetbrains.com/ruby/$PRGNAM-${SRCVER}.tar.gz"
+SOURCE="${CWD}/$(basename $SRCURL)"
 
 rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT

@@ -41,9 +41,8 @@ OUTPUT=${OUTPUT:-/tmp}
 
 
 SRCURL="http://download.jetbrains.com/webide/$PRGNAM-EAP-$VERSION.tar.gz"
-SOURCE="${CWD}/${PRGNAM}-${VERSION}.tar.gz"
 #SRCURL="http://download.jetbrains.com/webide/PhpStorm-7.1.3.tar.gz"
-
+SOURCE="${CWD}/$(basename $SRCURL)"
 
 rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
@@ -76,22 +75,6 @@ dnl() {
        fi
     fi
 }
-
-
-if [ "$1" == "netinstall" ]; then
-    mkdir -p $PKG/install $PKG/usr/doc/${PKGNAM}-${VERSION}/SlackBuild
-    cp -a $CWD/$PKGNAM.SlackBuild $CWD/slack-* \
-        $PKG/usr/doc/${PKGNAM}-${VERSION}/SlackBuild/
-    cat > $PKG/install/doinst.sh  <<NETINSTALL
-      set -eu
-      cd usr/doc/${PKGNAM}-${VERSION}/SlackBuild/ && OUTPUT=/tmp sh ./${PKGNAM}.SlackBuild && /sbin/upgradepkg --install-new /tmp/${PKGNAM}-${VERSION}-${ARCH}-${BUILD}${TAG}.${PKGTYPE}
-NETINSTALL
-
-    cd $PKG
-    chown -R root:root $PKG
-    /sbin/makepkg -l y -c n $OUTPUT/$PKGNAM-$VERSION-noarch-netinstall.$PKGTYPE
-    exit 0
-fi
 
 check_installed() {
     PACKAGE=${1}
