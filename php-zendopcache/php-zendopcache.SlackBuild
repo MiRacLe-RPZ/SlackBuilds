@@ -87,7 +87,7 @@ if [ -e $CWD/slack-required ]; then
     done
 fi
 
-if [ !-e $CWD/slack-conflicts ]; then
+if [ -e $CWD/slack-conflicts ]; then
     for REQ in `cat $CWD/slack-conflicts|cut -f 1 -d " "`;do
         ! check_installed "$REQ" || {
            echo "${0##*/}: Conflict package '$REQ' was installed."
