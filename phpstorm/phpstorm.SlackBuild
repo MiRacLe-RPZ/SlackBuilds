@@ -99,14 +99,25 @@ check_installed() {
     return $?
 }
 
+
 if [ -e $CWD/slack-required ]; then
-    for REQ in `cat $CWD/slack-required|cut -f 1 -d " "`;do
-        check_installed "$REQ" || {
+    IFS=$'\n'
+    for REQ in `cat $CWD/slack-required`; do
+        pkgs=(`echo $REQ| tr "|" "\n"`)
+        for pkg in "${!pkgs[@]}"; do
+            search_for=$(echo -n "${pkgs[pkg]}"|sed -e 's/^ *//' -e 's/ *$//'|awk '{print $1}')
+            check_installed ${search_for} || {
+                unset "pkgs[pkg]"
+            }
+        done
+        if [ 0 = ${#pkgs[@]} ]; then
            echo "${0##*/}: Required package '$REQ' not installed."
            exit 1
-       }
+        fi
     done
+    unset IFS
 fi
+
 
 if [ -e $CWD/slack-conflicts ]; then
     for REQ in `cat $CWD/slack-conflicts|cut -f 1 -d " "`;do
