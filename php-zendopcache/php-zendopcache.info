@@ -1,7 +1,7 @@
 PRGNAM="php-zendopcache"
 VERSION="7.0.3"
 HOMEPAGE="http://pecl.php.net/package/ZendOpcache"
-DOWNLOAD="http://pecl.php.net/package/ZendOpcache/7.0.3"
+DOWNLOAD="http://pecl.php.net/get/zendopcache-7.0.3.tgz"
 MD5SUM="a25679504ae75bf0813acafc99991a95"
 DOWNLOAD_x86_64=""
 MD5SUM_x86_64=""

@@ -337,7 +337,7 @@ SLACKBUILD NAME: php-zendopcache
 SLACKBUILD LOCATION: ./php-zendopcache
 SLACKBUILD FILES: doinst.sh php-zendopcache.SlackBuild php-zendopcache.info slack-conflicts slack-desc slack-required zendopcache.ini
 SLACKBUILD VERSION: 7.0.3
-SLACKBUILD DOWNLOAD: http://pecl.php.net/package/ZendOpcache/7.0.3
+SLACKBUILD DOWNLOAD: http://pecl.php.net/get/zendopcache-7.0.3.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
 SLACKBUILD MD5SUM: a25679504ae75bf0813acafc99991a95
 SLACKBUILD MD5SUM_x86_64: 
