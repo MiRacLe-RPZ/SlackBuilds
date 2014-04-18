@@ -1,8 +1,8 @@
 #!/bin/sh
 
-# Slackware build script for php-xdebug
+# Slackware build script for php-zendopcache
 
-# Copyright 2013-2014 MiRacLe.RPZ
+# Copyright 2014 MiRacLe.RPZ
 # All rights reserved.
 #
 # Redistribution and use of this script, with or without modification, is
@@ -22,11 +22,11 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-SRCNAM=xdebug
-PRGNAM=php-xdebug
-PKGNAM=php-xdebug
+SRCNAM=zendopcache
+PRGNAM=php-zendopcache
+PKGNAM=php-zendopcache
 PHP_CONFIG=$(which php-config)
-SRCURL=$(curl "http://pecl.php.net/feeds/pkg_xdebug.rss" 2>/dev/null|grep -m1 "item rdf" -a2|grep link|sed -r "s/<(|\/)link>//g"|tr -d ' ')
+SRCURL=$(curl "http://pecl.php.net/feeds/pkg_${SRCNAM}.rss" 2>/dev/null|grep -m1 "item rdf" -a2|grep link|sed -r "s/<(|\/)link>//g"|tr -d ' ')
 VERSION=$(echo $SRCURL|cut -d '/' -f6)
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
@@ -87,7 +87,7 @@ if [ -e $CWD/slack-required ]; then
     done
 fi
 
-if [ -e $CWD/slack-conflicts ]; then
+if [ !-e $CWD/slack-conflicts ]; then
     for REQ in `cat $CWD/slack-conflicts|cut -f 1 -d " "`;do
         ! check_installed "$REQ" || {
            echo "${0##*/}: Conflict package '$REQ' was installed."
@@ -100,23 +100,18 @@ dnl() {
     SOURCE=$1
     SRCURL=$2
     if [ ! -e $SOURCE ]; then
-       XSOURCE="$(dirname ${SOURCE})/$(basename ${SRCURL})"
-       if [ ! -e $XSOURCE ]; then
-           if ! [ "x${SRCURL}" == "x" ]; then
-             echo "Downloading '$(basename ${SOURCE})'."
-             wget --no-check-certificate -nv -T 30 -O "${SOURCE}" "${SRCURL}" || true
-             if [ $? -ne 0 -o ! -s "${SOURCE}" ]; then
-                echo "Downloading '$(basename ${SOURCE})' failed... aborting the build."
-                mv -f "${SOURCE}" "${SOURCE}.FAIL"
-                exit 1
-             fi
-           else
+       if ! [ "x${SRCURL}" == "x" ]; then
+         echo "Downloading '$(basename ${SOURCE})'."
+         wget --no-check-certificate -nv -T 30 -O "${SOURCE}" "${SRCURL}" || true
+         if [ $? -ne 0 -o ! -s "${SOURCE}" ]; then
+            echo "Downloading '$(basename ${SOURCE})' failed... aborting the build."
+            mv -f "${SOURCE}" "${SOURCE}.FAIL"
+            exit 1
+         fi
+         else
              echo "File '${SOURCE}' not available... aborting the build."
              exit 1
-           fi
-       else
-            mv $XSOURCE $SOURCE
-       fi
+         fi
     fi
 }
 
@@ -146,7 +141,7 @@ CXXFLAGS="$SLKCFLAGS" \
   --docdir=/usr/doc/$PRGNAM-$VERSION \
   --with-php-config=$PHP_CONFIG \
   --build=$ARCH-slackware-linux \
-  --enable-xdebug \
+  --enable-$SRCNAM \
   --with-libdir=lib${LIBDIRSUFFIX}
 
 make -j$NUMJOBS
@@ -162,7 +157,7 @@ find $PKG | xargs file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
-cp -a CREDITS LICENSE NEWS README $PKG/usr/doc/$PRGNAM-$VERSION/
+cp -a LICENSE README $PKG/usr/doc/$PRGNAM-$VERSION/
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION/SlackBuild
 cp -a $CWD/$PRGNAM.SlackBuild $CWD/$PRGNAM.info $CWD/slack-* $CWD/doinst.sh $CWD/*.ini \
  $PKG/usr/doc/$PRGNAM-$VERSION/SlackBuild
