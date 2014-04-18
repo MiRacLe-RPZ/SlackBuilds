@@ -107,25 +107,6 @@ dnl() {
 }
 
 
-
-
-
-if [ "$1" == "netinstall" ]; then
-    mkdir -p $PKG/install $PKG/usr/doc/${PKGNAM}-${VERSION}/SlackBuild
-    cp -a $CWD/$PKGNAM.SlackBuild $CWD/slack-* \
-        $PKG/usr/doc/${PKGNAM}-${VERSION}/SlackBuild/
-    cat > $PKG/install/doinst.sh  <<NETINSTALL
-      set -eu
-      cd usr/doc/${PKGNAM}-${VERSION}/SlackBuild/ && OUTPUT=/tmp sh ./${PKGNAM}.SlackBuild && /sbin/upgradepkg --install-new /tmp/${PKGNAM}-${VERSION}-${ARCH}-${BUILD}${TAG}.${PKGTYPE}
-NETINSTALL
-
-    cd $PKG
-    chown -R root:root $PKG
-    /sbin/makepkg -l y -c n $OUTPUT/$PKGNAM-$VERSION-noarch-netinstall.$PKGTYPE
-    exit 0
-fi
-
-
 dnl "${SOURCE}" "${SRCURL}"
 
 cd $TMP
@@ -193,9 +174,9 @@ cp -a $CWD/$PKGNAM.SlackBuild $CWD/slack-* \
 ln -s /opt/$PKGNAM/bin/phpstorm.sh $PKG/usr/bin/$PKGNAM
 
 ( cd $PKG
-  find . | xargs file | grep "executable" | grep ELF | cut -f 1 -d : | xargs -r strip --strip-unneeded 2> /dev/null || true
-  find . | xargs file | grep "shared object" | grep ELF | cut -f 1 -d : | xargs -r strip --strip-unneeded 2> /dev/null || true
-  find . | xargs file | grep "current ar archive" | cut -f 1 -d : | xargs -r strip --strip-unneeded 2> /dev/null || true
+  find . | xargs -0 file | grep "executable" | grep ELF | cut -f 1 -d : | xargs -r strip --strip-unneeded 2> /dev/null || true
+  find . | xargs -0 file | grep "shared object" | grep ELF | cut -f 1 -d : | xargs -r strip --strip-unneeded 2> /dev/null || true
+  find . | xargs -0 file | grep "current ar archive" | cut -f 1 -d : | xargs -r strip --strip-unneeded 2> /dev/null || true
 )
 
 mkdir -p $PKG/install
