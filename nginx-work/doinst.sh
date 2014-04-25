@@ -35,6 +35,6 @@ config etc/nginx/win-utf.new
 
 if [ -d /etc/monit.d/ ]; then
     if [ ! -r /etc/monit.d/nginx ]; then
-        cp /usr/doc/nginx-1.4.2/monit.nginx /etc/monit.d/nginx
+        cp /usr/doc/nginx-1.4.7/monit.nginx /etc/monit.d/nginx
     fi
 fi
