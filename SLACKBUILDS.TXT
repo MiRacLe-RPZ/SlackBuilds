@@ -212,9 +212,9 @@ SLACKBUILD REQUIRES: cabextract
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  msvistawebfonts
 
-SLACKBUILD NAME: mysql-pinba
-SLACKBUILD LOCATION: ./mysql-pinba
-SLACKBUILD FILES: mysql-pinba.SlackBuild mysql-pinba.info slack-desc slack-required
+SLACKBUILD NAME: mysql-pinba-work
+SLACKBUILD LOCATION: ./mysql-pinba-work
+SLACKBUILD FILES: mysql-pinba-work.SlackBuild mysql-pinba-work.info slack-desc slack-required
 SLACKBUILD VERSION: 1.0.0
 SLACKBUILD DOWNLOAD: http://pinba.org/files/pinba_engine-1.0.0.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -321,17 +321,6 @@ SLACKBUILD MD5SUM: 1c6e99187d25023411b663ea09f145ee
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php-mssql (php MS SQL extension)
-
-SLACKBUILD NAME: php-odbc
-SLACKBUILD LOCATION: ./php-odbc
-SLACKBUILD FILES: doinst.sh odbc.ini php-5.4.27.tar.bz2 php-odbc.SlackBuild php-odbc.info slack-desc slack-required
-SLACKBUILD VERSION: 5.4.27
-SLACKBUILD DOWNLOAD: http://www.php.net/distributions/php-5.4.27.tar.bz2
-SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 1c6e99187d25023411b663ea09f145ee
-SLACKBUILD MD5SUM_x86_64: 
-SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
-SLACKBUILD SHORT DESCRIPTION: 
 
 SLACKBUILD NAME: php-redis
 SLACKBUILD LOCATION: ./php-redis
