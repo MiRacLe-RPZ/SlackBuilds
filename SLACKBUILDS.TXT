@@ -53,6 +53,17 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  Eye-Fi Configuration Tool
 
+SLACKBUILD NAME: ffcast2
+SLACKBUILD LOCATION: ./ffcast2
+SLACKBUILD FILES: ffcast2.SlackBuild ffcast2.info slack-desc slack-required
+SLACKBUILD VERSION: 1.0
+SLACKBUILD DOWNLOAD: https://github.com/lolilolicon/FFcast2/archive/1.0.tar.gz
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: 0bff7ba5fc79c7ca64ec80631822e367
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  screencast one or more interactively selected region or window
+
 SLACKBUILD NAME: freetds
 SLACKBUILD LOCATION: ./freetds
 SLACKBUILD FILES: doinst.sh freetds.SlackBuild freetds.info slack-desc slack-required
