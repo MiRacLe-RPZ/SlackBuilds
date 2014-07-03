@@ -3,7 +3,7 @@
 
 PRGNAM=monit
 PKGNAM=monit
-VERSION=5.8
+VERSION=5.8.1
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 
@@ -137,7 +137,7 @@ if [ -d $PKG/usr/man ]; then
 fi
 
 mkdir -p $PKG/usr/doc/$PKGNAM-$VERSION/SlackBuild
-cp -a COPYING README CHANGES doc/*  $PKG/usr/doc/$PRGNAM-$VERSION
+cp -a COPYING README CONTRIBUTORS doc/*  $PKG/usr/doc/$PRGNAM-$VERSION
 
 cp -a $CWD/$PKGNAM.SlackBuild $CWD/slack-* $CWD/rc.* $CWD/doinst.sh \
   $PKG/usr/doc/$PKGNAM-$VERSION/SlackBuild/
