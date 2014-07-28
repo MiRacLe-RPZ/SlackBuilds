@@ -53,6 +53,17 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  Eye-Fi Configuration Tool
 
+SLACKBUILD NAME: ffcast2
+SLACKBUILD LOCATION: ./ffcast2
+SLACKBUILD FILES: ffcast2.SlackBuild ffcast2.info slack-desc slack-required
+SLACKBUILD VERSION: 1.0
+SLACKBUILD DOWNLOAD: https://github.com/lolilolicon/FFcast2/archive/1.0.tar.gz
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: 0bff7ba5fc79c7ca64ec80631822e367
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  screencast one or more interactively selected region or window
+
 SLACKBUILD NAME: freetds
 SLACKBUILD LOCATION: ./freetds
 SLACKBUILD FILES: doinst.sh freetds.SlackBuild freetds.info slack-desc slack-required
@@ -192,10 +203,10 @@ SLACKBUILD SHORT DESCRIPTION:  KFilebox (KDE Dropbox client)
 SLACKBUILD NAME: monit
 SLACKBUILD LOCATION: ./monit
 SLACKBUILD FILES: doinst.sh monit.SlackBuild monit.info rc.monit slack-desc
-SLACKBUILD VERSION: 5.8
-SLACKBUILD DOWNLOAD: http://mmonit.com/monit/dist/monit-5.8.tar.gz
+SLACKBUILD VERSION: 5.8.1
+SLACKBUILD DOWNLOAD: http://mmonit.com/monit/dist/monit-5.8.1.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: c6873b0828f872676f9e7fe1476a8dc2
+SLACKBUILD MD5SUM: 9467328f1da0b644a766a387443db2ea
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  monit (Unix System Management)
