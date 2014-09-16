@@ -498,17 +498,6 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  Crossplatform Jabber client
 
-SLACKBUILD NAME: vagrant
-SLACKBUILD LOCATION: ./vagrant
-SLACKBUILD FILES: slack-desc vagrant.SlackBuild vagrant.info
-SLACKBUILD VERSION: 1.5.3
-SLACKBUILD DOWNLOAD: https://dl.bintray.com/mitchellh/vagrant/vagrant_1.5.3_i686.deb
-SLACKBUILD DOWNLOAD_x86_64: https://dl.bintray.com/mitchellh/vagrant/vagrant_1.5.3_x86_64.deb
-SLACKBUILD MD5SUM: 961f65b98ce0c8baf86c803aeaec29a8
-SLACKBUILD MD5SUM_x86_64: ef0bc4a36a1d0dc58197c8f804f69634
-SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
-SLACKBUILD SHORT DESCRIPTION:  vagrant (Development environments made easy.)
-
 SLACKBUILD NAME: zabbix_server
 SLACKBUILD LOCATION: ./zabbix_server
 SLACKBUILD FILES: doinst.sh rc.zabbix_server slack-conflicts slack-desc slack-required zabbix_server.SlackBuild zabbix_server.info
