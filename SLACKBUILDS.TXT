@@ -498,6 +498,17 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  Crossplatform Jabber client
 
+SLACKBUILD NAME: xxd
+SLACKBUILD LOCATION: ./xxd
+SLACKBUILD FILES: slack-desc xxd.SlackBuild xxd.info
+SLACKBUILD VERSION: 1.10
+SLACKBUILD DOWNLOAD: http://grail.cba.csuohio.edu/~somos/xxd-1.10.tar.gz
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: 604cf64093fddc30adf41f1f371c9032
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION: 
+
 SLACKBUILD NAME: zabbix_server
 SLACKBUILD LOCATION: ./zabbix_server
 SLACKBUILD FILES: doinst.sh rc.zabbix_server slack-conflicts slack-desc slack-required zabbix_server.SlackBuild zabbix_server.info
