@@ -509,14 +509,3 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION: 
 
-SLACKBUILD NAME: zabbix_server
-SLACKBUILD LOCATION: ./zabbix_server
-SLACKBUILD FILES: doinst.sh rc.zabbix_server slack-conflicts slack-desc slack-required zabbix_server.SlackBuild zabbix_server.info
-SLACKBUILD VERSION: 2.0.8
-SLACKBUILD DOWNLOAD: http://downloads.sourceforge.net/zabbix/zabbix-2.0.8.tar.gz
-SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 8fef9e6f499295211dd9b2a9db96464b
-SLACKBUILD MD5SUM_x86_64: 
-SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
-SLACKBUILD SHORT DESCRIPTION:  zabbix_server (enterprise-class distributed monitoring solution)
-
