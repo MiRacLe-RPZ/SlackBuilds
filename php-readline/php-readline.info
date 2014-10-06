@@ -1,6 +1,6 @@
-PRGNAM="php-mssql"
+PRGNAM="php-readline"
 VERSION="5.4.27"
-HOMEPAGE="http://www.php.net/book.mssql"
+HOMEPAGE="http://www.php.net/book.readline"
 DOWNLOAD="http://www.php.net/distributions/php-5.4.27.tar.bz2"
 MD5SUM="1c6e99187d25023411b663ea09f145ee"
 DOWNLOAD_x86_64=""
