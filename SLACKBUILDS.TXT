@@ -236,11 +236,11 @@ SLACKBUILD SHORT DESCRIPTION:  mysql-pinba (PHP Statistics Server - DB part)
 
 SLACKBUILD NAME: nginx-work
 SLACKBUILD LOCATION: ./nginx-work
-SLACKBUILD FILES: doinst.sh monit.nginx nginx-work.SlackBuild nginx-work.info nginx.conf nginx.logrotate rc.nginx slack-conflicts slack-desc slack-required
-SLACKBUILD VERSION: 1.4.7
-SLACKBUILD DOWNLOAD: http://nginx.org/download/nginx-1.4.7.tar.gz
+SLACKBUILD FILES: doinst.sh monit.nginx nginx-work-redmine.SlackBuild nginx-work.SlackBuild nginx-work.info nginx.conf nginx.logrotate rc.nginx slack-conflicts slack-desc slack-required
+SLACKBUILD VERSION: 1.7.3
+SLACKBUILD DOWNLOAD: http://nginx.org/download/nginx-1.7.3.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: aee151d298dcbfeb88b3f7dd3e7a4d17
+SLACKBUILD MD5SUM: 2b7f37f86e0af9bbb109c4dc225c6247
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  nginx (http/imap/pop3 proxy)
@@ -380,10 +380,10 @@ SLACKBUILD SHORT DESCRIPTION:   An interactive shell for php
 SLACKBUILD NAME: phpstorm
 SLACKBUILD LOCATION: ./phpstorm
 SLACKBUILD FILES: phpstorm.SlackBuild phpstorm.info slack-desc slack-required
-SLACKBUILD VERSION: 138.2071
-SLACKBUILD DOWNLOAD: http://download-ln.jetbrains.com/webide/PhpStorm-EAP-138.2071.tar.gz
+SLACKBUILD VERSION: 138.2502
+SLACKBUILD DOWNLOAD: http://download-ln.jetbrains.com/webide/PhpStorm-EAP-138.2502.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: ef0e3385417298edd3253a6c5d065f2a
+SLACKBUILD MD5SUM: 736f96a014dd3fc1158c1ce6d51bd1dd
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  PhpIDE based on JetBrain's IDEA
