@@ -236,7 +236,7 @@ SLACKBUILD SHORT DESCRIPTION:  mysql-pinba (PHP Statistics Server - DB part)
 
 SLACKBUILD NAME: nginx-work
 SLACKBUILD LOCATION: ./nginx-work
-SLACKBUILD FILES: doinst.sh monit.nginx nginx-work-redmine.SlackBuild nginx-work.SlackBuild nginx-work.info nginx.conf nginx.logrotate rc.nginx slack-conflicts slack-desc slack-required
+SLACKBUILD FILES: doinst.sh monit.nginx nginx-work.SlackBuild nginx-work.info nginx.conf nginx.logrotate rc.nginx slack-conflicts slack-desc slack-required
 SLACKBUILD VERSION: 1.7.3
 SLACKBUILD DOWNLOAD: http://nginx.org/download/nginx-1.7.3.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -457,10 +457,10 @@ SLACKBUILD SHORT DESCRIPTION:  Redis (Key-Value Store)
 SLACKBUILD NAME: rubymine
 SLACKBUILD LOCATION: ./rubymine
 SLACKBUILD FILES: rubymine.SlackBuild rubymine.info slack-desc slack-required
-SLACKBUILD VERSION: 138.2332
-SLACKBUILD DOWNLOAD: http://download.jetbrains.com/ruby/RubyMine-138.2332.tar.gz
+SLACKBUILD VERSION: 139.106
+SLACKBUILD DOWNLOAD: http://download.jetbrains.com/ruby/RubyMine-139.106.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 49b60c1f09a4da99063f5a0536870aaf
+SLACKBUILD MD5SUM: 99975520d3fd9114c42b01f32d9da1e6
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  RubyIDE based on JetBrain's IDEA
