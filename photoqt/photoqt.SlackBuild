@@ -2,7 +2,7 @@
 
 PRGNAM=photoqt
 PKGNAM=$(basename $0 .SlackBuild)
-VERSION=${VERSION:-1.0}
+VERSION=${VERSION:-1.1.0.1}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
@@ -82,7 +82,7 @@ if [ ! -e $SOURCE ]; then
 fi
 
 tar zxf $SOURCE || exit 1
-cd $PRGNAM-`echo "$VERSION"|cut -c -5`
+cd $PRGNAM-$VERSION
 
 chown -R root:root .
 find . \
@@ -90,6 +90,9 @@ find . \
  -exec chmod 755 {} \; -o \
  \( -perm 666 -o -perm 664 -o -perm 600 -o -perm 444 -o -perm 440 -o -perm 400 \) \
  -exec chmod 644 {} \;
+
+
+sed -i "s|exiv2|exiv2 phonon|" CMakeLists.txt
 
 cd build 
 
@@ -99,7 +102,11 @@ cmake \
     -DLIB_SUFFIX=${LIBDIRSUFFIX} \
     -DCMAKE_C_FLAGS:STRING="$SLKCFLAGS" \
     -DCMAKE_CXX_FLAGS:STRING="$SLKCFLAGS" \
-    -DPHONON=OFF \
+    -DQT_PHONON_LIBRARY:STRING="/usr/lib${LIBDIRSUFFIX}/libphonon.so" \
+    -DPHONON:BOOL="0" \
+    -DQT_PHONON_INCLUDE_DIR:PATH="/usr/include/phonon/" \
+    -DCMAKE_BUILD_TYPE=Release ..
+    
     ..
 make -j$NUMJOBS
 make DESTDIR=$PKG install/strip
