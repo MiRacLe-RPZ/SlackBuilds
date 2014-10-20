@@ -38,7 +38,8 @@ else
   LIBDIRSUFFIX=""
 fi
 
-NUMJOBS=${NUMJOBS:-$(( $(getconf _NPROCESSORS_ONLN) + 1 ))}
+#NUMJOBS=${NUMJOBS:-$(( $(getconf _NPROCESSORS_ONLN) + 1 ))}
+NUMJOBS=1
 
 check_installed() {
     PACKAGE=${1}
@@ -65,11 +66,6 @@ if [ -e $CWD/slack-conflicts ]; then
 fi
 
 set -e
-
-if [ -d /usr/lib${LIBDIRSUFFIX}/qt ]; then
-  export QTDIR=/usr/lib${LIBDIRSUFFIX}/qt
-  export QT4DIR=$QTDIR
-fi
 
 rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
@@ -98,16 +94,12 @@ cd build
 
 cmake \
     -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_BUILD_TYPE=RELEASE \
-    -DLIB_SUFFIX=${LIBDIRSUFFIX} \
+    -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_C_FLAGS:STRING="$SLKCFLAGS" \
     -DCMAKE_CXX_FLAGS:STRING="$SLKCFLAGS" \
-    -DQT_PHONON_LIBRARY:STRING="/usr/lib${LIBDIRSUFFIX}/libphonon.so" \
-    -DPHONON:BOOL="0" \
-    -DQT_PHONON_INCLUDE_DIR:PATH="/usr/include/phonon/" \
-    -DCMAKE_BUILD_TYPE=Release ..
-    
-    ..
+    -DEXIV2:BOOL=OFF \
+     ..
+
 make -j$NUMJOBS
 make DESTDIR=$PKG install/strip
 cd ..

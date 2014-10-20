@@ -258,11 +258,11 @@ SLACKBUILD SHORT DESCRIPTION:  pam (Pluggable Authentication Modules)
 
 SLACKBUILD NAME: photoqt
 SLACKBUILD LOCATION: ./photoqt
-SLACKBUILD FILES: doinst.sh photoqt-1.1.0.1.tar.gz photoqt.SlackBuild photoqt.info slack-desc slack-required
+SLACKBUILD FILES: doinst.sh photoqt.SlackBuild photoqt.info slack-desc slack-required
 SLACKBUILD VERSION: 1.1.0.1
 SLACKBUILD DOWNLOAD: http://photoqt.org/pkgs/photoqt-1.1.0.1.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: b54dc4de8c7561551f47e47738633002
+SLACKBUILD MD5SUM: f7e2f2898eb7b898a7302344df456276
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  Photo (Qt Graphic Viewer)
