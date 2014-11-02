@@ -21,7 +21,7 @@ set -e
 
 PRGNAM=nginx
 PKGNAM=$(basename $0 .SlackBuild)
-VERSION=${VERSION:-1.7.3}
+VERSION=${VERSION:-1.7.7}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
@@ -121,7 +121,6 @@ CXXFLAGS="$SLKCFLAGS" \
   --with-http_stub_status_module \
   --http-client-body-temp-path=/tmp/nginx/client_body \
   --http-proxy-temp-path=/tmp/nginx/proxy \
-  --with-http_geoip_module \
   --http-fastcgi-temp-path=/dev/shm && \
 make $NUMJOBS && \
 make install DESTDIR=$PKG

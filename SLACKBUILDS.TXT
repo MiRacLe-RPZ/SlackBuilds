@@ -226,10 +226,10 @@ SLACKBUILD SHORT DESCRIPTION:  mysql-pinba (PHP Statistics Server - DB part)
 SLACKBUILD NAME: nginx-work
 SLACKBUILD LOCATION: ./nginx-work
 SLACKBUILD FILES: doinst.sh monit.nginx nginx-work.SlackBuild nginx-work.info nginx.conf nginx.logrotate rc.nginx slack-conflicts slack-desc slack-required
-SLACKBUILD VERSION: 1.7.3
-SLACKBUILD DOWNLOAD: http://nginx.org/download/nginx-1.7.3.tar.gz
+SLACKBUILD VERSION: 1.7.7
+SLACKBUILD DOWNLOAD: http://nginx.org/download/nginx-1.7.7.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 2b7f37f86e0af9bbb109c4dc225c6247
+SLACKBUILD MD5SUM: 3beaa25fc87ff2a75ab1b46174dc5ebf
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  nginx (http/imap/pop3 proxy)
