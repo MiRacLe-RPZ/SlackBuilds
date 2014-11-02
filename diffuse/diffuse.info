@@ -1,8 +1,0 @@
-PKGNAM="diffuse"
-VERSION="0.4.7"
-HOMEPAGE="http://diffuse.sourceforge.net/"
-DOWNLOAD="http://downloads.sourceforge.net/project/diffuse/diffuse/0.4.7/diffuse-0.4.7.tar.bz2"
-MD5SUM="1cbee487cdfdf37a0d1a94f2f57d89e5"
-MAINTAINER="MiRacLe.RPZ"
-EMAIL="miracle@rpz.name"
-

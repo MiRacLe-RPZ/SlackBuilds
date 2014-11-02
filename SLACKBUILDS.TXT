@@ -31,17 +31,6 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  cryptopp (library of cryptographic schemes)
 
-SLACKBUILD NAME: diffuse
-SLACKBUILD LOCATION: ./diffuse
-SLACKBUILD FILES: diffuse.SlackBuild diffuse.info doinst.sh slack-desc
-SLACKBUILD VERSION: 0.4.7
-SLACKBUILD DOWNLOAD: http://downloads.sourceforge.net/project/diffuse/diffuse/0.4.7/diffuse-0.4.7.tar.bz2
-SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 1cbee487cdfdf37a0d1a94f2f57d89e5
-SLACKBUILD MD5SUM_x86_64: 
-SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
-SLACKBUILD SHORT DESCRIPTION:  diffuse (tool for merging and comparing text files)
-
 SLACKBUILD NAME: eyefi-config
 SLACKBUILD LOCATION: ./eyefi-config
 SLACKBUILD FILES: eyefi-config.SlackBuild eyefi-config.info slack-desc
