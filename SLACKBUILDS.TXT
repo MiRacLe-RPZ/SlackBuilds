@@ -366,17 +366,6 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION: 
 
-SLACKBUILD NAME: phpsh
-SLACKBUILD LOCATION: ./phpsh
-SLACKBUILD FILES: doinst.sh phpsh.SlackBuild phpsh.info slack-desc slack-required
-SLACKBUILD VERSION: 1.3
-SLACKBUILD DOWNLOAD: 
-SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 
-SLACKBUILD MD5SUM_x86_64: 
-SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
-SLACKBUILD SHORT DESCRIPTION:   An interactive shell for php
-
 SLACKBUILD NAME: phpstorm
 SLACKBUILD LOCATION: ./phpstorm
 SLACKBUILD FILES: phpstorm.SlackBuild phpstorm.info slack-desc slack-required
