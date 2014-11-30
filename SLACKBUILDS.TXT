@@ -1,6 +1,6 @@
 SLACKBUILD NAME: ansible
 SLACKBUILD LOCATION: ./ansible
-SLACKBUILD FILES: ansible.SlackBuild ansible.info doinst.sh slack-desc slack-required
+SLACKBUILD FILES: ansible.SlackBuild ansible.info doinst.sh google-chrome-stable_current_amd64.deb slack-desc slack-required
 SLACKBUILD VERSION: 1.5.4
 SLACKBUILD DOWNLOAD: https://github.com/ansible/ansible/archive/v1.5.4.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -369,10 +369,10 @@ SLACKBUILD SHORT DESCRIPTION:
 SLACKBUILD NAME: phpstorm
 SLACKBUILD LOCATION: ./phpstorm
 SLACKBUILD FILES: phpstorm.SlackBuild phpstorm.info slack-desc slack-required
-SLACKBUILD VERSION: 139.105
-SLACKBUILD DOWNLOAD: http://download-ln.jetbrains.com/webide/PhpStorm-EAP-139.105.tar.gz
+SLACKBUILD VERSION: 139.584
+SLACKBUILD DOWNLOAD: http://download-ln.jetbrains.com/webide/PhpStorm-EAP-139.584.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 2f03cf9621903f8c27f46f6bc1504a4b
+SLACKBUILD MD5SUM: 179533351ba5f21b117b5826ba27ab52
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  PhpIDE based on JetBrain's IDEA
