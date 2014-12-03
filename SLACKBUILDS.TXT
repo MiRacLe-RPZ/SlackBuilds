@@ -1,6 +1,6 @@
 SLACKBUILD NAME: ansible
 SLACKBUILD LOCATION: ./ansible
-SLACKBUILD FILES: ansible.SlackBuild ansible.info doinst.sh google-chrome-stable_current_amd64.deb slack-desc slack-required
+SLACKBUILD FILES: ansible.SlackBuild ansible.info doinst.sh slack-desc slack-required
 SLACKBUILD VERSION: 1.5.4
 SLACKBUILD DOWNLOAD: https://github.com/ansible/ansible/archive/v1.5.4.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -435,10 +435,10 @@ SLACKBUILD SHORT DESCRIPTION:  Redis (Key-Value Store)
 SLACKBUILD NAME: rubymine
 SLACKBUILD LOCATION: ./rubymine
 SLACKBUILD FILES: rubymine.SlackBuild rubymine.info slack-desc slack-required
-SLACKBUILD VERSION: 139.365
-SLACKBUILD DOWNLOAD: http://download.jetbrains.com/ruby/RubyMine-7.0.tar.gz
+SLACKBUILD VERSION: 139.631
+SLACKBUILD DOWNLOAD: http://download.jetbrains.com/ruby/RubyMine-7.0.1.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 6db7c5d987f4aeba2f5d2968c1a3e702
+SLACKBUILD MD5SUM: 648843e1b01eafce116a128dcccc7e92
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  RubyIDE based on JetBrain's IDEA
