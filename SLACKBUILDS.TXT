@@ -358,10 +358,10 @@ SLACKBUILD SHORT DESCRIPTION:  php-xdebug
 SLACKBUILD NAME: php-zendopcache
 SLACKBUILD LOCATION: ./php-zendopcache
 SLACKBUILD FILES: doinst.sh php-zendopcache.SlackBuild php-zendopcache.info slack-conflicts slack-desc slack-required zendopcache.ini
-SLACKBUILD VERSION: 7.0.3
-SLACKBUILD DOWNLOAD: http://pecl.php.net/get/zendopcache-7.0.3.tgz
+SLACKBUILD VERSION: 7.0.4
+SLACKBUILD DOWNLOAD: http://pecl.php.net/get/zendopcache-7.0.4.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: a25679504ae75bf0813acafc99991a95
+SLACKBUILD MD5SUM: 7aad5d4bc0abd4c2c03c9f9305e9c36d
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION: 
