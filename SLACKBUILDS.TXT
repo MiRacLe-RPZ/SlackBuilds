@@ -20,17 +20,6 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  cabextract (Extract Microsoft cabinet files)
 
-SLACKBUILD NAME: cryptopp
-SLACKBUILD LOCATION: ./cryptopp
-SLACKBUILD FILES: cryptopp.SlackBuild cryptopp.info slack-desc
-SLACKBUILD VERSION: 5.6.2
-SLACKBUILD DOWNLOAD: http://www.cryptopp.com/cryptopp562.zip
-SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 7ed022585698df48e65ce9218f6c6a67
-SLACKBUILD MD5SUM_x86_64: 
-SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
-SLACKBUILD SHORT DESCRIPTION:  cryptopp (library of cryptographic schemes)
-
 SLACKBUILD NAME: eyefi-config
 SLACKBUILD LOCATION: ./eyefi-config
 SLACKBUILD FILES: eyefi-config.SlackBuild eyefi-config.info slack-desc
