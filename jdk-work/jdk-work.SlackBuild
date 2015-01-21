@@ -23,9 +23,9 @@
 PRGNAM=jdk
 PKGNAM=$(basename $0 .SlackBuild)
 SRCNAM=jdk
-VERSION=${VERSION:-7u72}
+VERSION=${VERSION:-7u76}
 BUILD=${BUILD:-1}
-PATCHLEVEL="b14"
+PATCHLEVEL="b13"
 TAG=${TAG:-_rpz}
 
 
@@ -72,12 +72,12 @@ if [ "$ARCH" = "x86_64" ]; then
   LIB_ARCH=amd64
   LIBDIRSUFFIX="64"
   SRC_ARCH="x64"
-  SRC_MD5SUM="cfa44b49e50ea06e5c6ab95ff79e5b2a"
+  SRC_MD5SUM="5a98b1a3e4c48363d03f664f173bbb9a"
 else
   LIB_ARCH=i386
   LIBDIRSUFFIX=""
   SRC_ARCH="i586"
-  SRC_MD5SUM="4a942a47a700e63e050dd66e8ca08a1f"
+  SRC_MD5SUM="e7eb5d65eab8f57cbf0d5da804327f75"
 fi
 
 SRCURL="http://download.oracle.com/otn-pub/java/${SRCNAM}/${VERSION}-${PATCHLEVEL}/${SRCNAM}-${VERSION}-linux-${SRC_ARCH}.tar.gz"
@@ -98,7 +98,7 @@ dnl() {
     if [ ! -e $SOURCE ]; then
        if ! [ "x${SRCURL}" == "x" ]; then
          echo "Downloading '$(basename ${SOURCE})'."
-         wget --no-check-certificate -nv -T 30 --header "Cookie: oraclelicense=accept-securebackup-cookie; gpw_e24=http%3A%2F%2Fwww.oracle.com%2Ftechnetwork%2Fjava%2Fjavase%2Fdownloads%2Fjdk7-downloads-1880260.html" -O "${SOURCE}" "${SRCURL}" || true
+         wget --no-check-certificate -nv -T 30 --header "Cookie: oraclelicense=a" -O "${SOURCE}" "${SRCURL}" || true
          if [ $? -ne 0 -o ! -s "${SOURCE}" ]; then
             echo "Downloading '$(basename ${SOURCE})' failed... aborting the build."
             mv -f "${SOURCE}" "${SOURCE}.FAIL"
