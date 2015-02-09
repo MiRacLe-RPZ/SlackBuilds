@@ -214,7 +214,7 @@ SLACKBUILD SHORT DESCRIPTION:  mysql-pinba (PHP Statistics Server - DB part)
 
 SLACKBUILD NAME: nginx-work
 SLACKBUILD LOCATION: ./nginx-work
-SLACKBUILD FILES: doinst.sh monit.nginx nginx-work.SlackBuild nginx-work.info nginx.conf nginx.logrotate rc.nginx slack-conflicts slack-desc slack-required
+SLACKBUILD FILES: doinst.sh monit.nginx nginx-work-redmine.SlackBuild nginx-work.SlackBuild nginx-work.info nginx.conf nginx.logrotate rc.nginx slack-conflicts slack-desc slack-required
 SLACKBUILD VERSION: 1.7.7
 SLACKBUILD DOWNLOAD: http://nginx.org/download/nginx-1.7.7.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -358,10 +358,10 @@ SLACKBUILD SHORT DESCRIPTION:
 SLACKBUILD NAME: phpstorm
 SLACKBUILD LOCATION: ./phpstorm
 SLACKBUILD FILES: phpstorm.SlackBuild phpstorm.info slack-desc slack-required
-SLACKBUILD VERSION: 139.1069
-SLACKBUILD DOWNLOAD: http://download.jetbrains.com/webide/PhpStorm-EAP-139.1069.tar.gz
+SLACKBUILD VERSION: 139.1226
+SLACKBUILD DOWNLOAD: http://download.jetbrains.com/webide/PhpStorm-EAP-139.1226.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: efa58ac4f881d918835afb7800bbdd8f
+SLACKBUILD MD5SUM: 5399dc9232ecaa99dbe609c3b05a1529
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  PhpIDE based on JetBrain's IDEA
