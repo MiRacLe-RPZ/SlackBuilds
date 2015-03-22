@@ -214,7 +214,7 @@ SLACKBUILD SHORT DESCRIPTION:  mysql-pinba (PHP Statistics Server - DB part)
 
 SLACKBUILD NAME: nginx-work
 SLACKBUILD LOCATION: ./nginx-work
-SLACKBUILD FILES: doinst.sh monit.nginx nginx-work-redmine.SlackBuild nginx-work.SlackBuild nginx-work.info nginx.conf nginx.logrotate rc.nginx slack-conflicts slack-desc slack-required
+SLACKBUILD FILES: doinst.sh monit.nginx nginx-work.SlackBuild nginx-work.info nginx.conf nginx.logrotate rc.nginx slack-conflicts slack-desc slack-required
 SLACKBUILD VERSION: 1.7.7
 SLACKBUILD DOWNLOAD: http://nginx.org/download/nginx-1.7.7.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -335,9 +335,9 @@ SLACKBUILD SHORT DESCRIPTION:  php-redis
 
 SLACKBUILD NAME: php-xdebug
 SLACKBUILD LOCATION: ./php-xdebug
-SLACKBUILD FILES: doinst.sh php-xdebug.SlackBuild php-xdebug.info slack-desc slack-required xdebug.ini
-SLACKBUILD VERSION: 2.3.0
-SLACKBUILD DOWNLOAD: http://pecl.php.net/get/xdebug/2.3.0
+SLACKBUILD FILES: doinst.sh php-xdebug.SlackBuild php-xdebug.info slack-desc slack-required xdebug-2.3.1.tar.gz xdebug.ini
+SLACKBUILD VERSION: 2.3.1
+SLACKBUILD DOWNLOAD: http://pecl.php.net/get/xdebug/2.3.1
 SLACKBUILD DOWNLOAD_x86_64: 
 SLACKBUILD MD5SUM: a43ffb71380a018fa14a49168772fd14
 SLACKBUILD MD5SUM_x86_64: 
@@ -409,17 +409,6 @@ SLACKBUILD MD5SUM: 339ebe60fc61789808a457f6f967d226
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  rats (Rough Auditing Tool for Security)
-
-SLACKBUILD NAME: redis
-SLACKBUILD LOCATION: ./redis
-SLACKBUILD FILES: doinst.sh rc.redis.new redis.SlackBuild redis.info redis.logrotate slack-desc
-SLACKBUILD VERSION: 2.8.17
-SLACKBUILD DOWNLOAD: http://download.redis.io/releases/redis-2.8.17.tar.gz
-SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 69023c3005664602268a5e2dbe23425c
-SLACKBUILD MD5SUM_x86_64: 
-SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
-SLACKBUILD SHORT DESCRIPTION:  Redis (Key-Value Store)
 
 SLACKBUILD NAME: rubymine
 SLACKBUILD LOCATION: ./rubymine
