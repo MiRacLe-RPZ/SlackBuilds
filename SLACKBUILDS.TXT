@@ -181,10 +181,10 @@ SLACKBUILD SHORT DESCRIPTION:  KFilebox (KDE Dropbox client)
 SLACKBUILD NAME: monit
 SLACKBUILD LOCATION: ./monit
 SLACKBUILD FILES: doinst.sh monit.SlackBuild monit.info rc.monit slack-desc
-SLACKBUILD VERSION: 5.10
-SLACKBUILD DOWNLOAD: http://mmonit.com/monit/dist/monit-5.10.tar.gz
+SLACKBUILD VERSION: 5.12.1
+SLACKBUILD DOWNLOAD: http://mmonit.com/monit/dist/monit-5.12.1.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 5b5b5cc7939b975bbbef73bd6426750a
+SLACKBUILD MD5SUM: 1ffde79207270925f6f7df787d19100a
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  monit (Unix System Management)
