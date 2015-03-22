@@ -335,11 +335,11 @@ SLACKBUILD SHORT DESCRIPTION:  php-redis
 
 SLACKBUILD NAME: php-xdebug
 SLACKBUILD LOCATION: ./php-xdebug
-SLACKBUILD FILES: doinst.sh php-xdebug.SlackBuild php-xdebug.info slack-desc slack-required xdebug-2.3.1.tar.gz xdebug.ini
-SLACKBUILD VERSION: 2.3.1
-SLACKBUILD DOWNLOAD: http://pecl.php.net/get/xdebug/2.3.1
+SLACKBUILD FILES: doinst.sh php-xdebug.SlackBuild php-xdebug.info slack-desc slack-required xdebug.ini
+SLACKBUILD VERSION: 2.3.2
+SLACKBUILD DOWNLOAD: http://pecl.php.net/get/xdebug/2.3.2
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: a43ffb71380a018fa14a49168772fd14
+SLACKBUILD MD5SUM: 647b862291fe900f40d25a80fcf50026
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php-xdebug
