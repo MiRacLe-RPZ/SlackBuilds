@@ -21,7 +21,7 @@ set -e
 
 PRGNAM=PhpStorm
 PKGNAM=phpstorm
-VERSION=${VERSION:-141.89}
+VERSION=${VERSION:-141.176}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
