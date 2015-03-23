@@ -21,7 +21,7 @@ set -e
 
 PRGNAM=nginx
 PKGNAM=$(basename $0 .SlackBuild)
-VERSION=${VERSION:-1.7.7}
+VERSION=${VERSION:-1.7.10}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
@@ -119,6 +119,7 @@ CXXFLAGS="$SLKCFLAGS" \
   --with-http_gzip_static_module \
   --with-http_secure_link_module \
   --with-http_stub_status_module \
+  --with-http_ssl_module \
   --http-client-body-temp-path=/tmp/nginx/client_body \
   --http-proxy-temp-path=/tmp/nginx/proxy \
   --http-fastcgi-temp-path=/dev/shm && \

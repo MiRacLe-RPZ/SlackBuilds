@@ -178,17 +178,6 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  KFilebox (KDE Dropbox client)
 
-SLACKBUILD NAME: libiconv
-SLACKBUILD LOCATION: ./libiconv
-SLACKBUILD FILES: libiconv-1.14-no-gets.patch libiconv-1.14.tar.gz libiconv.SlackBuild libiconv.info slack-desc
-SLACKBUILD VERSION: 1.14
-SLACKBUILD DOWNLOAD: http://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.14.tar.gz
-SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: e34509b1623cec449dfeb73d7ce9c6c6
-SLACKBUILD MD5SUM_x86_64: 
-SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
-SLACKBUILD SHORT DESCRIPTION:  libiconv (text encoding conversion library)
-
 SLACKBUILD NAME: monit
 SLACKBUILD LOCATION: ./monit
 SLACKBUILD FILES: doinst.sh monit.SlackBuild monit.info rc.monit slack-desc
@@ -225,11 +214,11 @@ SLACKBUILD SHORT DESCRIPTION:  mysql-pinba (PHP Statistics Server - DB part)
 
 SLACKBUILD NAME: nginx-work
 SLACKBUILD LOCATION: ./nginx-work
-SLACKBUILD FILES: doinst.sh monit.nginx nginx-work-redmine.SlackBuild nginx-work.SlackBuild nginx-work.info nginx.conf nginx.logrotate rc.nginx slack-conflicts slack-desc slack-required
-SLACKBUILD VERSION: 1.7.7
-SLACKBUILD DOWNLOAD: http://nginx.org/download/nginx-1.7.7.tar.gz
+SLACKBUILD FILES: doinst.sh monit.nginx nginx-work.SlackBuild nginx-work.info nginx.conf nginx.logrotate rc.nginx slack-conflicts slack-desc slack-required
+SLACKBUILD VERSION: 1.7.10
+SLACKBUILD DOWNLOAD: http://nginx.org/download/nginx-1.7.10.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 3beaa25fc87ff2a75ab1b46174dc5ebf
+SLACKBUILD MD5SUM: 8e800ea5247630b0fcf31ba35cb3245d
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  nginx (http/imap/pop3 proxy)
@@ -289,17 +278,6 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php-gearman (binding for libgearman)
 
-SLACKBUILD NAME: php-iconv
-SLACKBUILD LOCATION: ./php-iconv
-SLACKBUILD FILES: doinst.sh iconv.ini php-5.4.36.tar.bz2 php-iconv.SlackBuild php-iconv.info slack-desc slack-required
-SLACKBUILD VERSION: 5.4.36
-SLACKBUILD DOWNLOAD: http://www.php.net/distributions/php-5.4.36.tar.bz2
-SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 70e223be4bb460e465b7a9d7cb5b9cac
-SLACKBUILD MD5SUM_x86_64: 
-SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
-SLACKBUILD SHORT DESCRIPTION:  php-iconv
-
 SLACKBUILD NAME: php-memcache
 SLACKBUILD LOCATION: ./php-memcache
 SLACKBUILD FILES: doinst.sh memcache.ini php-memcache.SlackBuild php-memcache.info slack-desc slack-required
@@ -324,11 +302,11 @@ SLACKBUILD SHORT DESCRIPTION:  extension for interfacing with memcached via libm
 
 SLACKBUILD NAME: php-mssql
 SLACKBUILD LOCATION: ./php-mssql
-SLACKBUILD FILES: doinst.sh mssql.ini php-5.4.36.tar.bz2 php-mssql.SlackBuild php-mssql.info slack-desc slack-required
-SLACKBUILD VERSION: 5.4.36
-SLACKBUILD DOWNLOAD: http://www.php.net/distributions/php-5.4.36.tar.bz2
+SLACKBUILD FILES: doinst.sh mssql.ini php-mssql.SlackBuild php-mssql.info slack-desc slack-required
+SLACKBUILD VERSION: 5.4.27
+SLACKBUILD DOWNLOAD: http://www.php.net/distributions/php-5.4.27.tar.bz2
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 70e223be4bb460e465b7a9d7cb5b9cac
+SLACKBUILD MD5SUM: 1c6e99187d25023411b663ea09f145ee
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php-mssql (php MS SQL extension)
