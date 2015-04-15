@@ -303,10 +303,10 @@ SLACKBUILD SHORT DESCRIPTION:  extension for interfacing with memcached via libm
 SLACKBUILD NAME: php-mssql
 SLACKBUILD LOCATION: ./php-mssql
 SLACKBUILD FILES: doinst.sh mssql.ini php-mssql.SlackBuild php-mssql.info slack-desc slack-required
-SLACKBUILD VERSION: 5.4.27
-SLACKBUILD DOWNLOAD: http://www.php.net/distributions/php-5.4.27.tar.bz2
+SLACKBUILD VERSION: 5.4.36
+SLACKBUILD DOWNLOAD: http://www.php.net/distributions/php-5.4.36.tar.bz2
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 1c6e99187d25023411b663ea09f145ee
+SLACKBUILD MD5SUM: 70e223be4bb460e465b7a9d7cb5b9cac
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php-mssql (php MS SQL extension)
@@ -358,10 +358,10 @@ SLACKBUILD SHORT DESCRIPTION:
 SLACKBUILD NAME: phpstorm
 SLACKBUILD LOCATION: ./phpstorm
 SLACKBUILD FILES: phpstorm.SlackBuild phpstorm.info slack-desc slack-required
-SLACKBUILD VERSION: 141.176
-SLACKBUILD DOWNLOAD: http://download.jetbrains.com/webide/PhpStorm-EAP-141.176.tar.gz
+SLACKBUILD VERSION: 141.582
+SLACKBUILD DOWNLOAD: http://download.jetbrains.com/webide/PhpStorm-EAP-141.582.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 99b60d335ca00ba9902d6f8300d9740f
+SLACKBUILD MD5SUM: 13858b6ac15689ecd3e766b0307f6f37
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  PhpIDE based on JetBrain's IDEA
