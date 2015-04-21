@@ -424,10 +424,10 @@ SLACKBUILD SHORT DESCRIPTION:  rats (Rough Auditing Tool for Security)
 SLACKBUILD NAME: rubymine
 SLACKBUILD LOCATION: ./rubymine
 SLACKBUILD FILES: rubymine.SlackBuild rubymine.info slack-desc slack-required
-SLACKBUILD VERSION: 139.800
-SLACKBUILD DOWNLOAD: http://download.jetbrains.com/ruby/RubyMine-7.0.2.tar.gz
+SLACKBUILD VERSION: 141.664
+SLACKBUILD DOWNLOAD: http://download.jetbrains.com/ruby/RubyMine-7.1.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 02244cdb599392ef667621220567fceb
+SLACKBUILD MD5SUM: 589e8f5f1cfeba2396b6acff10b0098a
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  RubyIDE based on JetBrain's IDEA
