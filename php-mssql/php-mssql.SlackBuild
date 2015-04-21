@@ -140,6 +140,7 @@ CXXFLAGS="$SLKCFLAGS" \
   --docdir=/usr/doc/$PRGNAM-$VERSION \
   --with-php-config=$PHP_CONFIG \
   --build=$ARCH-slackware-linux \
+  --with-iconv=/usr/local/libiconv \
   --with-mssql=/usr \
   --with-libdir=lib${LIBDIRSUFFIX}
 
