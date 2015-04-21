@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':'.
+
+         |-----handy-ruler------------------------------------------------------|
+php-pdo-dblib: php-pdo-dblib (php DBLIB pdo driver)
+php-pdo-dblib:
+php-pdo-dblib: This extension enables PHP to connect to and use MSSQL
+php-pdo-dblib: databases via PDO.
+php-pdo-dblib:
+php-pdo-dblib: Home: http://www.php.net/pdo_dblib
+php-pdo-dblib:
+php-pdo-dblib:
+php-pdo-dblib:
+php-pdo-dblib:
+php-pdo-dblib:

@@ -181,10 +181,10 @@ SLACKBUILD SHORT DESCRIPTION:  KFilebox (KDE Dropbox client)
 SLACKBUILD NAME: monit
 SLACKBUILD LOCATION: ./monit
 SLACKBUILD FILES: doinst.sh monit.SlackBuild monit.info rc.monit slack-desc
-SLACKBUILD VERSION: 5.12.1
-SLACKBUILD DOWNLOAD: http://mmonit.com/monit/dist/monit-5.12.1.tar.gz
+SLACKBUILD VERSION: 5.12.2
+SLACKBUILD DOWNLOAD: http://mmonit.com/monit/dist/monit-5.12.2.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 1ffde79207270925f6f7df787d19100a
+SLACKBUILD MD5SUM: 5f5cf4c18b42e8091b49b4e07cf972ce
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  monit (Unix System Management)
@@ -311,6 +311,17 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php-mssql (php MS SQL extension)
 
+SLACKBUILD NAME: php-pdo-dblib
+SLACKBUILD LOCATION: ./php-pdo-dblib
+SLACKBUILD FILES: doinst.sh pdo-dblib.ini php-pdo-dblib.SlackBuild php-pdo-dblib.info slack-desc slack-required
+SLACKBUILD VERSION: 5.4.36
+SLACKBUILD DOWNLOAD: http://www.php.net/distributions/php-5.4.36.tar.bz2
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: 70e223be4bb460e465b7a9d7cb5b9cac
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  php-pdo-dblib (php DBLIB pdo driver)
+
 SLACKBUILD NAME: php-readline
 SLACKBUILD LOCATION: ./php-readline
 SLACKBUILD FILES: doinst.sh php-readline.SlackBuild php-readline.info readline.ini slack-desc slack-required
@@ -325,10 +336,10 @@ SLACKBUILD SHORT DESCRIPTION:  php-readline
 SLACKBUILD NAME: php-redis
 SLACKBUILD LOCATION: ./php-redis
 SLACKBUILD FILES: doinst.sh php-redis.SlackBuild php-redis.info redis.ini slack-desc slack-required
-SLACKBUILD VERSION: 2.2.5
-SLACKBUILD DOWNLOAD: http://pecl.php.net/get/redis/2.2.5
+SLACKBUILD VERSION: 2.2.7
+SLACKBUILD DOWNLOAD: http://pecl.php.net/get/redis/2.2.7
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 60151c2a837cd4a94f420d45e6114b0b
+SLACKBUILD MD5SUM: c55839465b2c435fd091ac50923f2d96
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php-redis
@@ -347,10 +358,10 @@ SLACKBUILD SHORT DESCRIPTION:  php-xdebug
 SLACKBUILD NAME: php-zendopcache
 SLACKBUILD LOCATION: ./php-zendopcache
 SLACKBUILD FILES: doinst.sh php-zendopcache.SlackBuild php-zendopcache.info slack-conflicts slack-desc slack-required zendopcache.ini
-SLACKBUILD VERSION: 7.0.4
-SLACKBUILD DOWNLOAD: http://pecl.php.net/get/zendopcache-7.0.4.tgz
+SLACKBUILD VERSION: 7.0.5
+SLACKBUILD DOWNLOAD: http://pecl.php.net/get/zendopcache-7.0.5.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 7aad5d4bc0abd4c2c03c9f9305e9c36d
+SLACKBUILD MD5SUM: 0c2710c272e398bea89d41dee42ee633
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION: 
