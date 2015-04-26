@@ -11,4 +11,6 @@ config() {
   # Otherwise, we leave the .new copy for the admin to consider...
 }
 
-config etc/php/pdo-dblib.ini.new
+INI=$(php -i 2>/dev/null|grep 'Scan this dir for additional .ini files'|awk '{print $NF}')
+
+config ${INI}/pdo-dblib.ini.new

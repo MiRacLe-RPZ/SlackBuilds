@@ -1,4 +1,3 @@
 php >= 5.4.19
 freetds >= 0.91
-libiconv >= 1.14
 

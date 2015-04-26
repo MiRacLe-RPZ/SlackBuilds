@@ -145,8 +145,6 @@ CXXFLAGS="$SLKCFLAGS" \
 
 make -j$NUMJOBS
 
-mkdir -p $PKG/etc/php
-
 make install DESTDIR=$PKG EXTENSION_DIR="$PKG/$($PHP_CONFIG --extension-dir)"
 
 mkdir -p ${PKG}/${INI}

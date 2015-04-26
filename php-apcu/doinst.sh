@@ -10,5 +10,6 @@ config() {
   fi
   # Otherwise, we leave the .new copy for the admin to consider...
 }
+INI=$(php -i 2>/dev/null|grep 'Scan this dir for additional .ini files'|awk '{print $NF}')
 
-config etc/php/apcu.ini.new
+config ${INI}/apcu.ini.new
