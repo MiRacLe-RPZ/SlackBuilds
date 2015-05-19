@@ -126,7 +126,7 @@ SLACKBUILD SHORT DESCRIPTION:  icoutils (Windows Icon and Cursor Utilities)
 SLACKBUILD NAME: jdk-work
 SLACKBUILD LOCATION: ./jdk-work
 SLACKBUILD FILES: jdk-work.SlackBuild jdk-work.info profile.d/jdk.csh profile.d/jdk.sh slack-conflicts slack-desc
-SLACKBUILD VERSION: 7u76
+SLACKBUILD VERSION: 8u45
 SLACKBUILD DOWNLOAD: 
 SLACKBUILD DOWNLOAD_x86_64: 
 SLACKBUILD MD5SUM: 
@@ -155,17 +155,6 @@ SLACKBUILD MD5SUM: 9cae3b6f12edd6595a4d0554772e926e
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:   KdeSudo is a frontend for sudo. 
-
-SLACKBUILD NAME: keriovpnclient
-SLACKBUILD LOCATION: ./keriovpnclient
-SLACKBUILD FILES: kerio-kvc.conf.example kerio-setup keriovpnclient.SlackBuild keriovpnclient.info rc.kerio-kvc slack-desc
-SLACKBUILD VERSION: 8.2.2
-SLACKBUILD DOWNLOAD: http://download.kerio.com/eu/dwn/kerio-control-vpnclient-linux.deb
-SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 3d1570a8c8b0b9eab7c6863b528ab671
-SLACKBUILD MD5SUM_x86_64: 
-SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
-SLACKBUILD SHORT DESCRIPTION:  Kerio VPN client
 
 SLACKBUILD NAME: kfilebox
 SLACKBUILD LOCATION: ./kfilebox
@@ -369,10 +358,10 @@ SLACKBUILD SHORT DESCRIPTION:
 SLACKBUILD NAME: phpstorm
 SLACKBUILD LOCATION: ./phpstorm
 SLACKBUILD FILES: phpstorm.SlackBuild phpstorm.info slack-desc slack-required
-SLACKBUILD VERSION: 141.792
-SLACKBUILD DOWNLOAD: http://download.jetbrains.com/webide/PhpStorm-EAP-141.792.tar.gz
+SLACKBUILD VERSION: 141.1000
+SLACKBUILD DOWNLOAD: http://download.jetbrains.com/webide/PhpStorm-EAP-141.1000.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 5a0bb84846cb4b4492ef1edc0e628cb9
+SLACKBUILD MD5SUM: 277c4c6b6b3b55c10618f75b1cb08980
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  PhpIDE based on JetBrain's IDEA
