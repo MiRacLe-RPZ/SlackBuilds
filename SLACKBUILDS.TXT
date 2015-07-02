@@ -78,7 +78,7 @@ SLACKBUILD SHORT DESCRIPTION:  Gearman(A framework to farm out work)
 
 SLACKBUILD NAME: google-chrome
 SLACKBUILD LOCATION: ./google-chrome
-SLACKBUILD FILES: doinst.sh google-chrome-stable_current_amd64.deb google-chrome-updater google-chrome.SlackBuild google-chrome.info slack-desc
+SLACKBUILD FILES: doinst.sh google-chrome-updater google-chrome.SlackBuild google-chrome.info slack-desc
 SLACKBUILD VERSION: 41.0.2272.101-1
 SLACKBUILD DOWNLOAD: http://dl.google.com/linux/deb/pool/main/g/google-chrome-stable/google-chrome-stable_41.0.2272.101-1_i386.deb
 SLACKBUILD DOWNLOAD_x86_64: http://dl.google.com/linux/deb/pool/main/g/google-chrome-stable/google-chrome-stable_41.0.2272.101-1_amd64.deb
@@ -126,7 +126,7 @@ SLACKBUILD SHORT DESCRIPTION:  icoutils (Windows Icon and Cursor Utilities)
 SLACKBUILD NAME: jdk-work
 SLACKBUILD LOCATION: ./jdk-work
 SLACKBUILD FILES: jdk-work.SlackBuild jdk-work.info profile.d/jdk.csh profile.d/jdk.sh slack-conflicts slack-desc
-SLACKBUILD VERSION: 7u76
+SLACKBUILD VERSION: 8u45
 SLACKBUILD DOWNLOAD: 
 SLACKBUILD DOWNLOAD_x86_64: 
 SLACKBUILD MD5SUM: 
@@ -336,10 +336,10 @@ SLACKBUILD SHORT DESCRIPTION:  php-redis
 SLACKBUILD NAME: php-xdebug
 SLACKBUILD LOCATION: ./php-xdebug
 SLACKBUILD FILES: doinst.sh php-xdebug.SlackBuild php-xdebug.info slack-desc slack-required xdebug.ini
-SLACKBUILD VERSION: 2.3.2
-SLACKBUILD DOWNLOAD: http://pecl.php.net/get/xdebug/2.3.2
+SLACKBUILD VERSION: 2.3.3
+SLACKBUILD DOWNLOAD: http://pecl.php.net/get/xdebug/2.3.3
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 647b862291fe900f40d25a80fcf50026
+SLACKBUILD MD5SUM: 60e6fdf41840104a23debe16db15a2af
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php-xdebug
@@ -358,10 +358,10 @@ SLACKBUILD SHORT DESCRIPTION:
 SLACKBUILD NAME: phpstorm
 SLACKBUILD LOCATION: ./phpstorm
 SLACKBUILD FILES: phpstorm.SlackBuild phpstorm.info slack-desc slack-required
-SLACKBUILD VERSION: 141.1717
-SLACKBUILD DOWNLOAD: http://download.jetbrains.com/webide/PhpStorm-EAP-141.1717.tar.gz
+SLACKBUILD VERSION: 141.1815
+SLACKBUILD DOWNLOAD: http://download.jetbrains.com/webide/PhpStorm-EAP-141.1815.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: e83ccaeb27894a2cb98302a2a4d6014e
+SLACKBUILD MD5SUM: f2193f250e6c45be0e4c1aa4b1693938
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  PhpIDE based on JetBrain's IDEA
@@ -380,10 +380,10 @@ SLACKBUILD SHORT DESCRIPTION:  q4wine (Qt4 GUI for wine)
 SLACKBUILD NAME: qmmp
 SLACKBUILD LOCATION: ./qmmp
 SLACKBUILD FILES: doinst.sh qmmp.SlackBuild qmmp.info slack-desc slack-required
-SLACKBUILD VERSION: 0.8.3
-SLACKBUILD DOWNLOAD: http://qmmp.ylsoftware.com/files/qmmp-0.8.3.tar.bz2
+SLACKBUILD VERSION: 0.8.5
+SLACKBUILD DOWNLOAD: http://qmmp.ylsoftware.com/files/qmmp-0.8.5.tar.bz2
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 7ca44d249aa0d7ee131f17edb9a238ea
+SLACKBUILD MD5SUM: c9347ad18913058e8a37b1e88b9c6ce2
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  qmmp (audio-player with a Qt interface)
@@ -413,10 +413,10 @@ SLACKBUILD SHORT DESCRIPTION:  rats (Rough Auditing Tool for Security)
 SLACKBUILD NAME: rubymine
 SLACKBUILD LOCATION: ./rubymine
 SLACKBUILD FILES: rubymine.SlackBuild rubymine.info slack-desc slack-required
-SLACKBUILD VERSION: 141.664
-SLACKBUILD DOWNLOAD: http://download.jetbrains.com/ruby/RubyMine-7.1.tar.gz
+SLACKBUILD VERSION: 141.1711
+SLACKBUILD DOWNLOAD: http://download.jetbrains.com/ruby/RubyMine-7.1.3.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 589e8f5f1cfeba2396b6acff10b0098a
+SLACKBUILD MD5SUM: ddf70229b12c0a7ddc2fa78c7b2edb76
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  RubyIDE based on JetBrain's IDEA
