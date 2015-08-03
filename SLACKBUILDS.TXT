@@ -78,7 +78,7 @@ SLACKBUILD SHORT DESCRIPTION:  Gearman(A framework to farm out work)
 
 SLACKBUILD NAME: google-chrome
 SLACKBUILD LOCATION: ./google-chrome
-SLACKBUILD FILES: doinst.sh google-chrome-updater google-chrome.SlackBuild google-chrome.info slack-desc
+SLACKBUILD FILES: doinst.sh google-chrome-stable_current_amd64.deb google-chrome-updater google-chrome.SlackBuild google-chrome.info slack-desc
 SLACKBUILD VERSION: 41.0.2272.101-1
 SLACKBUILD DOWNLOAD: http://dl.google.com/linux/deb/pool/main/g/google-chrome-stable/google-chrome-stable_41.0.2272.101-1_i386.deb
 SLACKBUILD DOWNLOAD_x86_64: http://dl.google.com/linux/deb/pool/main/g/google-chrome-stable/google-chrome-stable_41.0.2272.101-1_amd64.deb
@@ -126,7 +126,7 @@ SLACKBUILD SHORT DESCRIPTION:  icoutils (Windows Icon and Cursor Utilities)
 SLACKBUILD NAME: jdk-work
 SLACKBUILD LOCATION: ./jdk-work
 SLACKBUILD FILES: jdk-work.SlackBuild jdk-work.info profile.d/jdk.csh profile.d/jdk.sh slack-conflicts slack-desc
-SLACKBUILD VERSION: 8u45
+SLACKBUILD VERSION: 7u76
 SLACKBUILD DOWNLOAD: 
 SLACKBUILD DOWNLOAD_x86_64: 
 SLACKBUILD MD5SUM: 
@@ -358,10 +358,10 @@ SLACKBUILD SHORT DESCRIPTION:
 SLACKBUILD NAME: phpstorm
 SLACKBUILD LOCATION: ./phpstorm
 SLACKBUILD FILES: phpstorm.SlackBuild phpstorm.info slack-desc slack-required
-SLACKBUILD VERSION: 141.1815
-SLACKBUILD DOWNLOAD: http://download.jetbrains.com/webide/PhpStorm-EAP-141.1815.tar.gz
+SLACKBUILD VERSION: 141.2204
+SLACKBUILD DOWNLOAD: http://download.jetbrains.com/webide/PhpStorm-EAP-141.2204.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: f2193f250e6c45be0e4c1aa4b1693938
+SLACKBUILD MD5SUM: a54fee4387dfef77df9da6ce3589e61c
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  PhpIDE based on JetBrain's IDEA
