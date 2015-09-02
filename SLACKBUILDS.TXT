@@ -333,6 +333,17 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php-redis
 
+SLACKBUILD NAME: php-runkit
+SLACKBUILD LOCATION: ./php-runkit
+SLACKBUILD FILES: doinst.sh php-runkit.SlackBuild php-runkit.info runkit.ini slack-desc slack-required
+SLACKBUILD VERSION: 1.0.4-dev
+SLACKBUILD DOWNLOAD: https://github.com/zenovich/runkit/archive/acd897332372598dc2dc5f289e03d6ad5262144c.tar.gz
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: 
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  php-runkit 
+
 SLACKBUILD NAME: php-xdebug
 SLACKBUILD LOCATION: ./php-xdebug
 SLACKBUILD FILES: doinst.sh php-xdebug.SlackBuild php-xdebug.info slack-desc slack-required xdebug.ini
@@ -358,10 +369,10 @@ SLACKBUILD SHORT DESCRIPTION:
 SLACKBUILD NAME: phpstorm
 SLACKBUILD LOCATION: ./phpstorm
 SLACKBUILD FILES: phpstorm.SlackBuild phpstorm.info slack-desc slack-required
-SLACKBUILD VERSION: 141.2204
-SLACKBUILD DOWNLOAD: http://download.jetbrains.com/webide/PhpStorm-EAP-141.2204.tar.gz
+SLACKBUILD VERSION: 142.4289
+SLACKBUILD DOWNLOAD: http://download.jetbrains.com/webide/PhpStorm-EAP-142.4289.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: a54fee4387dfef77df9da6ce3589e61c
+SLACKBUILD MD5SUM: 38cf4198231acc7345f9ef36f53a8fa2
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  PhpIDE based on JetBrain's IDEA

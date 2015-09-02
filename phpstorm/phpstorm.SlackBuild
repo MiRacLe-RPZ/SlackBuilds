@@ -21,7 +21,7 @@ set -e
 
 PRGNAM=PhpStorm
 PKGNAM=phpstorm
-VERSION=${VERSION:-141.2204}
+VERSION=${VERSION:-142.4289}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
@@ -129,8 +129,8 @@ mkdir -p $PKG/opt/$PKGNAM $PKG/usr/bin $PKG/usr/share/applications $PKG/usr/shar
 
 cp -R * $PKG/opt/$PKGNAM
 
-rm -rf $PKG/opt/$PKGNAM/lib/libpty/macosx
-
+rm -rf $PKG/opt/$PKGNAM/lib/libpty/{macosx,win}
+rm -f $PKG/opt/$PKGNAM/help/*ForMac*
 
 
 if [ "$ARCH" = "x86_64" ]; then
@@ -164,7 +164,7 @@ EOF
 
 cp $PKG/opt/$PKGNAM/bin/webide.png $PKG/usr/share/pixmaps/$PKGNAM.png
 
-cp -a license/* Install-Linux-tar.txt \
+cp -a Install-Linux-tar.txt \
   $PKG/usr/doc/$PKGNAM-$VERSION
 
 # [ -e $PKG/opt/$PKGNAM/license ] && rm -rf $PKG/opt/$PKGNAM/license
