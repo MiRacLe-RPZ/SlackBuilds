@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Slackware build script for php-mssql
+# Slackware build script for php-pthreads
 
 # Copyright 2015 MiRacLe.RPZ
 # All rights reserved.
@@ -22,14 +22,14 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-SRCNAM=php
-PRGNAM=php-pdo-dblib
-PKGNAM=php-pdo-dblib
+SRCNAM=pthreads
+PRGNAM=php-pthreads
+PKGNAM=php-pthreads
 PHP_CONFIG=$(which php-config)
-VERSION=$($PHP_CONFIG --version)
+SRCURL=$(curl "http://pecl.php.net/feeds/pkg_${SRCNAM}.rss" 2>/dev/null|grep -m1 "item rdf" -a2|grep link|sed -r "s/<(|\/)link>//g"|tr -d ' ')
+VERSION=$(echo $SRCURL|cut -d '/' -f6)
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
-SRCURL="http://www.php.net/distributions/${SRCNAM}-${VERSION}.tar.bz2"
 INI=$(php -i 2>/dev/null|grep 'Scan this dir for additional .ini files'|awk '{print $NF}')
 
 if [ -z "$ARCH" ]; then
@@ -44,8 +44,9 @@ CWD=$(pwd)
 TMP=${TMP:-/tmp/rpz}
 PKG=$TMP/package-$PRGNAM
 OUTPUT=${OUTPUT:-/tmp}
+SOURCE="${CWD}/${SRCNAM}-${VERSION}.tar.gz"
 NUMJOBS=${NUMJOBS:-$(( $(getconf _NPROCESSORS_ONLN) + 1 ))}
-SOURCE="${CWD}/${SRCNAM}-${VERSION}.tar.bz2"
+
 
 
 if [ "$ARCH" = "i486" ]; then
@@ -116,7 +117,7 @@ dnl() {
 
 dnl "${SOURCE}" "${SRCURL}"
 
-tar xvf $CWD/$SRCNAM-$VERSION.tar.bz2
+tar xzf $CWD/$SRCNAM-$VERSION.tar.gz
 cd $SRCNAM-$VERSION
 
 chown -R root:root .
@@ -126,9 +127,7 @@ find . \
  \( -perm 666 -o -perm 664 -o -perm 600 -o -perm 444 -o -perm 440 -o -perm 400 \) \
  -exec chmod 644 {} \;
 
-patch -p1 < $CWD/dblib.patch
-
-cd ext/pdo_dblib/ && /usr/bin/phpize
+/usr/bin/phpize
 
 
 CFLAGS="$SLKCFLAGS" \
@@ -142,7 +141,7 @@ CXXFLAGS="$SLKCFLAGS" \
   --docdir=/usr/doc/$PRGNAM-$VERSION \
   --with-php-config=$PHP_CONFIG \
   --build=$ARCH-slackware-linux \
-  --with-pdo-dblib=/usr \
+  --enable-pthreads \
   --with-libdir=lib${LIBDIRSUFFIX}
 
 make -j$NUMJOBS
@@ -150,20 +149,19 @@ make -j$NUMJOBS
 make install DESTDIR=$PKG EXTENSION_DIR="$PKG/$($PHP_CONFIG --extension-dir)"
 
 mkdir -p ${PKG}/${INI}
-install -m 644 $CWD/pdo-dblib.ini ${PKG}/${INI}/pdo-dblib.ini.new
+install -m 644 $CWD/pthreads.ini ${PKG}/${INI}/pthreads.ini.new
 
 find $PKG | xargs file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
-cp CREDITS $PKG/usr/doc/$PRGNAM-$VERSION/
+cp -a README.md LICENSE $PKG/usr/doc/$PRGNAM-$VERSION/
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION/SlackBuild
 cp -a $CWD/$PRGNAM.SlackBuild $CWD/$PRGNAM.info $CWD/slack-* $CWD/doinst.sh $CWD/*.ini \
  $PKG/usr/doc/$PRGNAM-$VERSION/SlackBuild
 
 mkdir -p $PKG/install
-cat $CWD/slack-desc > $PKG/install/slack-desc
-cat $CWD/doinst.sh > $PKG/install/doinst.sh
+cp -a $CWD/doinst.sh $CWD/slack-* $PKG/install/
 
 cd $PKG
 /sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-txz}
