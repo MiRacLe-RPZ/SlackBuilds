@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# Slackware build script for q4wine
+# Slackware build script for qmmp
 #
 # Redistribution and use of this script, with or without modification, is
 # permitted provided that the following conditions are met:
@@ -22,7 +22,7 @@
 
 PRGNAM=qmmp
 PKGNAM=$(basename $0 .SlackBuild)
-VERSION=${VERSION:-0.9.0}
+VERSION=${VERSION:-1.0.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 
@@ -96,10 +96,10 @@ dnl() {
 
 set -e
 
-if [ -d /usr/lib${LIBDIRSUFFIX}/qt ]; then
-  export QTDIR=/usr/lib${LIBDIRSUFFIX}/qt
-  export QT4DIR=$QTDIR
-fi
+#if [ -d /usr/lib${LIBDIRSUFFIX}/qt ]; then
+#  export QTDIR=/usr/lib${LIBDIRSUFFIX}/qt
+#  export QT4DIR=$QTDIR
+#fi
 
 rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
