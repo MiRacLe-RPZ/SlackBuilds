@@ -26,8 +26,9 @@ SRCNAM=apcu
 PRGNAM=php-apcu
 PKGNAM=php-apcu
 PHP_CONFIG=$(which php-config)
-if [ -f "${PKGNAM}.info" ]; then
-    source "${PKGNAM}.info"
+INFOFILE="$(dirname $0)/${PKGNAM}.info"
+if [ -f $INFOFILE ]; then
+    source $INFOFILE
     SRCURL=${DOWNLOAD}
 else    
     SRCURL=$(curl "http://pecl.php.net/feeds/pkg_apcu.rss" 2>/dev/null|grep -m1 "item rdf" -a2|grep link|sed -r "s/<(|\/)link>//g"|tr -d ' ')
