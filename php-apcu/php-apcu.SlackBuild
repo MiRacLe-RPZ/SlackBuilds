@@ -26,11 +26,12 @@ SRCNAM=apcu
 PRGNAM=php-apcu
 PKGNAM=php-apcu
 PHP_CONFIG=$(which php-config)
-if [ "x${VERSION}" = "x" ]; then
+if [ -f "${PKGNAM}.info" ]; then
+    source "${PKGNAM}.info"
+    SRCURL=${DOWNLOAD}
+else    
     SRCURL=$(curl "http://pecl.php.net/feeds/pkg_apcu.rss" 2>/dev/null|grep -m1 "item rdf" -a2|grep link|sed -r "s/<(|\/)link>//g"|tr -d ' ')
     VERSION=$(echo $SRCURL|cut -d '/' -f6)
-else
-    SRCURL="http://pecl.php.net/get/apcu-${VERSION}.tgz"
 fi
 
 BUILD=${BUILD:-1}
