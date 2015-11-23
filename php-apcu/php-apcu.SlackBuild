@@ -30,7 +30,7 @@ if [ "x${VERSION}" = "x" ]; then
     SRCURL=$(curl "http://pecl.php.net/feeds/pkg_apcu.rss" 2>/dev/null|grep -m1 "item rdf" -a2|grep link|sed -r "s/<(|\/)link>//g"|tr -d ' ')
     VERSION=$(echo $SRCURL|cut -d '/' -f6)
 else
-    SRCURL="http://pecl.php.net/get/APCu/${VERSION}"
+    SRCURL="http://pecl.php.net/get/apcu-${VERSION}.tgz"
 fi
 
 BUILD=${BUILD:-1}
