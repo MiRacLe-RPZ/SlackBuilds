@@ -1,7 +1,7 @@
 PRGNAM="php-memcache"
 VERSION="3.0.8"
 HOMEPAGE="http://pecl.php.net/package/memcache"
-DOWNLOAD="http://pecl.php.net/get/memcache/3.0.8"
+DOWNLOAD="http://pecl.php.net/get/memcache-3.0.8.tgz"
 MD5SUM="24505e9b263d2c77f8ae5e9b4725e7d1"
 DOWNLOAD_x86_64=""
 MD5SUM_x86_64=""

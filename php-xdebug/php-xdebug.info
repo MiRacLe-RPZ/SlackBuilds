@@ -1,7 +1,7 @@
 PRGNAM="php-xdebug"
 VERSION="2.3.3"
 HOMEPAGE="http://xdebug.org"
-DOWNLOAD="http://pecl.php.net/get/xdebug/2.3.3"
+DOWNLOAD="http://pecl.php.net/get/xdebug-2.3.3.tgz"
 MD5SUM="60e6fdf41840104a23debe16db15a2af"
 DOWNLOAD_x86_64=""
 MD5SUM_x86_64=""

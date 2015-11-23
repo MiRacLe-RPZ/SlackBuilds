@@ -1,7 +1,7 @@
 PRGNAM="php-memcached"
 VERSION="2.2.0"
 HOMEPAGE="http://pecl.php.net/package/memcached"
-DOWNLOAD="http://pecl.php.net/get/memcached/2.2.0"
+DOWNLOAD="http://pecl.php.net/get/memcached-2.2.0.tgz"
 MD5SUM="28937c6144f734e000c6300242f44ce6"
 DOWNLOAD_x86_64=""
 MD5SUM_x86_64=""
