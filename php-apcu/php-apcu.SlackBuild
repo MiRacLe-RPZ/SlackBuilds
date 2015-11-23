@@ -125,7 +125,7 @@ dnl() {
 
 dnl "${SOURCE}" "${SRCURL}"
 
-tar xzf $CWD/$SRCNAM-$VERSION.tar.gz
+tar xzf ${SOURCE}
 cd $SRCNAM-$VERSION
 
 chown -R root:root .
