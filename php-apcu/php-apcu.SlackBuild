@@ -26,12 +26,13 @@ SRCNAM=apcu
 PRGNAM=php-apcu
 PKGNAM=php-apcu
 PHP_CONFIG=$(which php-config)
-INFOFILE="$(dirname $0)/${PKGNAM}.info"
+CWD=$(pwd)
+INFOFILE="${CWD}/${PKGNAM}.info"
 if [ -f $INFOFILE ]; then
     source $INFOFILE
     SRCURL=${DOWNLOAD}
 else    
-    SRCURL=$(curl "http://pecl.php.net/feeds/pkg_apcu.rss" 2>/dev/null|grep -m1 "item rdf" -a2|grep link|sed -r "s/<(|\/)link>//g"|tr -d ' ')
+    SRCURL=$(curl "http://pecl.php.net/feeds/pkg_${SRCNAM}.rss" 2>/dev/null|grep -m1 "item rdf" -a2|grep link|sed -r "s/<(|\/)link>//g"|tr -d ' ')
     VERSION=$(echo $SRCURL|cut -d '/' -f6)
 fi
 
@@ -47,11 +48,11 @@ if [ -z "$ARCH" ]; then
   esac
 fi
 
-CWD=$(pwd)
+
 TMP=${TMP:-/tmp/rpz}
 PKG=$TMP/package-$PRGNAM
 OUTPUT=${OUTPUT:-/tmp}
-SOURCE="${CWD}/${SRCNAM}-${VERSION}.tar.gz"
+SOURCE="${CWD}/${SRCNAM}-${VERSION}.tgz"
 NUMJOBS=${NUMJOBS:-$(( $(getconf _NPROCESSORS_ONLN) + 1 ))}
 
 
