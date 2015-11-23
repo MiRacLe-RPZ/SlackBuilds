@@ -2,7 +2,7 @@
 
 # Slackware build script for php-apcu
 
-# Copyright 2013-2014 MiRacLe.RPZ
+# Copyright 2013-2015 MiRacLe.RPZ
 # All rights reserved.
 #
 # Redistribution and use of this script, with or without modification, is
@@ -26,8 +26,13 @@ SRCNAM=apcu
 PRGNAM=php-apcu
 PKGNAM=php-apcu
 PHP_CONFIG=$(which php-config)
-SRCURL=$(curl "http://pecl.php.net/feeds/pkg_apcu.rss" 2>/dev/null|grep -m1 "item rdf" -a2|grep link|sed -r "s/<(|\/)link>//g"|tr -d ' ')
-VERSION=$(echo $SRCURL|cut -d '/' -f6)
+if [ "x${VERSION}" = "x" ]; then
+    SRCURL=$(curl "http://pecl.php.net/feeds/pkg_apcu.rss" 2>/dev/null|grep -m1 "item rdf" -a2|grep link|sed -r "s/<(|\/)link>//g"|tr -d ' ')
+    VERSION=$(echo $SRCURL|cut -d '/' -f6)
+else
+    SRCURL="http://pecl.php.net/get/APCu/${VERSION}"
+fi
+
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 INI=$(php -i 2>/dev/null|grep 'Scan this dir for additional .ini files'|awk '{print $NF}')
