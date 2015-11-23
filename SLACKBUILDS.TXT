@@ -350,7 +350,7 @@ SLACKBUILD FILES: doinst.sh php-runkit.info php-runkit.SlackBuild runkit.ini sla
 SLACKBUILD VERSION: 1.0.4
 SLACKBUILD DOWNLOAD: https://github.com/zenovich/runkit/releases/download/1.0.4/runkit-1.0.4.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 
+SLACKBUILD MD5SUM: 9d6d87868d2b74d65573fafa1fb2c6d9
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php-runkit 

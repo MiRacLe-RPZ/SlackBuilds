@@ -2,7 +2,7 @@
 
 # Slackware build script for php-runkit
 
-# Copyright 015 MiRacLe.RPZ
+# Copyright 2015 MiRacLe.RPZ
 # All rights reserved.
 #
 # Redistribution and use of this script, with or without modification, is
@@ -26,8 +26,27 @@ SRCNAM="runkit"
 PRGNAM="php-runkit"
 PKGNAM="php-runkit"
 PHP_CONFIG=$(which php-config)
-GITHASH=${GITHASH:-"80160a2cf94b0377924a7d08f9318bef0c225214"}
-VERSION="1.0.4"
+
+CWD=$(pwd)
+INFOFILE="${CWD}/${PKGNAM}.info"
+if [ -f $INFOFILE ]; then
+    source $INFOFILE
+    SRCURL=${DOWNLOAD}
+    SOURCE="${CWD}/$(basename $DOWNLOAD)"
+    SRCDIR="${SRCNAM}-${VERSION}"
+    SUFFIX=""
+else    
+    GITHASH=${GITHASH:-"80160a2cf94b0377924a7d08f9318bef0c225214"}
+    SRCURL="https://github.com/zenovich/runkit/archive/${GITHASH}.tar.gz"
+    SOURCE="${CWD}/${GITHASH}.tar.gz"
+    VERSION="1.0.4"
+    SRCDIR="$SRCNAM-$GITHASH"
+    SUFFIX=${GITHASH:0:8}
+fi
+
+
+
+
 BUILD=${BUILD:-2}
 TAG=${TAG:-_rpz}
 INI=$(php -i 2>/dev/null|grep 'Scan this dir for additional .ini files'|awk '{print $NF}')
@@ -40,12 +59,11 @@ if [ -z "$ARCH" ]; then
   esac
 fi
 
-CWD=$(pwd)
 TMP=${TMP:-/tmp/rpz}
 PKG=$TMP/package-$PRGNAM
 OUTPUT=${OUTPUT:-/tmp}
-SRCURL="https://github.com/zenovich/runkit/archive/${GITHASH}.tar.gz"
-SOURCE="${CWD}/${GITHASH}.tar.gz"
+
+
 NUMJOBS=${NUMJOBS:-$(( $(getconf _NPROCESSORS_ONLN) + 1 ))}
 
 
@@ -71,7 +89,7 @@ set -u
 rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
-rm -rf $SRCNAM-$GITHASH
+rm -rf ${SRCDIR}
 
 check_installed() {
     PACKAGE=${1}
@@ -118,8 +136,8 @@ dnl() {
 
 dnl "${SOURCE}" "${SRCURL}"
 
-tar xzf $CWD/$GITHASH.tar.gz
-cd $SRCNAM-$GITHASH
+tar xzf ${SOURCE}
+cd ${SRCDIR}
 
 chown -R root:root .
 find . \
@@ -165,4 +183,4 @@ mkdir -p $PKG/install
 cp -a $CWD/doinst.sh $CWD/slack-* $PKG/install/
 
 cd $PKG
-/sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION${GITHASH:0:8}-$ARCH-$BUILD$TAG.${PKGTYPE:-txz}
+/sbin/makepkg -l y -c n $OUTPUT/$PRGNAM-$VERSION${SUFFIX}-$ARCH-$BUILD$TAG.${PKGTYPE:-txz}
