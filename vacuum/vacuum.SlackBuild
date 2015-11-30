@@ -20,9 +20,9 @@
 #   OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
 #   SUCH DAMAGE.
 
-PRGNAM=vacuum
+PRGNAM=vacuum-im
 PKGNAM=$(basename $0 .SlackBuild)
-VERSION=${VERSION:-1.2.4}
+VERSION=${VERSION:-master}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 
@@ -42,7 +42,7 @@ OUTPUT=${OUTPUT:-/tmp}
 
 NUMJOBS=" -j$(lscpu|grep 'CPU(s):'|awk '{print $2 + 1}') "
 
-SOURCE="https://googledrive.com/host/0B7A5K_290X8-NE5nLUx5Yl9BTkk/vacuum-${VERSION}.tar.gz"
+SOURCE="https://github.com/Vacuum-IM/vacuum-im/archive/${VERSION}.tar.gz"
 
 set -e
 
