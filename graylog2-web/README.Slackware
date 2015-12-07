@@ -1,5 +1,0 @@
-This script requires a 'graylog2' user/group to exist before running.
-The recommended UID/GID is 311. You can create these like so:
-groupadd -g 311 graylog2
-useradd -u 311 -g graylog2 -s /bin/false -d /usr/share/graylog2 graylog2
-

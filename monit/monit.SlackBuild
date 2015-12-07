@@ -3,7 +3,7 @@
 
 PRGNAM=monit
 PKGNAM=monit
-VERSION=5.12.2
+VERSION=5.15
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 
@@ -103,6 +103,7 @@ CFLAGS="$SLKCFLAGS" \
 CXXFLAGS="$SLKCFLAGS" \
 ./configure \
   --prefix=/usr \
+  --sysconfdir=/etc \
   --libdir=/usr/lib$LIBDIRSUFFIX \
   --mandir=/usr/man \
   --docdir=/usr/doc/$PRGNAM-$VERSION \

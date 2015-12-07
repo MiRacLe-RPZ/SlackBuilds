@@ -4,7 +4,7 @@
 #
 # Written by Dag Wieers <dag@wieers.com>.
 # Adapted for Slackware by Eric Hameleers <alien@slackware.com>
-#
+
 
 ### Default variables
 CONFIG="/etc/monit.conf"
