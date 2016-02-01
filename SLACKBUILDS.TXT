@@ -42,6 +42,17 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  screencast one or more interactively selected region or window
 
+SLACKBUILD NAME: ffmpeg
+SLACKBUILD LOCATION: ./ffmpeg
+SLACKBUILD FILES: ffmpeg-2.8.4.tar.bz2 ffmpeg.info ffmpeg.SlackBuild slack-desc slack-required
+SLACKBUILD VERSION: 2.8.4
+SLACKBUILD DOWNLOAD: http://ffmpeg.org/releases/ffmpeg-2.8.4.tar.bz2
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: 5a312bebaf71688703644c18ef3f26e8
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  FFmpeg (Software to record, convert and stream audio and video)
+
 SLACKBUILD NAME: freetds
 SLACKBUILD LOCATION: ./freetds
 SLACKBUILD FILES: doinst.sh freetds.info freetds.SlackBuild slack-desc slack-required
@@ -52,18 +63,6 @@ SLACKBUILD MD5SUM: b14db5823980a32f0643d1a84d3ec3ad
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  FreeTDS (free implementation of the Tabular Data Stream protocol)
-
-SLACKBUILD NAME: fuseiso
-SLACKBUILD LOCATION: ./fuseiso
-SLACKBUILD FILES: fuseiso.info fuseiso.SlackBuild slack-desc slack-required
-SLACKBUILD VERSION: 20070708
-SLACKBUILD DOWNLOAD: http://downloads.sourceforge.net/fuseiso/fuseiso-20070708.tar.bz2
-SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 4bb50412b6d01f337565e28afddca3a5
-SLACKBUILD MD5SUM_x86_64: 
-SLACKBUILD REQUIRES: fuse
-SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
-SLACKBUILD SHORT DESCRIPTION:  fuseiso (FUSE module to mount ISO filesystem images)
 
 SLACKBUILD NAME: gearmand
 SLACKBUILD LOCATION: ./gearmand
@@ -87,17 +86,6 @@ SLACKBUILD MD5SUM_x86_64: 854249db290c76e024b734e77b49e72a
 SLACKBUILD REQUIRES: google-chrome-pam-solibs
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  google-chrome (Google Chrome web browser)
-
-SLACKBUILD NAME: icoutils
-SLACKBUILD LOCATION: ./icoutils
-SLACKBUILD FILES: icoutils.info icoutils.SlackBuild slack-desc slack-required
-SLACKBUILD VERSION: 0.31.0
-SLACKBUILD DOWNLOAD: http://download.savannah.gnu.org/releases/icoutils/icoutils-0.31.0.tar.bz2
-SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: fe12dcfb7796cb6cb4ac9bb0720ae362
-SLACKBUILD MD5SUM_x86_64: 
-SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
-SLACKBUILD SHORT DESCRIPTION:  icoutils (Windows Icon and Cursor Utilities)
 
 SLACKBUILD NAME: jdk-work
 SLACKBUILD LOCATION: ./jdk-work
@@ -202,10 +190,10 @@ SLACKBUILD SHORT DESCRIPTION:  pam (Pluggable Authentication Modules)
 SLACKBUILD NAME: photoqt
 SLACKBUILD LOCATION: ./photoqt
 SLACKBUILD FILES: doinst.sh photoqt.info photoqt.SlackBuild slack-desc slack-required
-SLACKBUILD VERSION: 1.1.0.1
-SLACKBUILD DOWNLOAD: http://photoqt.org/pkgs/photoqt-1.1.0.1.tar.gz
+SLACKBUILD VERSION: 1.3
+SLACKBUILD DOWNLOAD: http://photoqt.org/pkgs/photoqt-1.3.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: f7e2f2898eb7b898a7302344df456276
+SLACKBUILD MD5SUM: 9240f33d0c4e55316ce96b1c1ef25042
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  Photo (Qt Graphic Viewer)
@@ -334,10 +322,10 @@ SLACKBUILD SHORT DESCRIPTION:  php-runkit
 SLACKBUILD NAME: phpstorm
 SLACKBUILD LOCATION: ./phpstorm
 SLACKBUILD FILES: phpstorm.info phpstorm.SlackBuild slack-desc slack-required
-SLACKBUILD VERSION: 143.1480
-SLACKBUILD DOWNLOAD: http://download.jetbrains.com/webide/PhpStorm-EAP-143.1480.tar.gz
+SLACKBUILD VERSION: 144.3398
+SLACKBUILD DOWNLOAD: http://download.jetbrains.com/webide/PhpStorm-EAP-144.3398-custom-jdk-linux.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: d0c61d686df5be2a1277c73b8cf77178
+SLACKBUILD MD5SUM: baf96d324062a260c8dd465494c00c8d
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  PhpIDE based on JetBrain's IDEA
@@ -367,10 +355,10 @@ SLACKBUILD SHORT DESCRIPTION:
 SLACKBUILD NAME: q4wine
 SLACKBUILD LOCATION: ./q4wine
 SLACKBUILD FILES: doinst.sh q4wine.info q4wine.SlackBuild slack-desc slack-required
-SLACKBUILD VERSION: 1.1
-SLACKBUILD DOWNLOAD: http://downloads.sourceforge.net/project/q4wine/q4wine/q4wine%201.1/q4wine-1.1.tar.bz2
+SLACKBUILD VERSION: 1.2r2
+SLACKBUILD DOWNLOAD: https://github.com/brezerk/q4wine/archive/v1.2-r2.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 6d806e02a32346c84f72090a2b5c7f40
+SLACKBUILD MD5SUM: f38f1194eda5b6dca27cd5d01818475f
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  q4wine (Qt4 GUI for wine)
@@ -389,10 +377,10 @@ SLACKBUILD SHORT DESCRIPTION:  qmmp (audio-player with a Qt interface)
 SLACKBUILD NAME: qwinff
 SLACKBUILD LOCATION: ./qwinff
 SLACKBUILD FILES: qwinff.info qwinff.SlackBuild slack-desc slack-required
-SLACKBUILD VERSION: 0.2.0
-SLACKBUILD DOWNLOAD: https://github.com/qwinff/qwinff/archive/v0.2.0.tar.gz
+SLACKBUILD VERSION: 0.2.1
+SLACKBUILD DOWNLOAD: https://github.com/qwinff/qwinff/archive/v0.2.1.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 280f87c62a30e6c2597091281dabfa7b
+SLACKBUILD MD5SUM: 38ec02aecea2a7cc2ef51d5d7ed9205a
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:   easy-to-use media converter frontend to FFmpeg
