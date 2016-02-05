@@ -322,10 +322,10 @@ SLACKBUILD SHORT DESCRIPTION:  php-runkit
 SLACKBUILD NAME: phpstorm
 SLACKBUILD LOCATION: ./phpstorm
 SLACKBUILD FILES: phpstorm.info phpstorm.SlackBuild slack-desc slack-required
-SLACKBUILD VERSION: 144.3398
-SLACKBUILD DOWNLOAD: http://download.jetbrains.com/webide/PhpStorm-EAP-144.3398-custom-jdk-linux.tar.gz
+SLACKBUILD VERSION: 144.3656
+SLACKBUILD DOWNLOAD: http://download.jetbrains.com/webide/PhpStorm-EAP-144.3656-custom-jdk-linux.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: baf96d324062a260c8dd465494c00c8d
+SLACKBUILD MD5SUM: fde6b0c0ab5d457b083f5cc1aab6d13a
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  PhpIDE based on JetBrain's IDEA
