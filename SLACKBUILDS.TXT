@@ -432,10 +432,10 @@ SLACKBUILD SHORT DESCRIPTION:  Crossplatform Jabber client
 SLACKBUILD NAME: webstorm
 SLACKBUILD LOCATION: ./webstorm
 SLACKBUILD FILES: slack-desc slack-required webstorm.SlackBuild webstorm.info
-SLACKBUILD VERSION: 145.184.5
-SLACKBUILD DOWNLOAD: http://download.jetbrains.com/webstorm/WebStorm-EAP-145.184.5.tar.gz
+SLACKBUILD VERSION: 145.256.40
+SLACKBUILD DOWNLOAD: http://download.jetbrains.com/webstorm/WebStorm-EAP-145.256.40.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 1fcc3c5d2f48aac6a4175b9bfa346ef3
+SLACKBUILD MD5SUM: aef75302db5b5bbc2f1c427d4c066fe9
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  WebIDE based on JetBrain's IDEA
