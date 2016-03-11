@@ -1,0 +1,7 @@
+PRGNAM="webstorm"
+VERSION="145.184.5"
+HOMEPAGE="http://www.jetbrains.com/webstorm/"
+DOWNLOAD="http://download.jetbrains.com/webstorm/WebStorm-EAP-145.184.5.tar.gz"
+MD5SUM="1fcc3c5d2f48aac6a4175b9bfa346ef3"
+MAINTAINER="MiRacLe.RPZ"
+EMAIL="miracle@rpz.name"
