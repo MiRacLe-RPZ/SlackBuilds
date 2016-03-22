@@ -187,17 +187,6 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  Photo (Qt Graphic Viewer)
 
-SLACKBUILD NAME: php-apc
-SLACKBUILD LOCATION: ./php-apc
-SLACKBUILD FILES: apc.ini doinst.sh php-apc.SlackBuild php-apc.info slack-conflicts slack-desc slack-required
-SLACKBUILD VERSION: 3.1.13
-SLACKBUILD DOWNLOAD: http://pecl.php.net/get/APC/3.1.13
-SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: c9e47002e3a67ebde3a6f81437c7b6e0
-SLACKBUILD MD5SUM_x86_64: 
-SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
-SLACKBUILD SHORT DESCRIPTION:  php-apc (Advanced PHP Cache)
-
 SLACKBUILD NAME: php-apcu
 SLACKBUILD LOCATION: ./php-apcu
 SLACKBUILD FILES: apcu.ini doinst.sh php-apcu.SlackBuild php-apcu.info slack-conflicts slack-desc slack-required
@@ -245,10 +234,10 @@ SLACKBUILD SHORT DESCRIPTION:  extension for interfacing with memcached via libm
 SLACKBUILD NAME: php-mssql
 SLACKBUILD LOCATION: ./php-mssql
 SLACKBUILD FILES: doinst.sh mssql.ini php-mssql.SlackBuild php-mssql.info slack-desc slack-required
-SLACKBUILD VERSION: 5.6.15
-SLACKBUILD DOWNLOAD: http://www.php.net/distributions/php-5.6.15.tar.bz2
+SLACKBUILD VERSION: 5.6.19
+SLACKBUILD DOWNLOAD: http://www.php.net/distributions/php-5.6.19.tar.bz2
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: bdfa8fb1b895a25e1cc05c162f9ae5fc
+SLACKBUILD MD5SUM: aec4374c660d7b160497001c25f8c75e
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php-mssql (php MS SQL extension)
@@ -256,10 +245,10 @@ SLACKBUILD SHORT DESCRIPTION:  php-mssql (php MS SQL extension)
 SLACKBUILD NAME: php-pdo-dblib
 SLACKBUILD LOCATION: ./php-pdo-dblib
 SLACKBUILD FILES: doinst.sh pdo-dblib.ini php-pdo-dblib.SlackBuild php-pdo-dblib.info slack-desc slack-required
-SLACKBUILD VERSION: 5.6.16
-SLACKBUILD DOWNLOAD: http://www.php.net/distributions/php-5.6.16.tar.bz2
+SLACKBUILD VERSION: 5.6.19
+SLACKBUILD DOWNLOAD: http://www.php.net/distributions/php-5.6.19.tar.bz2
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 765b164b89af1f03ae2fdf39a4e4e1df
+SLACKBUILD MD5SUM: aec4374c660d7b160497001c25f8c75e
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php-pdo-dblib (php DBLIB pdo driver)
@@ -278,10 +267,10 @@ SLACKBUILD SHORT DESCRIPTION:  Object Orientated API that allows user-land multi
 SLACKBUILD NAME: php-readline
 SLACKBUILD LOCATION: ./php-readline
 SLACKBUILD FILES: doinst.sh php-readline.SlackBuild php-readline.info readline.ini slack-desc slack-required
-SLACKBUILD VERSION: 5.6.15
-SLACKBUILD DOWNLOAD: http://www.php.net/distributions/php-5.6.15.tar.bz2
+SLACKBUILD VERSION: 5.6.19
+SLACKBUILD DOWNLOAD: http://www.php.net/distributions/php-5.6.19.tar.bz2
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: bdfa8fb1b895a25e1cc05c162f9ae5fc
+SLACKBUILD MD5SUM: aec4374c660d7b160497001c25f8c75e
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php-readline
@@ -333,10 +322,10 @@ SLACKBUILD SHORT DESCRIPTION:
 SLACKBUILD NAME: phpstorm
 SLACKBUILD LOCATION: ./phpstorm
 SLACKBUILD FILES: phpstorm.SlackBuild phpstorm.info slack-desc slack-required
-SLACKBUILD VERSION: 145.184.39
-SLACKBUILD DOWNLOAD: http://download.jetbrains.com/webide/PhpStorm-EAP-145.184.39.tar.gz
+SLACKBUILD VERSION: 145.258.2
+SLACKBUILD DOWNLOAD: https://download.jetbrains.com/webide/PhpStorm-2016.1.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 0e047c32219ab1ee32e09ec3b9b24487
+SLACKBUILD MD5SUM: f590386e9659ca4f0335558d18d60bdd
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  PhpIDE based on JetBrain's IDEA
