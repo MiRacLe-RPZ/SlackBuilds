@@ -23,9 +23,9 @@
 PRGNAM=jdk
 PKGNAM=$(basename $0 .SlackBuild)
 SRCNAM=jdk
-VERSION=${VERSION:-8u60}
+VERSION=${VERSION:-8u74}
 BUILD=${BUILD:-1}
-PATCHLEVEL="b27"
+PATCHLEVEL="b02"
 TAG=${TAG:-_rpz}
 
 
@@ -72,12 +72,12 @@ if [ "$ARCH" = "x86_64" ]; then
   LIB_ARCH=amd64
   LIBDIRSUFFIX="64"
   SRC_ARCH="x64"
-  SRC_MD5SUM="b8ca513d4f439782c019cb78cd7fd101"
+  SRC_MD5SUM="4928d67633c5e5b397315b5cf5f8fa2e"
 else
   LIB_ARCH=i386
   LIBDIRSUFFIX=""
   SRC_ARCH="i586"
-  SRC_MD5SUM="a46d706babbd63f459d7ca6d4057d80f"
+  SRC_MD5SUM="5e73453a8b6fda591d99820eae293594"
 fi
 
 SRCURL="http://download.oracle.com/otn-pub/java/${SRCNAM}/${VERSION}-${PATCHLEVEL}/${SRCNAM}-${VERSION}-linux-${SRC_ARCH}.tar.gz"
