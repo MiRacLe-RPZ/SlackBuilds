@@ -2,7 +2,7 @@
 
 # Slackware build script for php-xdebug
 
-# Copyright 2013-2015 MiRacLe.RPZ
+# Copyright 2013-2016 MiRacLe.RPZ
 # All rights reserved.
 #
 # Redistribution and use of this script, with or without modification, is
@@ -162,7 +162,7 @@ find $PKG | xargs file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
-cp -a CREDITS LICENSE NEWS README $PKG/usr/doc/$PRGNAM-$VERSION/
+cp -a CREDITS LICENSE README.rst $PKG/usr/doc/$PRGNAM-$VERSION/
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION/SlackBuild
 cp -a $CWD/$PRGNAM.SlackBuild $CWD/$PRGNAM.info $CWD/slack-* $CWD/doinst.sh $CWD/*.ini \
  $PKG/usr/doc/$PRGNAM-$VERSION/SlackBuild

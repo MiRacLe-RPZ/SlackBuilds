@@ -310,9 +310,9 @@ SLACKBUILD SHORT DESCRIPTION:  php-runkit
 
 SLACKBUILD NAME: php-xdebug
 SLACKBUILD LOCATION: ./php-xdebug
-SLACKBUILD FILES: doinst.sh php-xdebug.SlackBuild php-xdebug.info slack-desc slack-required xdebug-2.4.0RC3.tar.gz xdebug.ini
-SLACKBUILD VERSION: 2.3.3
-SLACKBUILD DOWNLOAD: http://pecl.php.net/get/xdebug-2.3.3.tgz
+SLACKBUILD FILES: doinst.sh php-xdebug.SlackBuild php-xdebug.info slack-desc slack-required xdebug.ini
+SLACKBUILD VERSION: 2.4.0
+SLACKBUILD DOWNLOAD: http://pecl.php.net/get/xdebug-2.4.0.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
 SLACKBUILD MD5SUM: 60e6fdf41840104a23debe16db15a2af
 SLACKBUILD MD5SUM_x86_64: 
