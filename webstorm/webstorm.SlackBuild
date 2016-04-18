@@ -21,7 +21,7 @@ set -e
 
 PRGNAM=WebStorm
 PKGNAM=webstorm
-VERSION=${VERSION:-145.256.40}
+VERSION=${VERSION:-145.969.8}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
@@ -159,7 +159,7 @@ Categories=Development;IDE;Web;
 StartupNotify=true
 StartupWMClass=WebStorm
 EOF
-) > $PKG/usr/share/applications/phpstorm.desktop
+) > $PKG/usr/share/applications/webstorm.desktop
 
 cp $PKG/opt/$PKGNAM/bin/webstorm.svg $PKG/usr/share/pixmaps/$PKGNAM.svg
 
