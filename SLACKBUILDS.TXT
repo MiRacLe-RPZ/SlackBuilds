@@ -190,10 +190,10 @@ SLACKBUILD SHORT DESCRIPTION:  Photo (Qt Graphic Viewer)
 SLACKBUILD NAME: php-apcu
 SLACKBUILD LOCATION: ./php-apcu
 SLACKBUILD FILES: apcu.ini doinst.sh php-apcu.SlackBuild php-apcu.info slack-conflicts slack-desc slack-required
-SLACKBUILD VERSION: 4.0.10
-SLACKBUILD DOWNLOAD: http://pecl.php.net/get/apcu-4.0.10.tgz
+SLACKBUILD VERSION: 4.0.11
+SLACKBUILD DOWNLOAD: http://pecl.php.net/get/apcu-4.0.11.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: e52d930a050066025095e2a448fd3cab
+SLACKBUILD MD5SUM: 13c0c0dd676e5a7905d54fa985d0ee62
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php-apcu (Advanced PHP Cache)
@@ -322,10 +322,10 @@ SLACKBUILD SHORT DESCRIPTION:
 SLACKBUILD NAME: phpstorm
 SLACKBUILD LOCATION: ./phpstorm
 SLACKBUILD FILES: phpstorm.SlackBuild phpstorm.info slack-desc slack-required
-SLACKBUILD VERSION: 145.258.2
-SLACKBUILD DOWNLOAD: https://download.jetbrains.com/webide/PhpStorm-2016.1.tar.gz
+SLACKBUILD VERSION: 145.844.5
+SLACKBUILD DOWNLOAD: http://download.jetbrains.com/webide/PhpStorm-EAP-145.844.5.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: f590386e9659ca4f0335558d18d60bdd
+SLACKBUILD MD5SUM: 8c3cbf8e058c978cf48ce1666f328d1a
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  PhpIDE based on JetBrain's IDEA
@@ -377,10 +377,10 @@ SLACKBUILD SHORT DESCRIPTION:  rats (Rough Auditing Tool for Security)
 SLACKBUILD NAME: rubymine
 SLACKBUILD LOCATION: ./rubymine
 SLACKBUILD FILES: rubymine.SlackBuild rubymine.info slack-desc slack-required
-SLACKBUILD VERSION: 143.1559
-SLACKBUILD DOWNLOAD: http://download.jetbrains.com/ruby/RubyMine-143.1559.tar.gz
+SLACKBUILD VERSION: 145.844.4
+SLACKBUILD DOWNLOAD: http://download.jetbrains.com/ruby/RubyMine-145.844.4.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 79335d5b548d77cb2d40540c552ee396
+SLACKBUILD MD5SUM: b56513db33fcaec80696bee3556cede3
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  RubyIDE based on JetBrain's IDEA
@@ -421,10 +421,10 @@ SLACKBUILD SHORT DESCRIPTION:  Crossplatform Jabber client
 SLACKBUILD NAME: webstorm
 SLACKBUILD LOCATION: ./webstorm
 SLACKBUILD FILES: slack-desc slack-required webstorm.SlackBuild webstorm.info
-SLACKBUILD VERSION: 145.844.3
-SLACKBUILD DOWNLOAD: http://download.jetbrains.com/webstorm/WebStorm-EAP-145.844.3.tar.gz
+SLACKBUILD VERSION: 145.969.8
+SLACKBUILD DOWNLOAD: http://download.jetbrains.com/webstorm/WebStorm-EAP-145.969.8.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 4a7f84186a56026b00defcbbcd4d204d
+SLACKBUILD MD5SUM: 1fcf7a3153e82efcc7fa742bf7d86cb5
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  WebIDE based on JetBrain's IDEA
