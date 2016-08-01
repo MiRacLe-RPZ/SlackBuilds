@@ -211,7 +211,7 @@ SLACKBUILD SHORT DESCRIPTION:  php-gearman (binding for libgearman)
 
 SLACKBUILD NAME: php-memcache
 SLACKBUILD LOCATION: ./php-memcache
-SLACKBUILD FILES: doinst.sh memcache.ini php-memcache.SlackBuild php-memcache.info slack-desc slack-required
+SLACKBUILD FILES: doinst.sh memcache-faulty-inline.diff.gz memcache.ini php-memcache.SlackBuild php-memcache.info slack-desc slack-required
 SLACKBUILD VERSION: 3.0.8
 SLACKBUILD DOWNLOAD: http://pecl.php.net/get/memcache-3.0.8.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -421,10 +421,10 @@ SLACKBUILD SHORT DESCRIPTION:  Crossplatform Jabber client
 SLACKBUILD NAME: webstorm
 SLACKBUILD LOCATION: ./webstorm
 SLACKBUILD FILES: slack-desc slack-required webstorm.SlackBuild webstorm.info
-SLACKBUILD VERSION: 145.256.40
-SLACKBUILD DOWNLOAD: http://download.jetbrains.com/webstorm/WebStorm-EAP-145.256.40.tar.gz
+SLACKBUILD VERSION: 145.844.3
+SLACKBUILD DOWNLOAD: http://download.jetbrains.com/webstorm/WebStorm-EAP-145.844.3.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: aef75302db5b5bbc2f1c427d4c066fe9
+SLACKBUILD MD5SUM: 4a7f84186a56026b00defcbbcd4d204d
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  WebIDE based on JetBrain's IDEA

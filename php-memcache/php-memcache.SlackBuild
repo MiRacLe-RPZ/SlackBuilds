@@ -28,7 +28,7 @@ PKGNAM=php-memcache
 PHP_CONFIG=$(which php-config)
 SRCURL=$(curl "http://pecl.php.net/feeds/pkg_${SRCNAM}.rss" 2>/dev/null|grep -m1 "item rdf" -a2|grep link|sed -r "s/<(|\/)link>//g"|tr -d ' ')
 VERSION=$(echo $SRCURL|cut -d '/' -f6)
-BUILD=${BUILD:-1}
+BUILD=${BUILD:-2}
 TAG=${TAG:-_rpz}
 INI=$(php -i 2>/dev/null|grep 'Scan this dir for additional .ini files'|awk '{print $NF}')
 
@@ -119,6 +119,7 @@ dnl "${SOURCE}" "${SRCURL}"
 
 tar xzf $CWD/$SRCNAM-$VERSION.tar.gz
 cd $SRCNAM-$VERSION
+zcat $CWD/memcache-faulty-inline.diff.gz | patch -p1 || exit
 
 chown -R root:root .
 find . \
