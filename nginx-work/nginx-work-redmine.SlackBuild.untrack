@@ -20,9 +20,9 @@
 set -e
 
 PRGNAM=nginx
-PKGNAM=$(basename $0 .SlackBuild)
-VERSION=${VERSION:-1.10.3}
-BUILD=${BUILD:-1}
+PKGNAM=nginx-work-redmine
+VERSION=${VERSION:-1.7.3}
+BUILD=${BUILD:-2}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
 
@@ -103,9 +103,24 @@ find . \
  \( -perm 777 -o -perm 775 -o -perm 511 -o -perm 711 -o -perm 555 \) -exec chmod 755 {} \;
 
 
+
+PATH=/srv/redmine.lan/.rvm/gems/ruby-1.9.3-p448/bin:/srv/redmine.lan/.rvm/gems/ruby-1.9.3-p448@global/bin:/srv/redmine.lan/.rvm/rubies/ruby-1.9.3-p448/bin:/srv/redmine.lan//.rvm/bin:$PATH
+#PATH=/srv/redmine.lan/.rvm/gems/ree-1.8.7-2012.02@redmine/bin:/srv/redmine.lan/.rvm/gems/ree-1.8.7-2012.02@global/bin:/srv/redmine.lan/.rvm/rubies/ree-1.8.7-2012.02/bin:/srv/redmine.lan/.rvm/bin:$PATH
+#GEM_HOME="/srv/redmine.lan/.rvm/gems/ree-1.8.7-2012.02@redmine"
+GEM_HOME=/srv/redmine.lan/.rvm/gems/ruby-1.9.3-p448
+#GEM_PATH="/srv/redmine.lan/.rvm/gems/ree-1.8.7-2012.02@redmine:/srv/redmine.lan/.rvm/gems/ree-1.8.7-2012.02@global"
+GEM_PATH="/srv/redmine.lan/.rvm/gems/ruby-1.9.3-p448:/srv/redmine.lan/.rvm/gems/ruby-1.9.3-p448@global"
+
+
+[[ -s "/srv/redmine.lan/.rvm/scripts/rvm" ]] && source "/srv/redmine.lan/.rvm/scripts/rvm"
+
+
+GEM_HOME="$GEM_HOME" \
+GEM_PATH="$GEM_PATH" \
 CFLAGS="$SLKCFLAGS" \
 CXXFLAGS="$SLKCFLAGS" \
-./configure \
+rvm_path="/srv/redmine.lan/.rvm" \
+/srv/redmine.lan/.rvm/gems/ruby-1.9.3-p448/bin/passenger-install-nginx-module --nginx-source-dir=`pwd` --auto --prefix=/usr --extra-configure-flags=" \
   --prefix=/usr \
   --sbin-path=/usr/sbin/nginx \
   --conf-path=/etc/nginx/nginx.conf \
@@ -119,10 +134,10 @@ CXXFLAGS="$SLKCFLAGS" \
   --with-http_gzip_static_module \
   --with-http_secure_link_module \
   --with-http_stub_status_module \
-  --with-http_ssl_module \
   --http-client-body-temp-path=/tmp/nginx/client_body \
   --http-proxy-temp-path=/tmp/nginx/proxy \
-  --http-fastcgi-temp-path=/dev/shm && \
+  --with-http_geoip_module \
+  --http-fastcgi-temp-path=/dev/shm" && \
 make $NUMJOBS && \
 make install DESTDIR=$PKG
 
@@ -150,7 +165,7 @@ cp -r \
   CHANGES* LICENSE README \
   $PKG/usr/doc/$PKGNAM-$VERSION
 
-for i in $CWD/doinst.sh $CWD/$PKGNAM.SlackBuild $CWD/nginx.conf $CWD/nginx.logrotate $CWD/rc.nginx $CWD/slack-* $CWD/monit.* ; do
+for i in $CWD/doinst.sh $CWD/$PKGNAM.SlackBuild $CWD/nginx.conf $CWD/nginx.logrotate $CWD/rc.nginx $CWD/slack-*; do
   cp -a $i $PKG/usr/doc/$PKGNAM-$VERSION/SlackBuild/
 done
 
