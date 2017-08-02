@@ -21,7 +21,7 @@ set -e
 
 PRGNAM=PhpStorm
 PKGNAM=phpstorm
-VERSION=${VERSION:-145.844.5}
+VERSION=${VERSION:-172.3544.21}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
@@ -165,7 +165,7 @@ StartupWMClass=PhpStorm
 EOF
 ) > $PKG/usr/share/applications/phpstorm.desktop
 
-cp $PKG/opt/$PKGNAM/bin/webide.png $PKG/usr/share/pixmaps/$PKGNAM.png
+cp $PKG/opt/$PKGNAM/bin/$PKGNAM.png $PKG/usr/share/pixmaps/$PKGNAM.png
 
 cp -a Install-Linux-tar.txt \
   $PKG/usr/doc/$PKGNAM-$VERSION
