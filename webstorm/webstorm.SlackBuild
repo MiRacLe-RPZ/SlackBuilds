@@ -21,7 +21,7 @@ set -e
 
 PRGNAM=WebStorm
 PKGNAM=webstorm
-VERSION=${VERSION:-145.969.8}
+VERSION=${VERSION:-171.4249.16}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
@@ -40,7 +40,7 @@ PKG=$TMP/package-$PKGNAM
 OUTPUT=${OUTPUT:-/tmp}
 
 
-SRCURL="http://download.jetbrains.com/webstorm/$PRGNAM-EAP-$VERSION.tar.gz"
+SRCURL="http://download.jetbrains.com/${PKGNAM}/${PRGNAM}-${VERSION}.tar.gz"
 SOURCE="${CWD}/$(basename $SRCURL)"
 
 rm -rf $PKG

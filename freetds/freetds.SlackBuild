@@ -26,8 +26,9 @@
 
 PRGNAM=freetds
 PKGNAM=$(basename $0 .SlackBuild)
-VERSION=${VERSION:-0.91}
-BUILD=${BUILD:-3}
+VERSION=${VERSION:-1.0}
+SRCVERSION=${SRCVERSION:-R1_00}
+BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 
 if [ -z "$ARCH" ]; then
@@ -65,12 +66,12 @@ set -e
 rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
-rm -rf $PRGNAM-$VERSION
-if [ ! -e $CWD/$PRGNAM-$VERSION.tar.gz ]; then
-    wget "ftp://ftp.freetds.org/pub/${PRGNAM}/stable/$PRGNAM-$VERSION.tar.gz" -O "$CWD/$PRGNAM-$VERSION.tar.gz"
+rm -rf $PRGNAM-$SRCVERSION
+if [ ! -e $CWD/$PRGNAM-$SRCVERSION.tar.gz ]; then
+    wget "https://github.com/FreeTDS/${PRGNAM}/archive/${SRCVERSION}.tar.gz" -O "$CWD/$PRGNAM-$SRCVERSION.tar.gz"
 fi
-tar xvf $CWD/$PRGNAM-$VERSION.tar.gz
-cd $PRGNAM-$VERSION
+tar xvf $CWD/$PRGNAM-$SRCVERSION.tar.gz
+cd $PRGNAM-$SRCVERSION
 chown -R root:root .
 find . \
  \( -perm 777 -o -perm 775 -o -perm 711 -o -perm 555 -o -perm 511 \) \
@@ -78,14 +79,16 @@ find . \
  \( -perm 666 -o -perm 664 -o -perm 600 -o -perm 444 -o -perm 440 -o -perm 400 \) \
  -exec chmod 644 {} \;
 
+
 CFLAGS="$SLKCFLAGS" \
 CXXFLAGS="$SLKCFLAGS" \
-./configure \
+./autogen.sh \
   --prefix=/usr \
   --libdir=/usr/lib${LIBDIRSUFFIX} \
   --sysconfdir=/etc/freetds \
   --localstatedir=/var \
   --mandir=/usr/man \
+  --disable-odbc \
   --disable-static \
   --disable-debug \
   --with-openssl \
