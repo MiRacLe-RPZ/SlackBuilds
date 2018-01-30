@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Slackware build script for php-runkit
+# Slackware build script for php-phalcon
 
 # Copyright 2017 MiRacLe.RPZ
 # All rights reserved.
@@ -26,6 +26,8 @@ SRCNAM="cphalcon"
 PRGNAM="php-phalcon"
 PKGNAM="php-phalcon"
 PHP_CONFIG=$(which php-config)
+PHP_MAJOR_VERSION=$(php --version | head -n 1 | cut -d " " -f 2 | cut -c 1)
+
 
 CWD=$(pwd)
 INFOFILE="${CWD}/${PKGNAM}.info"
@@ -141,7 +143,7 @@ dnl() {
 dnl "${SOURCE}" "${SRCURL}"
 
 tar xzf ${SOURCE}
-cd ${SRCDIR}/build/php7/$SRCARCH/
+cd ${SRCDIR}/build/php${PHP_MAJOR_VERSION}/$SRCARCH/
 
 chown -R root:root .
 find . \
