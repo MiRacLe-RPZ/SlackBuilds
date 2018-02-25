@@ -10,7 +10,6 @@ config() {
   fi
   # Otherwise, we leave the .new copy for the admin to consider...
 }
-
 INI=$(php -i 2>/dev/null|grep 'Scan this dir for additional .ini files'|awk '{print $NF}')
 
-config ${INI}/zendopcache.ini.new
+config ${INI}/phpiredis.ini.new

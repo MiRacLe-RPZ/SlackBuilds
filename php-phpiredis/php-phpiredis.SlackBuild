@@ -1,8 +1,8 @@
 #!/bin/sh
 
-# Slackware build script for php-runkit
+# Slackware build script for php-phiredis
 
-# Copyright 2015 MiRacLe.RPZ
+# Copyright 2018 MiRacLe.RPZ
 # All rights reserved.
 #
 # Redistribution and use of this script, with or without modification, is
@@ -22,10 +22,12 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-SRCNAM="runkit"
-PRGNAM="php-runkit"
-PKGNAM="php-runkit"
+SRCNAM="phpiredis"
+PRGNAM="php-phpiredis"
+PKGNAM="php-phpiredis"
 PHP_CONFIG=$(which php-config)
+PHP_MAJOR_VERSION=$(php --version | head -n 1 | cut -d " " -f 2 | cut -c 1)
+
 
 CWD=$(pwd)
 INFOFILE="${CWD}/${PKGNAM}.info"
@@ -36,18 +38,17 @@ if [ -f $INFOFILE ]; then
     SRCDIR="${SRCNAM}-${VERSION}"
     SUFFIX=""
 else    
-    GITHASH=${GITHASH:-"80160a2cf94b0377924a7d08f9318bef0c225214"}
-    SRCURL="https://github.com/zenovich/runkit/archive/${GITHASH}.tar.gz"
-    SOURCE="${CWD}/${GITHASH}.tar.gz"
-    VERSION="1.0.4"
-    SRCDIR="$SRCNAM-$GITHASH"
-    SUFFIX=${GITHASH:0:8}
+    VERSION="1.0.0"
+    SRCURL="https://github.com/nrk/${SRCNAME}/archive/v${VERSION}.tar.gz"
+    SOURCE="${CWD}/v${VERSION}.tar.gz"
+    SRCDIR="$SRCNAM-$VERSION"
+    SUFFIX=""
 fi
 
 
 
 
-BUILD=${BUILD:-2}
+BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 INI=$(php -i 2>/dev/null|grep 'Scan this dir for additional .ini files'|awk '{print $NF}')
 
@@ -58,6 +59,11 @@ if [ -z "$ARCH" ]; then
        *) ARCH=$( uname -m ) ;;
   esac
 fi
+
+case "$( uname -m )" in
+    x86_64) SRCARCH="64bits" ;;
+    *) SRCARCH="32bits" ;;
+esac
 
 TMP=${TMP:-/tmp/rpz}
 PKG=$TMP/package-$PRGNAM
@@ -160,7 +166,7 @@ CXXFLAGS="$SLKCFLAGS" \
   --docdir=/usr/doc/$PRGNAM-$VERSION \
   --with-php-config=$PHP_CONFIG \
   --build=$ARCH-slackware-linux \
-  --enable-runkit \
+  --enable-phpiredis \
   --with-libdir=lib${LIBDIRSUFFIX}
 
 make -j$NUMJOBS
@@ -168,13 +174,14 @@ make -j$NUMJOBS
 make install DESTDIR=$PKG EXTENSION_DIR="$PKG/$($PHP_CONFIG --extension-dir)"
 
 mkdir -p ${PKG}/${INI}
-install -m 644 $CWD/runkit.ini ${PKG}/${INI}/runkit.ini.new
+install -m 644 $CWD/phpiredis.ini ${PKG}/${INI}/phpiredis.ini.new
 
 find $PKG | xargs file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
 
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION
-cp -a README.md LICENSE $PKG/usr/doc/$PRGNAM-$VERSION/
+cd ${TMP}/${SRCDIR}
+cp -a README.md LICENSE CHANGELOG.md $PKG/usr/doc/$PRGNAM-$VERSION/
 mkdir -p $PKG/usr/doc/$PRGNAM-$VERSION/SlackBuild
 cp -a $CWD/$PRGNAM.SlackBuild $CWD/$PRGNAM.info $CWD/slack-* $CWD/doinst.sh $CWD/*.ini \
  $PKG/usr/doc/$PRGNAM-$VERSION/SlackBuild
