@@ -1,8 +1,8 @@
 #!/bin/sh
 
-# Slackware build script for freetds (required for build php-work)
+# Slackware build script for freetds (required for build php-mssql, php-pdo-dblib)
 
-# Copyright 2012  MiRacLe.RPZ <miracle@rpz.name>
+# Copyright 2012 - 2018  MiRacLe.RPZ <miracle@rpz.name>
 # All rights reserved.
 #
 #   Permission to use, copy, modify, and distribute this software for
@@ -26,8 +26,8 @@
 
 PRGNAM=freetds
 PKGNAM=$(basename $0 .SlackBuild)
-VERSION=${VERSION:-1.0}
-SRCVERSION=${SRCVERSION:-R1_00}
+VERSION=${VERSION:-1.00.83}
+SRCVERSION=${SRCVERSION:-1.00.83}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 
@@ -68,7 +68,7 @@ mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf $PRGNAM-$SRCVERSION
 if [ ! -e $CWD/$PRGNAM-$SRCVERSION.tar.gz ]; then
-    wget "https://github.com/FreeTDS/${PRGNAM}/archive/${SRCVERSION}.tar.gz" -O "$CWD/$PRGNAM-$SRCVERSION.tar.gz"
+    wget "ftp://ftp.freetds.org/pub/${PRGNAM}/stable/${PRGNAM}-${VERSION}.tar.gz" -O "$CWD/$PRGNAM-$SRCVERSION.tar.gz"
 fi
 tar xvf $CWD/$PRGNAM-$SRCVERSION.tar.gz
 cd $PRGNAM-$SRCVERSION
@@ -82,7 +82,7 @@ find . \
 
 CFLAGS="$SLKCFLAGS" \
 CXXFLAGS="$SLKCFLAGS" \
-./autogen.sh \
+./configure \
   --prefix=/usr \
   --libdir=/usr/lib${LIBDIRSUFFIX} \
   --sysconfdir=/etc/freetds \

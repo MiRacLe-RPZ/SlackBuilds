@@ -21,8 +21,8 @@ set -e
 
 PRGNAM=RubyMine
 PKGNAM=rubymine
-VERSION=${VERSION:-145.844.4}
-SRCVER=${SRCVER:-$VERSION}
+VERSION=${VERSION:-2017.3.1}
+SRCVER=${SRCVER:-2017.3.1}
 SRCDIR=${SRCDIR:-$SRCVER}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
@@ -41,7 +41,7 @@ TMP=${TMP:-/tmp/rpz}
 PKG=$TMP/package-$PKGNAM
 OUTPUT=${OUTPUT:-/tmp}
 
-SRCURL="http://download.jetbrains.com/ruby/$PRGNAM-$VERSION.tar.gz"
+SRCURL="https://download.jetbrains.com/ruby/$PRGNAM-$VERSION.tar.gz"
 SOURCE="${CWD}/${PRGNAM}-${VERSION}.tar.gz"
 
 #SRCURL="http://download.jetbrains.com/ruby/$PRGNAM-${SRCVER}.tar.gz"

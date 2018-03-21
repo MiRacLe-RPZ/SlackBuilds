@@ -21,7 +21,7 @@ set -e
 
 PRGNAM=PhpStorm
 PKGNAM=phpstorm
-VERSION=${VERSION:-173.3727.138}
+VERSION=${VERSION:-173.4548.32}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
@@ -40,7 +40,7 @@ PKG=$TMP/package-$PKGNAM
 OUTPUT=${OUTPUT:-/tmp}
 
 
-SRCURL="https://download-cf.jetbrains.com/webide/PhpStorm-2017.3.tar.gz"
+SRCURL="https://download-cf.jetbrains.com/webide/PhpStorm-2017.3.4.tar.gz"
 #SRCURL="http://download.jetbrains.com/webide/$PRGNAM-EAP-$VERSION.tar.gz"
 #SRCURL="https://download.jetbrains.com/webide/$PRGNAM-2016.1.tar.gz"
 #SRCURL="http://download.jetbrains.com/webide/${PRGNAM}-EAP-${VERSION}-custom-jdk-linux.tar.gz"
