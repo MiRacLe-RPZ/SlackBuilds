@@ -38,7 +38,7 @@ if [ -f $INFOFILE ]; then
     SRCDIR="${SRCNAM}-${VERSION}"
     SUFFIX=""
 else    
-    VERSION="3.3.1"
+    VERSION="3.4.0"
     SRCURL="https://github.com/phalcon/cphalcon/archive/v${VERSION}.tar.gz"
     SOURCE="${CWD}/v${VERSION}.tar.gz"
     SRCDIR="$SRCNAM-$VERSION"
