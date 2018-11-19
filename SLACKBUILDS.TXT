@@ -308,28 +308,6 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php-xdebug
 
-SLACKBUILD NAME: q4wine
-SLACKBUILD LOCATION: ./q4wine
-SLACKBUILD FILES: doinst.sh q4wine.info q4wine.SlackBuild slack-desc slack-required
-SLACKBUILD VERSION: 1.2r2
-SLACKBUILD DOWNLOAD: https://github.com/brezerk/q4wine/archive/v1.2-r2.tar.gz
-SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: f38f1194eda5b6dca27cd5d01818475f
-SLACKBUILD MD5SUM_x86_64: 
-SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
-SLACKBUILD SHORT DESCRIPTION:  q4wine (Qt4 GUI for wine)
-
-SLACKBUILD NAME: qwinff
-SLACKBUILD LOCATION: ./qwinff
-SLACKBUILD FILES: qwinff.info qwinff.SlackBuild slack-desc slack-required
-SLACKBUILD VERSION: 0.2.1
-SLACKBUILD DOWNLOAD: https://github.com/qwinff/qwinff/archive/v0.2.1.tar.gz
-SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 38ec02aecea2a7cc2ef51d5d7ed9205a
-SLACKBUILD MD5SUM_x86_64: 
-SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
-SLACKBUILD SHORT DESCRIPTION:   easy-to-use media converter frontend to FFmpeg
-
 SLACKBUILD NAME: rats
 SLACKBUILD LOCATION: ./rats
 SLACKBUILD FILES: rats.info rats.SlackBuild slack-desc
