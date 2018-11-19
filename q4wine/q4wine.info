@@ -1,7 +1,0 @@
-PRGNAM="q4wine"
-VERSION="1.2r2"
-HOMEPAGE="http://q4wine.brezblock.org.ua/"
-DOWNLOAD="https://github.com/brezerk/q4wine/archive/v1.2-r2.tar.gz"
-MD5SUM="f38f1194eda5b6dca27cd5d01818475f"
-MAINTAINER="MiRacLe.RPZ"
-EMAIL="miracle@rpz.name"
