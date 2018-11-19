@@ -311,10 +311,10 @@ SLACKBUILD SHORT DESCRIPTION:  php-xdebug
 SLACKBUILD NAME: rats
 SLACKBUILD LOCATION: ./rats
 SLACKBUILD FILES: rats.info rats.SlackBuild slack-desc
-SLACKBUILD VERSION: 2.3
-SLACKBUILD DOWNLOAD: http://rough-auditing-tool-for-security.googlecode.com/files/rats-2.3.tar.gz
+SLACKBUILD VERSION: 2.4
+SLACKBUILD DOWNLOAD: https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/rough-auditing-tool-for-security/rats-2.4.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 339ebe60fc61789808a457f6f967d226
+SLACKBUILD MD5SUM: 86afc955a26811d0d631e69113a75368
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  rats (Rough Auditing Tool for Security)

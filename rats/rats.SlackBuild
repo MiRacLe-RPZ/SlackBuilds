@@ -2,7 +2,7 @@
 
 # Slackware build script for jsl
 
-# Copyright 2012  MiRacLe.RPZ <miracle@rpz.name>
+# Copyright 2012-2018  MiRacLe.RPZ <miracle@rpz.name>
 # All rights reserved.
 #
 #   Permission to use, copy, modify, and distribute this software for
@@ -25,7 +25,7 @@
 
 PRGNAM=rats
 PKGNAM=$(basename $0 .SlackBuild)
-VERSION=${VERSION:-2.3}
+VERSION=${VERSION:-2.4}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 
@@ -57,8 +57,7 @@ CWD=$(pwd)
 TMP=${TMP:-/tmp/rpz}
 PKG=$TMP/package-$PRGNAM
 OUTPUT=${OUTPUT:-/tmp}
-SOURCE="http://rough-auditing-tool-for-security.googlecode.com/files/${PRGNAM}-${VERSION}.tar.gz"
-
+SOURCE="https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/rough-auditing-tool-for-security/${PRGNAM}-${VERSION}.tgz"
 set -e
 
 rm -rf $PKG
