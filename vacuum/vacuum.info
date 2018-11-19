@@ -1,8 +1,0 @@
-PKGNAM="vacuum"
-VERSION="1.2.5"
-HOMEPAGE="https://github.com/Vacuum-IM/vacuum-im"
-DOWNLOAD="https://github.com/Vacuum-IM/vacuum-im/archive/1.2.5.tar.gz"
-MD5SUM="be949999dfe05695f2d1434096d46717"
-MAINTAINER="MiRacLe.RPZ"
-EMAIL="miracle@rpz.name"
-

@@ -363,17 +363,6 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  An application that allows you to run mobile or small web pages in your system notification area. 
 
-SLACKBUILD NAME: vacuum
-SLACKBUILD LOCATION: ./vacuum
-SLACKBUILD FILES: slack-desc vacuum.info vacuum.SlackBuild
-SLACKBUILD VERSION: 1.2.5
-SLACKBUILD DOWNLOAD: https://github.com/Vacuum-IM/vacuum-im/archive/1.2.5.tar.gz
-SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: be949999dfe05695f2d1434096d46717
-SLACKBUILD MD5SUM_x86_64: 
-SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
-SLACKBUILD SHORT DESCRIPTION:  Crossplatform Jabber client
-
 SLACKBUILD NAME: webstorm
 SLACKBUILD LOCATION: ./webstorm
 SLACKBUILD FILES: slack-desc slack-required webstorm.info webstorm.SlackBuild
