@@ -168,10 +168,10 @@ SLACKBUILD SHORT DESCRIPTION:  Photo (Qt Graphic Viewer)
 SLACKBUILD NAME: php-apcu
 SLACKBUILD LOCATION: ./php-apcu
 SLACKBUILD FILES: apcu.ini doinst.sh php-apcu.info php-apcu.SlackBuild slack-conflicts slack-desc slack-required
-SLACKBUILD VERSION: 5.1.15
-SLACKBUILD DOWNLOAD: http://pecl.php.net/get/apcu-5.1.15.tgz
+SLACKBUILD VERSION: 5.1.16
+SLACKBUILD DOWNLOAD: http://pecl.php.net/get/apcu-5.1.16.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: f252c0df77064e49fc10506fbad18afd
+SLACKBUILD MD5SUM: 5d3d27f9b7b08a87343fe1417aa8af37
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php-apcu (Advanced PHP Cache)
