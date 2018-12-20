@@ -9,6 +9,17 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  Ansible (a ssh-based config management framework)
 
+SLACKBUILD NAME: azuredatastudio
+SLACKBUILD LOCATION: ./azuredatastudio
+SLACKBUILD FILES: azuredatastudio.info azuredatastudio.SlackBuild slack-desc
+SLACKBUILD VERSION: 1.3.6
+SLACKBUILD DOWNLOAD: https://github.com/Microsoft/azuredatastudio/releases/download/1.3.6/azuredatastudio-linux-1.3.6.tar.gz
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: 430817c4e7ce29fe529d1580aa1a804d
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  Azure Data Studio is a data management tool that enables you to work 
+
 SLACKBUILD NAME: eyefi-config
 SLACKBUILD LOCATION: ./eyefi-config
 SLACKBUILD FILES: eyefi-config.info eyefi-config.SlackBuild slack-desc

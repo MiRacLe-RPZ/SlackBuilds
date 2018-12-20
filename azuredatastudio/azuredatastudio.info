@@ -1,0 +1,7 @@
+PRGNAM="azuredatastudio"
+VERSION="1.3.6"
+HOMEPAGE="https://github.com/Microsoft/azuredatastudio"
+DOWNLOAD="https://github.com/Microsoft/azuredatastudio/releases/download/1.3.6/azuredatastudio-linux-1.3.6.tar.gz"
+MD5SUM="430817c4e7ce29fe529d1580aa1a804d"
+MAINTAINER="MiRacLe.RPZ"
+EMAIL="miracle@rpz.name"
