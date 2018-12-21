@@ -26,7 +26,13 @@ SRCNAM=memcached
 PRGNAM=php-memcached
 PKGNAM=php-memcached
 PHP_CONFIG=$(which php-config)
-VERSION=${VERSION:-$(curl "http://pecl.php.net/feeds/pkg_${SRCNAM}.rss" 2> /dev/null|grep -m1 "item rdf"|cut -d '=' -f4|sed 's/\">//')}
+
+INFOFILE="${CWD}/${PKGNAM}.info"
+if [ -f $INFOFILE ]; then
+    source $INFOFILE
+fi
+
+VERSION=${VERSION:-$(curl "https://pecl.php.net/feeds/pkg_${SRCNAM}.rss" 2> /dev/null|grep -m1 "item rdf"|cut -d '=' -f4|sed 's/\">//')}
 SRCURL=${DOWNLOAD:-https://pecl.php.net/get/${SRCNAM}-${VERSION}.tgz}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}

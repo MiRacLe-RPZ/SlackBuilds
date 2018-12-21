@@ -30,11 +30,11 @@ CWD=$(pwd)
 INFOFILE="${CWD}/${PKGNAM}.info"
 if [ -f $INFOFILE ]; then
     source $INFOFILE
-    SRCURL=${DOWNLOAD}
-else    
-    SRCURL=$(curl "http://pecl.php.net/feeds/pkg_${SRCNAM}.rss" 2>/dev/null|grep -m1 "item rdf" -a2|grep link|sed -r "s/<(|\/)link>//g"|tr -d ' ')
-    VERSION=$(echo $SRCURL|cut -d '/' -f6)
 fi
+
+VERSION=${VERSION:-$(curl "https://pecl.php.net/feeds/pkg_${SRCNAM}.rss" 2> /dev/null|grep -m1 "item rdf"|cut -d '=' -f4|sed 's/\">//')}
+SRCURL=${DOWNLOAD:-https://pecl.php.net/get/${SRCNAM}-${VERSION}.tgz}
+
 
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}

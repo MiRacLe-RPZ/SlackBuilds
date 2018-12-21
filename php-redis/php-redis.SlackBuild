@@ -30,19 +30,18 @@ PHP_CONFIG=$(which php-config)
 CWD=$(pwd)
 INFOFILE="${CWD}/${PKGNAM}.info"
 
+INFOFILE="${CWD}/${PKGNAM}.info"
 if [ -f $INFOFILE ]; then
     source $INFOFILE
-    SRCURL=${DOWNLOAD}
-    SOURCE="${CWD}/$(basename $DOWNLOAD)"
-    SRCDIR="${SRCNAM}-${VERSION}"
-    SUFFIX=""
-else    
-    SRCURL=$(curl "http://pecl.php.net/feeds/pkg_${SRCNAM}.rss" 2>/dev/null|grep -m1 "item rdf" -a2|grep link|sed -r "s/<(|\/)link>//g"|tr -d ' ')
-    VERSION=$(echo $SRCURL|cut -d '/' -f6)
-    SOURCE="${CWD}/${SRCNAM}-${VERSION}.tgz"
-    SRCDIR="$SRCNAM-$VERSION"
-    SUFFIX=""
 fi
+
+VERSION=${VERSION:-$(curl "https://pecl.php.net/feeds/pkg_${SRCNAM}.rss" 2> /dev/null|grep -m1 "item rdf"|cut -d '=' -f4|sed 's/\">//')}
+SRCURL=${DOWNLOAD:-https://pecl.php.net/get/${SRCNAM}-${VERSION}.tgz}
+
+SOURCE="${CWD}/${SRCNAM}-${VERSION}.tgz"
+SRCDIR="$SRCNAM-$VERSION"
+SUFFIX=""
+
 
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
@@ -60,7 +59,6 @@ CWD=$(pwd)
 TMP=${TMP:-/tmp/rpz}
 PKG=$TMP/package-$PRGNAM
 OUTPUT=${OUTPUT:-/tmp}
-SOURCE="${CWD}/${SRCNAM}-${VERSION}.tar.gz"
 NUMJOBS=${NUMJOBS:-$(( $(getconf _NPROCESSORS_ONLN) + 1 ))}
 
 
@@ -86,7 +84,7 @@ set -u
 rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
-rm -rf $SRCNAM-$VERSION
+rm -rf $SRCDIR
 
 check_installed() {
     PACKAGE=${1}
@@ -133,8 +131,8 @@ dnl() {
 
 dnl "${SOURCE}" "${SRCURL}"
 
-tar xzf $CWD/$SRCNAM-$VERSION.tar.gz
-cd $SRCNAM-$VERSION
+tar xzf $SOURCE
+cd $SRCDIR
 
 chown -R root:root .
 find . \
