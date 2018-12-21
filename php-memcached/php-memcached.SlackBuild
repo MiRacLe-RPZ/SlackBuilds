@@ -27,6 +27,7 @@ PRGNAM=php-memcached
 PKGNAM=php-memcached
 PHP_CONFIG=$(which php-config)
 
+CWD=$(pwd)
 INFOFILE="${CWD}/${PKGNAM}.info"
 if [ -f $INFOFILE ]; then
     source $INFOFILE
@@ -46,7 +47,6 @@ if [ -z "$ARCH" ]; then
   esac
 fi
 
-CWD=$(pwd)
 TMP=${TMP:-/tmp/rpz}
 PKG=$TMP/package-$PRGNAM
 OUTPUT=${OUTPUT:-/tmp}

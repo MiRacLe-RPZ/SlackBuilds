@@ -26,8 +26,16 @@ SRCNAM=xdebug
 PRGNAM=php-xdebug
 PKGNAM=php-xdebug
 PHP_CONFIG=$(which php-config)
-SRCURL=$(curl "http://pecl.php.net/feeds/pkg_xdebug.rss" 2>/dev/null|grep -m1 "item rdf" -a2|grep link|sed -r "s/<(|\/)link>//g"|tr -d ' ')
-VERSION=$(echo $SRCURL|cut -d '/' -f6)
+INFOFILE="$(pwd)/${PKGNAM}.info"
+if [ -f $INFOFILE ]; then
+    source $INFOFILE
+fi
+
+VERSION=${VERSION:-$(curl "https://pecl.php.net/feeds/pkg_${SRCNAM}.rss" 2> /dev/null|grep -m1 "item rdf"|cut -d '=' -f4|sed 's/\">//')}
+SRCURL=${DOWNLOAD:-https://pecl.php.net/get/${SRCNAM}-${VERSION}.tgz}
+
+
+
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 INI=$(php -i 2>/dev/null|grep 'Scan this dir for additional .ini files'|awk '{print $NF}')
@@ -146,7 +154,7 @@ CXXFLAGS="$SLKCFLAGS" \
   --docdir=/usr/doc/$PRGNAM-$VERSION \
   --with-php-config=$PHP_CONFIG \
   --build=$ARCH-slackware-linux \
-  --enable-xdebug \
+  --enable-${SRCNAM} \
   --with-libdir=lib${LIBDIRSUFFIX}
 
 make -j$NUMJOBS
