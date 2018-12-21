@@ -2,7 +2,7 @@
 
 # Slackware build script for php-memcached
 
-# Copyright 2013 MiRacLe.RPZ
+# Copyright 2013-2018 MiRacLe.RPZ
 # All rights reserved.
 #
 # Redistribution and use of this script, with or without modification, is
@@ -26,8 +26,8 @@ SRCNAM=memcached
 PRGNAM=php-memcached
 PKGNAM=php-memcached
 PHP_CONFIG=$(which php-config)
-SRCURL=$(curl "http://pecl.php.net/feeds/pkg_${SRCNAM}.rss" 2>/dev/null|grep -m1 "item rdf" -a2|grep link|sed -r "s/<(|\/)link>//g"|tr -d ' ')
-VERSION=$(echo $SRCURL|cut -d '/' -f6)
+VERSION=${VERSION:-$(curl "http://pecl.php.net/feeds/pkg_${SRCNAM}.rss" 2> /dev/null|grep -m1 "item rdf"|cut -d '=' -f4|sed 's/\">//')}
+SRCURL=${DOWNLOAD:-https://pecl.php.net/get/${SRCNAM}-${VERSION}.tgz}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 INI=$(php -i 2>/dev/null|grep 'Scan this dir for additional .ini files'|awk '{print $NF}')
@@ -142,6 +142,7 @@ CXXFLAGS="$SLKCFLAGS" \
   --with-php-config=$PHP_CONFIG \
   --build=$ARCH-slackware-linux \
   --enable-$SRCNAM \
+  --enable-memcached-session \
   --with-libdir=lib${LIBDIRSUFFIX}
 
 make -j$NUMJOBS
