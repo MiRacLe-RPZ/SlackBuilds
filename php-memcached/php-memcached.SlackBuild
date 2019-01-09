@@ -149,6 +149,7 @@ CXXFLAGS="$SLKCFLAGS" \
   --build=$ARCH-slackware-linux \
   --enable-$SRCNAM \
   --enable-memcached-session \
+  --enable-memcached-protocol=yes \
   --with-libdir=lib${LIBDIRSUFFIX}
 
 make -j$NUMJOBS
