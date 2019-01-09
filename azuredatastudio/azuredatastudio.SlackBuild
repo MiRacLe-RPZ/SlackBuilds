@@ -21,7 +21,13 @@ set -e
 
 PRGNAM=azuredatastudio
 PKGNAM=${PRGNAM}
-VERSION=${VERSION:-1.3.6}
+
+INFOFILE="${CWD}/${PKGNAM}.info"
+if [ -f $INFOFILE ]; then
+    source $INFOFILE
+fi
+
+VERSION=${VERSION:-1.3.8}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
@@ -45,7 +51,7 @@ PKG=$TMP/package-$PKGNAM
 OUTPUT=${OUTPUT:-/tmp}
 
 
-SRCURL="https://github.com/Microsoft/${PRGNAM}/releases/download/${VERSION}/${PRGNAM}-linux-${VERSION}.tar.gz"
+SRCURL=${DOWNLOAD:-https://github.com/Microsoft/${PRGNAM}/releases/download/${VERSION}/${PRGNAM}-linux-${VERSION}.tar.gz}
 SOURCE="${CWD}/$(basename $SRCURL)"
 
 rm -rf $PKG
