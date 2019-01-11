@@ -1,6 +1,6 @@
 SLACKBUILD NAME: ansible
 SLACKBUILD LOCATION: ./ansible
-SLACKBUILD FILES: ansible.info ansible.SlackBuild doinst.sh slack-desc slack-required
+SLACKBUILD FILES: ansible.SlackBuild ansible.info doinst.sh slack-desc slack-required
 SLACKBUILD VERSION: 1.5.4
 SLACKBUILD DOWNLOAD: https://github.com/ansible/ansible/archive/v1.5.4.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -11,9 +11,9 @@ SLACKBUILD SHORT DESCRIPTION:  Ansible (a ssh-based config management framework)
 
 SLACKBUILD NAME: azuredatastudio
 SLACKBUILD LOCATION: ./azuredatastudio
-SLACKBUILD FILES: azuredatastudio.info azuredatastudio.SlackBuild slack-desc
+SLACKBUILD FILES: azuredatastudio.SlackBuild azuredatastudio.info slack-desc
 SLACKBUILD VERSION: 1.3.8
-SLACKBUILD DOWNLOAD: https://github.com/Microsoft/azuredatastudio/releases/download/1.3.6/azuredatastudio-linux-1.3.8.tar.gz
+SLACKBUILD DOWNLOAD: https://github.com/Microsoft/azuredatastudio/releases/download/1.3.8/azuredatastudio-linux-1.3.8.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
 SLACKBUILD MD5SUM: ddc8842bb4b64e8d7f56f00e3206a0f9
 SLACKBUILD MD5SUM_x86_64: 
@@ -22,7 +22,7 @@ SLACKBUILD SHORT DESCRIPTION:  Azure Data Studio is a data management tool that 
 
 SLACKBUILD NAME: eyefi-config
 SLACKBUILD LOCATION: ./eyefi-config
-SLACKBUILD FILES: eyefi-config.info eyefi-config.SlackBuild slack-desc
+SLACKBUILD FILES: eyefi-config.SlackBuild eyefi-config.info slack-desc
 SLACKBUILD VERSION: 012dev
 SLACKBUILD DOWNLOAD: git://git.sr71.net/eyefi-config.git
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -33,7 +33,7 @@ SLACKBUILD SHORT DESCRIPTION:  Eye-Fi Configuration Tool
 
 SLACKBUILD NAME: ffcast2
 SLACKBUILD LOCATION: ./ffcast2
-SLACKBUILD FILES: ffcast2.info ffcast2.SlackBuild slack-desc slack-required
+SLACKBUILD FILES: ffcast2.SlackBuild ffcast2.info slack-desc slack-required
 SLACKBUILD VERSION: 1.0
 SLACKBUILD DOWNLOAD: https://github.com/lolilolicon/FFcast2/archive/1.0.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -44,7 +44,7 @@ SLACKBUILD SHORT DESCRIPTION:  screencast one or more interactively selected reg
 
 SLACKBUILD NAME: freetds
 SLACKBUILD LOCATION: ./freetds
-SLACKBUILD FILES: doinst.sh freetds.info freetds.SlackBuild slack-desc slack-required
+SLACKBUILD FILES: doinst.sh freetds-1.00.99.tar.gz freetds.SlackBuild freetds.info slack-desc slack-required
 SLACKBUILD VERSION: 1.00.108
 SLACKBUILD DOWNLOAD: ftp://ftp.freetds.org/pub/freetds/stable/freetds-1.00.108.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -55,7 +55,7 @@ SLACKBUILD SHORT DESCRIPTION:  FreeTDS (free implementation of the Tabular Data 
 
 SLACKBUILD NAME: gearmand
 SLACKBUILD LOCATION: ./gearmand
-SLACKBUILD FILES: doinst.sh gearmand.info gearmand.SlackBuild rc.gearmand slack-desc slack-required
+SLACKBUILD FILES: doinst.sh gearmand.SlackBuild gearmand.info rc.gearmand slack-desc slack-required
 SLACKBUILD VERSION: 1.1.18
 SLACKBUILD DOWNLOAD: https://github.com/gearman/gearmand/releases/download/1.1.18/gearmand-1.1.18.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -66,7 +66,7 @@ SLACKBUILD SHORT DESCRIPTION:  Gearman(A framework to farm out work)
 
 SLACKBUILD NAME: google-chrome
 SLACKBUILD LOCATION: ./google-chrome
-SLACKBUILD FILES: doinst.sh google-chrome.info google-chrome.SlackBuild google-chrome-updater slack-desc
+SLACKBUILD FILES: doinst.sh google-chrome-updater google-chrome.SlackBuild google-chrome.info slack-desc
 SLACKBUILD VERSION: 41.0.2272.101-1
 SLACKBUILD DOWNLOAD: http://dl.google.com/linux/deb/pool/main/g/google-chrome-stable/google-chrome-stable_41.0.2272.101-1_i386.deb
 SLACKBUILD DOWNLOAD_x86_64: http://dl.google.com/linux/deb/pool/main/g/google-chrome-stable/google-chrome-stable_41.0.2272.101-1_amd64.deb
@@ -78,7 +78,7 @@ SLACKBUILD SHORT DESCRIPTION:  google-chrome (Google Chrome web browser)
 
 SLACKBUILD NAME: jdk-work
 SLACKBUILD LOCATION: ./jdk-work
-SLACKBUILD FILES: jdk-work.info jdk-work.SlackBuild profile.d/jdk.csh profile.d/jdk.sh slack-conflicts slack-desc
+SLACKBUILD FILES: jdk-work.SlackBuild jdk-work.info profile.d/jdk.csh profile.d/jdk.sh slack-conflicts slack-desc
 SLACKBUILD VERSION: 8u74
 SLACKBUILD DOWNLOAD: 
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -89,7 +89,7 @@ SLACKBUILD SHORT DESCRIPTION:  jdk (Java(TM) 2 Platform Standard Edition Develop
 
 SLACKBUILD NAME: jsl
 SLACKBUILD LOCATION: ./jsl
-SLACKBUILD FILES: jsl.info js-lint jsl.SlackBuild slack-desc
+SLACKBUILD FILES: js-lint jsl.SlackBuild jsl.info slack-desc
 SLACKBUILD VERSION: 0.3.0
 SLACKBUILD DOWNLOAD: http://www.javascriptlint.com/download/jsl-0.3.0-src.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -100,7 +100,7 @@ SLACKBUILD SHORT DESCRIPTION:  JavaScript Lint
 
 SLACKBUILD NAME: kdesudo
 SLACKBUILD LOCATION: ./kdesudo
-SLACKBUILD FILES: doinst.sh kdesudo.info kdesudo.SlackBuild slack-desc slack-required
+SLACKBUILD FILES: doinst.sh kdesudo.SlackBuild kdesudo.info slack-desc slack-required
 SLACKBUILD VERSION: 3.4.2.4
 SLACKBUILD DOWNLOAD: https://launchpad.net/kdesudo/3.x/3.4.2.4/+download/kdesudo-3.4.2.4.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -111,7 +111,7 @@ SLACKBUILD SHORT DESCRIPTION:   KdeSudo is a frontend for sudo.
 
 SLACKBUILD NAME: monit
 SLACKBUILD LOCATION: ./monit
-SLACKBUILD FILES: doinst.sh monit.info monit.SlackBuild rc.monit slack-desc
+SLACKBUILD FILES: doinst.sh monit.SlackBuild monit.info rc.monit slack-desc
 SLACKBUILD VERSION: 5.15
 SLACKBUILD DOWNLOAD: http://mmonit.com/monit/dist/monit-5.15.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -122,7 +122,7 @@ SLACKBUILD SHORT DESCRIPTION:  monit (Unix System Management)
 
 SLACKBUILD NAME: msvistawebfonts
 SLACKBUILD LOCATION: ./msvistawebfonts
-SLACKBUILD FILES: doinst.sh msvistawebfonts.info msvistawebfonts.SlackBuild slack-desc slack-required
+SLACKBUILD FILES: doinst.sh msvistawebfonts.SlackBuild msvistawebfonts.info slack-desc slack-required
 SLACKBUILD VERSION: 0.0.4
 SLACKBUILD DOWNLOAD: http://download.microsoft.com/download/f/5/a/f5a3df76-d856-4a61-a6bd-722f52a5be26/PowerPointViewer.exe
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -134,7 +134,7 @@ SLACKBUILD SHORT DESCRIPTION:  msvistawebfonts
 
 SLACKBUILD NAME: mysql-pinba-work
 SLACKBUILD LOCATION: ./mysql-pinba-work
-SLACKBUILD FILES: mysql-pinba-work.info mysql-pinba-work.SlackBuild slack-desc slack-required
+SLACKBUILD FILES: mysql-pinba-work.SlackBuild mysql-pinba-work.info slack-desc slack-required
 SLACKBUILD VERSION: 1.0.0
 SLACKBUILD DOWNLOAD: http://pinba.org/files/pinba_engine-1.0.0.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -145,7 +145,7 @@ SLACKBUILD SHORT DESCRIPTION:  mysql-pinba (PHP Statistics Server - DB part)
 
 SLACKBUILD NAME: nginx-work
 SLACKBUILD LOCATION: ./nginx-work
-SLACKBUILD FILES: doinst.sh monit.nginx nginx.conf nginx.logrotate nginx-work.info nginx-work.SlackBuild rc.nginx slack-conflicts slack-desc slack-required
+SLACKBUILD FILES: doinst.sh monit.nginx nginx-work.SlackBuild nginx-work.info nginx.conf nginx.logrotate rc.nginx slack-conflicts slack-desc slack-required
 SLACKBUILD VERSION: 1.10.3
 SLACKBUILD DOWNLOAD: http://nginx.org/download/nginx-1.10.3.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -156,7 +156,7 @@ SLACKBUILD SHORT DESCRIPTION:  nginx (http/imap/pop3 proxy)
 
 SLACKBUILD NAME: pam
 SLACKBUILD LOCATION: ./pam
-SLACKBUILD FILES: pam.info pam.SlackBuild slack-desc
+SLACKBUILD FILES: pam.SlackBuild pam.info slack-desc
 SLACKBUILD VERSION: 1.1.8
 SLACKBUILD DOWNLOAD: 
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -167,7 +167,7 @@ SLACKBUILD SHORT DESCRIPTION:  pam (Pluggable Authentication Modules)
 
 SLACKBUILD NAME: photoqt
 SLACKBUILD LOCATION: ./photoqt
-SLACKBUILD FILES: doinst.sh photoqt.info photoqt.SlackBuild slack-desc slack-required
+SLACKBUILD FILES: doinst.sh photoqt.SlackBuild photoqt.info slack-desc slack-required
 SLACKBUILD VERSION: 1.3
 SLACKBUILD DOWNLOAD: http://photoqt.org/pkgs/photoqt-1.3.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -178,7 +178,7 @@ SLACKBUILD SHORT DESCRIPTION:  Photo (Qt Graphic Viewer)
 
 SLACKBUILD NAME: php-apcu
 SLACKBUILD LOCATION: ./php-apcu
-SLACKBUILD FILES: apcu.ini doinst.sh php-apcu.info php-apcu.SlackBuild slack-conflicts slack-desc slack-required
+SLACKBUILD FILES: apcu.ini doinst.sh php-apcu.SlackBuild php-apcu.info slack-conflicts slack-desc slack-required
 SLACKBUILD VERSION: 5.1.16
 SLACKBUILD DOWNLOAD: https://pecl.php.net/get/apcu-5.1.16.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -189,7 +189,7 @@ SLACKBUILD SHORT DESCRIPTION:  php-apcu (Advanced PHP Cache)
 
 SLACKBUILD NAME: php-gearman
 SLACKBUILD LOCATION: ./php-gearman
-SLACKBUILD FILES: doinst.sh gearman.ini php-gearman.info php-gearman.SlackBuild slack-desc slack-required
+SLACKBUILD FILES: doinst.sh gearman.ini php-gearman.SlackBuild php-gearman.info slack-desc slack-required
 SLACKBUILD VERSION: 1.1.2
 SLACKBUILD DOWNLOAD: http://pecl.php.net/get/gearman-1.1.2.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -198,20 +198,9 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php-gearman (binding for libgearman)
 
-SLACKBUILD NAME: php-memcached
-SLACKBUILD LOCATION: ./php-memcached
-SLACKBUILD FILES: doinst.sh memcached.ini php-memcached.info php-memcached.SlackBuild slack-desc slack-required
-SLACKBUILD VERSION: 3.1.2
-SLACKBUILD DOWNLOAD: https://pecl.php.net/get/memcached-3.1.2.tgz
-SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 07f6ad19a3cbba3dd302b36629b709de
-SLACKBUILD MD5SUM_x86_64: 
-SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
-SLACKBUILD SHORT DESCRIPTION:  extension for interfacing with memcached via libmemcached library
-
 SLACKBUILD NAME: php-memcache
 SLACKBUILD LOCATION: ./php-memcache
-SLACKBUILD FILES: doinst.sh memcache-faulty-inline.diff.gz memcache.ini php-memcache.info php-memcache.SlackBuild slack-desc slack-required
+SLACKBUILD FILES: doinst.sh memcache-faulty-inline.diff.gz memcache.ini php-memcache.SlackBuild php-memcache.info slack-desc slack-required
 SLACKBUILD VERSION: 3.0.8
 SLACKBUILD DOWNLOAD: http://pecl.php.net/get/memcache-3.0.8.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -220,9 +209,20 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php-memcache
 
+SLACKBUILD NAME: php-memcached
+SLACKBUILD LOCATION: ./php-memcached
+SLACKBUILD FILES: doinst.sh memcached.ini php-memcached.SlackBuild php-memcached.info slack-desc slack-required
+SLACKBUILD VERSION: 3.1.2
+SLACKBUILD DOWNLOAD: https://pecl.php.net/get/memcached-3.1.2.tgz
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: 07f6ad19a3cbba3dd302b36629b709de
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  extension for interfacing with memcached via libmemcached library
+
 SLACKBUILD NAME: php-mssql
 SLACKBUILD LOCATION: ./php-mssql
-SLACKBUILD FILES: doinst.sh mssql.ini php-mssql.info php-mssql.SlackBuild slack-desc slack-required
+SLACKBUILD FILES: doinst.sh mssql.ini php-mssql.SlackBuild php-mssql.info slack-desc slack-required
 SLACKBUILD VERSION: 5.6.22
 SLACKBUILD DOWNLOAD: http://www.php.net/distributions/php-5.6.22.tar.bz2
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -233,7 +233,7 @@ SLACKBUILD SHORT DESCRIPTION:  php-mssql (php MS SQL extension)
 
 SLACKBUILD NAME: php-pdo-dblib
 SLACKBUILD LOCATION: ./php-pdo-dblib
-SLACKBUILD FILES: doinst.sh pdo-dblib.ini php-pdo-dblib.info php-pdo-dblib.SlackBuild slack-desc slack-required
+SLACKBUILD FILES: doinst.sh pdo-dblib.ini php-pdo-dblib.SlackBuild php-pdo-dblib.info slack-desc slack-required
 SLACKBUILD VERSION: 7.2.3
 SLACKBUILD DOWNLOAD: http://www.php.net/distributions/php-7.2.3.tar.bz2
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -244,7 +244,7 @@ SLACKBUILD SHORT DESCRIPTION:  php-pdo-dblib (php DBLIB pdo driver)
 
 SLACKBUILD NAME: php-phalcon
 SLACKBUILD LOCATION: ./php-phalcon
-SLACKBUILD FILES: doinst.sh phalcon.ini php-phalcon.info php-phalcon.SlackBuild slack-desc slack-required
+SLACKBUILD FILES: doinst.sh phalcon.ini php-phalcon.SlackBuild php-phalcon.info slack-desc slack-required
 SLACKBUILD VERSION: 3.4.0
 SLACKBUILD DOWNLOAD: https://github.com/phalcon/cphalcon/archive/v3.4.0.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -255,7 +255,7 @@ SLACKBUILD SHORT DESCRIPTION:  php-phalcon
 
 SLACKBUILD NAME: php-phpiredis
 SLACKBUILD LOCATION: ./php-phpiredis
-SLACKBUILD FILES: doinst.sh phpiredis.ini php-phpiredis.info php-phpiredis.SlackBuild slack-desc slack-required
+SLACKBUILD FILES: doinst.sh php-phpiredis.SlackBuild php-phpiredis.info phpiredis.ini slack-desc slack-required
 SLACKBUILD VERSION: 1.0.0
 SLACKBUILD DOWNLOAD: https://github.com/nrk/phpiredis/archive/v1.0.0.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -266,7 +266,7 @@ SLACKBUILD SHORT DESCRIPTION:  php-phpiredis is an extension based on hiredis th
 
 SLACKBUILD NAME: php-pthreads
 SLACKBUILD LOCATION: ./php-pthreads
-SLACKBUILD FILES: doinst.sh php-pthreads.info php-pthreads.SlackBuild pthreads.ini slack-desc slack-required
+SLACKBUILD FILES: doinst.sh php-pthreads.SlackBuild php-pthreads.info pthreads.ini slack-desc slack-required
 SLACKBUILD VERSION: 3.1.2
 SLACKBUILD DOWNLOAD: http://pecl.php.net/get/pthreads-3.1.2.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -277,7 +277,7 @@ SLACKBUILD SHORT DESCRIPTION:  Object Orientated API that allows user-land multi
 
 SLACKBUILD NAME: php-readline
 SLACKBUILD LOCATION: ./php-readline
-SLACKBUILD FILES: doinst.sh php-readline.info php-readline.SlackBuild readline.ini slack-desc slack-required
+SLACKBUILD FILES: doinst.sh php-readline.SlackBuild php-readline.info readline.ini slack-desc slack-required
 SLACKBUILD VERSION: 7.2.0
 SLACKBUILD DOWNLOAD: http://www.php.net/distributions/php-7.2.0.tar.bz2
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -288,7 +288,7 @@ SLACKBUILD SHORT DESCRIPTION:  php-readline
 
 SLACKBUILD NAME: php-redis
 SLACKBUILD LOCATION: ./php-redis
-SLACKBUILD FILES: doinst.sh php-redis.info php-redis.SlackBuild redis.ini slack-desc slack-required
+SLACKBUILD FILES: doinst.sh php-redis.SlackBuild php-redis.info redis.ini slack-desc slack-required
 SLACKBUILD VERSION: 4.2.0
 SLACKBUILD DOWNLOAD: https://pecl.php.net/get/redis-4.2.0.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -297,20 +297,9 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php-redis
 
-SLACKBUILD NAME: phpstorm
-SLACKBUILD LOCATION: ./phpstorm
-SLACKBUILD FILES: phpstorm.info phpstorm.SlackBuild slack-desc
-SLACKBUILD VERSION: 183.3795.24
-SLACKBUILD DOWNLOAD: https://download-cf.jetbrains.com/webide/PhpStorm-183.3795.24.tar.gz
-SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 5e646eb6083658d3597ec46902539a33
-SLACKBUILD MD5SUM_x86_64: 
-SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
-SLACKBUILD SHORT DESCRIPTION:  PhpIDE based on JetBrain's IDEA
-
 SLACKBUILD NAME: php-xdebug
 SLACKBUILD LOCATION: ./php-xdebug
-SLACKBUILD FILES: doinst.sh php-xdebug.info php-xdebug.SlackBuild slack-desc slack-required xdebug.ini
+SLACKBUILD FILES: doinst.sh php-xdebug.SlackBuild php-xdebug.info slack-desc slack-required xdebug.ini
 SLACKBUILD VERSION: 2.6.1
 SLACKBUILD DOWNLOAD: https://pecl.php.net/get/xdebug-2.6.1.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -319,9 +308,20 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php-xdebug
 
+SLACKBUILD NAME: phpstorm
+SLACKBUILD LOCATION: ./phpstorm
+SLACKBUILD FILES: PhpStorm-2018.3.2.tar.gz phpstorm.SlackBuild phpstorm.info slack-desc
+SLACKBUILD VERSION: 183.4886.46
+SLACKBUILD DOWNLOAD: https://download-cf.jetbrains.com/webide/PhpStorm-2018.3.2.tar.gz
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: 58b47b80675707f5dc23317fb7e54a27
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  PhpIDE based on JetBrain's IDEA
+
 SLACKBUILD NAME: rats
 SLACKBUILD LOCATION: ./rats
-SLACKBUILD FILES: rats.info rats.SlackBuild slack-desc
+SLACKBUILD FILES: rats.SlackBuild rats.info slack-desc
 SLACKBUILD VERSION: 2.4
 SLACKBUILD DOWNLOAD: https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/rough-auditing-tool-for-security/rats-2.4.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -332,7 +332,7 @@ SLACKBUILD SHORT DESCRIPTION:  rats (Rough Auditing Tool for Security)
 
 SLACKBUILD NAME: rubymine
 SLACKBUILD LOCATION: ./rubymine
-SLACKBUILD FILES: rubymine.info rubymine.SlackBuild slack-desc
+SLACKBUILD FILES: rubymine.SlackBuild rubymine.info slack-desc
 SLACKBUILD VERSION: 2017.3.1
 SLACKBUILD DOWNLOAD: http://download.jetbrains.com/ruby/RubyMine-2017.3.1.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -343,7 +343,7 @@ SLACKBUILD SHORT DESCRIPTION:  RubyIDE based on JetBrain's IDEA
 
 SLACKBUILD NAME: treb
 SLACKBUILD LOCATION: ./treb
-SLACKBUILD FILES: slack-desc treb.info treb.SlackBuild
+SLACKBUILD FILES: slack-desc treb.SlackBuild treb.info
 SLACKBUILD VERSION: 0.0.1
 SLACKBUILD DOWNLOAD: http://citylan.dl.sourceforge.net/project/treb/treb-source-0.0.1.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -354,7 +354,7 @@ SLACKBUILD SHORT DESCRIPTION:  An application that allows you to run mobile or s
 
 SLACKBUILD NAME: webstorm
 SLACKBUILD LOCATION: ./webstorm
-SLACKBUILD FILES: slack-desc slack-required webstorm.info webstorm.SlackBuild
+SLACKBUILD FILES: slack-desc slack-required webstorm.SlackBuild webstorm.info
 SLACKBUILD VERSION: 171.4249.16
 SLACKBUILD DOWNLOAD: http://download.jetbrains.com/webstorm/WebStorm-171.4249.16.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -365,7 +365,7 @@ SLACKBUILD SHORT DESCRIPTION:  WebIDE based on JetBrain's IDEA
 
 SLACKBUILD NAME: xxd
 SLACKBUILD LOCATION: ./xxd
-SLACKBUILD FILES: slack-desc xxd.info xxd.SlackBuild
+SLACKBUILD FILES: slack-desc xxd.SlackBuild xxd.info
 SLACKBUILD VERSION: 1.10
 SLACKBUILD DOWNLOAD: http://grail.cba.csuohio.edu/~somos/xxd-1.10.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
