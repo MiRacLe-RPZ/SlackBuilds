@@ -311,10 +311,10 @@ SLACKBUILD SHORT DESCRIPTION:  PhpIDE based on JetBrain's IDEA
 SLACKBUILD NAME: php-xdebug
 SLACKBUILD LOCATION: ./php-xdebug
 SLACKBUILD FILES: doinst.sh php-xdebug.info php-xdebug.SlackBuild slack-desc slack-required xdebug.ini
-SLACKBUILD VERSION: 2.6.1
-SLACKBUILD DOWNLOAD: https://pecl.php.net/get/xdebug-2.6.1.tgz
+SLACKBUILD VERSION: 2.7.0
+SLACKBUILD DOWNLOAD: https://pecl.php.net/get/xdebug-2.7.0.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 35cc0f2e8b7d40556a9ad9afd9c49aee
+SLACKBUILD MD5SUM: 88125fb281002b3b90da5d447c190668
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php-xdebug
