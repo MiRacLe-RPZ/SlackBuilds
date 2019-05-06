@@ -21,8 +21,8 @@ set -e
 
 PRGNAM=PhpStorm
 PKGNAM=phpstorm
-VERSION=${VERSION:-191.5701.19}
-SRCVER="191.5701.19"
+VERSION=${VERSION:-191.7141.35}
+SRCVER="2019.1.2"
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
@@ -43,9 +43,9 @@ OUTPUT=${OUTPUT:-/tmp}
 
 #SRCURL="https://download-cf.jetbrains.com/webide/PhpStorm-2017.3.4.tar.gz"
 #SRCURL="http://download.jetbrains.com/webide/$PRGNAM-EAP-$VERSION.tar.gz"
-#SRCURL="https://download-cf.jetbrains.com/webide/$PRGNAM-$VERSION.tar.gz"
-SRCURL="https://download-cf.jetbrains.com/webide/$PRGNAM-$SRCVER.tar.gz"
-
+SRCURL="https://download-cf.jetbrains.com/webide/$PRGNAM-$VERSION.tar.gz"
+#SRCURL="https://download-cf.jetbrains.com/webide/$PRGNAM-$SRCVER.tar.gz"
+#SRCURL="https://download-cf.jetbrains.com/webide/PhpStorm-2019.1.tar.gz"
 #SRCURL="https://download.jetbrains.com/webide/$PRGNAM-2016.1.tar.gz"
 #SRCURL="http://download.jetbrains.com/webide/${PRGNAM}-EAP-${VERSION}-custom-jdk-linux.tar.gz"
 #http://download.jetbrains.com/webide/PhpStorm-EAP-144.3398.zip
