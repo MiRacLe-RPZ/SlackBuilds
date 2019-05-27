@@ -253,17 +253,6 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php-phpiredis is an extension based on hiredis that provides a simple 
 
-SLACKBUILD NAME: php-pthreads
-SLACKBUILD LOCATION: ./php-pthreads
-SLACKBUILD FILES: doinst.sh php-pthreads.info php-pthreads.SlackBuild pthreads.ini slack-desc slack-required
-SLACKBUILD VERSION: 3.1.2
-SLACKBUILD DOWNLOAD: http://pecl.php.net/get/pthreads-3.1.2.tgz
-SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 65b91e1995e9ed820b3a054d4c4af2ba
-SLACKBUILD MD5SUM_x86_64: 
-SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
-SLACKBUILD SHORT DESCRIPTION:  Object Orientated API that allows user-land multi-threading in PHP
-
 SLACKBUILD NAME: php-readline
 SLACKBUILD LOCATION: ./php-readline
 SLACKBUILD FILES: doinst.sh php-readline.info php-readline.SlackBuild readline.ini slack-desc slack-required
