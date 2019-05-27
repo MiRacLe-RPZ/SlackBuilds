@@ -2,7 +2,7 @@
 
 # Slackware build script for freetds (required for build php-mssql, php-pdo-dblib)
 
-# Copyright 2012 - 2018  MiRacLe.RPZ <miracle@rpz.name>
+# Copyright 2012 - 2019 MiRacLe.RPZ <miracle@rpz.name>
 # All rights reserved.
 #
 #   Permission to use, copy, modify, and distribute this software for
@@ -26,8 +26,8 @@
 
 PRGNAM=freetds
 PKGNAM=$(basename $0 .SlackBuild)
-VERSION=${VERSION:-1.00.108}
-SRCVERSION=${SRCVERSION:-1.00.108}
+VERSION=${VERSION:-1.1.6}
+SRCVERSION=${SRCVERSION:-1.1.6}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 
