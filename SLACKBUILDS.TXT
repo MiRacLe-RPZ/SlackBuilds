@@ -76,17 +76,6 @@ SLACKBUILD REQUIRES: google-chrome-pam-solibs
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  google-chrome (Google Chrome web browser)
 
-SLACKBUILD NAME: jdk-work
-SLACKBUILD LOCATION: ./jdk-work
-SLACKBUILD FILES: jdk-work.info jdk-work.SlackBuild profile.d/jdk.csh profile.d/jdk.sh slack-conflicts slack-desc
-SLACKBUILD VERSION: 8u74
-SLACKBUILD DOWNLOAD: 
-SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 
-SLACKBUILD MD5SUM_x86_64: 
-SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
-SLACKBUILD SHORT DESCRIPTION:  jdk (Java(TM) 2 Platform Standard Edition Development Kit)
-
 SLACKBUILD NAME: jsl
 SLACKBUILD LOCATION: ./jsl
 SLACKBUILD FILES: jsl.info js-lint jsl.SlackBuild slack-desc
