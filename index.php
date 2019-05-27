@@ -8,7 +8,7 @@
             if (flock($lock,LOCK_EX)) {
                 $is_github = function() {
                     $ip = ip2long($_SERVER['REMOTE_ADDR']);
-                    foreach (array('204.232.175.64/27','192.30.252.0/22') as $cidr) {
+                    foreach (array('192.30.252.0/22','185.199.108.0/22','140.82.112.0/20') as $cidr) { // https://api.github.com/meta
                         list($subnet, $mask) = explode('/', $cidr);
                         if (($ip & ~((1 << (32 - $mask)) - 1) ) == ip2long($subnet)) { 
                             return true;
