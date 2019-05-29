@@ -2,7 +2,7 @@
 
 # Slackware build script for eyefi-config
 
-# Copyright 2012  MiRacLe.RPZ <miracle@rpz.name>
+# Copyright 2012-2019  MiRacLe.RPZ <miracle@rpz.name>
 # All rights reserved.
 #
 #   Permission to use, copy, modify, and distribute this software for
@@ -25,7 +25,7 @@
 
 PRGNAM=eyefi-config
 PKGNAM=$(basename $0 .SlackBuild)
-VERSION=${VERSION:-012dev}
+VERSION=${VERSION:-013}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 
@@ -57,8 +57,8 @@ CWD=$(pwd)
 TMP=${TMP:-/tmp/rpz}
 PKG=$TMP/package-$PRGNAM
 OUTPUT=${OUTPUT:-/tmp}
-SOURCE="http://www.sr71.net/projects/eyefi/${PRGNAM}-${VERSION}.tar.gz"
-SOURCEGIT="git://git.sr71.net/eyefi-config.git"
+SOURCE="https://github.com/hansendc/eyefi-config/archive/${PRGNAM}-${VERSION}.tar.gz"
+#SOURCEGIT="git://git.sr71.net/eyefi-config.git"
 
 
 set -e
@@ -68,8 +68,6 @@ mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf ${PRGNAM}-${VERSION}
 
-<<GETGITSOURCE
-
 if [ ! -e $CWD/${PRGNAM}-${VERSION}.tar.gz ]; then
     wget $SOURCE -O $CWD/${PRGNAM}-${VERSION}.tar.gz
 fi
@@ -77,11 +75,7 @@ fi
 tar zxf $CWD/${PRGNAM}-${VERSION}.tar.gz
 
 
-GETGITSOURCE
-
-git clone "${SOURCEGIT}" "${PRGNAM}-${VERSION}"
-
-cd ${PRGNAM}-${VERSION}
+cd ${PRGNAM}-${PRGNAM}-${VERSION} # \_(o_0)_/
 
 chown -R root:root .
 find . \

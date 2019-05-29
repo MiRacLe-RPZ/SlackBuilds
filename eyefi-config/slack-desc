@@ -16,5 +16,5 @@ eyefi-config: Note that this does not replace the Eye-Fi-supplied manager for ca
 eyefi-config: registration or changing online upload services, nor does it perform 
 eyefi-config: as the "Upload to my computer" destination. 
 eyefi-config: 
-eyefi-config: Homepage at http://www.sr71.net/projects/eyefi/
+eyefi-config: Homepage at https://github.com/hansendc/eyefi-config
 eyefi-config: 
