@@ -319,6 +319,17 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  An application that allows you to run mobile or small web pages in your system notification area. 
 
+SLACKBUILD NAME: unixODBC
+SLACKBUILD LOCATION: ./unixODBC
+SLACKBUILD FILES: doinst.sh README slack-desc unixODBC.info unixODBC.SlackBuild
+SLACKBUILD VERSION: 2.3.7
+SLACKBUILD DOWNLOAD: http://www.unixodbc.org/unixODBC-2.3.7.tar.gz
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: 274a711b0c77394e052db6493840c6f9
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  unixODBC (ODBC for Unix platforms)
+
 SLACKBUILD NAME: webstorm
 SLACKBUILD LOCATION: ./webstorm
 SLACKBUILD FILES: slack-desc slack-required webstorm.info webstorm.SlackBuild
