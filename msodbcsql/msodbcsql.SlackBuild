@@ -1,0 +1,133 @@
+#!/bin/sh
+
+# Copyright 2019  MiRacLe.RPZ
+# All rights reserved.
+#
+# Redistribution and use of this script, with or without modification, is
+# permitted provided that the following conditions are met:
+#
+# 1. Redistributions of this script must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+#
+# THIS SOFTWARE IS PROVIDED BY THE AUTHOR ''AS IS'' AND ANY EXPRESS OR IMPLIED
+# WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+# EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+# SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+# PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+# OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+# OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+# ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+PRGNAM=msodbcsql
+PKGNAM=${PKGNAM:-$(basename $0 .SlackBuild)}
+
+INFOFILE="$(pwd)/${PKGNAM}.info"
+if [ -f $INFOFILE ]; then
+    source $INFOFILE
+fi
+
+VERSION=${VERSION:-17.3.1.1}
+BUILD=${BUILD:-1}
+TAG=${TAG:-_rpz}
+PKGTYPE=${PKGTYPE:-txz}
+
+
+
+case "$(uname -m)" in
+  x86_64) DEBARCH="amd64" ; LIBDIRSUFFIX="64" ; ARCH=x86_64 ;;
+  *) echo "Package for $(uname -m) architecture is not available." ; exit 1 ;;
+esac
+
+
+CWD=$(pwd)
+TMP=${TMP:-/tmp/rpz}
+PKG=$TMP/package-$PKGNAM
+OUTPUT=${OUTPUT:-/tmp}
+
+SRCURL=${DOWNLOAD:-https://packages.microsoft.com/debian/9/prod/pool/main/m/msodbcsql17/msodbcsql17_17.3.1.1-1_amd64.deb}
+SOURCE="${CWD}/${PRGNAM}-${VERSION}.deb"
+
+
+check_installed() {
+    PACKAGE=${1}
+    ls -1 /var/log/packages | grep "^${PACKAGE}-[^-]*-[^-]*-[^-]*$" >/dev/null 2>&1
+    return $?
+}
+
+if [ -e $CWD/slack-required ]; then
+    for REQ in `cat $CWD/slack-required|cut -f 1 -d " "`;do
+        check_installed "$REQ" || {
+           echo "${0##*/}: Required package '$REQ' not installed."
+           exit 1
+       }
+    done
+fi
+
+if [ -e $CWD/slack-conflicts ]; then
+    for REQ in `cat $CWD/slack-conflicts|cut -f 1 -d " "`;do
+        ! check_installed "$REQ" || {
+           echo "${0##*/}: Conflict package '$REQ' was installed."
+           exit 1
+       }
+    done
+fi
+
+dnl() {
+    SOURCE=$1
+    SRCURL=$2
+    if [ ! -e $SOURCE ]; then
+       if ! [ "x${SRCURL}" == "x" ]; then
+         echo "Downloading '$(basename ${SOURCE})'."
+         wget --no-check-certificate -nv -T 30 -O "${SOURCE}" "${SRCURL}" || true
+         if [ $? -ne 0 -o ! -s "${SOURCE}" ]; then
+            echo "Downloading '$(basename ${SOURCE})' failed... aborting the build."
+            mv -f "${SOURCE}" "${SOURCE}.FAIL"
+            exit 1
+         fi
+         else
+             echo "File '${SOURCE}' not available... aborting the build."
+             exit 1
+         fi
+    fi
+}
+
+dnl "${SOURCE}" "${SRCURL}"
+
+
+rm -rf $PKG
+mkdir -p $TMP $PKG $OUTPUT
+cd $PKG
+ar p $SOURCE data.tar.xz | tar xJv || exit 1
+chown -R root:root .
+chmod -R u+w,go+r-w,a-s .
+
+# Make sure top-level perms are correct:
+chmod 0755 .
+
+mv opt/microsoft/msodbcsql{17,}
+mv usr/share/doc/msodbcsql{17,}
+
+# Link to the standard library names:
+sed -i 's,libcrypto.so.1.0.2,libcrypto.so.1.0.0,g;
+        s,libssl.so.1.0.2,libssl.so.1.0.0,g;' opt/microsoft/msodbcsql/lib64/libmsodbcsql-17.3.so.1.1
+
+sed 's/msodbcsql17/msodbcsql/g' -i opt/microsoft/msodbcsql/etc/odbcinst.ini
+
+rm $PKG/opt/microsoft/msodbcsql/lib64/libmsodbcsql-17.so
+( cd usr/lib64 ; ln -sf /opt/microsoft/msodbcsql/lib64/libmsodbcsql-17.3.so.1.1 libmsodbcsql-17.so )
+
+
+mkdir -p $PKG/install
+cp -a $CWD/slack-* $CWD/doinst.sh \
+  $PKG/install
+
+mkdir -p $PKG/usr/share/doc/${PKGNAM}/SlackBuild
+cp -a $CWD/$PKGNAM.SlackBuild $CWD/slack-* $CWD/doinst.sh \
+  $PKG/usr/share/doc/${PKGNAM}/SlackBuild
+
+cd $PKG
+
+/sbin/makepkg -l y -c n $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE
+

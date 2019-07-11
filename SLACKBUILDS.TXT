@@ -109,6 +109,18 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  monit (Unix System Management)
 
+SLACKBUILD NAME: msodbcsql
+SLACKBUILD LOCATION: ./msodbcsql
+SLACKBUILD FILES: doinst.sh msodbcsql.info msodbcsql.SlackBuild slack-desc
+SLACKBUILD VERSION: 17.3.1.1
+SLACKBUILD DOWNLOAD: https://packages.microsoft.com/debian/9/prod/pool/main/m/msodbcsql17/msodbcsql17_17.3.1.1-1_amd64.deb
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: 54840a52c521856c58d8d5afe367e9ae
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD REQUIRES: unixODBC
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  Microsoft ODBC Driver 17 for SQL Server
+
 SLACKBUILD NAME: msvistawebfonts
 SLACKBUILD LOCATION: ./msvistawebfonts
 SLACKBUILD FILES: doinst.sh msvistawebfonts.info msvistawebfonts.SlackBuild slack-desc slack-required
@@ -263,6 +275,18 @@ SLACKBUILD MD5SUM: d1fdb05c3dea40c45c279f88895309f8
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php-redis
+
+SLACKBUILD NAME: php-sqlsrv
+SLACKBUILD LOCATION: ./php-sqlsrv
+SLACKBUILD FILES: doinst.sh php-sqlsrv.info php-sqlsrv.SlackBuild slack-desc slack-required sqlsrv-5.6.1.tar.gz sqlsrv.ini
+SLACKBUILD VERSION: 5.6.1
+SLACKBUILD DOWNLOAD: http://pecl.php.net/get/sqlsrv-5.6.1.tgz
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: c7b66e343d4ae0760a658964552966b4
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD REQUIRES: unixODBC msodbcsql17
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  php-sqlsrv (binding for msodbcsqlrv)
 
 SLACKBUILD NAME: phpstorm
 SLACKBUILD LOCATION: ./phpstorm

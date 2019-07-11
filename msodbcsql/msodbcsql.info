@@ -1,0 +1,13 @@
+PKGNAM="msodbcsql"
+VERSION="17.3.1.1"
+HOMEPAGE="https://docs.microsoft.com/en-us/sql/connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server?view=sql-server-2017"
+DOWNLOAD="https://packages.microsoft.com/debian/9/prod/pool/main/m/msodbcsql17/msodbcsql17_17.3.1.1-1_amd64.deb"
+MD5SUM="54840a52c521856c58d8d5afe367e9ae"
+REQUIRES="unixODBC"
+MAINTAINER="MiRacLe.RPZ"
+EMAIL="miracle@rpz.name"
+
+
+
+
+
