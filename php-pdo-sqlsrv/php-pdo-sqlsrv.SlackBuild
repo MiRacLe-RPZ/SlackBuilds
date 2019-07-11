@@ -142,7 +142,7 @@ CXXFLAGS="$SLKCFLAGS" \
   --docdir=/usr/doc/$PKGNAM-$VERSION \
   --with-php-config=$PHP_CONFIG \
   --build=$ARCH-slackware-linux \
-  --enable-pdo-sqlsrv \
+  --with-pdo_sqlsrv \
   --with-libdir=lib${LIBDIRSUFFIX}
 
 make -j$NUMJOBS
