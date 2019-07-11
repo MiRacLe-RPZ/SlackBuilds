@@ -1,0 +1,18 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':'.
+
+              |-----handy-ruler------------------------------------------------------|
+php-pdo-sqlsrv: php-pdo-sqlsrv (binding for msodbcsqlrv)
+php-pdo-sqlsrv:
+php-pdo-sqlsrv: PDO_SQLSRV extension implements PDO for accessing data in all 
+php-pdo-sqlsrv: editions of SQL Server 2008 R2 and later (including Azure SQL DB).
+php-pdo-sqlsrv: These drivers rely on the Microsoft ODBC Driver for SQL Server 
+php-pdo-sqlsrv: to handle the low-level communication with SQL Server.
+php-pdo-sqlsrv:
+php-pdo-sqlsrv:
+php-pdo-sqlsrv:  Home: http://pecl.php.net/package/pdo_sqlsrv
+php-pdo-sqlsrv:
