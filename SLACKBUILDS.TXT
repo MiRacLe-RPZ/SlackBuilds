@@ -278,13 +278,13 @@ SLACKBUILD SHORT DESCRIPTION:  php-redis
 
 SLACKBUILD NAME: php-sqlsrv
 SLACKBUILD LOCATION: ./php-sqlsrv
-SLACKBUILD FILES: doinst.sh php-sqlsrv.info php-sqlsrv.SlackBuild slack-desc slack-required sqlsrv-5.6.1.tar.gz sqlsrv.ini
+SLACKBUILD FILES: doinst.sh php-sqlsrv.info php-sqlsrv.SlackBuild slack-desc slack-required sqlsrv.ini
 SLACKBUILD VERSION: 5.6.1
 SLACKBUILD DOWNLOAD: http://pecl.php.net/get/sqlsrv-5.6.1.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
 SLACKBUILD MD5SUM: c7b66e343d4ae0760a658964552966b4
 SLACKBUILD MD5SUM_x86_64: 
-SLACKBUILD REQUIRES: unixODBC msodbcsql17
+SLACKBUILD REQUIRES: unixODBC msodbcsql
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php-sqlsrv (binding for msodbcsqlrv)
 
