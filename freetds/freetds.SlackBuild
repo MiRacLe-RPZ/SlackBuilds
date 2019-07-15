@@ -26,8 +26,14 @@
 
 PRGNAM=freetds
 PKGNAM=$(basename $0 .SlackBuild)
-VERSION=${VERSION:-1.1.6}
-SRCVERSION=${SRCVERSION:-1.1.6}
+
+INFOFILE="$(pwd)/${PKGNAM}.info"
+if [ -f $INFOFILE ]; then
+    source $INFOFILE
+fi
+
+VERSION=${VERSION:-1.1.11}
+SRCVERSION=${SRCVERSION:-1.1.11}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 

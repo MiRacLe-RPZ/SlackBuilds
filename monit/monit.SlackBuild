@@ -3,7 +3,13 @@
 
 PRGNAM=monit
 PKGNAM=monit
-VERSION=5.15
+
+INFOFILE="$(pwd)/${PKGNAM}.info"
+if [ -f $INFOFILE ]; then
+    source $INFOFILE
+fi
+
+VERSION=${VERSION:-5.26.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 
@@ -23,7 +29,7 @@ PKG=$TMP/package-$PRGNAM
 OUTPUT=${OUTPUT:-/tmp}
 NUMJOBS=${NUMJOBS:-$(( $(getconf _NPROCESSORS_ONLN) + 1 ))}
 
-SRCURL="http://mmonit.com/monit/dist/${PRGNAM}-${VERSION}.tar.gz"
+SRCURL=${DOWNLOAD:-"https://mmonit.com/monit/dist/${PRGNAM}-${VERSION}.tar.gz"}
 SOURCE="${CWD}/${PRGNAM}-${VERSION}.tar.gz"
 
 
