@@ -111,13 +111,13 @@ SLACKBUILD SHORT DESCRIPTION:  monit (Unix System Management)
 
 SLACKBUILD NAME: msodbcsql
 SLACKBUILD LOCATION: ./msodbcsql
-SLACKBUILD FILES: doinst.sh msodbcsql.info msodbcsql.SlackBuild slack-desc
+SLACKBUILD FILES: doinst.sh msodbcsql.info msodbcsql.SlackBuild slack-desc slack-required
 SLACKBUILD VERSION: 17.3.1.1
 SLACKBUILD DOWNLOAD: https://packages.microsoft.com/debian/9/prod/pool/main/m/msodbcsql17/msodbcsql17_17.3.1.1-1_amd64.deb
 SLACKBUILD DOWNLOAD_x86_64: 
 SLACKBUILD MD5SUM: 54840a52c521856c58d8d5afe367e9ae
 SLACKBUILD MD5SUM_x86_64: 
-SLACKBUILD REQUIRES: unixODBC
+SLACKBUILD REQUIRES: unixODBC,krb5
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  Microsoft ODBC Driver 17 for SQL Server
 
