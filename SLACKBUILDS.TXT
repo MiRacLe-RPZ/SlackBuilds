@@ -29,7 +29,7 @@ SLACKBUILD DOWNLOAD_x86_64: https://chromedriver.storage.googleapis.com/76.0.380
 SLACKBUILD MD5SUM: 
 SLACKBUILD MD5SUM_x86_64: 2f2d9ab416c86c94cbbfcf1b8833280d
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
-SLACKBUILD SHORT DESCRIPTION: 
+SLACKBUILD SHORT DESCRIPTION:   is a standalone server that implements the W3C WebDriver standard
 
 SLACKBUILD NAME: eyefi-config
 SLACKBUILD LOCATION: ./eyefi-config
