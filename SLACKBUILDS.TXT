@@ -202,10 +202,10 @@ SLACKBUILD SHORT DESCRIPTION:  php-gearman (binding for libgearman)
 SLACKBUILD NAME: php-memcached
 SLACKBUILD LOCATION: ./php-memcached
 SLACKBUILD FILES: doinst.sh memcached.ini php-memcached.info php-memcached.SlackBuild slack-desc slack-required
-SLACKBUILD VERSION: 3.1.3
-SLACKBUILD DOWNLOAD: https://pecl.php.net/get/memcached-3.1.3.tgz
+SLACKBUILD VERSION: 3.1.4
+SLACKBUILD DOWNLOAD: https://pecl.php.net/get/memcached-3.1.4.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 29e64c6b6484a2aed6185974c8108465
+SLACKBUILD MD5SUM: c50f416ff9fc66360b5bd7a5017dc829
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  extension for interfacing with memcached via libmemcached library
