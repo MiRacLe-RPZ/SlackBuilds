@@ -280,10 +280,10 @@ SLACKBUILD SHORT DESCRIPTION:  php-readline
 SLACKBUILD NAME: php-redis
 SLACKBUILD LOCATION: ./php-redis
 SLACKBUILD FILES: doinst.sh php-redis.info php-redis.SlackBuild redis.ini slack-desc slack-required
-SLACKBUILD VERSION: 5.0.2
-SLACKBUILD DOWNLOAD: https://pecl.php.net/get/redis-5.0.2.tgz
+SLACKBUILD VERSION: 5.1.0
+SLACKBUILD DOWNLOAD: https://pecl.php.net/get/redis-5.1.0.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 0fed05402f8eabc2030ae327df0d1e27
+SLACKBUILD MD5SUM: 957129b542062e26fa4c5e48aefe0cb7
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php-redis
@@ -314,10 +314,10 @@ SLACKBUILD SHORT DESCRIPTION:  PhpIDE based on JetBrain's IDEA
 SLACKBUILD NAME: php-xdebug
 SLACKBUILD LOCATION: ./php-xdebug
 SLACKBUILD FILES: doinst.sh php-xdebug.info php-xdebug.SlackBuild slack-desc slack-required xdebug.ini
-SLACKBUILD VERSION: 2.7.2
-SLACKBUILD DOWNLOAD: https://pecl.php.net/get/xdebug-2.7.2.tgz
+SLACKBUILD VERSION: 2.8.0
+SLACKBUILD DOWNLOAD: https://pecl.php.net/get/xdebug-2.8.0.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 5d1a8ca3101df93938d283933f256493
+SLACKBUILD MD5SUM: 3f2ef1f42ff0a96c97e113f2cb3bd653
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php-xdebug
