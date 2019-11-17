@@ -12,10 +12,10 @@ SLACKBUILD SHORT DESCRIPTION:  Ansible (a ssh-based config management framework)
 SLACKBUILD NAME: azuredatastudio
 SLACKBUILD LOCATION: ./azuredatastudio
 SLACKBUILD FILES: azuredatastudio.info azuredatastudio.SlackBuild slack-desc
-SLACKBUILD VERSION: 1.13.0
-SLACKBUILD DOWNLOAD: https://github.com/Microsoft/azuredatastudio/releases/download/1.12.0/azuredatastudio-linux-1.13.0.tar.gz
+SLACKBUILD VERSION: 1.13.1
+SLACKBUILD DOWNLOAD: https://github.com/Microsoft/azuredatastudio/releases/download/1.12.0/azuredatastudio-linux-1.13.1.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 29cd4adfcb2c6518f9a49adce8558f8a
+SLACKBUILD MD5SUM: 4fff3434d70f97f45af5e749970359a4
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  Azure Data Studio is a data management tool that enables you to work 
@@ -56,10 +56,10 @@ SLACKBUILD SHORT DESCRIPTION:  screencast one or more interactively selected reg
 SLACKBUILD NAME: freetds
 SLACKBUILD LOCATION: ./freetds
 SLACKBUILD FILES: doinst.sh freetds.info freetds.SlackBuild slack-desc slack-required
-SLACKBUILD VERSION: 1.1.19
-SLACKBUILD DOWNLOAD: ftp://ftp.freetds.org/pub/freetds/stable/freetds-1.1.19.tar.gz
+SLACKBUILD VERSION: 1.1.21
+SLACKBUILD DOWNLOAD: ftp://ftp.freetds.org/pub/freetds/stable/freetds-1.1.21.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 36eae309b2302ea071bbb874e3a404c0
+SLACKBUILD MD5SUM: 4fff3434d70f97f45af5e749970359a4
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  FreeTDS (free implementation of the Tabular Data Stream protocol)
