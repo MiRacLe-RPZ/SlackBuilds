@@ -213,10 +213,10 @@ SLACKBUILD SHORT DESCRIPTION:  extension for interfacing with memcached via libm
 SLACKBUILD NAME: php-memcache
 SLACKBUILD LOCATION: ./php-memcache
 SLACKBUILD FILES: doinst.sh memcache.ini php-memcache.info php-memcache.SlackBuild slack-desc slack-required
-SLACKBUILD VERSION: 4.0.5.1
-SLACKBUILD DOWNLOAD: http://pecl.php.net/get/memcache-4.0.5.1.tgz
+SLACKBUILD VERSION: 4.0.5.2
+SLACKBUILD DOWNLOAD: http://pecl.php.net/get/memcache-4.0.5.2.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 0b11dcaa218872b7645d2c3425ce7fe8
+SLACKBUILD MD5SUM: bfbf18bc0b410e4f70f13c8fcd965647
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php-memcache
