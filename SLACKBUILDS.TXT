@@ -13,7 +13,7 @@ SLACKBUILD NAME: azuredatastudio
 SLACKBUILD LOCATION: ./azuredatastudio
 SLACKBUILD FILES: azuredatastudio.info azuredatastudio.SlackBuild slack-desc
 SLACKBUILD VERSION: 1.14.1
-SLACKBUILD DOWNLOAD: https://github.com/Microsoft/azuredatastudio/releases/download/1.12.0/azuredatastudio-linux-1.14.1.tar.gz
+SLACKBUILD DOWNLOAD: https://github.com/Microsoft/azuredatastudio/releases/download/1.14.1/azuredatastudio-linux-1.14.1.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
 SLACKBUILD MD5SUM: bdd9bb6b7567a8ecc2a2cf919ec09d42
 SLACKBUILD MD5SUM_x86_64: 
