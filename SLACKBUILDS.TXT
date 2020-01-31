@@ -246,10 +246,10 @@ SLACKBUILD SHORT DESCRIPTION:  php-pdo-dblib (php DBLIB pdo driver)
 SLACKBUILD NAME: php-pdo-sqlsrv
 SLACKBUILD LOCATION: ./php-pdo-sqlsrv
 SLACKBUILD FILES: doinst.sh pdo-sqlsrv.ini php-pdo-sqlsrv.info php-pdo-sqlsrv.SlackBuild slack-desc slack-required
-SLACKBUILD VERSION: 5.6.1
-SLACKBUILD DOWNLOAD: http://pecl.php.net/get/pdo_sqlsrv-5.6.1.tgz
+SLACKBUILD VERSION: 5.8.0
+SLACKBUILD DOWNLOAD: http://pecl.php.net/get/pdo_sqlsrv-5.8.0.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: fa932e2d60e9c3782f30ba0b0ab77516
+SLACKBUILD MD5SUM: 19c44361407c2fed6a9d9eb50332c8ed
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD REQUIRES: unixODBC msodbcsql
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
@@ -291,10 +291,10 @@ SLACKBUILD SHORT DESCRIPTION:  php-redis
 SLACKBUILD NAME: php-sqlsrv
 SLACKBUILD LOCATION: ./php-sqlsrv
 SLACKBUILD FILES: doinst.sh php-sqlsrv.info php-sqlsrv.SlackBuild slack-desc slack-required sqlsrv.ini
-SLACKBUILD VERSION: 5.6.1
-SLACKBUILD DOWNLOAD: http://pecl.php.net/get/sqlsrv-5.6.1.tgz
+SLACKBUILD VERSION: 5.8.0
+SLACKBUILD DOWNLOAD: http://pecl.php.net/get/sqlsrv-5.8.0.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: c7b66e343d4ae0760a658964552966b4
+SLACKBUILD MD5SUM: a0c032e41ae06d1fcc2be31584ae49ed
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD REQUIRES: unixODBC msodbcsql
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
@@ -314,10 +314,10 @@ SLACKBUILD SHORT DESCRIPTION:  PhpIDE based on JetBrain's IDEA
 SLACKBUILD NAME: php-xdebug
 SLACKBUILD LOCATION: ./php-xdebug
 SLACKBUILD FILES: doinst.sh php-xdebug.info php-xdebug.SlackBuild slack-desc slack-required xdebug.ini
-SLACKBUILD VERSION: 2.9.1
-SLACKBUILD DOWNLOAD: https://pecl.php.net/get/xdebug-2.9.1.tgz
+SLACKBUILD VERSION: 2.9.2
+SLACKBUILD DOWNLOAD: https://pecl.php.net/get/xdebug-2.9.2.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 1bf3bde9e23b9877570559ab09815037
+SLACKBUILD MD5SUM: 3bdbe3d6f3f85bb2e989a90a791cde28
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php-xdebug
