@@ -32,7 +32,7 @@ if [ -f $INFOFILE ]; then
     source $INFOFILE
 fi
 
-VERSION=${VERSION:-1.1.23}
+VERSION=${VERSION:-1.1.24}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 
@@ -64,7 +64,7 @@ else
   LIBDIRSUFFIX=""
 fi
 
-NUMJOBS=" -j$(lscpu|grep 'CPU(s):'|awk '{print $2 + 1}') "
+NUMJOBS=${NUMJOBS:-$(( $(getconf _NPROCESSORS_ONLN) + 1 ))}
 
 set -e
 
@@ -99,7 +99,7 @@ CXXFLAGS="$SLKCFLAGS" \
   --with-openssl \
   --build=$ARCH-slackware-linux
 
-make ${NUMJOBS}
+make -j${NUMJOBS}
 make install DESTDIR=$PKG TARGET_DOCDIR=$PKG/usr/doc/$PKGNAM-$VERSION
 
 find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
