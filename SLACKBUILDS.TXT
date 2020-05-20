@@ -166,17 +166,6 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  nginx (http/imap/pop3 proxy)
 
-SLACKBUILD NAME: pam
-SLACKBUILD LOCATION: ./pam
-SLACKBUILD FILES: pam.info pam.SlackBuild slack-desc
-SLACKBUILD VERSION: 1.1.8
-SLACKBUILD DOWNLOAD: 
-SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 
-SLACKBUILD MD5SUM_x86_64: 
-SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
-SLACKBUILD SHORT DESCRIPTION:  pam (Pluggable Authentication Modules)
-
 SLACKBUILD NAME: php-apcu
 SLACKBUILD LOCATION: ./php-apcu
 SLACKBUILD FILES: apcu.ini doinst.sh php-apcu.info php-apcu.SlackBuild slack-conflicts slack-desc slack-required
