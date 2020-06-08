@@ -1,6 +1,6 @@
 PKGNAM="google-chrome"
 PRGNAM="google-chrome"
-VERSION="83.0.4103.97-1"
+VERSION="83.0.4103.97"
 HOMEPAGE="http://chrome.google.com/"
 DOWNLOAD_x86_64="http://dl.google.com/linux/deb/pool/main/g/google-chrome-stable/google-chrome-stable_83.0.4103.97-1_amd64.deb"
 MD5SUM_x86_64="104dcd160ac652e316a3b79f6fc7a122"
