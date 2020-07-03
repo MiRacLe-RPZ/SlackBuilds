@@ -12,10 +12,10 @@ SLACKBUILD SHORT DESCRIPTION:  Ansible (a ssh-based config management framework)
 SLACKBUILD NAME: azuredatastudio
 SLACKBUILD LOCATION: ./azuredatastudio
 SLACKBUILD FILES: azuredatastudio.info azuredatastudio.SlackBuild slack-desc
-SLACKBUILD VERSION: 1.18.1
-SLACKBUILD DOWNLOAD: https://azuredatastudiobuilds.blob.core.windows.net/releases/1.18.1/azuredatastudio-linux-1.18.1.tar.gz
+SLACKBUILD VERSION: 1.19.0
+SLACKBUILD DOWNLOAD: https://sqlopsbuilds.azureedge.net/stable/4095037f2578c23033867e611e82c13de114ca5a/azuredatastudio-linux-1.19.0.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: ea921712de449eda50e1d8bf530d4bb5
+SLACKBUILD MD5SUM: 958db15938d1ca0020f8858790c99de8
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  Azure Data Studio is a data management tool that enables you to work 
@@ -56,24 +56,13 @@ SLACKBUILD SHORT DESCRIPTION:  screencast one or more interactively selected reg
 SLACKBUILD NAME: freetds
 SLACKBUILD LOCATION: ./freetds
 SLACKBUILD FILES: doinst.sh freetds.info freetds.SlackBuild slack-desc slack-required
-SLACKBUILD VERSION: 1.1.40
-SLACKBUILD DOWNLOAD: ftp://ftp.freetds.org/pub/freetds/stable/freetds-1.1.40.tar.gz
+SLACKBUILD VERSION: 1.2
+SLACKBUILD DOWNLOAD: ftp://ftp.freetds.org/pub/freetds/stable/freetds-1.2.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: bf5e7428b54a9a82effb2d89d62cc401
+SLACKBUILD MD5SUM: d1b11a0798b5d06f5b879a868ee4852c
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  FreeTDS (free implementation of the Tabular Data Stream protocol)
-
-SLACKBUILD NAME: gearmand
-SLACKBUILD LOCATION: ./gearmand
-SLACKBUILD FILES: doinst.sh gearmand.info gearmand.SlackBuild rc.gearmand slack-desc slack-required
-SLACKBUILD VERSION: 1.1.18
-SLACKBUILD DOWNLOAD: https://github.com/gearman/gearmand/releases/download/1.1.18/gearmand-1.1.18.tar.gz
-SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 88ecc39ad6d0895ba32b695d91f09bc9
-SLACKBUILD MD5SUM_x86_64: 
-SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
-SLACKBUILD SHORT DESCRIPTION:  Gearman(A framework to farm out work)
 
 SLACKBUILD NAME: google-chrome
 SLACKBUILD LOCATION: ./google-chrome
@@ -112,10 +101,10 @@ SLACKBUILD SHORT DESCRIPTION:   KdeSudo is a frontend for sudo.
 SLACKBUILD NAME: monit
 SLACKBUILD LOCATION: ./monit
 SLACKBUILD FILES: doinst.sh monit.info monit.SlackBuild rc.monit slack-desc
-SLACKBUILD VERSION: 5.26.0
-SLACKBUILD DOWNLOAD: https://mmonit.com/monit/dist/monit-5.26.0.tar.gz
+SLACKBUILD VERSION: 5.27.0
+SLACKBUILD DOWNLOAD: https://mmonit.com/monit/dist/monit-5.27.0.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 9f7dc65e902c103e4c5891354994c3df
+SLACKBUILD MD5SUM: 6a582b26bcc1be69d565b98b2f183cfb
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  monit (Unix System Management)
@@ -177,17 +166,6 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php-apcu (Advanced PHP Cache)
 
-SLACKBUILD NAME: php-gearman
-SLACKBUILD LOCATION: ./php-gearman
-SLACKBUILD FILES: doinst.sh gearman.ini php-gearman.info php-gearman.SlackBuild slack-desc slack-required
-SLACKBUILD VERSION: 1.1.2
-SLACKBUILD DOWNLOAD: http://pecl.php.net/get/gearman-1.1.2.tgz
-SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: fb3bc8df2d017048726d5654459e8433
-SLACKBUILD MD5SUM_x86_64: 
-SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
-SLACKBUILD SHORT DESCRIPTION:  php-gearman (binding for libgearman)
-
 SLACKBUILD NAME: php-memcached
 SLACKBUILD LOCATION: ./php-memcached
 SLACKBUILD FILES: doinst.sh memcached.ini php-memcached.info php-memcached.SlackBuild slack-desc slack-required
@@ -209,17 +187,6 @@ SLACKBUILD MD5SUM: bfbf18bc0b410e4f70f13c8fcd965647
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php-memcache
-
-SLACKBUILD NAME: php-mssql
-SLACKBUILD LOCATION: ./php-mssql
-SLACKBUILD FILES: doinst.sh mssql.ini php-mssql.info php-mssql.SlackBuild slack-desc slack-required
-SLACKBUILD VERSION: 5.6.22
-SLACKBUILD DOWNLOAD: http://www.php.net/distributions/php-5.6.22.tar.bz2
-SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 2244754a50d0a5f07c20967d0c9e0b8d
-SLACKBUILD MD5SUM_x86_64: 
-SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
-SLACKBUILD SHORT DESCRIPTION:  php-mssql (php MS SQL extension)
 
 SLACKBUILD NAME: php-pdo-dblib
 SLACKBUILD LOCATION: ./php-pdo-dblib
@@ -244,17 +211,6 @@ SLACKBUILD REQUIRES: unixODBC msodbcsql
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php-pdo-sqlsrv (binding for msodbcsqlrv)
 
-SLACKBUILD NAME: php-phpiredis
-SLACKBUILD LOCATION: ./php-phpiredis
-SLACKBUILD FILES: doinst.sh phpiredis.ini php-phpiredis.info php-phpiredis.SlackBuild slack-desc slack-required
-SLACKBUILD VERSION: 1.0.0
-SLACKBUILD DOWNLOAD: https://github.com/nrk/phpiredis/archive/v1.0.0.tar.gz
-SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: d84a6e7e3a54744269fd776d7be80be1
-SLACKBUILD MD5SUM_x86_64: 
-SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
-SLACKBUILD SHORT DESCRIPTION:  php-phpiredis is an extension based on hiredis that provides a simple 
-
 SLACKBUILD NAME: php-readline
 SLACKBUILD LOCATION: ./php-readline
 SLACKBUILD FILES: doinst.sh php-readline.info php-readline.SlackBuild readline.ini slack-desc slack-required
@@ -269,10 +225,10 @@ SLACKBUILD SHORT DESCRIPTION:  php-readline
 SLACKBUILD NAME: php-redis
 SLACKBUILD LOCATION: ./php-redis
 SLACKBUILD FILES: doinst.sh php-redis.info php-redis.SlackBuild redis.ini slack-desc slack-required
-SLACKBUILD VERSION: 5.2.2
-SLACKBUILD DOWNLOAD: https://pecl.php.net/get/redis-5.2.2.tgz
+SLACKBUILD VERSION: 5.3.0
+SLACKBUILD DOWNLOAD: https://pecl.php.net/get/redis-5.3.0.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: ce151588fc8e678d8baa7ddf6e5e30c5
+SLACKBUILD MD5SUM: cb8ef5ec5a4214d1c30de221ee456135
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php-redis
@@ -311,17 +267,6 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php-xdebug
 
-SLACKBUILD NAME: rats
-SLACKBUILD LOCATION: ./rats
-SLACKBUILD FILES: rats.info rats.SlackBuild slack-desc
-SLACKBUILD VERSION: 2.4
-SLACKBUILD DOWNLOAD: https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/rough-auditing-tool-for-security/rats-2.4.tgz
-SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 86afc955a26811d0d631e69113a75368
-SLACKBUILD MD5SUM_x86_64: 
-SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
-SLACKBUILD SHORT DESCRIPTION:  rats (Rough Auditing Tool for Security)
-
 SLACKBUILD NAME: rubymine
 SLACKBUILD LOCATION: ./rubymine
 SLACKBUILD FILES: rubymine.info rubymine.SlackBuild slack-desc
@@ -332,17 +277,6 @@ SLACKBUILD MD5SUM: 5edde2720500a8f2a8f59bc3511194e9
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  RubyIDE based on JetBrain's IDEA
-
-SLACKBUILD NAME: treb
-SLACKBUILD LOCATION: ./treb
-SLACKBUILD FILES: slack-desc treb.info treb.SlackBuild
-SLACKBUILD VERSION: 0.0.1
-SLACKBUILD DOWNLOAD: http://citylan.dl.sourceforge.net/project/treb/treb-source-0.0.1.tar.gz
-SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: fa49e79472b4236e330d20e6938490c9
-SLACKBUILD MD5SUM_x86_64: 
-SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
-SLACKBUILD SHORT DESCRIPTION:  An application that allows you to run mobile or small web pages in your system notification area. 
 
 SLACKBUILD NAME: unixODBC
 SLACKBUILD LOCATION: ./unixODBC
