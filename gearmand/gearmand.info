@@ -1,8 +1,0 @@
-PKGNAM="gearmand"
-VERSION="1.1.18"
-HOMEPAGE="http://gearman.org/"
-DOWNLOAD="https://github.com/gearman/gearmand/releases/download/1.1.18/gearmand-1.1.18.tar.gz"
-MD5SUM="88ecc39ad6d0895ba32b695d91f09bc9"
-MAINTAINER="MiRacLe.RPZ"
-EMAIL="miracle@rpz.name"
-
