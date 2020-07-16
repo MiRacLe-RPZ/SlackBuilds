@@ -27,7 +27,7 @@ if [ -f $INFOFILE ]; then
     source $INFOFILE
 fi
 
-VERSION=${VERSION:-1.19.0}
+VERSION=${VERSION:-1.20.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
@@ -51,7 +51,7 @@ PKG=$TMP/package-$PKGNAM
 OUTPUT=${OUTPUT:-/tmp}
 
 
-SRCURL=${DOWNLOAD:-https://sqlopsbuilds.azureedge.net/stable/4095037f2578c23033867e611e82c13de114ca5a/${PRGNAM}-linux-${VERSION}.tar.gz}
+SRCURL=${DOWNLOAD:-https://sqlopsbuilds.azureedge.net/stable/cfbadd1eaef2dfa1fd643009c572137c704f1009/${PRGNAM}-linux-${VERSION}.tar.gz}
 SOURCE="${CWD}/$(basename $SRCURL)"
 
 rm -rf $PKG
