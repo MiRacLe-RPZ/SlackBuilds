@@ -248,10 +248,10 @@ SLACKBUILD SHORT DESCRIPTION:  php-sqlsrv (binding for msodbcsqlrv)
 SLACKBUILD NAME: phpstorm
 SLACKBUILD LOCATION: ./phpstorm
 SLACKBUILD FILES: phpstorm.info phpstorm.SlackBuild slack-desc
-SLACKBUILD VERSION: 193.5233.101
-SLACKBUILD DOWNLOAD: https://download-cf.jetbrains.com/webide/PhpStorm-2019.3.tar.gz
+SLACKBUILD VERSION: 201.8538.41
+SLACKBUILD DOWNLOAD: https://download-cf.jetbrains.com/webide/PhpStorm-2020.1.3.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: be1dbd32cb3b21a654a7eda1f1c41d2a
+SLACKBUILD MD5SUM: 1ca2c1c3b8c8300ccf0e42cf32a16ad8
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  PhpIDE based on JetBrain's IDEA

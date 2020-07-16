@@ -21,8 +21,8 @@ set -e
 
 PRGNAM=PhpStorm
 PKGNAM=phpstorm
-VERSION=${VERSION:-193.5233.101}
-SRCVER="2019.3"
+VERSION=${VERSION:-201.8538.41}
+SRCVER="2020.1.3"
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
@@ -41,15 +41,7 @@ PKG=$TMP/package-$PKGNAM
 OUTPUT=${OUTPUT:-/tmp}
 
 
-#SRCURL="https://download-cf.jetbrains.com/webide/PhpStorm-2017.3.4.tar.gz"
-#SRCURL="http://download.jetbrains.com/webide/$PRGNAM-EAP-$VERSION.tar.gz"
-#SRCURL="https://download-cf.jetbrains.com/webide/$PRGNAM-$VERSION.tar.gz"
 SRCURL="https://download-cf.jetbrains.com/webide/$PRGNAM-$SRCVER.tar.gz"
-#SRCURL="https://download-cf.jetbrains.com/webide/PhpStorm-2019.1.tar.gz"
-#SRCURL="https://download.jetbrains.com/webide/$PRGNAM-2016.1.tar.gz"
-#SRCURL="http://download.jetbrains.com/webide/${PRGNAM}-EAP-${VERSION}-custom-jdk-linux.tar.gz"
-#http://download.jetbrains.com/webide/PhpStorm-EAP-144.3398.zip
-#SRCURL="http://download.jetbrains.com/webide/PhpStorm-7.1.3.tar.gz"
 SOURCE="${CWD}/$(basename $SRCURL)"
 
 rm -rf $PKG
@@ -181,7 +173,7 @@ cp -a Install-Linux-tar.txt \
 [ -e $PKG/opt/$PKGNAM/build.txt ] && rm -f $PKG/opt/$PKGNAM/build.txt
 
 
-cp -a $CWD/$PKGNAM.SlackBuild $CWD/slack-* \
+cp -a $CWD/$PKGNAM.SlackBuild $CWD/slack-desc \
    $PKG/usr/doc/$PKGNAM-$VERSION/SlackBuild/
 
 ln -s /opt/$PKGNAM/bin/phpstorm.sh $PKG/usr/bin/$PKGNAM
