@@ -20,9 +20,13 @@
 set -e
 
 PRGNAM=PhpStorm
-PKGNAM=phpstorm
-VERSION=${VERSION:-201.8538.41}
-SRCVER="2020.1.3"
+PKGNAM=$(basename $0 .SlackBuild)
+INFOFILE="$(pwd)/${PKGNAM}.info"
+if [ -f $INFOFILE ]; then
+    source $INFOFILE
+fi
+VERSION=${VERSION:-202.6397.25}
+SRCVER=${VERSION}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
@@ -41,8 +45,9 @@ PKG=$TMP/package-$PKGNAM
 OUTPUT=${OUTPUT:-/tmp}
 
 
-SRCURL="https://download-cf.jetbrains.com/webide/$PRGNAM-$SRCVER.tar.gz"
+SRCURL=${DOWNLOAD:-https://download-cf.jetbrains.com/webide/${PRGNAM}-${SRCVER}.tar.gz}
 SOURCE="${CWD}/$(basename $SRCURL)"
+
 
 rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
@@ -56,23 +61,25 @@ dnl() {
     SOURCE=$1
     SRCURL=$2
     if [ ! -e $SOURCE ]; then
-       XSOURCE="$(dirname ${SOURCE})/$(basename ${SRCURL})"
-       if [ ! -e $XSOURCE ]; then
-           if ! [ "x${SRCURL}" == "x" ]; then
-             echo "Downloading '$(basename ${SOURCE})'."
-             wget --no-check-certificate -nv -T 30 -O "${SOURCE}" "${SRCURL}" || true
-             if [ $? -ne 0 -o ! -s "${SOURCE}" ]; then
-                echo "Downloading '$(basename ${SOURCE})' failed... aborting the build."
-                mv -f "${SOURCE}" "${SOURCE}.FAIL"
-                exit 1
-             fi
-           else
+       if ! [ "x${SRCURL}" == "x" ]; then
+         echo "Downloading '$(basename ${SOURCE})'."
+         wget --no-check-certificate -nv -T 30 -O "${SOURCE}" "${SRCURL}" || true
+         if [ $? -ne 0 -o ! -s "${SOURCE}" ]; then
+            echo "Downloading '$(basename ${SOURCE})' failed... aborting the build."
+            mv -f "${SOURCE}" "${SOURCE}.FAIL"
+            exit 1
+         fi
+         else
              echo "File '${SOURCE}' not available... aborting the build."
              exit 1
-           fi
-       else
-            mv $XSOURCE $SOURCE
-       fi
+         fi
+    fi
+    if ! [ "x${MD5SUM}" == "x" ]; then
+        CHECKSUM=`md5sum ${SOURCE}|cut -d' ' -f1`
+        if [ "x${CHECKSUM}" != "x${MD5SUM}" ]; then
+            echo "Checksum mismatch: expected - ${MD5SUM}, actual - ${CHECKSUM}"
+            exit 1
+        fi
     fi
 }
 
