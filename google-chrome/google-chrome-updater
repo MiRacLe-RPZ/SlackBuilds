@@ -16,6 +16,7 @@ if [ "x$LATEST" != "x$CURRENT" ]; then
     BUILD="1"
     TAG="_auto"
     PKGNAM=$(basename $0 -updater)
+    VERSION=${LATEST}
     ( cd /usr/share/doc/google-chrome/SlackBuild \
       && source ./google-chrome.SlackBuild \
       && /sbin/upgradepkg /tmp/google-chrome-$LATEST-$ARCH-$BUILD$TAG.txz \

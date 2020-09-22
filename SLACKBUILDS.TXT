@@ -67,11 +67,11 @@ SLACKBUILD SHORT DESCRIPTION:  FreeTDS (free implementation of the Tabular Data 
 SLACKBUILD NAME: google-chrome
 SLACKBUILD LOCATION: ./google-chrome
 SLACKBUILD FILES: doinst.sh google-chrome.info google-chrome.SlackBuild google-chrome-updater slack-desc
-SLACKBUILD VERSION: 83.0.4103.97
-SLACKBUILD DOWNLOAD: 
-SLACKBUILD DOWNLOAD_x86_64: http://dl.google.com/linux/deb/pool/main/g/google-chrome-stable/google-chrome-stable_83.0.4103.97-1_amd64.deb
-SLACKBUILD MD5SUM: 
-SLACKBUILD MD5SUM_x86_64: 104dcd160ac652e316a3b79f6fc7a122
+SLACKBUILD VERSION: 85.0.4183.121
+SLACKBUILD DOWNLOAD: http://dl.google.com/linux/deb/pool/main/g/google-chrome-stable/google-chrome-stable_85.0.4183.121-1_amd64.deb
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: d4030a70ef380a7a2a354311e2935975
+SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD REQUIRES: google-chrome-pam-solibs
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  google-chrome (Google Chrome web browser)

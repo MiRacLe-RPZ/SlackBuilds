@@ -2,7 +2,7 @@
 
 # Copyright 2009-2010  Erik Hanson, Minneapolis, MN, USA
 # Copyright 2011  Patrick J. Volkerding, Sebeka, MN, USA
-# Copyright 2012-2015  MiRacLe.RPZ
+# Copyright 2012-2020  MiRacLe.RPZ
 # All rights reserved.
 #
 # Redistribution and use of this script, with or without modification, is
@@ -24,8 +24,17 @@
 
 PRGNAM=google-chrome
 PKGNAM=${PKGNAM:-$(basename $0 .SlackBuild)}
+
+if [ "x${VERSION}" == "x" ]; then
+
+  INFOFILE="$(pwd)/${PKGNAM}.info"
+  if [ -f $INFOFILE ]; then
+    source $INFOFILE
+  fi
+fi
+
 RELEASE=${RELEASE:-stable}    # stable, beta, or unstable
-VERSION=${VERSION:-83.0.4103.97}
+VERSION=${VERSION:-85.0.4183.121}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
@@ -33,34 +42,44 @@ PKGTYPE=${PKGTYPE:-txz}
 
 
 case "$(uname -m)" in
-  i?86) DEBARCH="i386" ; LIBDIRSUFFIX="" ; ARCH=i386 ;;
   x86_64) DEBARCH="amd64" ; LIBDIRSUFFIX="64" ; ARCH=x86_64 ;;
   *) echo "Package for $(uname -m) architecture is not available." ; exit 1 ;;
 esac
-
-
-SOURCEMASK="$PRGNAM-$RELEASE_*_$DEBARCH.deb"
-SOURCEDEB=$(basename $SOURCEMASK)
-
-set -e
-trap 'echo "$0 FAILED at line $LINENO!" | tee $OUTPUT/error-${PKGNAM}.log' ERR
-set -u
-
-if [ "x$SOURCEDEB" == "x$SOURCEMASK" ]; then
-    wget "https://dl.google.com/linux/direct/${PRGNAM}-${RELEASE}_current_${DEBARCH}.deb"
-    SOURCEDEB=$(basename $SOURCEMASK)
-    VERSION=$(ar p $SOURCEDEB control.tar.gz 2> /dev/null | tar zxO ./control 2> /dev/null | grep Version | awk '{print $2}' | cut -d- -f1)
-fi
 
 CWD=$(pwd)
 TMP=${TMP:-/tmp/rpz}
 PKG=$TMP/package-$PKGNAM
 OUTPUT=${OUTPUT:-/tmp}
 
+
+SRCURL=${DOWNLOAD:-http://dl.google.com/linux/deb/pool/main/g/${PRGNAM}-${RELEASE}/${PRGNAM}-${RELEASE}_${VERSION}-1_amd64.deb}
+SOURCE="${CWD}/$(basename $SRCURL)"
+
+dnl() {
+    SOURCE=$1
+    SRCURL=$2
+    if [ ! -e $SOURCE ]; then
+       if ! [ "x${SRCURL}" == "x" ]; then
+         echo "Downloading '$(basename ${SOURCE})'."
+         wget --no-check-certificate -nv -T 30 -O "${SOURCE}" "${SRCURL}" || true
+         if [ $? -ne 0 -o ! -s "${SOURCE}" ]; then
+            echo "Downloading '$(basename ${SOURCE})' failed... aborting the build."
+            mv -f "${SOURCE}" "${SOURCE}.FAIL"
+            exit 1
+         fi
+         else
+             echo "File '${SOURCE}' not available... aborting the build."
+             exit 1
+         fi
+    fi
+}
+
+dnl "${SOURCE}" "${SRCURL}"
+
 rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $PKG
-ar p $CWD/$SOURCEDEB data.tar.xz | tar xJv || exit 1
+ar p ${SOURCE} data.tar.xz | tar xJv || exit 1
 chown -R root:root .
 chmod -R u+w,go+r-w,a-s .
 
