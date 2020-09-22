@@ -2,7 +2,7 @@
 
 # Slackware build script for msvistawebfonts
 
-# Copyright 2012  MiRacLe.RPZ <miracle@rpz.name>
+# Copyright 2012-2020  MiRacLe.RPZ <miracle@rpz.name>
 # All rights reserved.
 #
 #   Permission to use, copy, modify, and distribute this software for
@@ -25,6 +25,12 @@
 
 PRGNAM=msvistawebfonts
 PKGNAM=$(basename $0 .SlackBuild)
+
+INFOFILE="$(pwd)/${PKGNAM}.info"
+if [ -f $INFOFILE ]; then
+    source $INFOFILE
+fi
+
 VERSION=${VERSION:-0.0.4}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
@@ -36,7 +42,9 @@ TMP=${TMP:-/tmp/rpz}
 PKG=$TMP/package-$PKGNAM
 OUTPUT=${OUTPUT:-/tmp}
 
-SOURCE="http://download.microsoft.com/download/f/5/a/f5a3df76-d856-4a61-a6bd-722f52a5be26/PowerPointViewer.exe"
+SRCURL=${DOWNLOAD:-https://web.archive.org/web/20171225132744/http://download.microsoft.com/download/f/5/a/f5a3df76-d856-4a61-a6bd-722f52a5be26/PowerPointViewer.exe}
+SOURCE="${CWD}/$(basename $SRCURL)"
+
 
 set -e
 
@@ -44,38 +52,42 @@ if [ ! -x /usr/bin/cabextract ]; then
     echo "You need install cabextract first" && exit 1
 fi
 
+dnl() {
+    SOURCE=$1
+    SRCURL=$2
+    if [ ! -e $SOURCE ]; then
+       if ! [ "x${SRCURL}" == "x" ]; then
+         echo "Downloading '$(basename ${SOURCE})'."
+         wget --no-check-certificate -nv -T 30 -O "${SOURCE}" "${SRCURL}" || true
+         if [ $? -ne 0 -o ! -s "${SOURCE}" ]; then
+            echo "Downloading '$(basename ${SOURCE})' failed... aborting the build."
+            mv -f "${SOURCE}" "${SOURCE}.FAIL"
+            exit 1
+         fi
+         else
+             echo "File '${SOURCE}' not available... aborting the build."
+             exit 1
+         fi
+    fi
+}
+
+dnl "${SOURCE}" "${SRCURL}"
+
 rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 
 rm -rf ${PRGNAM}-${VERSION}
 
-if [ "$1" == "netinstall" ]; then
-    mkdir -p $PKG/install $PKG/usr/doc/${PKGNAM}-${VERSION}/SlackBuild
-    cp -a $CWD/$PKGNAM.SlackBuild $CWD/slack-* $CWD/doinst.sh \
-      $PKG/usr/doc/${PKGNAM}-${VERSION}/SlackBuild/
-    cat > $PKG/install/doinst.sh  <<NETINSTALL
-        set -eu
-        cd usr/doc/${PKGNAM}-${VERSION}/SlackBuild/ && OUTPUT=/tmp sh ./${PKGNAM}.SlackBuild && /sbin/upgradepkg --install-new /tmp/${PKGNAM}-${VERSION}-${ARCH}-${BUILD}${TAG}.${PKGTYPE}
-NETINSTALL
-
-    cd $PKG
-    chown -R root:root $PKG
-    /sbin/makepkg -l y -c n $OUTPUT/$PKGNAM-$VERSION-noarch-netinstall.$PKGTYPE
-    exit 0
-fi
-
-
-if [ ! -e $CWD/PowerPointViewer.exe ]; then
-    wget $SOURCE -O $CWD/PowerPointViewer.exe
-fi
-
-
 mkdir -p $TMP/$PRGNAM-$VERSION
 
 cd $TMP/$PRGNAM-$VERSION
 
-cabextract $CWD/PowerPointViewer.exe ppviewer.cab
+cabextract --lowercase "${SOURCE}" -d "$TMP/$PRGNAM-$VERSION"
+cabextract --lowercase -F '*.tt[fc]' "${TMP}/PowerPointViewer/ppviewer.cab" -d "$TMP/$PRGNAM-$VERSION"
+
+
+#cabextract --lowercase -F '*.tt[fc]' $CWD/PowerPointViewer.exe ppviewer.cab
 
 chown -R root:root .
 find . \
@@ -87,9 +99,9 @@ find . \
 
 mkdir -p $PKG/usr/share/fonts/TTF
 
-TOOLNAME="ttc2ttf.py"
+TOOLNAME="${CWD}/ttc2ttf.py"
 
-wget "https://gist.github.com/kayahr/2479682/raw/90319a19fa695f0abca7cd2672b0bb8535e8721a/ttc2ttf.py" -O $TOOLNAME
+dnl "${TOOLNAME}" "https://gist.github.com/kayahr/2479682/raw/90319a19fa695f0abca7cd2672b0bb8535e8721a/ttc2ttf.py"
 
 TOOLCHECKSUM=`md5sum ${TOOLNAME}|awk '{print $1}'`
 
@@ -98,16 +110,24 @@ if [ "x${TOOLCHECKSUM}" != "xbccfc1fda1d8227beb25b4cfdc62c837" ]; then
     exit 1
 fi
 
+for font in *.ttc; do python $TOOLNAME $font; done
 
-for font in *.TTC; do python $TOOLNAME $font; done
+dnl "${CWD}/gnome-vista-aero-theme-automated-V4.0.tar.bz" "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/gnome-vista-aero-theme-automated/gnome-vista-aero-theme-automated-V4.0.tar.bz2"
 
-for font in *.{TTF,ttf}; do mv "$font" $(echo $font|awk '{print(tolower($0));}'); done
 
+SEGUICHECKSUM=`md5sum ${CWD}/gnome-vista-aero-theme-automated-V4.0.tar.bz|awk '{print $1}'`
+
+if [ "x${SEGUICHECKSUM}" != "xda23dfc32631d066f16bcc2a82219bf4" ]; then
+    echo "Checksum for gnome-vista-aero-theme-automated-V4.0.tar.bz failed"
+    exit 1
+fi
+
+tar -jxf "${CWD}/gnome-vista-aero-theme-automated-V4.0.tar.bz"
+
+mv gnome-vista-aero-theme-automated-V4.0/vista/font/*.ttf .
 
 cp *.ttf $PKG/usr/share/fonts/TTF
 
-wget "http://gnome-vista-aero-theme-automated.googlecode.com/svn/trunk/vista/font/seguibd.ttf" -O $PKG/usr/share/fonts/TTF/seguibd.ttf
-wget "http://gnome-vista-aero-theme-automated.googlecode.com/svn/trunk/vista/font/seguibk.ttf" -O $PKG/usr/share/fonts/TTF/seguibk.ttf
 
 mkdir -p $PKG/install $PKG/usr/doc/$PKGNAM-$VERSION/SlackBuild
 

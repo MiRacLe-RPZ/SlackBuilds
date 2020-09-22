@@ -114,7 +114,7 @@ SLACKBUILD NAME: msvistawebfonts
 SLACKBUILD LOCATION: ./msvistawebfonts
 SLACKBUILD FILES: doinst.sh msvistawebfonts.info msvistawebfonts.SlackBuild slack-desc slack-required
 SLACKBUILD VERSION: 0.0.4
-SLACKBUILD DOWNLOAD: http://download.microsoft.com/download/f/5/a/f5a3df76-d856-4a61-a6bd-722f52a5be26/PowerPointViewer.exe
+SLACKBUILD DOWNLOAD: https://web.archive.org/web/20171225132744/http://download.microsoft.com/download/f/5/a/f5a3df76-d856-4a61-a6bd-722f52a5be26/PowerPointViewer.exe
 SLACKBUILD DOWNLOAD_x86_64: 
 SLACKBUILD MD5SUM: 9b4b476488674ae103d2e97cd88cd222
 SLACKBUILD MD5SUM_x86_64: 
@@ -159,7 +159,7 @@ SLACKBUILD NAME: php-memcache
 SLACKBUILD LOCATION: ./php-memcache
 SLACKBUILD FILES: doinst.sh memcache.ini php-memcache.info php-memcache.SlackBuild slack-desc slack-required
 SLACKBUILD VERSION: 4.0.5.2
-SLACKBUILD DOWNLOAD: http://pecl.php.net/get/memcache-4.0.5.2.tgz
+SLACKBUILD DOWNLOAD: https://pecl.php.net/get/memcache-4.0.5.2.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
 SLACKBUILD MD5SUM: bfbf18bc0b410e4f70f13c8fcd965647
 SLACKBUILD MD5SUM_x86_64: 
@@ -170,7 +170,7 @@ SLACKBUILD NAME: php-pdo-dblib
 SLACKBUILD LOCATION: ./php-pdo-dblib
 SLACKBUILD FILES: doinst.sh pdo-dblib.ini php-pdo-dblib.info php-pdo-dblib.SlackBuild slack-desc slack-required
 SLACKBUILD VERSION: 7.2.18
-SLACKBUILD DOWNLOAD: http://www.php.net/distributions/php-7.2.18.tar.bz2
+SLACKBUILD DOWNLOAD: https://www.php.net/distributions/php-7.2.18.tar.bz2
 SLACKBUILD DOWNLOAD_x86_64: 
 SLACKBUILD MD5SUM: b78af289ec31aa0186e588c58838e635
 SLACKBUILD MD5SUM_x86_64: 
@@ -181,7 +181,7 @@ SLACKBUILD NAME: php-pdo-sqlsrv
 SLACKBUILD LOCATION: ./php-pdo-sqlsrv
 SLACKBUILD FILES: doinst.sh pdo-sqlsrv.ini php-pdo-sqlsrv.info php-pdo-sqlsrv.SlackBuild slack-desc slack-required
 SLACKBUILD VERSION: 5.8.1
-SLACKBUILD DOWNLOAD: http://pecl.php.net/get/pdo_sqlsrv-5.8.1.tgz
+SLACKBUILD DOWNLOAD: https://pecl.php.net/get/pdo_sqlsrv-5.8.1.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
 SLACKBUILD MD5SUM: e687989a47cefd6cf9005e1f41637289
 SLACKBUILD MD5SUM_x86_64: 
@@ -215,7 +215,7 @@ SLACKBUILD NAME: php-sqlsrv
 SLACKBUILD LOCATION: ./php-sqlsrv
 SLACKBUILD FILES: doinst.sh php-sqlsrv.info php-sqlsrv.SlackBuild slack-desc slack-required sqlsrv.ini
 SLACKBUILD VERSION: 5.8.1
-SLACKBUILD DOWNLOAD: http://pecl.php.net/get/sqlsrv-5.8.1.tgz
+SLACKBUILD DOWNLOAD: https://pecl.php.net/get/sqlsrv-5.8.1.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
 SLACKBUILD MD5SUM: 1a237f847d4466a85f7bfdb6b2fd5ecd
 SLACKBUILD MD5SUM_x86_64: 
