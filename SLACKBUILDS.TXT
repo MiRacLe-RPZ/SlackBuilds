@@ -20,17 +20,6 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  Azure Data Studio is a data management tool that enables you to work 
 
-SLACKBUILD NAME: chromedriver
-SLACKBUILD LOCATION: ./chromedriver
-SLACKBUILD FILES: chromedriver.info chromedriver.SlackBuild slack-desc
-SLACKBUILD VERSION: 76.0.3809.126
-SLACKBUILD DOWNLOAD: 
-SLACKBUILD DOWNLOAD_x86_64: https://chromedriver.storage.googleapis.com/76.0.3809.126/chromedriver_linux64.zip
-SLACKBUILD MD5SUM: 
-SLACKBUILD MD5SUM_x86_64: 2f2d9ab416c86c94cbbfcf1b8833280d
-SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
-SLACKBUILD SHORT DESCRIPTION:   is a standalone server that implements the W3C WebDriver standard
-
 SLACKBUILD NAME: eyefi-config
 SLACKBUILD LOCATION: ./eyefi-config
 SLACKBUILD FILES: eyefi-config.info eyefi-config.SlackBuild slack-desc
