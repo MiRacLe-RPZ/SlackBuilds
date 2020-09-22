@@ -1,7 +1,0 @@
-PRGNAM="webstorm"
-VERSION="171.4249.16"
-HOMEPAGE="http://www.jetbrains.com/webstorm/"
-DOWNLOAD="http://download.jetbrains.com/webstorm/WebStorm-171.4249.16.tar.gz"
-MD5SUM="380c6c3431137fc1951aede3fd5ba40c"
-MAINTAINER="MiRacLe.RPZ"
-EMAIL="miracle@rpz.name"

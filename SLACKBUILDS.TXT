@@ -133,17 +133,6 @@ SLACKBUILD REQUIRES: cabextract
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  msvistawebfonts
 
-SLACKBUILD NAME: mysql-pinba-work
-SLACKBUILD LOCATION: ./mysql-pinba-work
-SLACKBUILD FILES: mysql-pinba-work.info mysql-pinba-work.SlackBuild slack-desc slack-required
-SLACKBUILD VERSION: 1.0.0
-SLACKBUILD DOWNLOAD: http://pinba.org/files/pinba_engine-1.0.0.tar.gz
-SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: d0dc3dcf6adeb07bef1603d334770879
-SLACKBUILD MD5SUM_x86_64: 
-SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
-SLACKBUILD SHORT DESCRIPTION:  mysql-pinba (PHP Statistics Server - DB part)
-
 SLACKBUILD NAME: nginx-work
 SLACKBUILD LOCATION: ./nginx-work
 SLACKBUILD FILES: doinst.sh monit.nginx nginx.conf nginx.logrotate nginx-work.info nginx-work.SlackBuild rc.nginx slack-conflicts slack-desc slack-required
@@ -288,26 +277,4 @@ SLACKBUILD MD5SUM: 06f76e034bb41df5233554abe961a16f
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  unixODBC (ODBC for Unix platforms)
-
-SLACKBUILD NAME: webstorm
-SLACKBUILD LOCATION: ./webstorm
-SLACKBUILD FILES: slack-desc slack-required webstorm.info webstorm.SlackBuild
-SLACKBUILD VERSION: 171.4249.16
-SLACKBUILD DOWNLOAD: http://download.jetbrains.com/webstorm/WebStorm-171.4249.16.tar.gz
-SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 380c6c3431137fc1951aede3fd5ba40c
-SLACKBUILD MD5SUM_x86_64: 
-SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
-SLACKBUILD SHORT DESCRIPTION:  WebIDE based on JetBrain's IDEA
-
-SLACKBUILD NAME: xxd
-SLACKBUILD LOCATION: ./xxd
-SLACKBUILD FILES: slack-desc xxd.info xxd.SlackBuild
-SLACKBUILD VERSION: 1.10
-SLACKBUILD DOWNLOAD: http://grail.cba.csuohio.edu/~somos/xxd-1.10.tar.gz
-SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 604cf64093fddc30adf41f1f371c9032
-SLACKBUILD MD5SUM_x86_64: 
-SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
-SLACKBUILD SHORT DESCRIPTION: 
 
