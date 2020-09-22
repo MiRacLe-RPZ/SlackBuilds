@@ -52,7 +52,7 @@ PKG=$TMP/package-$PKGNAM
 OUTPUT=${OUTPUT:-/tmp}
 
 
-SRCURL=${DOWNLOAD:-http://dl.google.com/linux/deb/pool/main/g/${PRGNAM}-${RELEASE}/${PRGNAM}-${RELEASE}_${VERSION}-1_amd64.deb}
+SRCURL=${DOWNLOAD:-https://dl.google.com/linux/deb/pool/main/g/${PRGNAM}-${RELEASE}/${PRGNAM}-${RELEASE}_${VERSION}-1_amd64.deb}
 SOURCE="${CWD}/$(basename $SRCURL)"
 
 dnl() {

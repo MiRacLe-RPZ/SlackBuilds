@@ -57,7 +57,7 @@ SLACKBUILD NAME: google-chrome
 SLACKBUILD LOCATION: ./google-chrome
 SLACKBUILD FILES: doinst.sh google-chrome.info google-chrome.SlackBuild google-chrome-updater slack-desc
 SLACKBUILD VERSION: 85.0.4183.121
-SLACKBUILD DOWNLOAD: http://dl.google.com/linux/deb/pool/main/g/google-chrome-stable/google-chrome-stable_85.0.4183.121-1_amd64.deb
+SLACKBUILD DOWNLOAD: https://dl.google.com/linux/deb/pool/main/g/google-chrome-stable/google-chrome-stable_85.0.4183.121-1_amd64.deb
 SLACKBUILD DOWNLOAD_x86_64: 
 SLACKBUILD MD5SUM: d4030a70ef380a7a2a354311e2935975
 SLACKBUILD MD5SUM_x86_64: 
