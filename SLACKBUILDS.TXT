@@ -90,10 +90,10 @@ SLACKBUILD SHORT DESCRIPTION:   KdeSudo is a frontend for sudo.
 SLACKBUILD NAME: monit
 SLACKBUILD LOCATION: ./monit
 SLACKBUILD FILES: doinst.sh monit.info monit.SlackBuild rc.monit slack-desc
-SLACKBUILD VERSION: 5.27.0
-SLACKBUILD DOWNLOAD: https://mmonit.com/monit/dist/monit-5.27.0.tar.gz
+SLACKBUILD VERSION: 5.27.1
+SLACKBUILD DOWNLOAD: https://mmonit.com/monit/dist/monit-5.27.1.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 6a582b26bcc1be69d565b98b2f183cfb
+SLACKBUILD MD5SUM: 200068f37847e3402f6a9b061c2d327e
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  monit (Unix System Management)
