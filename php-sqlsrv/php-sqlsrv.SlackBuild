@@ -26,6 +26,10 @@ SRCNAM=sqlsrv
 PRGNAM=php-sqlsrv
 PKGNAM=php-sqlsrv
 PHP_CONFIG=$(which php-config)
+INFOFILE="$(pwd)/${PKGNAM}.info"
+if [ -f $INFOFILE ]; then
+    source $INFOFILE
+fi
 VERSION=${VERSION:-$(curl "https://pecl.php.net/feeds/pkg_${SRCNAM}.rss" 2> /dev/null|grep -m1 "item rdf"|cut -d '=' -f4|sed 's/\">//')}
 SRCURL=${DOWNLOAD:-https://pecl.php.net/get/${SRCNAM}-${VERSION}.tgz}
 
@@ -45,7 +49,7 @@ CWD=$(pwd)
 TMP=${TMP:-/tmp/rpz}
 PKG=$TMP/package-$PRGNAM
 OUTPUT=${OUTPUT:-/tmp}
-SOURCE="${CWD}/${SRCNAM}-${VERSION}.tar.gz"
+SOURCE="${CWD}/$(basename $SRCURL)"
 NUMJOBS=${NUMJOBS:-$(( $(getconf _NPROCESSORS_ONLN) + 1 ))}
 
 
@@ -118,7 +122,7 @@ dnl() {
 
 dnl "${SOURCE}" "${SRCURL}"
 
-tar xzf $CWD/$SRCNAM-$VERSION.tar.gz
+tar xzf ${SOURCE}
 cd $SRCNAM-$VERSION
 
 chown -R root:root .
