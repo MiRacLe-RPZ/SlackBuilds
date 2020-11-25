@@ -52,7 +52,7 @@ CWD=$(pwd)
 TMP=${TMP:-/tmp/rpz}
 PKG=$TMP/package-$PRGNAM
 OUTPUT=${OUTPUT:-/tmp}
-SOURCE="${CWD}/${SRCNAM}-${VERSION}.tar.gz"
+SOURCE="${CWD}/$(basename $SRCURL)"
 NUMJOBS=${NUMJOBS:-$(( $(getconf _NPROCESSORS_ONLN) + 1 ))}
 
 
@@ -130,7 +130,7 @@ dnl() {
 
 dnl "${SOURCE}" "${SRCURL}"
 
-tar xzf $CWD/$SRCNAM-$VERSION.tar.gz
+tar xzf $SOURCE
 cd $SRCNAM-$VERSION
 
 chown -R root:root .
