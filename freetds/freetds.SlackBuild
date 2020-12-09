@@ -31,7 +31,7 @@ if [ -f $INFOFILE ]; then
     source $INFOFILE
 fi
 
-VERSION=${VERSION:-1.2.12}
+VERSION=${VERSION:-1.2.17}
 BUILD=${BUILD:-2}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
