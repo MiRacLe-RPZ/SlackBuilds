@@ -76,17 +76,6 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  JavaScript Lint
 
-SLACKBUILD NAME: kdesudo
-SLACKBUILD LOCATION: ./kdesudo
-SLACKBUILD FILES: doinst.sh kdesudo.info kdesudo.SlackBuild slack-desc slack-required
-SLACKBUILD VERSION: 3.4.2.4
-SLACKBUILD DOWNLOAD: https://launchpad.net/kdesudo/3.x/3.4.2.4/+download/kdesudo-3.4.2.4.tar.gz
-SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 9cae3b6f12edd6595a4d0554772e926e
-SLACKBUILD MD5SUM_x86_64: 
-SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
-SLACKBUILD SHORT DESCRIPTION:   KdeSudo is a frontend for sudo. 
-
 SLACKBUILD NAME: monit
 SLACKBUILD LOCATION: ./monit
 SLACKBUILD FILES: doinst.sh monit.info monit.SlackBuild rc.monit slack-desc
