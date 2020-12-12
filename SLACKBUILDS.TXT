@@ -114,10 +114,10 @@ SLACKBUILD SHORT DESCRIPTION:  msvistawebfonts
 SLACKBUILD NAME: nginx-work
 SLACKBUILD LOCATION: ./nginx-work
 SLACKBUILD FILES: doinst.sh monit.nginx nginx.conf nginx.logrotate nginx-work.info nginx-work.SlackBuild rc.nginx slack-conflicts slack-desc slack-required
-SLACKBUILD VERSION: 1.19.3
-SLACKBUILD DOWNLOAD: http://nginx.org/download/nginx-1.19.3.tar.gz
+SLACKBUILD VERSION: 1.19.5
+SLACKBUILD DOWNLOAD: http://nginx.org/download/nginx-1.19.5.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: f48ae6476f60028ca245d69101dd0726
+SLACKBUILD MD5SUM: 16944deaa2036dff831822615d96ede9
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  nginx (http/imap/pop3 proxy)
@@ -204,10 +204,10 @@ SLACKBUILD SHORT DESCRIPTION:  php-sqlsrv (binding for msodbcsqlrv)
 SLACKBUILD NAME: phpstorm
 SLACKBUILD LOCATION: ./phpstorm
 SLACKBUILD FILES: phpstorm.info phpstorm.SlackBuild slack-desc
-SLACKBUILD VERSION: 202.7660.42
-SLACKBUILD DOWNLOAD: https://download-cf.jetbrains.com/webide/PhpStorm-2020.2.3.tar.gz
+SLACKBUILD VERSION: 203.5981.175
+SLACKBUILD DOWNLOAD: https://download-cf.jetbrains.com/webide/PhpStorm-2020.3.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: cff9f475ef9df57be9575e60b346b1d5
+SLACKBUILD MD5SUM: 11c31963a07ba61381d78b8ea66c15f1
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  PhpIDE based on JetBrain's IDEA

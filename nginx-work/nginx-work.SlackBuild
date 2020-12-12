@@ -21,8 +21,15 @@ set -e
 
 PRGNAM=nginx
 PKGNAM=$(basename $0 .SlackBuild)
-VERSION=${VERSION:-1.19.3}
-BUILD=${BUILD:-1}
+
+INFOFILE="$(pwd)/${PKGNAM}.info"
+if [ -f $INFOFILE ]; then
+    source $INFOFILE
+fi
+
+
+VERSION=${VERSION:-1.19.5}
+BUILD=${BUILD:-2}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
 
@@ -45,10 +52,7 @@ SOURCE="${CWD}/${PRGNAM}-${VERSION}.tar.gz"
 SRCURL="http://nginx.org/download/${PRGNAM}-${VERSION}.tar.gz"
 
 
-CPUCOUNT="$(lscpu|grep 'CPU(s):'|awk '{print $2}')"
-NUMJOBS=" -j$(echo $CPUCOUNT|awk '{print $1 + 1}') "
-
-
+NUMJOBS=${NUMJOBS:-$(( $(getconf _NPROCESSORS_ONLN) + 1 ))}
 
 CHOST="i486"
 if [ "$ARCH" = "i486" ]; then
@@ -127,7 +131,7 @@ CXXFLAGS="$SLKCFLAGS" \
   --http-client-body-temp-path=/tmp/nginx/client_body \
   --http-proxy-temp-path=/tmp/nginx/proxy \
   --http-fastcgi-temp-path=/dev/shm && \
-make $NUMJOBS && \
+make -j$NUMJOBS && \
 make install DESTDIR=$PKG
 
 mkdir -p $PKG/etc/rc.d $PKG/etc/nginx/conf.d $PKG/usr/doc/$PKGNAM-$VERSION/SlackBuild
@@ -183,21 +187,6 @@ chown -R root:root $PKG
 
 /sbin/makepkg -l y -c n $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE
 
-cd $OUTPUT
 
-md5sum $PKGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE >  $PKGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE.md5
-cat $PKG/install/slack-desc | grep "^${PKGNAM}" > $PKGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE.txt
-
-rm -f $OUTPUT/$PKGNAM-*.log
-
-[ "${P1}" = "--cleanup" ] && {
-  rm -rf $PKG $TMP/$PRGNAM-$VERSION
-}
-
-rm -f "${PKGNAM}-*.log"|tee -a ${PKGNAM}-cleanup.log > /dev/null
-
-cd $CWD
-
-exit 0
 
 
