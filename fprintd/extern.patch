@@ -1,0 +1,21 @@
+--- src/main.c
++++ src/main.c
+@@ -33,6 +33,8 @@
+ #include "storage.h"
+ #include "file_storage.h"
+ 
++fp_storage store;
++
+ extern DBusGConnection *fprintd_dbus_conn;
+ static gboolean no_timeout = FALSE;
+ static gboolean g_fatal_warnings = FALSE;
+--- src/storage.h
++++ src/storage.h
+@@ -44,7 +44,7 @@
+ typedef struct storage fp_storage;
+ 
+ /* The currently setup store */
+-fp_storage store;
++extern fp_storage store;
+ 
+ #endif

@@ -42,6 +42,18 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  screencast one or more interactively selected region or window
 
+SLACKBUILD NAME: fprintd
+SLACKBUILD LOCATION: ./fprintd
+SLACKBUILD FILES: doinst.sh extern.patch fprintd.info fprintd.SlackBuild slack-desc slack-required
+SLACKBUILD VERSION: 0.9.0
+SLACKBUILD DOWNLOAD: https://gitlab.freedesktop.org/libfprint/fprintd/uploads/9dec4b63d1f00e637070be1477ce63c0/fprintd-0.9.0.tar.xz
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: fd29dcdfbbaf22593c3c74ba9068cfcf
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD REQUIRES: libfprint
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION: 
+
 SLACKBUILD NAME: freetds
 SLACKBUILD LOCATION: ./freetds
 SLACKBUILD FILES: doinst.sh freetds.info freetds.SlackBuild slack-desc slack-required
@@ -75,6 +87,17 @@ SLACKBUILD MD5SUM: 2b94ffa4fab07acabe0c5e73cd49bcdf
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  JavaScript Lint
+
+SLACKBUILD NAME: libfprint
+SLACKBUILD LOCATION: ./libfprint
+SLACKBUILD FILES: libfprint.info libfprint.SlackBuild slack-desc
+SLACKBUILD VERSION: 1.0
+SLACKBUILD DOWNLOAD: https://gitlab.freedesktop.org/libfprint/libfprint/uploads/aff93e9921d1cff53d7c070944952ff9/libfprint-1.0.tar.xz
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: 9c38889ab803711a6fc309d31a50658c
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  libfprint (library for support fingerprint reader devices)
 
 SLACKBUILD NAME: monit
 SLACKBUILD LOCATION: ./monit
