@@ -1,0 +1,138 @@
+#!/bin/sh
+
+PRGNAM=redis
+PKGNAM=$(basename $0 .SlackBuild)
+VERSION=${VERSION:-6.0.9}
+BUILD=${BUILD:-1}
+TAG=${TAG:-_rpz}
+
+CWD=$(pwd)
+TMP=${TMP:-/tmp/rpz}
+PKG=$TMP/package-$PKGNAM
+OUTPUT=${OUTPUT:-/tmp}
+NUMJOBS=${NUMJOBS:-$(( $(getconf _NPROCESSORS_ONLN) + 1 ))}
+
+SRCURL=${DOWNLOAD:-"https://download.redis.io/releases/${PRGNAM}-${VERSION}.tar.gz"}
+SOURCE=$(basename $SRCURL)
+
+
+if [ "$ARCH" = "i486" ]; then
+  SLKCFLAGS="-O2 -march=i486 -mtune=i686"
+  LIBDIRSUFFIX=""
+elif [ "$ARCH" = "i686" ]; then
+  SLKCFLAGS="-O2 -march=i686 -mtune=i686"
+  LIBDIRSUFFIX=""
+elif [ "$ARCH" = "x86_64" ]; then
+  SLKCFLAGS="-O2 -fPIC"
+  LIBDIRSUFFIX="64"
+else
+  SLKCFLAGS="-O2"
+  LIBDIRSUFFIX=""
+fi
+
+set -e
+
+rm -rf $PKG
+mkdir -p $TMP $PKG $OUTPUT
+cd $TMP
+rm -rf $PRGNAM-$VERSION
+
+check_installed() {
+    PACKAGE=${1}
+    ls -1 /var/log/packages | grep "^${PACKAGE}-[^-]*-[^-]*-[^-]*$" >/dev/null 2>&1
+    return $?
+}
+
+if [ -e $CWD/slack-required ]; then
+    for REQ in `cat $CWD/slack-required|cut -f 1 -d " "`;do
+        check_installed "$REQ" || {
+           echo "${0##*/}: Required package '$REQ' not installed."
+           exit 1
+       }
+    done
+fi
+
+if [ -e $CWD/slack-conflicts ]; then
+    for REQ in `cat $CWD/slack-conflicts|cut -f 1 -d " "`;do
+        ! check_installed "$REQ" || {
+           echo "${0##*/}: Conflict package '$REQ' was installed."
+           exit 1
+       }
+    done
+fi
+
+dnl() {
+    SOURCE=$1
+    SRCURL=$2
+    if [ ! -e $SOURCE ]; then
+       if ! [ "x${SRCURL}" == "x" ]; then
+         echo "Downloading '$(basename ${SOURCE})'."
+         wget --no-check-certificate -nv -T 30 -O "${SOURCE}" "${SRCURL}" || true
+         if [ $? -ne 0 -o ! -s "${SOURCE}" ]; then
+            echo "Downloading '$(basename ${SOURCE})' failed... aborting the build."
+            mv -f "${SOURCE}" "${SOURCE}.FAIL"
+            exit 1
+         fi
+         else
+             echo "File '${SOURCE}' not available... aborting the build."
+             exit 1
+         fi
+    fi
+}
+
+dnl "${SOURCE}" "${SRCURL}"
+
+tar xvf ${SOURCE}
+cd $PRGNAM-$VERSION
+chown -R root:root .
+find -L . \
+ \( -perm 777 -o -perm 775 -o -perm 750 -o -perm 711 -o -perm 555 \
+  -o -perm 511 \) -exec chmod 755 {} \; -o \
+ \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
+  -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
+
+# Use our CFLAGS.
+sed -i "s|-O3||" deps/Makefile deps/hiredis/Makefile
+
+( unset ARCH ; CFLAGS="$SLKCFLAGS" make -j${NUMJOBS})
+make install PREFIX=$PKG/usr
+
+find $PKG | xargs file | grep -e "executable" -e "shared object" | grep ELF \
+  | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
+
+install -D -m 0644 redis.conf $PKG/etc/redis/redis.conf.new
+sed -i \
+  -e 's|^daemonize no|daemonize yes|' \
+  -e 's|^dir \.|dir /var/lib/redis|' \
+  -e 's|^logfile ""|logfile /var/log/redis/redis_6379.log|' \
+  $PKG/etc/redis/redis.conf.new
+
+install -D -m 0644 sentinel.conf $PKG/etc/redis/sentinel.conf.new
+
+mkdir -p $PKG/var/lib/redis
+chmod 0700 $PKG/var/lib/redis
+
+mkdir -p $PKG/var/log/redis
+
+mkdir -p $PKG/etc/rc.d
+cp $CWD/rc.${PKGNAM} $PKG/etc/rc.d/rc.${PKGNAM}.new
+
+mkdir -p $PKG/etc/logrotate.d
+cp $CWD/${PKGNAM}.logrotate $PKG/etc/logrotate.d/${PKGNAM}.new
+
+mkdir -p $PKG/usr/doc/$PKGNAM-$VERSION/SlackBuild
+cp -a \
+  00-RELEASENOTES BUGS CONTRIBUTING COPYING MANIFESTO README.md TLS.md \
+  ${PKG}/usr/doc/$PKGNAM-$VERSION
+
+cp -a \
+  ${CWD}/${PKGNAM}.SlackBuild ${CWD}/${PKGNAM}.info ${CWD}/doinst.sh ${CWD}/${PKGNAM}.logrotate ${CWD}/rc.${PKGNAM} ${CWD}/slack-desc \
+  ${PKG}/usr/doc/$PKGNAM-$VERSION/SlackBuild
+
+
+mkdir -p $PKG/install
+cp -a $CWD/slack-desc ${CWD}/doinst.sh \
+  ${PKG}/install
+
+cd $PKG
+/sbin/makepkg -l y -c n $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-txz}

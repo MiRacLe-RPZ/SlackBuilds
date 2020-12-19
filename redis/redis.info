@@ -1,0 +1,7 @@
+PRGNAM="redis"
+VERSION="6.0.9"
+HOMEPAGE="https://redis.io/"
+DOWNLOAD="https://download.redis.io/releases/redis-6.0.9.tar.gz"
+MD5SUM="eef6a4345f2bcb8432bfa7f4db54e959"
+MAINTAINER="MiRacLe.RPZ"
+EMAIL="miracle@rpz.name"

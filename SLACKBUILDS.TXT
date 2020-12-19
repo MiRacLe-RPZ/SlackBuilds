@@ -257,6 +257,17 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  library for easily create mock objects on D-Bus.
 
+SLACKBUILD NAME: redis
+SLACKBUILD LOCATION: ./redis
+SLACKBUILD FILES: doinst.sh rc.redis redis.info redis.logrotate redis.SlackBuild slack-desc
+SLACKBUILD VERSION: 6.0.9
+SLACKBUILD DOWNLOAD: https://download.redis.io/releases/redis-6.0.9.tar.gz
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: eef6a4345f2bcb8432bfa7f4db54e959
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  redis (Key-Value Store)
+
 SLACKBUILD NAME: rubymine
 SLACKBUILD LOCATION: ./rubymine
 SLACKBUILD FILES: rubymine.info rubymine.SlackBuild slack-desc
