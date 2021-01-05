@@ -1,0 +1,9 @@
+PRGNAM="python3-soupsieve"
+VERSION="2.1"
+HOMEPAGE="https://github.com/facelessuser/soupsieve"
+DOWNLOAD="https://files.pythonhosted.org/packages/58/5d/445e21e92345848305eecf473338e9ec7ed8905b99ea78415042060127fc/soupsieve-2.1.tar.gz"
+MD5SUM="0194a795d6073b4336e7b95e42e5292f"
+REQUIRES=""
+MAINTAINER="MiRacLe.RPZ"
+EMAIL="miracle@rpz.name"
+

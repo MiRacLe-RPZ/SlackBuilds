@@ -1,0 +1,9 @@
+PRGNAM="python3-cryptography"
+VERSION="3.3.1"
+HOMEPAGE="https://github.com/pyca/cryptography/"
+DOWNLOAD="https://files.pythonhosted.org/packages/b7/82/f7a4ddc1af185936c1e4fa000942ffa8fb2d98cff26b75afa7b3c63391c4/cryptography-3.3.1.tar.gz"
+MD5SUM="6faa1a7125c500c0e1586ad342ba3b30"
+REQUIRES="python3-cffi"
+MAINTAINER="MiRacLe.RPZ"
+EMAIL="miracle@rpz.name"
+

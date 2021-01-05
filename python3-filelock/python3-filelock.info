@@ -1,0 +1,9 @@
+PRGNAM="python3-filelock"
+VERSION="3.0.12"
+HOMEPAGE="https://github.com/benediktschmitt/py-filelock/"
+DOWNLOAD="https://github.com/benediktschmitt/py-filelock/archive/v3.0.12.tar.gz"
+MD5SUM="1b73ed32462e5442f3abfe7d28ca49f8"
+REQUIRES=""
+MAINTAINER="MiRacLe.RPZ"
+EMAIL="miracle@rpz.name"
+
