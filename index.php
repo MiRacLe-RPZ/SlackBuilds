@@ -42,7 +42,7 @@
          body {background-color: #eee;}
          span.pkgnam {font-weight: bold;}
          span.version {color: gray;}
-         a.home { background-image: url('//icons.iconarchive.com/icons/artua/mac/16/Home-icon.png'); background-position: 0 0; background-repeat: no-repeat; color: transparent; width: 20px; display: inline-block; }
+         a.home { background-image: url('https://icons.iconarchive.com/icons/artua/mac/16/Home-icon.png'); background-position: 0 0; background-repeat: no-repeat; color: transparent; width: 20px; display: inline-block; }
         </style>
     </head>
     <body>
