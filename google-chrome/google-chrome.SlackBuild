@@ -2,7 +2,7 @@
 
 # Copyright 2009-2010  Erik Hanson, Minneapolis, MN, USA
 # Copyright 2011  Patrick J. Volkerding, Sebeka, MN, USA
-# Copyright 2012-2020  MiRacLe.RPZ
+# Copyright 2012-2021  MiRacLe.RPZ
 # All rights reserved.
 #
 # Redistribution and use of this script, with or without modification, is
@@ -34,7 +34,7 @@ if [ "x${VERSION}" == "x" ]; then
 fi
 
 RELEASE=${RELEASE:-stable}    # stable, beta, or unstable
-VERSION=${VERSION:-86.0.4240.75}
+VERSION=${VERSION:-87.0.4280.141}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
@@ -90,16 +90,9 @@ chmod 4711 opt/google/chrome/chrome-sandbox
 # The cron job is for Debian/Ubuntu only:
 rm -rf etc
 
-# Link to the standard Mozilla library names:
-sed -i 's,libnss3.so.1d,libnss3.so\x00\x00\x00,g;
-        s,libnssutil3.so.1d,libnssutil3.so\x00\x00\x00,g;
-        s,libsmime3.so.1d,libsmime3.so\x00\x00\x00,g;
-        s,libssl3.so.1d,libssl3.so\x00\x00\x00,g;
-        s,libplds4.so.0d,libplds4.so\x00\x00\x00,g;
-        s,libplc4.so.0d,libplc4.so\x00\x00\x00,g;
-        s,libnspr4.so.0d,libnspr4.so\x00\x00\x00,g;' opt/google/chrome/chrome
+rm -rf usr/share/gnome-control-center
+rm -rf usr/share/doc/google-chrome-stable
 
-# --mandir=/usr/man:
 mv $PKG/usr/share/man $PKG/usr/man
 # Compress manual pages:
 find $PKG/usr/man -type f -exec gzip -9 {} \;
@@ -110,18 +103,18 @@ done
 
 # Install a .desktop launcher:
 sed -i -e "s#Icon=google-chrome#Icon=/opt/google/chrome/product_logo_256.png#" \
-  $PKG/usr/share/applications/google-chrome.desktop
+  $PKG/usr/share/applications/${PKGNAM}.desktop
 
 mkdir -p $PKG/install
 cp -a $CWD/slack-* $CWD/doinst.sh \
   $PKG/install
 
-mkdir -p $PKG/usr/share/doc/google-chrome/SlackBuild
+mkdir -p $PKG/usr/share/doc/${PKGNAM}-${VERSION}/SlackBuild
 cp -a $CWD/$PKGNAM.SlackBuild $CWD/google-chrome-updater $CWD/slack-* $CWD/doinst.sh \
-  $PKG/usr/share/doc/google-chrome/SlackBuild
+  $PKG/usr/share/doc/${PKGNAM}-${VERSION}/SlackBuild
 
 mkdir -p $PKG/etc/cron.daily
-cp $CWD/google-chrome-updater $PKG/etc/cron.daily/google-chrome-updater.new
+cp $CWD/${PKGNAM}-updater $PKG/etc/cron.daily/${PKGNAM}-updater.new
 
 
 cd $PKG
