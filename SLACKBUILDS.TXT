@@ -202,6 +202,18 @@ SLACKBUILD REQUIRES: unixODBC msodbcsql
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php-pdo-sqlsrv (binding for msodbcsqlrv)
 
+SLACKBUILD NAME: php-pinba
+SLACKBUILD LOCATION: ./php-pinba
+SLACKBUILD FILES: doinst.sh php-pinba.info php-pinba.SlackBuild pinba.ini slack-desc
+SLACKBUILD VERSION: 1.1.2
+SLACKBUILD DOWNLOAD: https://github.com/tony2001/pinba_extension/archive/RELEASE_1_1_2.tar.gz
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: ab3d665482677608d8f03fd548cad9b3
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD REQUIRES: protobuf
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  php-pinba (Pinba Statistics Server - PHP part)
+
 SLACKBUILD NAME: php-readline
 SLACKBUILD LOCATION: ./php-readline
 SLACKBUILD FILES: doinst.sh php-readline.info php-readline.SlackBuild readline.ini slack-desc slack-required

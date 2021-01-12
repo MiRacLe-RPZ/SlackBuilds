@@ -1,0 +1,11 @@
+PRGNAM="php-pinba"
+VERSION="1.1.2"
+HOMEPAGE="http://pinba.org/"
+DOWNLOAD="https://github.com/tony2001/pinba_extension/archive/RELEASE_1_1_2.tar.gz"
+MD5SUM="ab3d665482677608d8f03fd548cad9b3"
+DOWNLOAD_x86_64=""
+MD5SUM_x86_64=""
+REQUIRES="protobuf"
+MAINTAINER="MiRacLe.RPZ"
+EMAIL="miracle@rpz.name"
+
