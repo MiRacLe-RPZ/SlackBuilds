@@ -2,14 +2,14 @@
 #
 
 PRGNAM=monit
-PKGNAM=monit
+PKGNAM=$(basename $0 .SlackBuild)
 
 INFOFILE="$(pwd)/${PKGNAM}.info"
 if [ -f $INFOFILE ]; then
     source $INFOFILE
 fi
 
-VERSION=${VERSION:-5.27.1}
+VERSION=${VERSION:-5.27.2}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 
