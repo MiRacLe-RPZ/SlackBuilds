@@ -2,7 +2,15 @@
 
 PRGNAM=redis
 PKGNAM=$(basename $0 .SlackBuild)
-VERSION=${VERSION:-6.0.9}
+
+INFOFILE="$(pwd)/${PKGNAM}.info"
+if [ -f $INFOFILE ]; then
+    source $INFOFILE
+fi
+
+
+
+VERSION=${VERSION:-6.0.10}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 
@@ -14,6 +22,15 @@ NUMJOBS=${NUMJOBS:-$(( $(getconf _NPROCESSORS_ONLN) + 1 ))}
 
 SRCURL=${DOWNLOAD:-"https://download.redis.io/releases/${PRGNAM}-${VERSION}.tar.gz"}
 SOURCE=$(basename $SRCURL)
+
+if [ -z "$ARCH" ]; then
+  case "$( uname -m )" in
+    i?86) ARCH=i486 ;;
+    arm*) ARCH=arm ;;
+       *) ARCH=$( uname -m ) ;;
+  esac
+fi
+
 
 
 if [ "$ARCH" = "i486" ]; then
