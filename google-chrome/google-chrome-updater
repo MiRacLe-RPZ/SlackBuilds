@@ -2,7 +2,6 @@
 
 RELEASE=${RELEASE:-stable}    # stable, beta, or unstable
 case "$(uname -m)" in
-  i?86) DEBARCH="i386" ; LIBDIRSUFFIX="" ; ARCH=i386 ;;
   x86_64) DEBARCH="amd64" ; LIBDIRSUFFIX="64" ; ARCH=x86_64 ;;
   *) echo "Package for $(uname -m) architecture is not available." ; exit 1 ;;
 esac
@@ -10,14 +9,14 @@ esac
 set -e
 
 LATEST=$(curl http://dl.google.com/linux/deb/dists/$RELEASE/main/binary-$DEBARCH/Packages 2>/dev/null |grep "google-chrome-$RELEASE$" -n1|grep Version|cut -d" " -f2|cut -d"-" -f1)
-CURRENT=$(ls /var/log/packages/ -1|grep google-chrome|grep -v pam-solibs|cut -d"-" -f3)
+CURRENT=$(ls /var/log/packages/ -1|grep google-chrome|cut -d"-" -f3)
 
 if [ "x$LATEST" != "x$CURRENT" ]; then
     BUILD="1"
     TAG="_auto"
     PKGNAM=$(basename $0 -updater)
     VERSION=${LATEST}
-    ( cd /usr/share/doc/google-chrome/SlackBuild \
+    ( cd /usr/share/doc/google-chrome-${CURRENT}/SlackBuild \
       && source ./google-chrome.SlackBuild \
       && /sbin/upgradepkg /tmp/google-chrome-$LATEST-$ARCH-$BUILD$TAG.txz \
       && cd /usr/share/doc/google-chrome/SlackBuild \
