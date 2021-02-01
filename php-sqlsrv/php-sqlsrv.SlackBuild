@@ -151,7 +151,7 @@ CXXFLAGS="$SLKCFLAGS" \
 
 make -j$NUMJOBS
 
-make install DESTDIR=$PKG EXTENSION_DIR="$PKG/$($PHP_CONFIG --extension-dir)"
+make install DESTDIR=$PKG EXTENSION_DIR="${PKG}/$($PHP_CONFIG --extension-dir)"
 
 mkdir -p ${PKG}/${INI}
 install -m 644 $CWD/sqlsrv.ini ${PKG}/${INI}/sqlsrv.ini.new

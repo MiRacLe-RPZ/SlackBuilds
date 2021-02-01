@@ -192,12 +192,12 @@ SLACKBUILD SHORT DESCRIPTION:  php-pdo-dblib (php DBLIB pdo driver)
 SLACKBUILD NAME: php-pdo-sqlsrv
 SLACKBUILD LOCATION: ./php-pdo-sqlsrv
 SLACKBUILD FILES: doinst.sh pdo-sqlsrv.ini php-pdo-sqlsrv.info php-pdo-sqlsrv.SlackBuild slack-desc slack-required
-SLACKBUILD VERSION: 5.8.1
-SLACKBUILD DOWNLOAD: https://pecl.php.net/get/pdo_sqlsrv-5.8.1.tgz
+SLACKBUILD VERSION: 5.9.0
+SLACKBUILD DOWNLOAD: https://pecl.php.net/get/pdo_sqlsrv-5.9.0.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: e687989a47cefd6cf9005e1f41637289
+SLACKBUILD MD5SUM: dab2d904d807ea9c74da56d361dcb1cd
 SLACKBUILD MD5SUM_x86_64: 
-SLACKBUILD REQUIRES: unixODBC msodbcsql
+SLACKBUILD REQUIRES: msodbcsql
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php-pdo-sqlsrv (binding for msodbcsqlrv)
 
@@ -238,12 +238,12 @@ SLACKBUILD SHORT DESCRIPTION:  php-redis
 SLACKBUILD NAME: php-sqlsrv
 SLACKBUILD LOCATION: ./php-sqlsrv
 SLACKBUILD FILES: doinst.sh php-sqlsrv.info php-sqlsrv.SlackBuild slack-desc slack-required sqlsrv.ini
-SLACKBUILD VERSION: 5.8.1
-SLACKBUILD DOWNLOAD: https://pecl.php.net/get/sqlsrv-5.8.1.tgz
+SLACKBUILD VERSION: 5.9.0
+SLACKBUILD DOWNLOAD: https://pecl.php.net/get/sqlsrv-5.9.0.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 1a237f847d4466a85f7bfdb6b2fd5ecd
+SLACKBUILD MD5SUM: 9e359cce3c795335fc4529d98ac27553
 SLACKBUILD MD5SUM_x86_64: 
-SLACKBUILD REQUIRES: unixODBC msodbcsql
+SLACKBUILD REQUIRES: msodbcsql
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php-sqlsrv (binding for msodbcsqlrv)
 
@@ -407,7 +407,7 @@ SLACKBUILD SHORT DESCRIPTION:  RubyIDE based on JetBrain's IDEA
 
 SLACKBUILD NAME: unixODBC
 SLACKBUILD LOCATION: ./unixODBC
-SLACKBUILD FILES: doinst.sh README slack-desc unixODBC.info unixODBC.SlackBuild
+SLACKBUILD FILES: doinst.sh README slack-desc unixODBC-2.3.9.tar.gz unixODBC.info unixODBC.SlackBuild
 SLACKBUILD VERSION: 2.3.9
 SLACKBUILD DOWNLOAD: http://www.unixodbc.org/unixODBC-2.3.9.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 

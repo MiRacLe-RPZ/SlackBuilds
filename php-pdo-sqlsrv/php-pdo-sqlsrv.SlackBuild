@@ -24,6 +24,7 @@
 
 SRCNAM=pdo_sqlsrv
 PRGNAM=pdo-sqlsrv
+EXTENSION=pdo-sqlsrv
 PKGNAM=php-pdo-sqlsrv
 PHP_CONFIG=$(which php-config)
 INFOFILE="$(pwd)/${PKGNAM}.info"
@@ -150,12 +151,12 @@ CXXFLAGS="$SLKCFLAGS" \
   --with-pdo_sqlsrv \
   --with-libdir=lib${LIBDIRSUFFIX}
 
-make -j$NUMJOBS
+gmake -j$NUMJOBS
 
-make install DESTDIR=$PKG EXTENSION_DIR="$PKG/$($PHP_CONFIG --extension-dir)"
+make install DESTDIR=$PKG EXTENSION_DIR="${PKG}/$($PHP_CONFIG --extension-dir)"
 
 mkdir -p ${PKG}/${INI}
-install -m 644 $CWD/${PKGNAM}.ini ${PKG}/${INI}/${PKGNAM}.ini.new
+install -m 644 $CWD/${EXTENSION}.ini ${PKG}/${INI}/${EXTENSION}.ini.new
 
 find $PKG | xargs file | grep -e "executable" -e "shared object" | grep ELF \
   | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
