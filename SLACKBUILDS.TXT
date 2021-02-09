@@ -77,13 +77,24 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  FreeTDS (free implementation of the Tabular Data Stream protocol)
 
+SLACKBUILD NAME: gearmand
+SLACKBUILD LOCATION: ./gearmand
+SLACKBUILD FILES: doinst.sh gearmand.info gearmand.SlackBuild rc.gearmand slack-desc slack-required
+SLACKBUILD VERSION: 1.1.19.1
+SLACKBUILD DOWNLOAD: https://github.com/gearman/gearmand/releases/download/1.1.19.1/gearmand-1.1.19.1.tar.gz
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: a95b772896ea46a3b1df150c6ba6b8b7
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  Gearman(A framework to farm out work)
+
 SLACKBUILD NAME: google-chrome
 SLACKBUILD LOCATION: ./google-chrome
 SLACKBUILD FILES: doinst.sh google-chrome.info google-chrome.SlackBuild google-chrome-updater slack-desc
-SLACKBUILD VERSION: 88.0.4324.96
-SLACKBUILD DOWNLOAD: https://dl.google.com/linux/deb/pool/main/g/google-chrome-stable/google-chrome-stable_88.0.4324.96-1_amd64.deb
+SLACKBUILD VERSION: 88.0.4324.146
+SLACKBUILD DOWNLOAD: https://dl.google.com/linux/deb/pool/main/g/google-chrome-stable/google-chrome-stable_88.0.4324.146-1_amd64.deb
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 250de72345e75b537163188842732c32
+SLACKBUILD MD5SUM: 8e3f08c5bd9ad7569bead316ed42ca27
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  google-chrome (Google Chrome web browser)
@@ -166,6 +177,17 @@ SLACKBUILD MD5SUM: a868ee0b4179fb240cf6eb7e49723794
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php-apcu (Advanced PHP Cache)
+
+SLACKBUILD NAME: php-gearman
+SLACKBUILD LOCATION: ./php-gearman
+SLACKBUILD FILES: doinst.sh gearman.ini php-gearman.info php-gearman.SlackBuild slack-desc slack-required
+SLACKBUILD VERSION: 2.1.0
+SLACKBUILD DOWNLOAD: https://pecl.php.net/get/gearman-2.1.0.tgz
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: 97c26b4b0ba81ce0cbd8d66aad7449e8
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  The Gearman PHP Extension provides a wrapper to libgearma
 
 SLACKBUILD NAME: php-memcache
 SLACKBUILD LOCATION: ./php-memcache
