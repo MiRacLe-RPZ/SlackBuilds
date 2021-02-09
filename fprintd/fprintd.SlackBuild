@@ -12,7 +12,7 @@ fi
 
 VERSION=${VERSION:-0.9.0}
 SRCVER=${SRCVER:-$VERSION}
-BUILD=${BUILD:-3}
+BUILD=${BUILD:-4}
 TAG=${TAG:-_rpz}
 
 # Automatically determine the architecture we're building on:
