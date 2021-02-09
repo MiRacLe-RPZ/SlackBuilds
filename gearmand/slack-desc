@@ -1,0 +1,26 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':'.
+
+        |-----handy-ruler-----------------------------------------------------|
+gearmand: Gearman(A framework to farm out work)
+gearmand:
+gearmand: Gearman is composed from 
+gearmand: * Gearmand: The Job server
+gearmand: * Libgearman: Client/worker framework
+gearmand:
+gearmand: Gearman provides a generic application framework to farm out work to
+gearmand: other machines or processes that are better suited to do the work. 
+gearmand: It allows you to do work in parallel, to load balance processing, 
+gearmand: and to call functions between languages. It can be used in a variety
+gearmand: of applications, from high-availability web sites to the transport 
+gearmand: of database replication events. In other words, it is the nervous 
+gearmand: system for how distributed processing communicates
+gearmand:
+gearmand:
+gearmand: Homepage: http://gearman.org
+gearmand:
+gearmand:
