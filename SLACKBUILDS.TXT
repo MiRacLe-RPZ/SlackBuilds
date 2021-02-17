@@ -182,10 +182,10 @@ SLACKBUILD SHORT DESCRIPTION:  msvistawebfonts
 SLACKBUILD NAME: nginx-work
 SLACKBUILD LOCATION: ./nginx-work
 SLACKBUILD FILES: doinst.sh monit.nginx nginx.conf nginx.logrotate nginx-work.info nginx-work.SlackBuild rc.nginx slack-conflicts slack-desc slack-required
-SLACKBUILD VERSION: 1.19.6
-SLACKBUILD DOWNLOAD: http://nginx.org/download/nginx-1.19.6.tar.gz
+SLACKBUILD VERSION: 1.19.7
+SLACKBUILD DOWNLOAD: http://nginx.org/download/nginx-1.19.7.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 0be1d90b45b1bdfcf8339f299e74063a
+SLACKBUILD MD5SUM: 09cd77222d59d9bd8168b788a80f5ef2
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  nginx (http/imap/pop3 proxy)
