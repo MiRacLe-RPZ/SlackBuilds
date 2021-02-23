@@ -29,7 +29,7 @@ if [ -f $INFOFILE ]; then
     source $INFOFILE
 fi
 
-VERSION=${VERSION:-1.25.3}
+VERSION=${VERSION:-1.26.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
@@ -52,7 +52,7 @@ TMP=${TMP:-/tmp/rpz}
 PKG=$TMP/package-$PKGNAM
 OUTPUT=${OUTPUT:-/tmp}
 
-SRCURL=${DOWNLOAD:-https://sqlopsbuilds.azureedge.net/stable/b277eafb8f5328ea26c6edfddd1999292ac27937/azuredatastudio-linux-1.25.3.tar.gz}
+SRCURL=${DOWNLOAD:-https://sqlopsbuilds.azureedge.net/stable/995095f696fd9800e7e621d34daa895d57989ccd/azuredatastudio-linux-1.26.0.tar.gz}
 
 
 SOURCE="${CWD}/$(basename $SRCURL)"
