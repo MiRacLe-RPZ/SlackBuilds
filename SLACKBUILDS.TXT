@@ -81,10 +81,10 @@ SLACKBUILD SHORT DESCRIPTION:
 SLACKBUILD NAME: freerdp
 SLACKBUILD LOCATION: ./freerdp
 SLACKBUILD FILES: freerdp.info freerdp.SlackBuild slack-desc slack-required
-SLACKBUILD VERSION: 2.2.0
-SLACKBUILD DOWNLOAD: https://pub.freerdp.com/releases/freerdp-2.2.0.tar.gz
+SLACKBUILD VERSION: 2.3.0
+SLACKBUILD DOWNLOAD: https://pub.freerdp.com/releases/freerdp-2.3.0.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 16e7f6063cb0e211eeed83a2fe938462
+SLACKBUILD MD5SUM: e07c94cc753dcd8e8ebbeadd71ed9c74
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD REQUIRES: ffmpeg
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
