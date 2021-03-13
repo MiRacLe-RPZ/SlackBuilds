@@ -115,10 +115,10 @@ SLACKBUILD SHORT DESCRIPTION:  Gearman(A framework to farm out work)
 SLACKBUILD NAME: google-chrome
 SLACKBUILD LOCATION: ./google-chrome
 SLACKBUILD FILES: doinst.sh google-chrome.info google-chrome.SlackBuild google-chrome-updater slack-desc
-SLACKBUILD VERSION: 88.0.4324.146
-SLACKBUILD DOWNLOAD: https://dl.google.com/linux/deb/pool/main/g/google-chrome-stable/google-chrome-stable_88.0.4324.146-1_amd64.deb
+SLACKBUILD VERSION: 89.0.4389.90
+SLACKBUILD DOWNLOAD: https://dl.google.com/linux/deb/pool/main/g/google-chrome-stable/google-chrome-stable_89.0.4389.90-1_amd64.deb
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 8e3f08c5bd9ad7569bead316ed42ca27
+SLACKBUILD MD5SUM: 58c8bec946f3251a13cdb5b56aecd0bd
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  google-chrome (Google Chrome web browser)
