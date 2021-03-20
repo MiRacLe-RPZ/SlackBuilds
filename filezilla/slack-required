@@ -1,2 +1,2 @@
-libfilezilla >= 0.26
+libfilezilla >= 0.27
 wxGTK3 >= 3.0
