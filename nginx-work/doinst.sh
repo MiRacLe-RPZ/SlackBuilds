@@ -35,6 +35,6 @@ config etc/nginx/win-utf.new
 
 if [ -d /etc/monit.d/ ]; then
     if [ ! -r /etc/monit.d/nginx ]; then
-        cp /usr/doc/nginx-work-1.19.5/SlackBuild/monit.nginx /etc/monit.d/nginx
+        cp /usr/doc/%pkgnam%-%version%/SlackBuild/monit.nginx /etc/monit.d/nginx
     fi
 fi
