@@ -92,11 +92,11 @@ SLACKBUILD SHORT DESCRIPTION:  freerdp (Free implementation of the RDP protocol)
 
 SLACKBUILD NAME: freetds
 SLACKBUILD LOCATION: ./freetds
-SLACKBUILD FILES: doinst.sh freetds.info freetds.SlackBuild slack-desc slack-required
-SLACKBUILD VERSION: 1.2.18
-SLACKBUILD DOWNLOAD: http://ftp.freetds.org/pub/freetds/stable/freetds-1.2.18.tar.bz2
+SLACKBUILD FILES: doinst.sh freetds.info freetds.SlackBuild slack-desc
+SLACKBUILD VERSION: 1.2.19
+SLACKBUILD DOWNLOAD: http://ftp.freetds.org/pub/freetds/stable/freetds-1.2.19.tar.bz2
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 02cc2ba1c6491d772c6930d8ec53ec5e
+SLACKBUILD MD5SUM: 03175422ef6b5cb3b495c8e87331d836
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  FreeTDS (free implementation of the Tabular Data Stream protocol)
@@ -307,10 +307,10 @@ SLACKBUILD SHORT DESCRIPTION:  php-sqlsrv (binding for msodbcsqlrv)
 SLACKBUILD NAME: phpstorm
 SLACKBUILD LOCATION: ./phpstorm
 SLACKBUILD FILES: phpstorm.info phpstorm.SlackBuild slack-desc
-SLACKBUILD VERSION: 203.7717.64
-SLACKBUILD DOWNLOAD: https://download-cf.jetbrains.com/webide/PhpStorm-2020.3.3.tar.gz
+SLACKBUILD VERSION: 211.6693.120
+SLACKBUILD DOWNLOAD: https://download-cf.jetbrains.com/webide/PhpStorm-2021.1.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: e2f83401fead1cdb7f05774c0e1e2399
+SLACKBUILD MD5SUM: 58114c6174395aef1351bdb7ba92dcce
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  PhpIDE based on JetBrain's IDEA
