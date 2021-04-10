@@ -1,4 +1,0 @@
-libiodbc >= 3.52.7
-ncurses >= 5.9
-openssl >= 1.0 | openssl-solibs >= 1.0
-readline >= 5.2
