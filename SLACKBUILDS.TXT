@@ -112,6 +112,17 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  Gearman(A framework to farm out work)
 
+SLACKBUILD NAME: globalprotect
+SLACKBUILD LOCATION: ./globalprotect
+SLACKBUILD FILES: doinst.sh globalprotect.info globalprotect.SlackBuild rc.globalprotect slack-desc
+SLACKBUILD VERSION: 5.2.5
+SLACKBUILD DOWNLOAD: PanGPLinux-5.2.5-c46.tgz
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: a1776059f9cfa837f913cc030b032651
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  GlobalProtect (vpn client) 
+
 SLACKBUILD NAME: google-chrome
 SLACKBUILD LOCATION: ./google-chrome
 SLACKBUILD FILES: doinst.sh google-chrome.info google-chrome.SlackBuild google-chrome-updater slack-desc

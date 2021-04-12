@@ -1,0 +1,104 @@
+#!/bin/sh
+#
+# PanGPS startup script for Slackware Linux
+
+DAEMONA=PanGPA
+DAEMONS=PanGPS
+
+GPS=/opt/paloaltonetworks/globalprotect/${DAEMONS}
+PIDFILES=/run/user/${UID}/${DAEMONS}.pid
+
+LOGIN_USER=$(logname)
+LOGIN_UID=$(id -u ${LOGIN_USER})
+LOGDIR=/run/user/${LOGIN_UID}/
+GPA=/opt/paloaltonetworks/globalprotect/${DAEMONA}
+PIDFILEA=/run/user/${LOGIN_UID}/${DAEMONA}.pid
+
+pangp_start() {
+  mkdir -p $(dirname $PIDFILES)
+  mkdir -p $(dirname $PIDFILEA)
+  if [ -s $PIDFILES ]; then
+    echo "${DAEMONS} appears to be already running?"
+    exit 1
+  fi
+  if [ -s $PIDFILEA ]; then
+    echo "${DAEMONA} appears to be already running?"
+    exit 1
+  fi
+
+  echo "Starting ${DAEMONS}..."
+  $GPS start &
+  
+  while [ ! -s $PIDFILES ]; do
+    sleep 1
+    pidof $GPS > $PIDFILES
+    echo -n "."
+  done
+  echo "Starting ${DAEMONA}..."
+  su -c "$GPA start &" $LOGIN_USER
+  while [ ! -s $PIDFILEA ]; do
+    sleep 1
+    pidof $GPA > $PIDFILEA
+    echo -n "."
+  done
+
+}
+
+pangp_stop() {
+  if [ ! -s $PIDFILEA ]; then
+    echo "$PIDFILEA does not exist or is empty."
+    exit 1
+  fi
+
+  if [ ! -s $PIDFILES ]; then
+    echo "$PIDFILES does not exist or is empty."
+    exit 1
+  fi
+
+  PID=$(cat $PIDFILEA)
+  echo -n "Stopping ${DAEMONA}..."
+  kill -TERM $PID
+  while [ -d /proc/$PID ]; do
+    sleep 1
+    echo -n "."
+  done
+  rm -f $PIDFILEA
+  
+  PID=$(cat $PIDFILES)
+  echo -n "Stopping ${DAEMONS}..."
+  kill -TERM $PID
+  while [ -d /proc/$PID ]; do
+    sleep 1
+    echo -n "."
+  done
+  rm -f $PIDFILES
+  
+  echo " done"
+}
+
+pangp_restart() {
+  pangp_stop
+  sleep 3
+  pangp_start
+}
+
+CWD=$(pwd)
+
+case "$1" in
+  start)
+    cd $LOGDIR
+    pangp_start
+    cd $CWD
+    ;;
+  stop)
+    cd $LOGDIR
+    pangp_stop
+    cd $CWD
+    ;;
+  restart)
+    pangp_restart
+    ;;
+  *)  
+    echo "Usage: $0 {start|stop|restart}"
+    exit 1
+esac
