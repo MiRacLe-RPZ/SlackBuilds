@@ -15,8 +15,7 @@ GPA=/opt/paloaltonetworks/globalprotect/${DAEMONA}
 PIDFILEA=/run/user/${LOGIN_UID}/${DAEMONA}.pid
 
 pangp_start() {
-  mkdir -p $(dirname $PIDFILES)
-  mkdir -p $(dirname $PIDFILEA)
+
   if [ -s $PIDFILES ]; then
     echo "${DAEMONS} appears to be already running?"
     exit 1
@@ -86,6 +85,8 @@ CWD=$(pwd)
 
 case "$1" in
   start)
+    mkdir -p $(dirname $PIDFILES)
+    mkdir -p $(dirname $PIDFILEA)
     cd $LOGDIR
     pangp_start
     cd $CWD
