@@ -12,10 +12,10 @@ SLACKBUILD SHORT DESCRIPTION:  Ansible (a ssh-based config management framework)
 SLACKBUILD NAME: azuredatastudio
 SLACKBUILD LOCATION: ./azuredatastudio
 SLACKBUILD FILES: azuredatastudio.info azuredatastudio.SlackBuild slack-desc
-SLACKBUILD VERSION: 1.27.0
-SLACKBUILD DOWNLOAD: https://sqlopsbuilds.azureedge.net/stable/765c7064d46253d88393e0e1ff78874b6fe8fa64/azuredatastudio-linux-1.27.0.tar.gz
+SLACKBUILD VERSION: 1.28.0
+SLACKBUILD DOWNLOAD: https://sqlopsbuilds.azureedge.net/stable/13e362762762e5cb76a5c8afd2bc650f48c2d3d8/azuredatastudio-linux-1.28.0.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 70ea0b9ccfb1d51f781aa940026e8916
+SLACKBUILD MD5SUM: 8f4c37ea9ba0d939eed61a4b20ca7348
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  Azure Data Studio is a data management tool that enables you to work 
@@ -318,10 +318,10 @@ SLACKBUILD SHORT DESCRIPTION:  php-sqlsrv (binding for msodbcsqlrv)
 SLACKBUILD NAME: phpstorm
 SLACKBUILD LOCATION: ./phpstorm
 SLACKBUILD FILES: phpstorm.info phpstorm.SlackBuild slack-desc
-SLACKBUILD VERSION: 211.6693.120
-SLACKBUILD DOWNLOAD: https://download-cf.jetbrains.com/webide/PhpStorm-2021.1.tar.gz
+SLACKBUILD VERSION: 203.7717.64
+SLACKBUILD DOWNLOAD: https://download-cf.jetbrains.com/webide/PhpStorm-2020.3.3.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 58114c6174395aef1351bdb7ba92dcce
+SLACKBUILD MD5SUM: e2f83401fead1cdb7f05774c0e1e2399
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  PhpIDE based on JetBrain's IDEA
