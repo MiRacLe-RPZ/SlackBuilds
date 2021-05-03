@@ -1,0 +1,115 @@
+#!/bin/sh
+
+PKGNAM=$(basename $0 .SlackBuild)
+
+INFOFILE="$(pwd)/${PKGNAM}.info"
+if [ -f $INFOFILE ]; then
+    source $INFOFILE
+fi
+
+VERSION=${VERSION:-0.7.2}
+BUILD=${BUILD:-1}
+TAG=${TAG:-_rpz}
+
+CWD=$(pwd)
+TMP=${TMP:-/tmp/rpz}
+PKG=$TMP/package-$PKGNAM
+OUTPUT=${OUTPUT:-/tmp}
+NUMJOBS=${NUMJOBS:-$(( $(getconf _NPROCESSORS_ONLN) + 1 ))}
+SOURCE=${CWD}/$(basename $DOWNLOAD)
+
+if [ -z "$ARCH" ]; then
+  case "$( uname -m )" in
+    i?86) ARCH=i486 ;;
+    arm*) ARCH=arm ;;
+       *) ARCH=$( uname -m ) ;;
+  esac
+fi
+
+set -e
+
+rm -rf $PKG
+mkdir -p $TMP $PKG $OUTPUT
+cd $TMP
+
+check_installed() {
+    PACKAGE=${1}
+    ls -1 /var/log/packages | grep "^${PACKAGE}-[^-]*-[^-]*-[^-]*$" >/dev/null 2>&1
+    return $?
+}
+
+if [ -e $CWD/slack-required ]; then
+    for REQ in `cat $CWD/slack-required|cut -f 1 -d " "`;do
+        check_installed "$REQ" || {
+           echo "${0##*/}: Required package '$REQ' not installed."
+           exit 1
+       }
+    done
+fi
+
+if [ -e $CWD/slack-conflicts ]; then
+    for REQ in `cat $CWD/slack-conflicts|cut -f 1 -d " "`;do
+        ! check_installed "$REQ" || {
+           echo "${0##*/}: Conflict package '$REQ' was installed."
+           exit 1
+       }
+    done
+fi
+
+mkdir $PKGNAM-$VERSION
+cd $PKGNAM-$VERSION
+unzip ${SOURCE}
+
+chown -R root:root .
+find -L . \
+ \( -perm 777 -o -perm 775 -o -perm 750 -o -perm 711 -o -perm 555 \
+  -o -perm 511 \) -exec chmod 755 {} \; -o \
+ \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
+  -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
+
+find $PKG | xargs file | grep -e "executable" -e "shared object" | grep ELF \
+  | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
+
+for size in 24 36 48 64 72 96 128 192 256 384 512; do
+    install -D "icons/${size}x${size}.png" \
+               "${PKG}/usr/share/icons/hicolor/${size}x${size}/apps/${PKGNAM}.png"
+done
+
+mkdir -p $PKG/usr/share/applications/
+
+(
+cat <<EOF
+[Desktop Entry]
+Name=Figma Linux
+Comment=Unofficial desktop application for linux
+Exec=/opt/${PKGNAM}/${PKGNAM} --no-sandbox --enable-oop-rasterization --ignore-gpu-blacklist -enable-experimental-canvas-features --enable-accelerated-2d-canvas --force-gpu-rasterization --enable-fast-unload --enable-accelerated-vpx-decode=3 --enable-tcp-fastopen --javascript-harmony --enable-checker-imaging --v8-cache-options=code --v8-cache-strategies-for-cache-storage=aggressive --enable-zero-copy --ui-enable-zero-copy --enable-native-gpu-memory-buffers --enable-webgl-image-chromium --enable-accelerated-video --enable-gpu-rasterization %U
+Terminal=false
+Type=Application
+Icon=figma-linux
+StartupWMClass=figma-linux
+Categories=Graphics;
+MimeType=application/figma;x-scheme-handler/figma;
+EOF
+) > $PKG/usr/share/applications/${PRGNAM}.desktop
+
+
+mkdir -p "${PKG}/opt/${PKGNAM}"
+cp -rf ./* "${PKG}/opt/${PKGNAM}"
+
+mkdir -p "${PKG}/usr/bin"
+ln -s "/opt/${PKGNAM}/figma-linux" "${PKG}/usr/bin/${PKGNAM}"
+
+
+mkdir -p $PKG/usr/doc/$PKGNAM-$VERSION/SlackBuild
+
+cp -a \
+  ${CWD}/${PKGNAM}.SlackBuild ${CWD}/${PKGNAM}.info ${CWD}/slack-desc \
+  ${PKG}/usr/doc/$PKGNAM-$VERSION/SlackBuild
+
+
+mkdir -p $PKG/install
+cp -a $CWD/slack-desc \
+  ${PKG}/install
+
+cd $PKG
+/sbin/makepkg -l y -c n $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.${PKGTYPE:-txz}

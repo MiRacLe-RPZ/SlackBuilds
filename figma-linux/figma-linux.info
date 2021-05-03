@@ -1,0 +1,7 @@
+PRGNAM="figma-linux"
+VERSION="0.7.2"
+HOMEPAGE="https://github.com/Figma-Linux/figma-linux"
+DOWNLOAD="https://github.com/Figma-Linux/figma-linux/releases/download/v0.7.2/figma-linux_0.7.2_linux_amd64.zip"
+MD5SUM="f00f957428e9ae2a548b5300cd23a1ea"
+MAINTAINER="MiRacLe.RPZ"
+EMAIL="miracle@rpz.name"

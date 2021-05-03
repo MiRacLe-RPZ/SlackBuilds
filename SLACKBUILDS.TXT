@@ -54,6 +54,17 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  screencast one or more interactively selected region or window
 
+SLACKBUILD NAME: figma-linux
+SLACKBUILD LOCATION: ./figma-linux
+SLACKBUILD FILES: figma-linux.info figma-linux.SlackBuild slack-desc
+SLACKBUILD VERSION: 0.7.2
+SLACKBUILD DOWNLOAD: https://github.com/Figma-Linux/figma-linux/releases/download/v0.7.2/figma-linux_0.7.2_linux_amd64.zip
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: f00f957428e9ae2a548b5300cd23a1ea
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  The collaborative interface design tool. 
+
 SLACKBUILD NAME: filezilla
 SLACKBUILD LOCATION: ./filezilla
 SLACKBUILD FILES: doinst.sh filezilla.info filezilla.SlackBuild slack-desc slack-required
@@ -454,10 +465,10 @@ SLACKBUILD SHORT DESCRIPTION:  The next generation YAML parser and emitter for P
 SLACKBUILD NAME: redis
 SLACKBUILD LOCATION: ./redis
 SLACKBUILD FILES: doinst.sh rc.redis redis.info redis.logrotate redis.SlackBuild slack-desc
-SLACKBUILD VERSION: 6.2.2
-SLACKBUILD DOWNLOAD: https://download.redis.io/releases/redis-6.2.2.tar.gz
+SLACKBUILD VERSION: 6.2.3
+SLACKBUILD DOWNLOAD: https://download.redis.io/releases/redis-6.2.3.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 4a0eba48f521e6b96c8f83ffc1202421
+SLACKBUILD MD5SUM: 15d090d65986bf2dc91223fec8da5627
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  redis (Key-Value Store)
