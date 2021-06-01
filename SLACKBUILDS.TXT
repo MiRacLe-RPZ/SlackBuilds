@@ -465,10 +465,10 @@ SLACKBUILD SHORT DESCRIPTION:  The next generation YAML parser and emitter for P
 SLACKBUILD NAME: redis
 SLACKBUILD LOCATION: ./redis
 SLACKBUILD FILES: doinst.sh rc.redis redis.info redis.logrotate redis.SlackBuild slack-desc
-SLACKBUILD VERSION: 6.2.3
-SLACKBUILD DOWNLOAD: https://download.redis.io/releases/redis-6.2.3.tar.gz
+SLACKBUILD VERSION: 6.2.4
+SLACKBUILD DOWNLOAD: https://download.redis.io/releases/redis-6.2.4.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 15d090d65986bf2dc91223fec8da5627
+SLACKBUILD MD5SUM: c21b0efe38a5cbd58874c72c5bddc7e7
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  redis (Key-Value Store)
