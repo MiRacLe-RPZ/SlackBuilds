@@ -29,7 +29,7 @@ if [ -f $INFOFILE ]; then
     source $INFOFILE
 fi
 
-VERSION=${VERSION:-1.29.0}
+VERSION=${VERSION:-1.30.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
@@ -52,10 +52,8 @@ TMP=${TMP:-/tmp/rpz}
 PKG=$TMP/package-$PKGNAM
 OUTPUT=${OUTPUT:-/tmp}
 
-SRCURL=${DOWNLOAD:-https://sqlopsbuilds.azureedge.net/stable/0f5cfdc2c8c2433028842e16dc5ac1a65da24292/azuredatastudio-linux-1.29.0.tar.gz}
 
-
-SOURCE="${CWD}/$(basename $SRCURL)"
+SOURCE="${CWD}/$PRGNAM-linux-$VERSION.tar.gz"
 
 rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
@@ -63,31 +61,6 @@ mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf ${PRGNAM}-${VERSION}
 
-
-
-dnl() {
-    SOURCE=$1
-    SRCURL=$2
-    if [ ! -e $SOURCE ]; then
-       XSOURCE="$(dirname ${SOURCE})/$(basename ${SRCURL})"
-       if [ ! -e $XSOURCE ]; then
-           if ! [ "x${SRCURL}" == "x" ]; then
-             echo "Downloading '$(basename ${SOURCE})'."
-             wget --no-check-certificate -nv -T 30 -O "${SOURCE}" "${SRCURL}" || true
-             if [ $? -ne 0 -o ! -s "${SOURCE}" ]; then
-                echo "Downloading '$(basename ${SOURCE})' failed... aborting the build."
-                mv -f "${SOURCE}" "${SOURCE}.FAIL"
-                exit 1
-             fi
-           else
-             echo "File '${SOURCE}' not available... aborting the build."
-             exit 1
-           fi
-       else
-            mv $XSOURCE $SOURCE
-       fi
-    fi
-}
 
 check_installed() {
     PACKAGE=${1}
@@ -124,9 +97,6 @@ if [ -e $CWD/slack-conflicts ]; then
     done
 fi
 
-
-
-dnl "$SOURCE" "$SRCURL"
 
 tar zxf $SOURCE
 
