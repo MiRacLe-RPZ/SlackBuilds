@@ -12,10 +12,10 @@ SLACKBUILD SHORT DESCRIPTION:  Ansible (a ssh-based config management framework)
 SLACKBUILD NAME: azuredatastudio
 SLACKBUILD LOCATION: ./azuredatastudio
 SLACKBUILD FILES: azuredatastudio.info azuredatastudio.SlackBuild slack-desc
-SLACKBUILD VERSION: 1.30.0
-SLACKBUILD DOWNLOAD: https://sqlopsbuilds.azureedge.net/stable/59c4b8e90cf2d3a24bed72623197f10f8d090fdc/azuredatastudio-linux-1.30.0.tar.gz
+SLACKBUILD VERSION: 1.31.0
+SLACKBUILD DOWNLOAD: https://sqlopsbuilds.azureedge.net/stable/a430fd2592763ef4c4a406821967e4b7b2b3d876/azuredatastudio-linux-1.31.0.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: a923a22899da7d87a2011804ed1d9ca1
+SLACKBUILD MD5SUM: 1839e4bc790399b880454079e36a1089
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  Azure Data Studio is a data management tool that enables you to work 
@@ -216,10 +216,10 @@ SLACKBUILD SHORT DESCRIPTION:  msvistawebfonts
 SLACKBUILD NAME: nginx-work
 SLACKBUILD LOCATION: ./nginx-work
 SLACKBUILD FILES: doinst.sh monit.nginx nginx.conf nginx.logrotate nginx-work.info nginx-work.SlackBuild rc.nginx slack-conflicts slack-desc slack-required
-SLACKBUILD VERSION: 1.20.1
-SLACKBUILD DOWNLOAD: https://nginx.org/download/nginx-1.20.1.tar.gz
+SLACKBUILD VERSION: 1.21.1
+SLACKBUILD DOWNLOAD: https://nginx.org/download/nginx-1.21.1.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 8ca6edd5076bdfad30a69c9c9b41cc68
+SLACKBUILD MD5SUM: 7dce9e2136ec32dfd823736e871815b1
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  nginx (http/imap/pop3 proxy)
@@ -465,10 +465,10 @@ SLACKBUILD SHORT DESCRIPTION:  The next generation YAML parser and emitter for P
 SLACKBUILD NAME: redis
 SLACKBUILD LOCATION: ./redis
 SLACKBUILD FILES: doinst.sh rc.redis redis.info redis.logrotate redis.SlackBuild slack-desc
-SLACKBUILD VERSION: 6.2.4
-SLACKBUILD DOWNLOAD: https://download.redis.io/releases/redis-6.2.4.tar.gz
+SLACKBUILD VERSION: 6.2.5
+SLACKBUILD DOWNLOAD: https://download.redis.io/releases/redis-6.2.5.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: c21b0efe38a5cbd58874c72c5bddc7e7
+SLACKBUILD MD5SUM: db8a2b45eafbf1ead4353044fb70f581
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  redis (Key-Value Store)
