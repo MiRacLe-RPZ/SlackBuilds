@@ -29,7 +29,7 @@ if [ -f $INFOFILE ]; then
     source $INFOFILE
 fi
 
-VERSION=${VERSION:-3.53.0}
+VERSION=${VERSION:-3.55.1}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 
