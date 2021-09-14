@@ -28,7 +28,7 @@ if [ -f $INFOFILE ]; then
     source $INFOFILE
 fi
 
-VERSION=${VERSION:-17.7.2.1}
+VERSION=${VERSION:-17.8.1.1}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
@@ -74,28 +74,6 @@ if [ -e $CWD/slack-conflicts ]; then
     done
 fi
 
-dnl() {
-    SOURCE=$1
-    SRCURL=$2
-    if [ ! -e $SOURCE ]; then
-       if ! [ "x${SRCURL}" == "x" ]; then
-         echo "Downloading '$(basename ${SOURCE})'."
-         wget --no-check-certificate -nv -T 30 -O "${SOURCE}" "${SRCURL}" || true
-         if [ $? -ne 0 -o ! -s "${SOURCE}" ]; then
-            echo "Downloading '$(basename ${SOURCE})' failed... aborting the build."
-            mv -f "${SOURCE}" "${SOURCE}.FAIL"
-            exit 1
-         fi
-         else
-             echo "File '${SOURCE}' not available... aborting the build."
-             exit 1
-         fi
-    fi
-}
-
-dnl "${SOURCE}" "${SRCURL}"
-
-
 rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
 cd $PKG
@@ -108,10 +86,6 @@ chmod 0755 .
 
 mv opt/microsoft/msodbcsql{17,}
 mv usr/share/doc/msodbcsql{17,}
-
-# Link to the standard library names:
-#sed -i 's,libcrypto.so.1.0.2,libcrypto.so.1.0.0,g;
-#        s,libssl.so.1.0.2,libssl.so.1.0.0,g;' opt/microsoft/msodbcsql/lib64/libmsodbcsql-17.3.so.1.1
 
 sed 's/msodbcsql17/msodbcsql/g' -i opt/microsoft/msodbcsql/etc/odbcinst.ini
 
