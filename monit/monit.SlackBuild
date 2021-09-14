@@ -9,7 +9,7 @@ if [ -f $INFOFILE ]; then
     source $INFOFILE
 fi
 
-VERSION=${VERSION:-5.28.0}
+VERSION=${VERSION:-5.29.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 
@@ -29,7 +29,6 @@ PKG=$TMP/package-$PRGNAM
 OUTPUT=${OUTPUT:-/tmp}
 NUMJOBS=${NUMJOBS:-$(( $(getconf _NPROCESSORS_ONLN) + 1 ))}
 
-SRCURL=${DOWNLOAD:-"https://mmonit.com/monit/dist/${PRGNAM}-${VERSION}.tar.gz"}
 SOURCE="${CWD}/${PRGNAM}-${VERSION}.tar.gz"
 
 
@@ -77,27 +76,6 @@ if [ -e $CWD/slack-conflicts ]; then
        }
     done
 fi
-
-dnl() {
-    SOURCE=$1
-    SRCURL=$2
-    if [ ! -e $SOURCE ]; then
-       if ! [ "x${SRCURL}" == "x" ]; then
-         echo "Downloading '$(basename ${SOURCE})'."
-         wget --no-check-certificate -nv -T 30 -O "${SOURCE}" "${SRCURL}" || true
-         if [ $? -ne 0 -o ! -s "${SOURCE}" ]; then
-            echo "Downloading '$(basename ${SOURCE})' failed... aborting the build."
-            mv -f "${SOURCE}" "${SOURCE}.FAIL"
-            exit 1
-         fi
-         else
-             echo "File '${SOURCE}' not available... aborting the build."
-             exit 1
-         fi
-    fi
-}
-
-dnl "${SOURCE}" "${SRCURL}"
 
 
 tar xvf $SOURCE
