@@ -12,10 +12,10 @@ SLACKBUILD SHORT DESCRIPTION:  Ansible (a ssh-based config management framework)
 SLACKBUILD NAME: azuredatastudio
 SLACKBUILD LOCATION: ./azuredatastudio
 SLACKBUILD FILES: azuredatastudio.info azuredatastudio.SlackBuild slack-desc
-SLACKBUILD VERSION: 1.31.0
-SLACKBUILD DOWNLOAD: https://sqlopsbuilds.azureedge.net/stable/a430fd2592763ef4c4a406821967e4b7b2b3d876/azuredatastudio-linux-1.31.0.tar.gz
+SLACKBUILD VERSION: 1.32.0
+SLACKBUILD DOWNLOAD: https://sqlopsbuilds.azureedge.net/stable/4a45ba7cf20dd4129f1a08e5e776dfb33e3d1d1e/azuredatastudio-linux-1.32.0.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 1839e4bc790399b880454079e36a1089
+SLACKBUILD MD5SUM: 1f99639634d14114b524d6cad47976a4
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  Azure Data Studio is a data management tool that enables you to work 
@@ -68,10 +68,10 @@ SLACKBUILD SHORT DESCRIPTION:  The collaborative interface design tool.
 SLACKBUILD NAME: filezilla
 SLACKBUILD LOCATION: ./filezilla
 SLACKBUILD FILES: doinst.sh filezilla.info filezilla.SlackBuild slack-desc slack-required
-SLACKBUILD VERSION: 3.53.0
-SLACKBUILD DOWNLOAD: https://download.filezilla-project.org/client/FileZilla_3.53.0_src.tar.bz2
+SLACKBUILD VERSION: 3.55.1
+SLACKBUILD DOWNLOAD: https://download.filezilla-project.org/client/FileZilla_3.55.1_src.tar.bz2
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: bdac3a687269b925c3e7aa279b90bab1
+SLACKBUILD MD5SUM: 7152b42d64c03ba01283fb25f51f6a48
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD REQUIRES: wxGTK3 libfilezilla
 SLACKBUILD MAINTAINER: MiRacLe <miracle@rpz.name>
@@ -92,10 +92,10 @@ SLACKBUILD SHORT DESCRIPTION:
 SLACKBUILD NAME: freerdp
 SLACKBUILD LOCATION: ./freerdp
 SLACKBUILD FILES: freerdp.info freerdp.SlackBuild slack-desc slack-required
-SLACKBUILD VERSION: 2.3.2
-SLACKBUILD DOWNLOAD: https://pub.freerdp.com/releases/freerdp-2.3.2.tar.gz
+SLACKBUILD VERSION: 2.4.0
+SLACKBUILD DOWNLOAD: https://pub.freerdp.com/releases/freerdp-2.4.0.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: e65dc895cd441b1efb0b2314dc29ee79
+SLACKBUILD MD5SUM: fb5556945b41dad362a03b23f330b971
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD REQUIRES: ffmpeg
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
@@ -104,10 +104,10 @@ SLACKBUILD SHORT DESCRIPTION:  freerdp (Free implementation of the RDP protocol)
 SLACKBUILD NAME: freetds
 SLACKBUILD LOCATION: ./freetds
 SLACKBUILD FILES: doinst.sh freetds.info freetds.SlackBuild slack-desc
-SLACKBUILD VERSION: 1.2.20
-SLACKBUILD DOWNLOAD: http://ftp.freetds.org/pub/freetds/stable/freetds-1.2.20.tar.bz2
+SLACKBUILD VERSION: 1.3.3
+SLACKBUILD DOWNLOAD: http://ftp.freetds.org/pub/freetds/stable/freetds-1.3.3.tar.bz2
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 3021d77da7d223808501983251be1170
+SLACKBUILD MD5SUM: c2799f1f64dc14e20271e34916c9f3e7
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  FreeTDS (free implementation of the Tabular Data Stream protocol)
@@ -159,10 +159,10 @@ SLACKBUILD SHORT DESCRIPTION:  JavaScript Lint
 SLACKBUILD NAME: libfilezilla
 SLACKBUILD LOCATION: ./libfilezilla
 SLACKBUILD FILES: libfilezilla.info libfilezilla.SlackBuild slack-desc
-SLACKBUILD VERSION: 0.27.1
-SLACKBUILD DOWNLOAD: https://download.filezilla-project.org/libfilezilla/libfilezilla-0.27.1.tar.bz2
+SLACKBUILD VERSION: 0.31.1
+SLACKBUILD DOWNLOAD: https://download.filezilla-project.org/libfilezilla/libfilezilla-0.31.1.tar.bz2
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 5c789021d687d483ee90ffae8433880f
+SLACKBUILD MD5SUM: a6e3157655e285410e6d12c7c76f0f26
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  libfilezilla (C++ Library)
@@ -181,10 +181,10 @@ SLACKBUILD SHORT DESCRIPTION:  libfprint (library for support fingerprint reader
 SLACKBUILD NAME: monit
 SLACKBUILD LOCATION: ./monit
 SLACKBUILD FILES: doinst.sh monit.info monit.SlackBuild rc.monit slack-desc
-SLACKBUILD VERSION: 5.28.0
-SLACKBUILD DOWNLOAD: https://mmonit.com/monit/dist/monit-5.28.0.tar.gz
+SLACKBUILD VERSION: 5.29.0
+SLACKBUILD DOWNLOAD: https://mmonit.com/monit/dist/monit-5.29.0.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 778ac383dea002a5cf2330dffcc65660
+SLACKBUILD MD5SUM: 8a0546d0d52216b22ebd57acc0bb1e03
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  monit (Unix System Management)
@@ -192,10 +192,10 @@ SLACKBUILD SHORT DESCRIPTION:  monit (Unix System Management)
 SLACKBUILD NAME: msodbcsql
 SLACKBUILD LOCATION: ./msodbcsql
 SLACKBUILD FILES: doinst.sh msodbcsql.info msodbcsql.SlackBuild slack-desc slack-required
-SLACKBUILD VERSION: 17.7.2.1
-SLACKBUILD DOWNLOAD: https://packages.microsoft.com/debian/10/prod/pool/main/m/msodbcsql17/msodbcsql17_17.7.2.1-1_amd64.deb
+SLACKBUILD VERSION: 17.8.1.1
+SLACKBUILD DOWNLOAD: https://packages.microsoft.com/debian/10/prod/pool/main/m/msodbcsql17/msodbcsql17_17.8.1.1-1_amd64.deb
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: e81f2f026ab15d9a9c74b4ff53520785
+SLACKBUILD MD5SUM: 6799d85b52a32a8146dba736820b683b
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD REQUIRES: unixODBC
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
@@ -216,10 +216,10 @@ SLACKBUILD SHORT DESCRIPTION:  msvistawebfonts
 SLACKBUILD NAME: nginx-work
 SLACKBUILD LOCATION: ./nginx-work
 SLACKBUILD FILES: doinst.sh monit.nginx nginx.conf nginx.logrotate nginx-work.info nginx-work.SlackBuild rc.nginx slack-conflicts slack-desc slack-required
-SLACKBUILD VERSION: 1.21.1
-SLACKBUILD DOWNLOAD: https://nginx.org/download/nginx-1.21.1.tar.gz
+SLACKBUILD VERSION: 1.21.3
+SLACKBUILD DOWNLOAD: https://nginx.org/download/nginx-1.21.3.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 7dce9e2136ec32dfd823736e871815b1
+SLACKBUILD MD5SUM: 21cf8dbb90efc89012fe8b49e3e025d3
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  nginx (http/imap/pop3 proxy)
