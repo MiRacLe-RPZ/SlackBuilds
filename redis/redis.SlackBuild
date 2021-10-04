@@ -10,7 +10,7 @@ fi
 
 
 
-VERSION=${VERSION:-6.2.5}
+VERSION=${VERSION:-6.2.6}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 
@@ -20,7 +20,7 @@ PKG=$TMP/package-$PKGNAM
 OUTPUT=${OUTPUT:-/tmp}
 NUMJOBS=${NUMJOBS:-$(( $(getconf _NPROCESSORS_ONLN) + 1 ))}
 
-SRCURL=${DOWNLOAD:-"https://download.redis.io/releases/${PRGNAM}-${VERSION}.tar.gz"}
+SRCURL=${DOWNLOAD:-"https://github.com/redis/${PRGNAM}/archive/refs/tags/${VERSION}.tar.gz"}
 SOURCE=$(basename $SRCURL)
 
 if [ -z "$ARCH" ]; then
