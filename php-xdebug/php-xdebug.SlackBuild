@@ -36,7 +36,7 @@ SRCURL=${DOWNLOAD:-https://pecl.php.net/get/${SRCNAM}-${VERSION}.tgz}
 
 
 
-BUILD=${BUILD:-2}
+BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 INI=$(php -i 2>/dev/null|grep 'Scan this dir for additional .ini files'|awk '{print $NF}')
 
