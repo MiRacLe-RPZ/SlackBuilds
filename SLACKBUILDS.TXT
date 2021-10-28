@@ -68,10 +68,10 @@ SLACKBUILD SHORT DESCRIPTION:  The collaborative interface design tool.
 SLACKBUILD NAME: filezilla
 SLACKBUILD LOCATION: ./filezilla
 SLACKBUILD FILES: doinst.sh filezilla.info filezilla.SlackBuild slack-desc slack-required
-SLACKBUILD VERSION: 3.55.1
-SLACKBUILD DOWNLOAD: https://download.filezilla-project.org/client/FileZilla_3.55.1_src.tar.bz2
+SLACKBUILD VERSION: 3.56.2
+SLACKBUILD DOWNLOAD: https://download.filezilla-project.org/client/FileZilla_3.56.2_src.tar.bz2
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 7152b42d64c03ba01283fb25f51f6a48
+SLACKBUILD MD5SUM: 1d2d2604ffe1f198271884dd1c788898
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD REQUIRES: wxGTK3 libfilezilla
 SLACKBUILD MAINTAINER: MiRacLe <miracle@rpz.name>
@@ -158,10 +158,10 @@ SLACKBUILD SHORT DESCRIPTION:  JavaScript Lint
 SLACKBUILD NAME: libfilezilla
 SLACKBUILD LOCATION: ./libfilezilla
 SLACKBUILD FILES: libfilezilla.info libfilezilla.SlackBuild slack-desc
-SLACKBUILD VERSION: 0.31.1
-SLACKBUILD DOWNLOAD: https://download.filezilla-project.org/libfilezilla/libfilezilla-0.31.1.tar.bz2
+SLACKBUILD VERSION: 0.34.2
+SLACKBUILD DOWNLOAD: https://download.filezilla-project.org/libfilezilla/libfilezilla-0.34.2.tar.bz2
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: a6e3157655e285410e6d12c7c76f0f26
+SLACKBUILD MD5SUM: c5cbaafcbf0fb307e30a59cb38a4b98d
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  libfilezilla (C++ Library)
