@@ -28,7 +28,7 @@ if [ -f $INFOFILE ]; then
 fi
 
 
-VERSION=${VERSION:-1.21.3}
+VERSION=${VERSION:-1.21.4}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
