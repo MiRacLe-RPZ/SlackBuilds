@@ -57,10 +57,10 @@ SLACKBUILD SHORT DESCRIPTION:  screencast one or more interactively selected reg
 SLACKBUILD NAME: figma-linux
 SLACKBUILD LOCATION: ./figma-linux
 SLACKBUILD FILES: figma-linux.info figma-linux.SlackBuild slack-desc
-SLACKBUILD VERSION: 0.7.2
-SLACKBUILD DOWNLOAD: https://github.com/Figma-Linux/figma-linux/releases/download/v0.7.2/figma-linux_0.7.2_linux_amd64.zip
+SLACKBUILD VERSION: 0.9.2
+SLACKBUILD DOWNLOAD: https://github.com/Figma-Linux/figma-linux/releases/download/v0.9.2/figma-linux_0.9.2_linux_amd64.zip
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: f00f957428e9ae2a548b5300cd23a1ea
+SLACKBUILD MD5SUM: b9f33a823e08336a566eb44c6461b7b8
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  The collaborative interface design tool. 
