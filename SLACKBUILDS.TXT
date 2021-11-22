@@ -89,17 +89,6 @@ SLACKBUILD REQUIRES: libfprint
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION: 
 
-SLACKBUILD NAME: freerdp
-SLACKBUILD LOCATION: ./freerdp
-SLACKBUILD FILES: freerdp.info freerdp.SlackBuild slack-desc
-SLACKBUILD VERSION: 2.4.1
-SLACKBUILD DOWNLOAD: https://pub.freerdp.com/releases/freerdp-2.4.1.tar.gz
-SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: a46c2fd303b9c131120162377e962dbb
-SLACKBUILD MD5SUM_x86_64: 
-SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
-SLACKBUILD SHORT DESCRIPTION:  freerdp (Free implementation of the RDP protocol)
-
 SLACKBUILD NAME: freetds
 SLACKBUILD LOCATION: ./freetds
 SLACKBUILD FILES: doinst.sh freetds.info freetds.SlackBuild slack-desc
