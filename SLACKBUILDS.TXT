@@ -12,10 +12,10 @@ SLACKBUILD SHORT DESCRIPTION:  Ansible (a ssh-based config management framework)
 SLACKBUILD NAME: azuredatastudio
 SLACKBUILD LOCATION: ./azuredatastudio
 SLACKBUILD FILES: azuredatastudio.info azuredatastudio.SlackBuild slack-desc
-SLACKBUILD VERSION: 1.33.1
-SLACKBUILD DOWNLOAD: https://sqlopsbuilds.azureedge.net/stable/0b9ef714c823d662815f441aec4a94eaa21940f8/azuredatastudio-linux-1.33.1.tar.gz
+SLACKBUILD VERSION: 1.34.0
+SLACKBUILD DOWNLOAD: https://sqlopsbuilds.azureedge.net/stable/83a4316cf89cbf961a0f09a72c861379cfd01fa9/azuredatastudio-linux-1.34.0.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 1f40cd42379a344190202ce2f9a5766f
+SLACKBUILD MD5SUM: 9a6715ba347db38974550a49203a3682
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  Azure Data Studio is a data management tool that enables you to work 
@@ -57,10 +57,10 @@ SLACKBUILD SHORT DESCRIPTION:  screencast one or more interactively selected reg
 SLACKBUILD NAME: figma-linux
 SLACKBUILD LOCATION: ./figma-linux
 SLACKBUILD FILES: figma-linux.info figma-linux.SlackBuild slack-desc
-SLACKBUILD VERSION: 0.9.2
-SLACKBUILD DOWNLOAD: https://github.com/Figma-Linux/figma-linux/releases/download/v0.9.2/figma-linux_0.9.2_linux_amd64.zip
+SLACKBUILD VERSION: 0.9.3
+SLACKBUILD DOWNLOAD: https://github.com/Figma-Linux/figma-linux/releases/download/v0.9.3/figma-linux_0.9.3_linux_amd64.zip
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: b9f33a823e08336a566eb44c6461b7b8
+SLACKBUILD MD5SUM: 4e5648213fcca9109478e25a426a01e7
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  The collaborative interface design tool. 
@@ -68,10 +68,10 @@ SLACKBUILD SHORT DESCRIPTION:  The collaborative interface design tool.
 SLACKBUILD NAME: filezilla
 SLACKBUILD LOCATION: ./filezilla
 SLACKBUILD FILES: doinst.sh filezilla.info filezilla.SlackBuild slack-desc slack-required
-SLACKBUILD VERSION: 3.56.2
-SLACKBUILD DOWNLOAD: https://download.filezilla-project.org/client/FileZilla_3.56.2_src.tar.bz2
+SLACKBUILD VERSION: 3.57.0
+SLACKBUILD DOWNLOAD: https://download.filezilla-project.org/client/FileZilla_3.57.0_src.tar.bz2
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 1d2d2604ffe1f198271884dd1c788898
+SLACKBUILD MD5SUM: c6844958dc38d05981d602df9c9309c4
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD REQUIRES: wxGTK3 libfilezilla
 SLACKBUILD MAINTAINER: MiRacLe <miracle@rpz.name>
@@ -147,10 +147,10 @@ SLACKBUILD SHORT DESCRIPTION:  JavaScript Lint
 SLACKBUILD NAME: libfilezilla
 SLACKBUILD LOCATION: ./libfilezilla
 SLACKBUILD FILES: libfilezilla.info libfilezilla.SlackBuild slack-desc
-SLACKBUILD VERSION: 0.34.2
-SLACKBUILD DOWNLOAD: https://download.filezilla-project.org/libfilezilla/libfilezilla-0.34.2.tar.bz2
+SLACKBUILD VERSION: 0.35.0
+SLACKBUILD DOWNLOAD: https://download.filezilla-project.org/libfilezilla/libfilezilla-0.35.0.tar.bz2
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: c5cbaafcbf0fb307e30a59cb38a4b98d
+SLACKBUILD MD5SUM: 136db5d44d5163da88658e0f97972b9f
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  libfilezilla (C++ Library)
@@ -328,10 +328,10 @@ SLACKBUILD SHORT DESCRIPTION:  PhpIDE based on JetBrain's IDEA
 SLACKBUILD NAME: php-xdebug
 SLACKBUILD LOCATION: ./php-xdebug
 SLACKBUILD FILES: doinst.sh php-xdebug.info php-xdebug.SlackBuild slack-desc slack-required xdebug.ini
-SLACKBUILD VERSION: 3.1.1
-SLACKBUILD DOWNLOAD: https://pecl.php.net/get/xdebug-3.1.1.tgz
+SLACKBUILD VERSION: 3.1.2
+SLACKBUILD DOWNLOAD: https://pecl.php.net/get/xdebug-3.1.2.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 3c2473656fb9aec8efd6b90ef6c45a66
+SLACKBUILD MD5SUM: 7284980644f4355cba41045203c50faf
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php-xdebug
