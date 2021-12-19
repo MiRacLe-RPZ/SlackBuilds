@@ -294,10 +294,10 @@ SLACKBUILD SHORT DESCRIPTION:  php-readline
 SLACKBUILD NAME: php-redis
 SLACKBUILD LOCATION: ./php-redis
 SLACKBUILD FILES: doinst.sh php-redis.info php-redis.SlackBuild redis.ini slack-desc slack-required
-SLACKBUILD VERSION: 5.3.4
-SLACKBUILD DOWNLOAD: https://pecl.php.net/get/redis-5.3.4.tgz
+SLACKBUILD VERSION: 5.3.5
+SLACKBUILD DOWNLOAD: https://pecl.php.net/get/redis-5.3.5.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 50c14e284683d474cfa44147a28384c1
+SLACKBUILD MD5SUM: bfb358fb6f53568c3ec38efe76727ece
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php-redis
