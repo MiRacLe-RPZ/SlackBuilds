@@ -259,10 +259,10 @@ SLACKBUILD SHORT DESCRIPTION:  php-pdo-dblib (php DBLIB pdo driver)
 SLACKBUILD NAME: php-pdo-sqlsrv
 SLACKBUILD LOCATION: ./php-pdo-sqlsrv
 SLACKBUILD FILES: doinst.sh pdo-sqlsrv.ini php-pdo-sqlsrv.info php-pdo-sqlsrv.SlackBuild slack-desc slack-required
-SLACKBUILD VERSION: 5.9.0
-SLACKBUILD DOWNLOAD: https://pecl.php.net/get/pdo_sqlsrv-5.9.0.tgz
+SLACKBUILD VERSION: 5.10.0
+SLACKBUILD DOWNLOAD: https://pecl.php.net/get/pdo_sqlsrv-5.10.0.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: dab2d904d807ea9c74da56d361dcb1cd
+SLACKBUILD MD5SUM: fddd14205fbc97190b4c5079e0fd2975
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD REQUIRES: msodbcsql
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
@@ -305,10 +305,10 @@ SLACKBUILD SHORT DESCRIPTION:  php-redis
 SLACKBUILD NAME: php-sqlsrv
 SLACKBUILD LOCATION: ./php-sqlsrv
 SLACKBUILD FILES: doinst.sh php-sqlsrv.info php-sqlsrv.SlackBuild slack-desc slack-required sqlsrv.ini
-SLACKBUILD VERSION: 5.9.0
-SLACKBUILD DOWNLOAD: https://pecl.php.net/get/sqlsrv-5.9.0.tgz
+SLACKBUILD VERSION: 5.10.0
+SLACKBUILD DOWNLOAD: https://pecl.php.net/get/sqlsrv-5.10.0.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 9e359cce3c795335fc4529d98ac27553
+SLACKBUILD MD5SUM: 95fa783fa7d83dc059076a8b1788b21a
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD REQUIRES: msodbcsql
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
