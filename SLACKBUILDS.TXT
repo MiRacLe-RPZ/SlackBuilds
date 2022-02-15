@@ -169,10 +169,10 @@ SLACKBUILD SHORT DESCRIPTION:  libfprint (library for support fingerprint reader
 SLACKBUILD NAME: monit
 SLACKBUILD LOCATION: ./monit
 SLACKBUILD FILES: doinst.sh monit.info monit.SlackBuild rc.monit slack-desc
-SLACKBUILD VERSION: 5.29.0
-SLACKBUILD DOWNLOAD: https://mmonit.com/monit/dist/monit-5.29.0.tar.gz
+SLACKBUILD VERSION: 5.31.0
+SLACKBUILD DOWNLOAD: https://mmonit.com/monit/dist/monit-5.31.0.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 8a0546d0d52216b22ebd57acc0bb1e03
+SLACKBUILD MD5SUM: 7f2efa2175841573a96209086e4a5a26
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  monit (Unix System Management)
