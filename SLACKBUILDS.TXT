@@ -1,6 +1,6 @@
 SLACKBUILD NAME: ansible
 SLACKBUILD LOCATION: ./ansible
-SLACKBUILD FILES: ansible.info ansible.SlackBuild doinst.sh slack-desc slack-required
+SLACKBUILD FILES: ansible.SlackBuild ansible.info doinst.sh slack-desc slack-required
 SLACKBUILD VERSION: 1.5.4
 SLACKBUILD DOWNLOAD: https://github.com/ansible/ansible/archive/v1.5.4.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -11,7 +11,7 @@ SLACKBUILD SHORT DESCRIPTION:  Ansible (a ssh-based config management framework)
 
 SLACKBUILD NAME: azuredatastudio
 SLACKBUILD LOCATION: ./azuredatastudio
-SLACKBUILD FILES: azuredatastudio.info azuredatastudio.SlackBuild slack-desc
+SLACKBUILD FILES: azuredatastudio.SlackBuild azuredatastudio.info slack-desc
 SLACKBUILD VERSION: 1.34.0
 SLACKBUILD DOWNLOAD: https://sqlopsbuilds.azureedge.net/stable/83a4316cf89cbf961a0f09a72c861379cfd01fa9/azuredatastudio-linux-1.34.0.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -22,7 +22,7 @@ SLACKBUILD SHORT DESCRIPTION:  Azure Data Studio is a data management tool that 
 
 SLACKBUILD NAME: dns-lexicon
 SLACKBUILD LOCATION: ./dns-lexicon
-SLACKBUILD FILES: dns-lexicon.info dns-lexicon.SlackBuild slack-desc
+SLACKBUILD FILES: dns-lexicon.SlackBuild dns-lexicon.info slack-desc
 SLACKBUILD VERSION: 3.5.3
 SLACKBUILD DOWNLOAD: https://files.pythonhosted.org/packages/11/7e/04e2a9f08d100a57774261c00debebf7e90e7d088b2fc10ca2ba88c3a28b/dns-lexicon-3.5.3.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -34,7 +34,7 @@ SLACKBUILD SHORT DESCRIPTION:
 
 SLACKBUILD NAME: eyefi-config
 SLACKBUILD LOCATION: ./eyefi-config
-SLACKBUILD FILES: eyefi-config.info eyefi-config.SlackBuild slack-desc
+SLACKBUILD FILES: eyefi-config.SlackBuild eyefi-config.info slack-desc
 SLACKBUILD VERSION: 013
 SLACKBUILD DOWNLOAD: https://github.com/hansendc/eyefi-config/archive/eyefi-config-013.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -45,7 +45,7 @@ SLACKBUILD SHORT DESCRIPTION:  Eye-Fi Configuration Tool
 
 SLACKBUILD NAME: ffcast2
 SLACKBUILD LOCATION: ./ffcast2
-SLACKBUILD FILES: ffcast2.info ffcast2.SlackBuild slack-desc slack-required
+SLACKBUILD FILES: ffcast2.SlackBuild ffcast2.info slack-desc slack-required
 SLACKBUILD VERSION: 1.0
 SLACKBUILD DOWNLOAD: https://github.com/lolilolicon/FFcast2/archive/1.0.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -56,7 +56,7 @@ SLACKBUILD SHORT DESCRIPTION:  screencast one or more interactively selected reg
 
 SLACKBUILD NAME: figma-linux
 SLACKBUILD LOCATION: ./figma-linux
-SLACKBUILD FILES: figma-linux.info figma-linux.SlackBuild slack-desc
+SLACKBUILD FILES: figma-linux.SlackBuild figma-linux.info slack-desc
 SLACKBUILD VERSION: 0.9.3
 SLACKBUILD DOWNLOAD: https://github.com/Figma-Linux/figma-linux/releases/download/v0.9.3/figma-linux_0.9.3_linux_amd64.zip
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -67,7 +67,7 @@ SLACKBUILD SHORT DESCRIPTION:  The collaborative interface design tool.
 
 SLACKBUILD NAME: filezilla
 SLACKBUILD LOCATION: ./filezilla
-SLACKBUILD FILES: doinst.sh filezilla.info filezilla.SlackBuild slack-desc slack-required
+SLACKBUILD FILES: doinst.sh filezilla.SlackBuild filezilla.info slack-desc slack-required
 SLACKBUILD VERSION: 3.58.0
 SLACKBUILD DOWNLOAD: https://download.filezilla-project.org/client/FileZilla_3.58.0_src.tar.bz2
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -79,7 +79,7 @@ SLACKBUILD SHORT DESCRIPTION:  filezilla (the free FTP solution)
 
 SLACKBUILD NAME: fprintd
 SLACKBUILD LOCATION: ./fprintd
-SLACKBUILD FILES: doinst.sh extern.patch fprintd.info fprintd.SlackBuild slack-desc slack-required
+SLACKBUILD FILES: doinst.sh extern.patch fprintd.SlackBuild fprintd.info slack-desc slack-required
 SLACKBUILD VERSION: 0.9.0
 SLACKBUILD DOWNLOAD: https://gitlab.freedesktop.org/libfprint/fprintd/uploads/9dec4b63d1f00e637070be1477ce63c0/fprintd-0.9.0.tar.xz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -91,7 +91,7 @@ SLACKBUILD SHORT DESCRIPTION:
 
 SLACKBUILD NAME: freetds
 SLACKBUILD LOCATION: ./freetds
-SLACKBUILD FILES: doinst.sh freetds.info freetds.SlackBuild slack-desc
+SLACKBUILD FILES: doinst.sh freetds.SlackBuild freetds.info slack-desc
 SLACKBUILD VERSION: 1.3.9
 SLACKBUILD DOWNLOAD: http://ftp.freetds.org/pub/freetds/stable/freetds-1.3.9.tar.bz2
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -102,7 +102,7 @@ SLACKBUILD SHORT DESCRIPTION:  FreeTDS (free implementation of the Tabular Data 
 
 SLACKBUILD NAME: gearmand
 SLACKBUILD LOCATION: ./gearmand
-SLACKBUILD FILES: doinst.sh gearmand.info gearmand.SlackBuild rc.gearmand slack-desc slack-required
+SLACKBUILD FILES: doinst.sh gearmand.SlackBuild gearmand.info rc.gearmand slack-desc slack-required
 SLACKBUILD VERSION: 1.1.19.1
 SLACKBUILD DOWNLOAD: https://github.com/gearman/gearmand/releases/download/1.1.19.1/gearmand-1.1.19.1.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -113,7 +113,7 @@ SLACKBUILD SHORT DESCRIPTION:  Gearman(A framework to farm out work)
 
 SLACKBUILD NAME: globalprotect
 SLACKBUILD LOCATION: ./globalprotect
-SLACKBUILD FILES: doinst.sh globalprotect.info globalprotect.SlackBuild rc.globalprotect slack-desc
+SLACKBUILD FILES: doinst.sh globalprotect.SlackBuild globalprotect.info rc.globalprotect slack-desc
 SLACKBUILD VERSION: 5.2.5
 SLACKBUILD DOWNLOAD: PanGPLinux-5.2.5-c46.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -124,7 +124,7 @@ SLACKBUILD SHORT DESCRIPTION:  GlobalProtect (vpn client)
 
 SLACKBUILD NAME: google-chrome
 SLACKBUILD LOCATION: ./google-chrome
-SLACKBUILD FILES: doinst.sh google-chrome.info google-chrome.SlackBuild google-chrome-updater slack-desc
+SLACKBUILD FILES: doinst.sh google-chrome-updater google-chrome.SlackBuild google-chrome.info slack-desc
 SLACKBUILD VERSION: 90.0.4430.72
 SLACKBUILD DOWNLOAD: https://dl.google.com/linux/deb/pool/main/g/google-chrome-stable/google-chrome-stable_90.0.4430.72-1_amd64.deb
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -135,7 +135,7 @@ SLACKBUILD SHORT DESCRIPTION:  google-chrome (Google Chrome web browser)
 
 SLACKBUILD NAME: jsl
 SLACKBUILD LOCATION: ./jsl
-SLACKBUILD FILES: jsl.info js-lint jsl.SlackBuild slack-desc
+SLACKBUILD FILES: js-lint jsl.SlackBuild jsl.info slack-desc
 SLACKBUILD VERSION: 0.3.0
 SLACKBUILD DOWNLOAD: http://www.javascriptlint.com/download/jsl-0.3.0-src.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -146,7 +146,7 @@ SLACKBUILD SHORT DESCRIPTION:  JavaScript Lint
 
 SLACKBUILD NAME: libfilezilla
 SLACKBUILD LOCATION: ./libfilezilla
-SLACKBUILD FILES: libfilezilla.info libfilezilla.SlackBuild slack-desc
+SLACKBUILD FILES: libfilezilla.SlackBuild libfilezilla.info slack-desc
 SLACKBUILD VERSION: 0.36.0
 SLACKBUILD DOWNLOAD: https://download.filezilla-project.org/libfilezilla/libfilezilla-0.36.0.tar.bz2
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -157,7 +157,7 @@ SLACKBUILD SHORT DESCRIPTION:  libfilezilla (C++ Library)
 
 SLACKBUILD NAME: libfprint
 SLACKBUILD LOCATION: ./libfprint
-SLACKBUILD FILES: libfprint.info libfprint.SlackBuild slack-desc
+SLACKBUILD FILES: libfprint.SlackBuild libfprint.info slack-desc
 SLACKBUILD VERSION: 1.0
 SLACKBUILD DOWNLOAD: https://gitlab.freedesktop.org/libfprint/libfprint/uploads/aff93e9921d1cff53d7c070944952ff9/libfprint-1.0.tar.xz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -168,7 +168,7 @@ SLACKBUILD SHORT DESCRIPTION:  libfprint (library for support fingerprint reader
 
 SLACKBUILD NAME: monit
 SLACKBUILD LOCATION: ./monit
-SLACKBUILD FILES: doinst.sh monit.info monit.SlackBuild rc.monit slack-desc
+SLACKBUILD FILES: doinst.sh monit.SlackBuild monit.info rc.monit slack-desc
 SLACKBUILD VERSION: 5.31.0
 SLACKBUILD DOWNLOAD: https://mmonit.com/monit/dist/monit-5.31.0.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -179,7 +179,7 @@ SLACKBUILD SHORT DESCRIPTION:  monit (Unix System Management)
 
 SLACKBUILD NAME: msodbcsql
 SLACKBUILD LOCATION: ./msodbcsql
-SLACKBUILD FILES: doinst.sh msodbcsql.info msodbcsql.SlackBuild slack-desc slack-required
+SLACKBUILD FILES: doinst.sh msodbcsql.SlackBuild msodbcsql.info slack-desc slack-required
 SLACKBUILD VERSION: 17.8.1.1
 SLACKBUILD DOWNLOAD: https://packages.microsoft.com/debian/10/prod/pool/main/m/msodbcsql17/msodbcsql17_17.8.1.1-1_amd64.deb
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -191,7 +191,7 @@ SLACKBUILD SHORT DESCRIPTION:  Microsoft ODBC Driver 17 for SQL Server
 
 SLACKBUILD NAME: msvistawebfonts
 SLACKBUILD LOCATION: ./msvistawebfonts
-SLACKBUILD FILES: doinst.sh msvistawebfonts.info msvistawebfonts.SlackBuild slack-desc slack-required
+SLACKBUILD FILES: doinst.sh msvistawebfonts.SlackBuild msvistawebfonts.info slack-desc slack-required
 SLACKBUILD VERSION: 0.0.4
 SLACKBUILD DOWNLOAD: https://web.archive.org/web/20171225132744/http://download.microsoft.com/download/f/5/a/f5a3df76-d856-4a61-a6bd-722f52a5be26/PowerPointViewer.exe
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -203,7 +203,7 @@ SLACKBUILD SHORT DESCRIPTION:  msvistawebfonts
 
 SLACKBUILD NAME: nginx-work
 SLACKBUILD LOCATION: ./nginx-work
-SLACKBUILD FILES: doinst.sh monit.nginx nginx.conf nginx.logrotate nginx-work.info nginx-work.SlackBuild rc.nginx slack-conflicts slack-desc slack-required
+SLACKBUILD FILES: doinst.sh monit.nginx nginx-work.SlackBuild nginx-work.info nginx.conf nginx.logrotate rc.nginx slack-conflicts slack-desc slack-required
 SLACKBUILD VERSION: 1.21.6
 SLACKBUILD DOWNLOAD: https://nginx.org/download/nginx-1.21.6.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -214,7 +214,7 @@ SLACKBUILD SHORT DESCRIPTION:  nginx (http/imap/pop3 proxy)
 
 SLACKBUILD NAME: php-apcu
 SLACKBUILD LOCATION: ./php-apcu
-SLACKBUILD FILES: apcu.ini doinst.sh php-apcu.info php-apcu.SlackBuild slack-conflicts slack-desc slack-required
+SLACKBUILD FILES: apcu.ini doinst.sh php-apcu.SlackBuild php-apcu.info slack-conflicts slack-desc slack-required
 SLACKBUILD VERSION: 5.1.21
 SLACKBUILD DOWNLOAD: https://pecl.php.net/get/apcu-5.1.21.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -225,7 +225,7 @@ SLACKBUILD SHORT DESCRIPTION:  php-apcu (Advanced PHP Cache)
 
 SLACKBUILD NAME: php-gearman
 SLACKBUILD LOCATION: ./php-gearman
-SLACKBUILD FILES: doinst.sh gearman.ini php-gearman.info php-gearman.SlackBuild slack-desc slack-required
+SLACKBUILD FILES: doinst.sh gearman.ini php-gearman.SlackBuild php-gearman.info slack-desc slack-required
 SLACKBUILD VERSION: 2.1.0
 SLACKBUILD DOWNLOAD: https://pecl.php.net/get/gearman-2.1.0.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -236,7 +236,7 @@ SLACKBUILD SHORT DESCRIPTION:  The Gearman PHP Extension provides a wrapper to l
 
 SLACKBUILD NAME: php-memcache
 SLACKBUILD LOCATION: ./php-memcache
-SLACKBUILD FILES: doinst.sh memcache.ini php-memcache.info php-memcache.SlackBuild slack-desc slack-required
+SLACKBUILD FILES: doinst.sh memcache.ini php-memcache.SlackBuild php-memcache.info slack-desc slack-required
 SLACKBUILD VERSION: 4.0.5.2
 SLACKBUILD DOWNLOAD: https://pecl.php.net/get/memcache-4.0.5.2.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -247,7 +247,7 @@ SLACKBUILD SHORT DESCRIPTION:  php-memcache
 
 SLACKBUILD NAME: php-pdo-dblib
 SLACKBUILD LOCATION: ./php-pdo-dblib
-SLACKBUILD FILES: doinst.sh pdo-dblib.ini php-pdo-dblib.info php-pdo-dblib.SlackBuild slack-desc slack-required
+SLACKBUILD FILES: doinst.sh pdo-dblib.ini php-pdo-dblib.SlackBuild php-pdo-dblib.info slack-desc slack-required
 SLACKBUILD VERSION: 7.2.18
 SLACKBUILD DOWNLOAD: https://www.php.net/distributions/php-7.2.18.tar.bz2
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -258,7 +258,7 @@ SLACKBUILD SHORT DESCRIPTION:  php-pdo-dblib (php DBLIB pdo driver)
 
 SLACKBUILD NAME: php-pdo-sqlsrv
 SLACKBUILD LOCATION: ./php-pdo-sqlsrv
-SLACKBUILD FILES: doinst.sh pdo-sqlsrv.ini php-pdo-sqlsrv.info php-pdo-sqlsrv.SlackBuild slack-desc slack-required
+SLACKBUILD FILES: doinst.sh pdo-sqlsrv.ini php-pdo-sqlsrv.SlackBuild php-pdo-sqlsrv.info slack-desc slack-required
 SLACKBUILD VERSION: 5.10.0
 SLACKBUILD DOWNLOAD: https://pecl.php.net/get/pdo_sqlsrv-5.10.0.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -270,7 +270,7 @@ SLACKBUILD SHORT DESCRIPTION:  php-pdo-sqlsrv (binding for msodbcsqlrv)
 
 SLACKBUILD NAME: php-pinba
 SLACKBUILD LOCATION: ./php-pinba
-SLACKBUILD FILES: doinst.sh php-pinba.info php-pinba.SlackBuild pinba.ini slack-desc
+SLACKBUILD FILES: doinst.sh php-pinba.SlackBuild php-pinba.info pinba.ini slack-desc
 SLACKBUILD VERSION: 1.1.2
 SLACKBUILD DOWNLOAD: https://github.com/tony2001/pinba_extension/archive/RELEASE_1_1_2.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -282,7 +282,7 @@ SLACKBUILD SHORT DESCRIPTION:  php-pinba (Pinba Statistics Server - PHP part)
 
 SLACKBUILD NAME: php-readline
 SLACKBUILD LOCATION: ./php-readline
-SLACKBUILD FILES: doinst.sh php-readline.info php-readline.SlackBuild readline.ini slack-desc slack-required
+SLACKBUILD FILES: doinst.sh php-readline.SlackBuild php-readline.info readline.ini slack-desc slack-required
 SLACKBUILD VERSION: 7.2.0
 SLACKBUILD DOWNLOAD: http://www.php.net/distributions/php-7.2.0.tar.bz2
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -293,7 +293,7 @@ SLACKBUILD SHORT DESCRIPTION:  php-readline
 
 SLACKBUILD NAME: php-redis
 SLACKBUILD LOCATION: ./php-redis
-SLACKBUILD FILES: doinst.sh php-redis.info php-redis.SlackBuild redis.ini slack-desc slack-required
+SLACKBUILD FILES: doinst.sh php-redis.SlackBuild php-redis.info redis.ini slack-desc slack-required
 SLACKBUILD VERSION: 5.3.7
 SLACKBUILD DOWNLOAD: https://pecl.php.net/get/redis-5.3.7.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -304,7 +304,7 @@ SLACKBUILD SHORT DESCRIPTION:  php-redis
 
 SLACKBUILD NAME: php-sqlsrv
 SLACKBUILD LOCATION: ./php-sqlsrv
-SLACKBUILD FILES: doinst.sh php-sqlsrv.info php-sqlsrv.SlackBuild slack-desc slack-required sqlsrv.ini
+SLACKBUILD FILES: doinst.sh php-sqlsrv.SlackBuild php-sqlsrv.info slack-desc slack-required sqlsrv.ini
 SLACKBUILD VERSION: 5.10.0
 SLACKBUILD DOWNLOAD: https://pecl.php.net/get/sqlsrv-5.10.0.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -314,20 +314,9 @@ SLACKBUILD REQUIRES: msodbcsql
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php-sqlsrv (binding for msodbcsqlrv)
 
-SLACKBUILD NAME: phpstorm
-SLACKBUILD LOCATION: ./phpstorm
-SLACKBUILD FILES: phpstorm.info phpstorm.SlackBuild slack-desc
-SLACKBUILD VERSION: 213.6777.58
-SLACKBUILD DOWNLOAD: https://download.jetbrains.com/webide/PhpStorm-2021.3.2.tar.gz
-SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 09a65b5bd0ea953d5b5a809a5ac27a17
-SLACKBUILD MD5SUM_x86_64: 
-SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
-SLACKBUILD SHORT DESCRIPTION:  PhpIDE based on JetBrain's IDEA
-
 SLACKBUILD NAME: php-xdebug
 SLACKBUILD LOCATION: ./php-xdebug
-SLACKBUILD FILES: doinst.sh php-xdebug.info php-xdebug.SlackBuild slack-desc slack-required xdebug.ini
+SLACKBUILD FILES: doinst.sh php-xdebug.SlackBuild php-xdebug.info slack-desc slack-required xdebug.ini
 SLACKBUILD VERSION: 3.1.3
 SLACKBUILD DOWNLOAD: https://pecl.php.net/get/xdebug-3.1.3.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -336,9 +325,20 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php-xdebug
 
+SLACKBUILD NAME: phpstorm
+SLACKBUILD LOCATION: ./phpstorm
+SLACKBUILD FILES: phpstorm.SlackBuild phpstorm.info slack-desc
+SLACKBUILD VERSION: 213.6777.58
+SLACKBUILD DOWNLOAD: https://download.jetbrains.com/webide/PhpStorm-2021.3.2.tar.gz
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: 09a65b5bd0ea953d5b5a809a5ac27a17
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  PhpIDE based on JetBrain's IDEA
+
 SLACKBUILD NAME: python3-beautifulsoup
 SLACKBUILD LOCATION: ./python3-beautifulsoup
-SLACKBUILD FILES: python3-beautifulsoup.info python3-beautifulsoup.SlackBuild slack-desc
+SLACKBUILD FILES: python3-beautifulsoup.SlackBuild python3-beautifulsoup.info slack-desc
 SLACKBUILD VERSION: 4.9.3
 SLACKBUILD DOWNLOAD: https://files.pythonhosted.org/packages/6b/c3/d31704ae558dcca862e4ee8e8388f357af6c9d9acb0cad4ba0fbbd350d9a/beautifulsoup4-4.9.3.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -350,7 +350,7 @@ SLACKBUILD SHORT DESCRIPTION:  Pythonic idioms for iterating, searching, and mod
 
 SLACKBUILD NAME: python3-cffi
 SLACKBUILD LOCATION: ./python3-cffi
-SLACKBUILD FILES: python3-cffi.info python3-cffi.SlackBuild slack-desc
+SLACKBUILD FILES: python3-cffi.SlackBuild python3-cffi.info slack-desc
 SLACKBUILD VERSION: 1.14.4
 SLACKBUILD DOWNLOAD: https://files.pythonhosted.org/packages/66/6a/98e023b3d11537a5521902ac6b50db470c826c682be6a8c661549cb7717a/cffi-1.14.4.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -362,7 +362,7 @@ SLACKBUILD SHORT DESCRIPTION:  Foreign Function Interface for Python calling C c
 
 SLACKBUILD NAME: python3-cryptography
 SLACKBUILD LOCATION: ./python3-cryptography
-SLACKBUILD FILES: python3-cryptography.info python3-cryptography.SlackBuild slack-desc
+SLACKBUILD FILES: python3-cryptography.SlackBuild python3-cryptography.info slack-desc
 SLACKBUILD VERSION: 3.3.1
 SLACKBUILD DOWNLOAD: https://files.pythonhosted.org/packages/b7/82/f7a4ddc1af185936c1e4fa000942ffa8fb2d98cff26b75afa7b3c63391c4/cryptography-3.3.1.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -374,7 +374,7 @@ SLACKBUILD SHORT DESCRIPTION:  is a package which provides cryptographic recipes
 
 SLACKBUILD NAME: python3-dbusmock
 SLACKBUILD LOCATION: ./python3-dbusmock
-SLACKBUILD FILES: python3-dbusmock.info python3-dbusmock.SlackBuild slack-desc
+SLACKBUILD FILES: python3-dbusmock.SlackBuild python3-dbusmock.info slack-desc
 SLACKBUILD VERSION: 0.19
 SLACKBUILD DOWNLOAD: https://github.com/martinpitt/python-dbusmock/releases/download/0.19/python-dbusmock-0.19.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -385,7 +385,7 @@ SLACKBUILD SHORT DESCRIPTION:  library for easily create mock objects on D-Bus.
 
 SLACKBUILD NAME: python3-filelock
 SLACKBUILD LOCATION: ./python3-filelock
-SLACKBUILD FILES: python3-filelock.info python3-filelock.SlackBuild slack-desc
+SLACKBUILD FILES: python3-filelock.SlackBuild python3-filelock.info slack-desc
 SLACKBUILD VERSION: 3.0.12
 SLACKBUILD DOWNLOAD: https://github.com/benediktschmitt/py-filelock/archive/v3.0.12.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -396,7 +396,7 @@ SLACKBUILD SHORT DESCRIPTION:  module, which implements a platform independent f
 
 SLACKBUILD NAME: python3-pycparser
 SLACKBUILD LOCATION: ./python3-pycparser
-SLACKBUILD FILES: python3-pycparser.info python3-pycparser.SlackBuild slack-desc
+SLACKBUILD FILES: python3-pycparser.SlackBuild python3-pycparser.info slack-desc
 SLACKBUILD VERSION: 2.20
 SLACKBUILD DOWNLOAD: https://files.pythonhosted.org/packages/0f/86/e19659527668d70be91d0369aeaa055b4eb396b0f387a4f92293a20035bd/pycparser-2.20.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -407,7 +407,7 @@ SLACKBUILD SHORT DESCRIPTION:  is a complete parser of the C language, written i
 
 SLACKBUILD NAME: python3-requests-file
 SLACKBUILD LOCATION: ./python3-requests-file
-SLACKBUILD FILES: python3-requests-file.info python3-requests-file.SlackBuild slack-desc
+SLACKBUILD FILES: python3-requests-file.SlackBuild python3-requests-file.info slack-desc
 SLACKBUILD VERSION: 1.5.1
 SLACKBUILD DOWNLOAD: https://files.pythonhosted.org/packages/50/5c/d32aeed5c91e7970ee6ab8316c08d911c1d6044929408f6bbbcc763f8019/requests-file-1.5.1.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -418,7 +418,7 @@ SLACKBUILD SHORT DESCRIPTION:   is a transport adapter for use with the Requests
 
 SLACKBUILD NAME: python3-soupsieve
 SLACKBUILD LOCATION: ./python3-soupsieve
-SLACKBUILD FILES: python3-soupsieve.info python3-soupsieve.SlackBuild slack-desc
+SLACKBUILD FILES: python3-soupsieve.SlackBuild python3-soupsieve.info slack-desc
 SLACKBUILD VERSION: 2.1
 SLACKBUILD DOWNLOAD: https://files.pythonhosted.org/packages/58/5d/445e21e92345848305eecf473338e9ec7ed8905b99ea78415042060127fc/soupsieve-2.1.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -429,7 +429,7 @@ SLACKBUILD SHORT DESCRIPTION:  is a CSS selector library designed to be used wit
 
 SLACKBUILD NAME: python3-tldextract
 SLACKBUILD LOCATION: ./python3-tldextract
-SLACKBUILD FILES: python3-tldextract.info python3-tldextract.SlackBuild slack-desc
+SLACKBUILD FILES: python3-tldextract.SlackBuild python3-tldextract.info slack-desc
 SLACKBUILD VERSION: 3.1.0
 SLACKBUILD DOWNLOAD: https://files.pythonhosted.org/packages/42/9c/0340ebfabfbbb3a2868eaa1039479688ca52e1d7f433df4fae638941377f/tldextract-3.1.0.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -441,7 +441,7 @@ SLACKBUILD SHORT DESCRIPTION:  tldextract accurately separates the gTLD or ccTLD
 
 SLACKBUILD NAME: python3-yaml
 SLACKBUILD LOCATION: ./python3-yaml
-SLACKBUILD FILES: python3-yaml.info python3-yaml.SlackBuild slack-desc
+SLACKBUILD FILES: python3-yaml.SlackBuild python3-yaml.info slack-desc
 SLACKBUILD VERSION: 5.3.1
 SLACKBUILD DOWNLOAD: https://files.pythonhosted.org/packages/64/c2/b80047c7ac2478f9501676c988a5411ed5572f35d1beff9cae07d321512c/PyYAML-5.3.1.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -452,7 +452,7 @@ SLACKBUILD SHORT DESCRIPTION:  The next generation YAML parser and emitter for P
 
 SLACKBUILD NAME: redis
 SLACKBUILD LOCATION: ./redis
-SLACKBUILD FILES: doinst.sh rc.redis redis.info redis.logrotate redis.SlackBuild slack-desc
+SLACKBUILD FILES: doinst.sh rc.redis redis.SlackBuild redis.info redis.logrotate slack-desc
 SLACKBUILD VERSION: 6.2.6
 SLACKBUILD DOWNLOAD: https://github.com/redis/redis/archive/refs/tags/6.2.6.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -463,7 +463,7 @@ SLACKBUILD SHORT DESCRIPTION:  redis (Key-Value Store)
 
 SLACKBUILD NAME: rubymine
 SLACKBUILD LOCATION: ./rubymine
-SLACKBUILD FILES: rubymine.info rubymine.SlackBuild slack-desc
+SLACKBUILD FILES: rubymine.SlackBuild rubymine.info slack-desc
 SLACKBUILD VERSION: 2017.3.1
 SLACKBUILD DOWNLOAD: http://download.jetbrains.com/ruby/RubyMine-2017.3.1.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -474,7 +474,7 @@ SLACKBUILD SHORT DESCRIPTION:  RubyIDE based on JetBrain's IDEA
 
 SLACKBUILD NAME: unixODBC
 SLACKBUILD LOCATION: ./unixODBC
-SLACKBUILD FILES: doinst.sh README slack-conflicts slack-desc unixODBC.info unixODBC.SlackBuild
+SLACKBUILD FILES: README doinst.sh slack-conflicts slack-desc unixODBC.SlackBuild unixODBC.info
 SLACKBUILD VERSION: 2.3.9
 SLACKBUILD DOWNLOAD: http://www.unixodbc.org/unixODBC-2.3.9.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 

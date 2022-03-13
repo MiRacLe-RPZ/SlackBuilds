@@ -28,7 +28,7 @@ fi
 
 VERSION=${VERSION:-213.6777.58}
 SRCVER="2021.3.2"
-BUILD=${BUILD:-1}
+BUILD=${BUILD:-2}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
 
@@ -137,22 +137,7 @@ mkdir -p $PKG/opt/$PKGNAM $PKG/usr/bin $PKG/usr/share/applications $PKG/usr/shar
 
 cp -R * $PKG/opt/$PKGNAM
 
-rm -rf $PKG/opt/$PKGNAM/lib/libpty/{macosx,win}
 rm -f $PKG/opt/$PKGNAM/help/*ForMac*
-
-rm -f $PKG/opt/$PKGNAM/bin/fsnotifier-arm
-
-if [ "$ARCH" = "x86_64" ]; then
-    rm -f $PKG/opt/$PKGNAM/bin/libyjpagent-linux.so
-    rm -f $PKG/opt/$PKGNAM/bin/fsnotifier
-    rm -f $PKG/opt/$PKGNAM/bin/phpstorm.vmoptions
-    rm -rf $PKG/opt/$PKGNAM/lib/libpty/linux/x86
-else
-    rm -f $PKG/opt/$PKGNAM/bin/libyjpagent-linux64.so
-    rm -f $PKG/opt/$PKGNAM/bin/fsnotifier64
-    rm -f $PKG/opt/$PKGNAM/bin/phpstorm64.vmoptions
-    rm -rf $PKG/opt/$PKGNAM/lib/libpty/linux/x86_64
-fi
 
 (
 cat <<EOF
