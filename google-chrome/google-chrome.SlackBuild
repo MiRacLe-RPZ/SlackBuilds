@@ -34,7 +34,7 @@ if [ "x${VERSION}" == "x" ]; then
 fi
 
 RELEASE=${RELEASE:-stable}    # stable, beta, or unstable
-VERSION=${VERSION:-100.0.4896.88}
+VERSION=${VERSION:-100.0.4896.127}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}

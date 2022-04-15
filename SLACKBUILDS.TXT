@@ -125,10 +125,10 @@ SLACKBUILD SHORT DESCRIPTION:  GlobalProtect (vpn client)
 SLACKBUILD NAME: google-chrome
 SLACKBUILD LOCATION: ./google-chrome
 SLACKBUILD FILES: doinst.sh google-chrome-updater google-chrome.SlackBuild google-chrome.info slack-desc
-SLACKBUILD VERSION: 100.0.4896.88
-SLACKBUILD DOWNLOAD: https://dl.google.com/linux/deb/pool/main/g/google-chrome-stable/google-chrome-stable_100.0.4896.88-1_amd64.deb
+SLACKBUILD VERSION: 100.0.4896.127
+SLACKBUILD DOWNLOAD: https://dl.google.com/linux/deb/pool/main/g/google-chrome-stable/google-chrome-stable_100.0.4896.127-1_amd64.deb
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 899b888644a2f41082d860be1d6ffaa8
+SLACKBUILD MD5SUM: cd028552d1fc97a82dec0719cd521f06
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  google-chrome (Google Chrome web browser)
