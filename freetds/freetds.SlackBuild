@@ -31,8 +31,8 @@ if [ -f $INFOFILE ]; then
     source $INFOFILE
 fi
 
-VERSION=${VERSION:-1.3.9}
-BUILD=${BUILD:-3}
+VERSION=${VERSION:-1.3.10}
+BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
 
@@ -58,8 +58,7 @@ TMP=${TMP:-/tmp/rpz}
 PKG=$TMP/package-$PKGNAM
 OUTPUT=${OUTPUT:-/tmp}
 
-SRCURL=${DOWNLOAD:-http://ftp.freetds.org/pub/${PRGNAM}/stable/${PRGNAM}-${VERSION}.tar.bz2}
-SOURCE="${CWD}/$(basename $SRCURL)"
+SOURCE="${CWD}/${PRGNAM}-${VERSION}.tar.bz2"
 
 
 rm -rf $PKG
@@ -91,28 +90,6 @@ if [ -e $CWD/slack-conflicts ]; then
        }
     done
 fi
-
-dnl() {
-    SOURCE=$1
-    SRCURL=$2
-    if [ ! -e $SOURCE ]; then
-       if ! [ "x${SRCURL}" == "x" ]; then
-         echo "Downloading '$(basename ${SOURCE})'."
-         wget --no-check-certificate -nv -T 30 -O "${SOURCE}" "${SRCURL}" || true
-         if [ $? -ne 0 -o ! -s "${SOURCE}" ]; then
-            echo "Downloading '$(basename ${SOURCE})' failed... aborting the build."
-            mv -f "${SOURCE}" "${SOURCE}.FAIL"
-            exit 1
-         fi
-         else
-             echo "File '${SOURCE}' not available... aborting the build."
-             exit 1
-         fi
-    fi
-}
-
-dnl "${SOURCE}" "${SRCURL}"
-
 
 tar -vxjf ${SOURCE}
 cd $PRGNAM-$VERSION
