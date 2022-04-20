@@ -125,10 +125,10 @@ SLACKBUILD SHORT DESCRIPTION:  GlobalProtect (vpn client)
 SLACKBUILD NAME: google-chrome
 SLACKBUILD LOCATION: ./google-chrome
 SLACKBUILD FILES: doinst.sh google-chrome-updater google-chrome.SlackBuild google-chrome.info slack-desc
-SLACKBUILD VERSION: 90.0.4430.72
-SLACKBUILD DOWNLOAD: https://dl.google.com/linux/deb/pool/main/g/google-chrome-stable/google-chrome-stable_90.0.4430.72-1_amd64.deb
+SLACKBUILD VERSION: 100.0.4896.127
+SLACKBUILD DOWNLOAD: https://dl.google.com/linux/deb/pool/main/g/google-chrome-stable/google-chrome-stable_100.0.4896.127-1_amd64.deb
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 507766272f47469209b52d565b3d59bf
+SLACKBUILD MD5SUM: cd028552d1fc97a82dec0719cd521f06
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  google-chrome (Google Chrome web browser)
@@ -328,10 +328,10 @@ SLACKBUILD SHORT DESCRIPTION:  php-xdebug
 SLACKBUILD NAME: phpstorm
 SLACKBUILD LOCATION: ./phpstorm
 SLACKBUILD FILES: phpstorm.SlackBuild phpstorm.info slack-desc
-SLACKBUILD VERSION: 213.6777.58
-SLACKBUILD DOWNLOAD: https://download.jetbrains.com/webide/PhpStorm-2021.3.2.tar.gz
+SLACKBUILD VERSION: 221.5080.224
+SLACKBUILD DOWNLOAD: https://download.jetbrains.com/webide/PhpStorm-2022.1.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 09a65b5bd0ea953d5b5a809a5ac27a17
+SLACKBUILD MD5SUM: fc473c7ad7a8e8b76673812396cf3c66
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  PhpIDE based on JetBrain's IDEA
