@@ -65,18 +65,6 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  The collaborative interface design tool. 
 
-SLACKBUILD NAME: filezilla
-SLACKBUILD LOCATION: ./filezilla
-SLACKBUILD FILES: doinst.sh filezilla.SlackBuild filezilla.info slack-desc slack-required
-SLACKBUILD VERSION: 3.58.0
-SLACKBUILD DOWNLOAD: https://download.filezilla-project.org/client/FileZilla_3.58.0_src.tar.bz2
-SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 6b4fdd5fafec402f20854aead7d3c715
-SLACKBUILD MD5SUM_x86_64: 
-SLACKBUILD REQUIRES: wxGTK3 libfilezilla
-SLACKBUILD MAINTAINER: MiRacLe <miracle@rpz.name>
-SLACKBUILD SHORT DESCRIPTION:  filezilla (the free FTP solution)
-
 SLACKBUILD NAME: fprintd
 SLACKBUILD LOCATION: ./fprintd
 SLACKBUILD FILES: doinst.sh extern.patch fprintd.SlackBuild fprintd.info slack-desc slack-required
@@ -143,17 +131,6 @@ SLACKBUILD MD5SUM: 2b94ffa4fab07acabe0c5e73cd49bcdf
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  JavaScript Lint
-
-SLACKBUILD NAME: libfilezilla
-SLACKBUILD LOCATION: ./libfilezilla
-SLACKBUILD FILES: libfilezilla.SlackBuild libfilezilla.info slack-desc
-SLACKBUILD VERSION: 0.36.0
-SLACKBUILD DOWNLOAD: https://download.filezilla-project.org/libfilezilla/libfilezilla-0.36.0.tar.bz2
-SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 4b5379c334e866ff73c9572e12bd3ddd
-SLACKBUILD MD5SUM_x86_64: 
-SLACKBUILD MAINTAINER: MiRacLe <miracle@rpz.name>
-SLACKBUILD SHORT DESCRIPTION:  libfilezilla (C++ Library)
 
 SLACKBUILD NAME: libfprint
 SLACKBUILD LOCATION: ./libfprint
