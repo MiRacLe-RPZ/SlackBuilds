@@ -2,7 +2,7 @@
 
 # Slackware build script for jsl
 
-# Copyright 2012  MiRacLe.RPZ <miracle@rpz.name>
+# Copyright 2012-2022  MiRacLe.RPZ <miracle@rpz.name>
 # All rights reserved.
 #
 #   Permission to use, copy, modify, and distribute this software for
@@ -57,7 +57,6 @@ CWD=$(pwd)
 TMP=${TMP:-/tmp/rpz}
 PKG=$TMP/package-$PRGNAM
 OUTPUT=${OUTPUT:-/tmp}
-SOURCE="http://www.javascriptlint.com/download/${PRGNAM}-${VERSION}-src.tar.gz"
 
 set -e
 
@@ -66,13 +65,9 @@ mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf ${PRGNAM}-${VERSION}
 
-if [ ! -e $CWD/${PRGNAM}-${VERSION}-src.tar.gz ]; then
-    wget $SOURCE -O $CWD/${PRGNAM}-${VERSION}-src.tar.gz
-fi
+unzip $CWD/javascriptlint-code-r387-tags-0.3.0-src.zip
 
-tar zxf $CWD/${PRGNAM}-${VERSION}-src.tar.gz
-
-cd ${PRGNAM}-${VERSION}/src
+cd javascriptlint-code-r387-tags-0.3.0-src
 
 chown -R root:root .
 find . \

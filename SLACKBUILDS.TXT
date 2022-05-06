@@ -125,9 +125,9 @@ SLACKBUILD NAME: jsl
 SLACKBUILD LOCATION: ./jsl
 SLACKBUILD FILES: js-lint jsl.SlackBuild jsl.info slack-desc
 SLACKBUILD VERSION: 0.3.0
-SLACKBUILD DOWNLOAD: http://www.javascriptlint.com/download/jsl-0.3.0-src.tar.gz
+SLACKBUILD DOWNLOAD: https://sourceforge.net/code-snapshots/svn/j/ja/javascriptlint/code/javascriptlint-code-r387-tags-0.3.0-src.zip
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 2b94ffa4fab07acabe0c5e73cd49bcdf
+SLACKBUILD MD5SUM: dd240f699a224e8dbd9acb172e082abc
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  JavaScript Lint
