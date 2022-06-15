@@ -10,7 +10,7 @@ fi
 
 
 
-VERSION=${VERSION:-7.0.0}
+VERSION=${VERSION:-7.0.2}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 
@@ -77,26 +77,6 @@ if [ -e $CWD/slack-conflicts ]; then
     done
 fi
 
-dnl() {
-    SOURCE=$1
-    SRCURL=$2
-    if [ ! -e $SOURCE ]; then
-       if ! [ "x${SRCURL}" == "x" ]; then
-         echo "Downloading '$(basename ${SOURCE})'."
-         wget --no-check-certificate -nv -T 30 -O "${SOURCE}" "${SRCURL}" || true
-         if [ $? -ne 0 -o ! -s "${SOURCE}" ]; then
-            echo "Downloading '$(basename ${SOURCE})' failed... aborting the build."
-            mv -f "${SOURCE}" "${SOURCE}.FAIL"
-            exit 1
-         fi
-         else
-             echo "File '${SOURCE}' not available... aborting the build."
-             exit 1
-         fi
-    fi
-}
-
-dnl "${SOURCE}" "${SRCURL}"
 
 tar xvf ${SOURCE}
 cd $PRGNAM-$VERSION
