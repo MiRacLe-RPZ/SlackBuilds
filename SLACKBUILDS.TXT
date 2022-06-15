@@ -80,10 +80,10 @@ SLACKBUILD SHORT DESCRIPTION:
 SLACKBUILD NAME: freetds
 SLACKBUILD LOCATION: ./freetds
 SLACKBUILD FILES: doinst.sh freetds.SlackBuild freetds.info slack-desc
-SLACKBUILD VERSION: 1.3.10
-SLACKBUILD DOWNLOAD: http://ftp.freetds.org/pub/freetds/stable/freetds-1.3.10.tar.bz2
+SLACKBUILD VERSION: 1.3.12
+SLACKBUILD DOWNLOAD: http://ftp.freetds.org/pub/freetds/stable/freetds-1.3.12.tar.bz2
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 6e007b9cb66abbe48fda12b6c88cc863
+SLACKBUILD MD5SUM: e15ab5ee7f6cc70e23f6badf6729b5d8
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  FreeTDS (free implementation of the Tabular Data Stream protocol)
@@ -430,10 +430,10 @@ SLACKBUILD SHORT DESCRIPTION:  The next generation YAML parser and emitter for P
 SLACKBUILD NAME: redis
 SLACKBUILD LOCATION: ./redis
 SLACKBUILD FILES: doinst.sh rc.redis redis.SlackBuild redis.info redis.logrotate slack-desc
-SLACKBUILD VERSION: 7.0.0
-SLACKBUILD DOWNLOAD: https://github.com/redis/redis/archive/refs/tags/7.0.0.tar.gz
+SLACKBUILD VERSION: 7.0.2
+SLACKBUILD DOWNLOAD: https://github.com/redis/redis/archive/refs/tags/7.0.2.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 0473876855fed162903be15893d9ad2d
+SLACKBUILD MD5SUM: 35e507f4d7df4a080ab166b6ee7cba61
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  redis (Key-Value Store)
