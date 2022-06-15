@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Copyright 2019 - 2021 MiRacLe.RPZ
+# Copyright 2019 - 2022 MiRacLe.RPZ
 # All rights reserved.
 #
 # Redistribution and use of this script, with or without modification, is
@@ -28,7 +28,7 @@ if [ -f $INFOFILE ]; then
     source $INFOFILE
 fi
 
-VERSION=${VERSION:-17.8.1.1}
+VERSION=${VERSION:-17.9.1.1}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
@@ -46,8 +46,7 @@ TMP=${TMP:-/tmp/rpz}
 PKG=$TMP/package-$PKGNAM
 OUTPUT=${OUTPUT:-/tmp}
 
-SRCURL=${DOWNLOAD:-https://packages.microsoft.com/debian/10/prod/pool/main/m/msodbcsql17/msodbcsql17_17.7.2.1-1_amd64.deb}
-SOURCE="${CWD}/$(basename $SRCURL)"
+SOURCE="${CWD}/$(basename $DOWNLOAD)"
 
 
 check_installed() {
@@ -90,7 +89,7 @@ mv usr/share/doc/msodbcsql{17,}
 sed 's/msodbcsql17/msodbcsql/g' -i opt/microsoft/msodbcsql/etc/odbcinst.ini
 
 rm $PKG/opt/microsoft/msodbcsql/lib64/libmsodbcsql-17.so
-( cd usr/lib64 ; ln -sf /opt/microsoft/msodbcsql/lib64/libmsodbcsql-17.6.so.1.1 libmsodbcsql-17.so )
+( cd usr/lib64 ; ln -sf /opt/microsoft/msodbcsql/lib64/libmsodbcsql-17.9.so.1.1 libmsodbcsql-17.so )
 
 
 mkdir -p $PKG/install
