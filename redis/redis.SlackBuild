@@ -10,7 +10,7 @@ fi
 
 
 
-VERSION=${VERSION:-7.0.2}
+VERSION=${VERSION:-7.0.4}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 
@@ -118,7 +118,7 @@ cp $CWD/${PKGNAM}.logrotate $PKG/etc/logrotate.d/${PKGNAM}.new
 
 mkdir -p $PKG/usr/doc/$PKGNAM-$VERSION/SlackBuild
 cp -a \
-  00-RELEASENOTES BUGS CONTRIBUTING COPYING MANIFESTO README.md TLS.md \
+  00-RELEASENOTES BUGS CONTRIBUTING.md COPYING MANIFESTO README.md TLS.md \
   ${PKG}/usr/doc/$PKGNAM-$VERSION
 
 cp -a \
