@@ -12,10 +12,10 @@ SLACKBUILD SHORT DESCRIPTION:  Ansible (a ssh-based config management framework)
 SLACKBUILD NAME: azuredatastudio
 SLACKBUILD LOCATION: ./azuredatastudio
 SLACKBUILD FILES: azuredatastudio.SlackBuild azuredatastudio.info slack-desc
-SLACKBUILD VERSION: 1.37.0
-SLACKBUILD DOWNLOAD: https://sqlopsbuilds.azureedge.net/stable/d904740d93d7df76a0ba361f20e4351813b57645/azuredatastudio-linux-1.37.0.tar.gz
+SLACKBUILD VERSION: 1.39.1
+SLACKBUILD DOWNLOAD: https://sqlopsbuilds.azureedge.net/stable/7553f799e175f471b7590302dd65c997b838b29b/azuredatastudio-linux-1.39.1.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 9ddcda8bf785f76a15cf51e4e66f312f
+SLACKBUILD MD5SUM: c0ba8fbb465df908b153252e100bfd6a
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  Azure Data Studio is a data management tool that enables you to work 
