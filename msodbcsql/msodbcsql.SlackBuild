@@ -28,7 +28,7 @@ if [ -f $INFOFILE ]; then
     source $INFOFILE
 fi
 
-VERSION=${VERSION:-17.9.1.1}
+VERSION=${VERSION:-17.10.1.1}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
@@ -89,7 +89,7 @@ mv usr/share/doc/msodbcsql{17,}
 sed 's/msodbcsql17/msodbcsql/g' -i opt/microsoft/msodbcsql/etc/odbcinst.ini
 
 rm $PKG/opt/microsoft/msodbcsql/lib64/libmsodbcsql-17.so
-( cd usr/lib64 ; ln -sf /opt/microsoft/msodbcsql/lib64/libmsodbcsql-17.9.so.1.1 libmsodbcsql-17.so )
+( cd usr/lib64 ; ln -sf /opt/microsoft/msodbcsql/lib64/libmsodbcsql-17.10.so.1.1 libmsodbcsql-17.so )
 
 
 mkdir -p $PKG/install
