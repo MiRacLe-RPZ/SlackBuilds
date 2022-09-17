@@ -26,8 +26,9 @@ if [ -f $INFOFILE ]; then
     source $INFOFILE
 fi
 
-VERSION=${VERSION:-221.5080.224}
-SRCVER="2022.1"
+VERSION=${VERSION:-222.4167.33}
+SRCVER="2022.2.2"
+
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
@@ -44,11 +45,7 @@ CWD=$(pwd)
 TMP=${TMP:-/tmp/rpz}
 PKG=$TMP/package-$PKGNAM
 OUTPUT=${OUTPUT:-/tmp}
-
-
-SRCURL=${DOWNLOAD:-https://download-cf.jetbrains.com/webide/${PRGNAM}-${SRCVER}.tar.gz}
-SOURCE="${CWD}/$(basename $SRCURL)"
-
+SOURCE=${CWD}/${PRGNAM}-${SRCVER}.tar.gz
 
 rm -rf $PKG
 mkdir -p $TMP $PKG $OUTPUT
@@ -56,33 +53,6 @@ mkdir -p $TMP $PKG $OUTPUT
 cd $TMP
 rm -rf ${PRGNAM}-${VERSION}
 
-
-
-dnl() {
-    SOURCE=$1
-    SRCURL=$2
-    if [ ! -e $SOURCE ]; then
-       if ! [ "x${SRCURL}" == "x" ]; then
-         echo "Downloading '$(basename ${SOURCE})'."
-         wget --no-check-certificate -nv -T 30 -O "${SOURCE}" "${SRCURL}" || true
-         if [ $? -ne 0 -o ! -s "${SOURCE}" ]; then
-            echo "Downloading '$(basename ${SOURCE})' failed... aborting the build."
-            mv -f "${SOURCE}" "${SOURCE}.FAIL"
-            exit 1
-         fi
-         else
-             echo "File '${SOURCE}' not available... aborting the build."
-             exit 1
-         fi
-    fi
-    if ! [ "x${MD5SUM}" == "x" ]; then
-        CHECKSUM=`md5sum ${SOURCE}|cut -d' ' -f1`
-        if [ "x${CHECKSUM}" != "x${MD5SUM}" ]; then
-            echo "Checksum mismatch: expected - ${MD5SUM}, actual - ${CHECKSUM}"
-            exit 1
-        fi
-    fi
-}
 
 check_installed() {
     PACKAGE=${1}
@@ -118,10 +88,6 @@ if [ -e $CWD/slack-conflicts ]; then
        }
     done
 fi
-
-
-
-dnl "$SOURCE" "$SRCURL"
 
 tar zxf $SOURCE
 
