@@ -294,10 +294,10 @@ SLACKBUILD SHORT DESCRIPTION:  php-sqlsrv (binding for msodbcsqlrv)
 SLACKBUILD NAME: php-xdebug
 SLACKBUILD LOCATION: ./php-xdebug
 SLACKBUILD FILES: doinst.sh php-xdebug.SlackBuild php-xdebug.info slack-desc slack-required xdebug.ini
-SLACKBUILD VERSION: 3.1.5
-SLACKBUILD DOWNLOAD: https://pecl.php.net/get/xdebug-3.1.5.tgz
+SLACKBUILD VERSION: 3.1.6
+SLACKBUILD DOWNLOAD: https://pecl.php.net/get/xdebug-3.1.6.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: fe2b85050c8ac6ddba6ae431f5c6dade
+SLACKBUILD MD5SUM: 5b204d4a02f3723a87e2b9dec0046b22
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php-xdebug
