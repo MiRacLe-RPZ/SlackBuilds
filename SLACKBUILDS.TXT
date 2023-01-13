@@ -143,6 +143,17 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  libfprint (library for support fingerprint reader devices)
 
+SLACKBUILD NAME: mkcert
+SLACKBUILD LOCATION: ./mkcert
+SLACKBUILD FILES: doinst.sh mkcert.SlackBuild mkcert.info slack-desc
+SLACKBUILD VERSION: 1.4.4
+SLACKBUILD DOWNLOAD: https://github.com/FiloSottile/mkcert/releases/download/v1.4.4/mkcert-v1.4.4-linux-amd64
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: 2b626e0953c78a2b863dadcfaffb2b91
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  simple tool for making locally-trusted development certificates
+
 SLACKBUILD NAME: monit
 SLACKBUILD LOCATION: ./monit
 SLACKBUILD FILES: doinst.sh monit.SlackBuild monit.info rc.monit slack-desc
@@ -305,10 +316,10 @@ SLACKBUILD SHORT DESCRIPTION:  php-xdebug
 SLACKBUILD NAME: phpstorm
 SLACKBUILD LOCATION: ./phpstorm
 SLACKBUILD FILES: phpstorm.SlackBuild phpstorm.info slack-desc
-SLACKBUILD VERSION: 222.4167.33
-SLACKBUILD DOWNLOAD: https://download.jetbrains.com/webide/PhpStorm-2022.2.2.tar.gz
+SLACKBUILD VERSION: 223.8214.64
+SLACKBUILD DOWNLOAD: https://download.jetbrains.com/webide/PhpStorm-2022.3.1.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 19e82f68e4f21fe7f5a44962d978174c
+SLACKBUILD MD5SUM: b1219244dba1be1aa7b44798c36e4878
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  PhpIDE based on JetBrain's IDEA

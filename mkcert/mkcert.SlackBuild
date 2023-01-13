@@ -1,0 +1,74 @@
+#!/bin/sh
+
+PRGNAM=mkcert
+PKGNAM=${PKGNAM:-$(basename $0 .SlackBuild)}
+
+INFOFILE="$(pwd)/${PKGNAM}.info"
+if [ -f $INFOFILE ]; then
+    source $INFOFILE
+fi
+
+VERSION=${VERSION:-1.4.4}
+BUILD=${BUILD:-1}
+TAG=${TAG:-_rpz}
+PKGTYPE=${PKGTYPE:-txz}
+
+case "$(uname -m)" in
+  x86_64) DEBARCH="amd64" ; LIBDIRSUFFIX="64" ; ARCH=x86_64 ;;
+  *) echo "Package for $(uname -m) architecture is not available." ; exit 1 ;;
+esac
+
+
+CWD=$(pwd)
+TMP=${TMP:-/tmp/rpz}
+PKG=$TMP/package-$PKGNAM
+OUTPUT=${OUTPUT:-/tmp}
+
+SOURCE="${CWD}/$(basename $DOWNLOAD)"
+
+
+check_installed() {
+    PACKAGE=${1}
+    ls -1 /var/log/packages | grep "^${PACKAGE}-[^-]*-[^-]*-[^-]*$" >/dev/null 2>&1
+    return $?
+}
+
+if [ -e $CWD/slack-required ]; then
+    for REQ in `cat $CWD/slack-required|cut -f 1 -d " "`;do
+        check_installed "$REQ" || {
+           echo "${0##*/}: Required package '$REQ' not installed."
+           exit 1
+       }
+    done
+fi
+
+if [ -e $CWD/slack-conflicts ]; then
+    for REQ in `cat $CWD/slack-conflicts|cut -f 1 -d " "`;do
+        ! check_installed "$REQ" || {
+           echo "${0##*/}: Conflict package '$REQ' was installed."
+           exit 1
+       }
+    done
+fi
+
+rm -rf $PKG
+mkdir -p $TMP $PKG $OUTPUT
+cd $PKG
+
+mkdir -p $PKG/usr/bin
+cp ${SOURCE} ${PKG}/usr/bin/${PRGNAM}
+
+chmod 0755 ${PKG}/usr/bin/${PRGNAM}
+
+mkdir -p $PKG/install
+cp -a $CWD/slack-* $CWD/doinst.sh \
+  $PKG/install
+
+mkdir -p $PKG/usr/share/doc/${PKGNAM}/SlackBuild
+cp -a $CWD/$PKGNAM.SlackBuild $CWD/slack-* $CWD/doinst.sh \
+  $PKG/usr/share/doc/${PKGNAM}/SlackBuild
+
+cd $PKG
+
+/sbin/makepkg -l y -c n $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE
+
