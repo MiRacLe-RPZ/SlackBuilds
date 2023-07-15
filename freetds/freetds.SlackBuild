@@ -2,7 +2,7 @@
 
 # Slackware build script for freetds (required for build php-mssql, php-pdo-dblib)
 
-# Copyright 2012 - 2022 MiRacLe.RPZ <miracle@rpz.name>
+# Copyright 2012 - 2023 MiRacLe.RPZ <miracle@rpz.name>
 # All rights reserved.
 #
 #   Permission to use, copy, modify, and distribute this software for
@@ -31,7 +31,7 @@ if [ -f $INFOFILE ]; then
     source $INFOFILE
 fi
 
-VERSION=${VERSION:-1.3.13}
+VERSION=${VERSION:-1.3.18}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}

@@ -12,10 +12,10 @@ SLACKBUILD SHORT DESCRIPTION:  Ansible (a ssh-based config management framework)
 SLACKBUILD NAME: azuredatastudio
 SLACKBUILD LOCATION: ./azuredatastudio
 SLACKBUILD FILES: azuredatastudio.SlackBuild azuredatastudio.info slack-desc
-SLACKBUILD VERSION: 1.40.1
-SLACKBUILD DOWNLOAD: https://sqlopsbuilds.azureedge.net/stable/3a32679ab590c1023ab4de6f191769e7e127d25b/azuredatastudio-linux-1.40.1.tar.gz
+SLACKBUILD VERSION: 1.44.1
+SLACKBUILD DOWNLOAD: https://sqlopsbuilds.azureedge.net/stable/8f53a316fa00a98264f1ab119641cd540b5af25c/azuredatastudio-linux-1.44.1.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 34a385bd6e119909117e3819df084c8e
+SLACKBUILD MD5SUM: 49ba216a25b46be6b0c1c4e9094a6033
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  Azure Data Studio is a data management tool that enables you to work 
@@ -80,10 +80,10 @@ SLACKBUILD SHORT DESCRIPTION:
 SLACKBUILD NAME: freetds
 SLACKBUILD LOCATION: ./freetds
 SLACKBUILD FILES: doinst.sh freetds.SlackBuild freetds.info slack-desc
-SLACKBUILD VERSION: 1.3.13
-SLACKBUILD DOWNLOAD: http://ftp.freetds.org/pub/freetds/stable/freetds-1.3.13.tar.bz2
+SLACKBUILD VERSION: 1.3.18
+SLACKBUILD DOWNLOAD: http://ftp.freetds.org/pub/freetds/stable/freetds-1.3.18.tar.bz2
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 896625fbf9134811a1a2bc9b6fc5811d
+SLACKBUILD MD5SUM: 0dce9e25368a5434c35f7990aaebec35
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  FreeTDS (free implementation of the Tabular Data Stream protocol)
@@ -168,10 +168,10 @@ SLACKBUILD SHORT DESCRIPTION:  monit (Unix System Management)
 SLACKBUILD NAME: msodbcsql
 SLACKBUILD LOCATION: ./msodbcsql
 SLACKBUILD FILES: doinst.sh msodbcsql.SlackBuild msodbcsql.info slack-desc slack-required
-SLACKBUILD VERSION: 17.10.1.1
-SLACKBUILD DOWNLOAD: https://packages.microsoft.com/debian/10/prod/pool/main/m/msodbcsql17/msodbcsql17_17.10.1.1-1_amd64.deb
+SLACKBUILD VERSION: 17.10.4.1
+SLACKBUILD DOWNLOAD: https://packages.microsoft.com/debian/10/prod/pool/main/m/msodbcsql17/msodbcsql17_17.10.4.1-1_amd64.deb
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: e6ca02f1eaad8262e2620b7cbda047cb
+SLACKBUILD MD5SUM: cc62a9da087ab961aaff97288aaeb067
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD REQUIRES: unixODBC
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
@@ -225,10 +225,10 @@ SLACKBUILD SHORT DESCRIPTION:  The Gearman PHP Extension provides a wrapper to l
 SLACKBUILD NAME: php-memcache
 SLACKBUILD LOCATION: ./php-memcache
 SLACKBUILD FILES: doinst.sh memcache.ini php-memcache.SlackBuild php-memcache.info slack-desc slack-required
-SLACKBUILD VERSION: 4.0.5.2
-SLACKBUILD DOWNLOAD: https://pecl.php.net/get/memcache-4.0.5.2.tgz
+SLACKBUILD VERSION: 8.2
+SLACKBUILD DOWNLOAD: https://pecl.php.net/get/memcache-8.2.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: bfbf18bc0b410e4f70f13c8fcd965647
+SLACKBUILD MD5SUM: a89f7ea0603a6aa95cc4a6e454abd112
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php-memcache
@@ -247,10 +247,10 @@ SLACKBUILD SHORT DESCRIPTION:  php-pdo-dblib (php DBLIB pdo driver)
 SLACKBUILD NAME: php-pdo-sqlsrv
 SLACKBUILD LOCATION: ./php-pdo-sqlsrv
 SLACKBUILD FILES: doinst.sh pdo-sqlsrv.ini php-pdo-sqlsrv.SlackBuild php-pdo-sqlsrv.info slack-desc slack-required
-SLACKBUILD VERSION: 5.10.1
-SLACKBUILD DOWNLOAD: https://pecl.php.net/get/pdo_sqlsrv-5.10.1.tgz
+SLACKBUILD VERSION: 5.11.0
+SLACKBUILD DOWNLOAD: https://pecl.php.net/get/pdo_sqlsrv-5.11.0.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 7db86f687b7b69326c7931a31e7a49c3
+SLACKBUILD MD5SUM: b982cecb57852e83d4662c78aed7b0b5
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD REQUIRES: msodbcsql
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
@@ -293,10 +293,10 @@ SLACKBUILD SHORT DESCRIPTION:  php-redis
 SLACKBUILD NAME: php-sqlsrv
 SLACKBUILD LOCATION: ./php-sqlsrv
 SLACKBUILD FILES: doinst.sh php-sqlsrv.SlackBuild php-sqlsrv.info slack-desc slack-required sqlsrv.ini
-SLACKBUILD VERSION: 5.10.1
-SLACKBUILD DOWNLOAD: https://pecl.php.net/get/sqlsrv-5.10.1.tgz
+SLACKBUILD VERSION: 5.11.0
+SLACKBUILD DOWNLOAD: https://pecl.php.net/get/sqlsrv-5.11.0.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: f60a5eb24c1bba21d78cbbef05efe73d
+SLACKBUILD MD5SUM: 9f7bfb088cc2ec2b2ff37e9edef63920
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD REQUIRES: msodbcsql
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
@@ -305,10 +305,10 @@ SLACKBUILD SHORT DESCRIPTION:  php-sqlsrv (binding for msodbcsqlrv)
 SLACKBUILD NAME: php-xdebug
 SLACKBUILD LOCATION: ./php-xdebug
 SLACKBUILD FILES: doinst.sh php-xdebug.SlackBuild php-xdebug.info slack-desc slack-required xdebug.ini
-SLACKBUILD VERSION: 3.1.6
-SLACKBUILD DOWNLOAD: https://pecl.php.net/get/xdebug-3.1.6.tgz
+SLACKBUILD VERSION: 3.2.2
+SLACKBUILD DOWNLOAD: https://pecl.php.net/get/xdebug-3.2.2.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 5b204d4a02f3723a87e2b9dec0046b22
+SLACKBUILD MD5SUM: c44132e5f49e3b65dfef506b4c6ed2f7
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php-xdebug
@@ -316,10 +316,10 @@ SLACKBUILD SHORT DESCRIPTION:  php-xdebug
 SLACKBUILD NAME: phpstorm
 SLACKBUILD LOCATION: ./phpstorm
 SLACKBUILD FILES: phpstorm.SlackBuild phpstorm.info slack-desc
-SLACKBUILD VERSION: 223.8214.64
-SLACKBUILD DOWNLOAD: https://download.jetbrains.com/webide/PhpStorm-2022.3.1.tar.gz
+SLACKBUILD VERSION: 231.8109.199
+SLACKBUILD DOWNLOAD: https://download.jetbrains.com/webide/PhpStorm-2023.1.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: b1219244dba1be1aa7b44798c36e4878
+SLACKBUILD MD5SUM: b9c648d6425c7529312f36454c9c9a28
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  PhpIDE based on JetBrain's IDEA
