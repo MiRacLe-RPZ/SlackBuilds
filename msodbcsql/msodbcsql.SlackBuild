@@ -28,7 +28,7 @@ if [ -f $INFOFILE ]; then
     source $INFOFILE
 fi
 
-VERSION=${VERSION:-17.10.4.1}
+VERSION=${VERSION:-18.3.1.1}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
@@ -83,13 +83,13 @@ chmod -R u+w,go+r-w,a-s .
 # Make sure top-level perms are correct:
 chmod 0755 .
 
-mv opt/microsoft/msodbcsql{17,}
-mv usr/share/doc/msodbcsql{17,}
+mv opt/microsoft/msodbcsql{18,}
+mv usr/share/doc/msodbcsql{18,}
 
-sed 's/msodbcsql17/msodbcsql/g' -i opt/microsoft/msodbcsql/etc/odbcinst.ini
+sed 's/msodbcsql18/msodbcsql/g' -i opt/microsoft/msodbcsql/etc/odbcinst.ini
 
-rm $PKG/opt/microsoft/msodbcsql/lib64/libmsodbcsql-17.so
-( cd usr/lib64 ; ln -sf /opt/microsoft/msodbcsql/lib64/libmsodbcsql-17.10.so.1.1 libmsodbcsql-17.so )
+rm $PKG/opt/microsoft/msodbcsql/lib64/libmsodbcsql-18.so
+( cd usr/lib64 ; ln -sf /opt/microsoft/msodbcsql/lib64/libmsodbcsql-18.3.so.1.1 libmsodbcsql-18.so )
 
 
 mkdir -p $PKG/install
