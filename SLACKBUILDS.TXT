@@ -12,10 +12,10 @@ SLACKBUILD SHORT DESCRIPTION:  Ansible (a ssh-based config management framework)
 SLACKBUILD NAME: azuredatastudio
 SLACKBUILD LOCATION: ./azuredatastudio
 SLACKBUILD FILES: azuredatastudio.SlackBuild azuredatastudio.info slack-desc
-SLACKBUILD VERSION: 1.45.1
-SLACKBUILD DOWNLOAD: https://sqlopsbuilds.azureedge.net/stable/88c21b1725a3e79440027bdb7b5a55fb036be0e2/azuredatastudio-linux-1.45.1.tar.gz
+SLACKBUILD VERSION: 1.46.0
+SLACKBUILD DOWNLOAD: https://sqlopsbuilds.azureedge.net/stable/39449bbe88a0bc4092c9b205cad10d0a556beffd/azuredatastudio-linux-1.46.0.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 705c5ef033912545787e42687c666c73
+SLACKBUILD MD5SUM: 47f1ecafe7e1b69db4fb74ed0498d303
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  Azure Data Studio is a data management tool that enables you to work 
@@ -80,10 +80,10 @@ SLACKBUILD SHORT DESCRIPTION:
 SLACKBUILD NAME: freetds
 SLACKBUILD LOCATION: ./freetds
 SLACKBUILD FILES: doinst.sh freetds.SlackBuild freetds.info slack-desc
-SLACKBUILD VERSION: 1.3.20
-SLACKBUILD DOWNLOAD: http://ftp.freetds.org/pub/freetds/stable/freetds-1.3.20.tar.bz2
+SLACKBUILD VERSION: 1.4
+SLACKBUILD DOWNLOAD: https://github.com/FreeTDS/freetds/releases/download/R1_4/freetds-1.4.tar.bz2
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: d9e97e15f15328dc4ff6d72953f480e8
+SLACKBUILD MD5SUM: f112013b05e348ce145405dff72f0462
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  FreeTDS (free implementation of the Tabular Data Stream protocol)
@@ -282,10 +282,10 @@ SLACKBUILD SHORT DESCRIPTION:  php-readline
 SLACKBUILD NAME: php-redis
 SLACKBUILD LOCATION: ./php-redis
 SLACKBUILD FILES: doinst.sh php-redis.SlackBuild php-redis.info redis.ini slack-desc slack-required
-SLACKBUILD VERSION: 6.0.0
-SLACKBUILD DOWNLOAD: https://pecl.php.net/get/redis-6.0.0.tgz
+SLACKBUILD VERSION: 6.0.1
+SLACKBUILD DOWNLOAD: https://pecl.php.net/get/redis-6.0.1.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 64d776fa037a3949469ca12f0cd3161d
+SLACKBUILD MD5SUM: 77380f030761b81499fbec8bdaf0cdf9
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php-redis
