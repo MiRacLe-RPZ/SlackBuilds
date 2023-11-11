@@ -31,7 +31,7 @@ if [ -f $INFOFILE ]; then
     source $INFOFILE
 fi
 
-VERSION=${VERSION:-1.4}
+VERSION=${VERSION:-1.4.6}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
@@ -58,7 +58,7 @@ TMP=${TMP:-/tmp/rpz}
 PKG=$TMP/package-$PKGNAM
 OUTPUT=${OUTPUT:-/tmp}
 
-SOURCE="${CWD}/${PRGNAM}-${VERSION}.tar.bz2"
+SOURCE="${CWD}/${PRGNAM}-${VERSION}.tar.gz"
 
 
 rm -rf $PKG
@@ -91,7 +91,7 @@ if [ -e $CWD/slack-conflicts ]; then
     done
 fi
 
-tar -vxjf ${SOURCE}
+tar -zxf ${SOURCE}
 cd $PRGNAM-$VERSION
 chown -R root:root .
 find . \
