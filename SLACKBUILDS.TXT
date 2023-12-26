@@ -80,10 +80,10 @@ SLACKBUILD SHORT DESCRIPTION:
 SLACKBUILD NAME: freetds
 SLACKBUILD LOCATION: ./freetds
 SLACKBUILD FILES: doinst.sh freetds.SlackBuild freetds.info slack-desc
-SLACKBUILD VERSION: 1.4.6
-SLACKBUILD DOWNLOAD: https://www.freetds.org/files/stable/freetds-1.4.6.tar.gz
+SLACKBUILD VERSION: 1.4.10
+SLACKBUILD DOWNLOAD: https://www.freetds.org/files/stable/freetds-1.4.10.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: fda122d5c38acc964eb35c760b814a70
+SLACKBUILD MD5SUM: 91f633b8597995eb5da1ab9fa532cf5d
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  FreeTDS (free implementation of the Tabular Data Stream protocol)
