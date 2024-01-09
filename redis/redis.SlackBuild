@@ -10,7 +10,7 @@ fi
 
 
 
-VERSION=${VERSION:-7.2.3}
+VERSION=${VERSION:-7.2.4}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 
