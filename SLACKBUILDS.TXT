@@ -180,10 +180,10 @@ SLACKBUILD SHORT DESCRIPTION:  pachca (instant messenger)
 SLACKBUILD NAME: php-apcu
 SLACKBUILD LOCATION: ./php-apcu
 SLACKBUILD FILES: apcu.ini doinst.sh php-apcu.SlackBuild php-apcu.info slack-conflicts slack-desc slack-required
-SLACKBUILD VERSION: 5.1.23
-SLACKBUILD DOWNLOAD: https://pecl.php.net/get/apcu-5.1.23.tgz
+SLACKBUILD VERSION: 5.1.24
+SLACKBUILD DOWNLOAD: https://pecl.php.net/get/apcu-5.1.24.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: c6ed350a587cf2b376c1efeb31f68907
+SLACKBUILD MD5SUM: 65494e2af7c92bdef075030b9d9e2da4
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php-apcu (Advanced PHP Cache)
