@@ -34,10 +34,10 @@ SLACKBUILD SHORT DESCRIPTION:  Eye-Fi Configuration Tool
 SLACKBUILD NAME: figma-linux
 SLACKBUILD LOCATION: ./figma-linux
 SLACKBUILD FILES: figma-linux.SlackBuild figma-linux.info slack-desc
-SLACKBUILD VERSION: 0.11.0
-SLACKBUILD DOWNLOAD: https://github.com/Figma-Linux/figma-linux/releases/download/v0.11.0/figma-linux_0.11.0_linux_amd64.zip
+SLACKBUILD VERSION: 0.11.5
+SLACKBUILD DOWNLOAD: https://github.com/Figma-Linux/figma-linux/releases/download/v0.11.5/figma-linux_0.11.5_linux_amd64.zip
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 1d8afc98e645305bf1ce77e7f704aeff
+SLACKBUILD MD5SUM: 8a3c87a99e75bbb41c905ca949774b20
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  The collaborative interface design tool. 
