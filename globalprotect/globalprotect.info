@@ -1,7 +1,0 @@
-PRGNAM="globalprotect"
-VERSION="5.2.5"
-HOMEPAGE="https://docs.paloaltonetworks.com/globalprotect/5-1/globalprotect-app-user-guide/globalprotect-app-for-linux/use-the-globalprotect-app-for-linux.html"
-DOWNLOAD="PanGPLinux-5.2.5-c46.tgz"
-MD5SUM="a1776059f9cfa837f913cc030b032651"
-MAINTAINER="MiRacLe.RPZ"
-EMAIL="miracle@rpz.name"
