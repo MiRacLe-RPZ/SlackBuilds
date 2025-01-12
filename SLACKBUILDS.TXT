@@ -146,10 +146,10 @@ SLACKBUILD SHORT DESCRIPTION:  simple tool for making locally-trusted developmen
 SLACKBUILD NAME: monit
 SLACKBUILD LOCATION: ./monit
 SLACKBUILD FILES: doinst.sh monit.SlackBuild monit.info rc.monit slack-desc
-SLACKBUILD VERSION: 5.33.0
-SLACKBUILD DOWNLOAD: https://mmonit.com/monit/dist/monit-5.33.0.tar.gz
+SLACKBUILD VERSION: 5.34.4
+SLACKBUILD DOWNLOAD: https://mmonit.com/monit/dist/monit-5.34.4.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: fe6ce36f33ecd0291ff3245ae6f62d3d
+SLACKBUILD MD5SUM: 0a4980f1c1d9da55bc39afae2a49f9e2
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  monit (Unix System Management)
