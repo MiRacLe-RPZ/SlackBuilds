@@ -1,8 +1,0 @@
-PRGNAM="python3-dbusmock"
-VERSION="0.19"
-HOMEPAGE="https://github.com/martinpitt/python-dbusmock"
-DOWNLOAD="https://github.com/martinpitt/python-dbusmock/releases/download/0.19/python-dbusmock-0.19.tar.gz"
-MD5SUM="565aaae672e065c9c17e7fafd1843701"
-MAINTAINER="MiRacLe.RPZ"
-EMAIL="miracle@rpz.name"
-

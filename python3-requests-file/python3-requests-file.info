@@ -1,9 +1,0 @@
-PRGNAM="python3-requests-file"
-VERSION="1.5.1"
-HOMEPAGE="http://github.com/dashea/requests-file"
-DOWNLOAD="https://files.pythonhosted.org/packages/50/5c/d32aeed5c91e7970ee6ab8316c08d911c1d6044929408f6bbbcc763f8019/requests-file-1.5.1.tar.gz"
-MD5SUM="c96daf6b0c56687556e8a52748fd896c"
-REQUIRES=""
-MAINTAINER="MiRacLe.RPZ"
-EMAIL="miracle@rpz.name"
-

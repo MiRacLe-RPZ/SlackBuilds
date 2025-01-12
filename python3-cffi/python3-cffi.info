@@ -1,9 +1,0 @@
-PRGNAM="python3-cffi"
-VERSION="1.14.4"
-HOMEPAGE="http://cffi.readthedocs.org/"
-DOWNLOAD="https://files.pythonhosted.org/packages/66/6a/98e023b3d11537a5521902ac6b50db470c826c682be6a8c661549cb7717a/cffi-1.14.4.tar.gz"
-MD5SUM="ad3d8537b1516bad6bcdc36c458788be"
-REQUIRES="python3-pycparser"
-MAINTAINER="MiRacLe.RPZ"
-EMAIL="miracle@rpz.name"
-

@@ -1,9 +1,0 @@
-PRGNAM="dns-lexicon"
-VERSION="3.5.3"
-HOMEPAGE="https://github.com/AnalogJ/lexicon"
-DOWNLOAD="https://files.pythonhosted.org/packages/11/7e/04e2a9f08d100a57774261c00debebf7e90e7d088b2fc10ca2ba88c3a28b/dns-lexicon-3.5.3.tar.gz"
-MD5SUM="6bf294e7963963ae82ebf9f2e07b5533"
-REQUIRES="python3-tldextract,python3-yaml,python3-cryptography,python3-beautifulsoup"
-MAINTAINER="MiRacLe.RPZ"
-EMAIL="miracle@rpz.name"
-
