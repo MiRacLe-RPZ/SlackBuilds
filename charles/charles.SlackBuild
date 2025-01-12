@@ -1,0 +1,116 @@
+#!/bin/sh
+
+# Redistribution and use of this script, with or without modification, is
+# permitted provided that the following conditions are met:
+#
+# 1. Redistributions of this script must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+#
+# THIS SOFTWARE IS PROVIDED BY THE AUTHOR ''AS IS'' AND ANY EXPRESS OR IMPLIED
+# WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+# EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+# SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+# PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+# OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+# OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+# ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+set -e
+
+
+PKGNAM=$(basename $0 .SlackBuild)
+INFOFILE="$(pwd)/${PKGNAM}.info"
+if [ -f $INFOFILE ]; then
+    source $INFOFILE
+fi
+
+VERSION=${VERSION:-4.6.7}
+
+BUILD=${BUILD:-1}
+TAG=${TAG:-_rpz}
+PKGTYPE=${PKGTYPE:-txz}
+
+if [ -z "$ARCH" ]; then
+  case "$( uname -m )" in
+    i?86) ARCH=i486 ;;
+       *) ARCH=$( uname -m ) ;;
+  esac
+fi
+
+
+CWD=$(pwd)
+TMP=${TMP:-/tmp/rpz}
+PKG=$TMP/package-$PKGNAM
+OUTPUT=${OUTPUT:-/tmp}
+SOURCE=${CWD}/charles-proxy_${VERSION}_amd64.deb
+
+rm -rf $PKG
+mkdir -p $TMP $PKG $OUTPUT
+
+cd $TMP
+rm -rf ${PRGNAM}-${VERSION}
+
+
+check_installed() {
+    PACKAGE=${1}
+    ls -1 /var/log/packages | grep "^${PACKAGE}-[^-]*-[^-]*-[^-]*$" >/dev/null 2>&1
+    return $?
+}
+
+
+if [ -e $CWD/slack-required ]; then
+    IFS=$'\n'
+    for REQ in `cat $CWD/slack-required`; do
+        pkgs=(`echo $REQ| tr "|" "\n"`)
+        for pkg in "${!pkgs[@]}"; do
+            search_for=$(echo -n "${pkgs[pkg]}"|sed -e 's/^ *//' -e 's/ *$//'|awk '{print $1}')
+            check_installed ${search_for} || {
+                unset "pkgs[pkg]"
+            }
+        done
+        if [ 0 = ${#pkgs[@]} ]; then
+           echo "${0##*/}: Required package '$REQ' not installed."
+           exit 1
+        fi
+    done
+    unset IFS
+fi
+
+
+if [ -e $CWD/slack-conflicts ]; then
+    for REQ in `cat $CWD/slack-conflicts|cut -f 1 -d " "`;do
+        ! check_installed "$REQ" || {
+           echo "${0##*/}: Conflict package '$REQ' was installed."
+           exit 1
+       }
+    done
+fi
+
+
+rm -rf $PKG
+mkdir -p $TMP $PKG $OUTPUT
+cd $PKG
+ar p ${SOURCE} data.tar.zst | tar --use-compress-program=unzstd -xv || exit 1
+chown -R root:root .
+chmod -R u+w,go+r-w,a-s .
+
+
+mkdir -p $PKG/usr/doc/$PKGNAM-$VERSION/SlackBuild/
+cp -a $CWD/$PKGNAM.SlackBuild $CWD/slack-desc \
+   $PKG/usr/doc/$PKGNAM-$VERSION/SlackBuild/
+
+mkdir -p $PKG/install
+cat $CWD/slack-desc > $PKG/install/slack-desc
+
+if [ ! -e $CWD/slack-required ] && [ -x "$(which requiredbuilder 2>/dev/null)" ]; then
+  requiredbuilder -y -v -s $CWD $PKG
+fi
+
+[ -e $CWD/doinst.sh ] && cat $CWD/doinst.sh > $PKG/install/doinst.sh
+
+cd $PKG
+chown -R root:root $PKG
+
+/sbin/makepkg -l y -c n $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE

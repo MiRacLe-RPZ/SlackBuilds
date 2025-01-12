@@ -1,0 +1,7 @@
+PRGNAM="charles"
+VERSION="4.6.7"
+HOMEPAGE="https://www.charlesproxy.com/"
+DOWNLOAD="https://www.charlesproxy.com/packages/apt/pool/main/c/charles-proxy/charles-proxy_4.6.7_amd64.deb"
+MD5SUM="0cc7549e4121c22b63aa7b7ca54ed1d0"
+MAINTAINER="MiRacLe.RPZ"
+EMAIL="miracle@rpz.name"
