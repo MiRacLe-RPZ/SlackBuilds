@@ -191,10 +191,10 @@ SLACKBUILD SHORT DESCRIPTION:  php-apcu (Advanced PHP Cache)
 SLACKBUILD NAME: php-gearman
 SLACKBUILD LOCATION: ./php-gearman
 SLACKBUILD FILES: doinst.sh gearman.ini php-gearman.SlackBuild php-gearman.info slack-desc slack-required
-SLACKBUILD VERSION: 2.1.2
-SLACKBUILD DOWNLOAD: https://pecl.php.net/get/gearman-2.1.2.tgz
+SLACKBUILD VERSION: 2.1.4
+SLACKBUILD DOWNLOAD: https://pecl.php.net/get/gearman-2.1.4.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 92296c8e03ec01483e0a952aa3ea9175
+SLACKBUILD MD5SUM: 68b5f4fb2c80f1ee20e73f1c066b4ece
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  The Gearman PHP Extension provides a wrapper to libgearma
