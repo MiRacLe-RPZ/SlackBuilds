@@ -20,6 +20,17 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  Azure Data Studio is a data management tool that enables you to work 
 
+SLACKBUILD NAME: davmail
+SLACKBUILD LOCATION: ./davmail
+SLACKBUILD FILES: davmail.SlackBuild davmail.desktop davmail.info davmail.sh doinst.sh slack-desc
+SLACKBUILD VERSION: 6.2.2
+SLACKBUILD DOWNLOAD: https://sourceforge.net/projects/davmail/files/davmail/6.2.2/davmail-6.2.2-3546.zip
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: 9c017f41e43ff7d2df7c33a1e068d0da
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  DavMail is a POP/IMAP/SMTP/Caldav/Carddav/LDAP Exchange gateway
+
 SLACKBUILD NAME: eyefi-config
 SLACKBUILD LOCATION: ./eyefi-config
 SLACKBUILD FILES: eyefi-config.SlackBuild eyefi-config.info slack-desc
