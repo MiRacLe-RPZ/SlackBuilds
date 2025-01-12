@@ -1,7 +1,7 @@
 SlackBuilds
 ------------------
 
-All packages tested on -current(post 14.2) version
+All packages tested on -current(post 15.0) version
 
 
 0. Install [slapt-src](http://software.jaos.org/#slapt-src)
