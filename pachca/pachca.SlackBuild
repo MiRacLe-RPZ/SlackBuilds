@@ -1,0 +1,92 @@
+#!/bin/sh
+# Copyright 2024 MiRacLe.RPZ
+# All rights reserved.
+#
+# Redistribution and use of this script, with or without modification, is
+# permitted provided that the following conditions are met:
+#
+# 1. Redistributions of this script must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+#
+# THIS SOFTWARE IS PROVIDED BY THE AUTHOR ''AS IS'' AND ANY EXPRESS OR IMPLIED
+# WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+# EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+# SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+# PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+# OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+# OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+# ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+PRGNAM=pachca
+PKGNAM=${PKGNAM:-$(basename $0 .SlackBuild)}
+
+if [ "x${VERSION}" == "x" ]; then
+
+  INFOFILE="$(pwd)/${PKGNAM}.info"
+  if [ -f $INFOFILE ]; then
+    source $INFOFILE
+  fi
+fi
+
+VERSION=${VERSION:-2.5.0}
+BUILD=${BUILD:-1}
+TAG=${TAG:-_rpz}
+PKGTYPE=${PKGTYPE:-txz}
+
+
+case "$(uname -m)" in
+  x86_64) DEBARCH="amd64" ; LIBDIRSUFFIX="64" ; ARCH=x86_64 ;;
+  *) echo "Package for $(uname -m) architecture is not available." ; exit 1 ;;
+esac
+
+CWD=$(pwd)
+TMP=${TMP:-/tmp/rpz}
+PKG=$TMP/package-$PKGNAM
+OUTPUT=${OUTPUT:-/tmp}
+
+
+SRCURL=${DOWNLOAD:-https://desktop.pachca.com/linux/deb/x64}
+SOURCE="${CWD}/$(basename $SRCURL)"
+
+rm -rf $PKG
+mkdir -p $TMP $PKG $OUTPUT
+cd $PKG
+ar p ${SOURCE} data.tar.xz | tar xJv || exit 1
+chown -R root:root .
+chmod -R u+w,go+r-w,a-s .
+
+# Make sure top-level perms are correct:
+chmod 0755 .
+# This needs to be setuid root:
+chmod 4711 opt/pachca/chrome-sandbox
+# The cron job is for Debian/Ubuntu only:
+rm -rf etc
+
+mv $PKG/usr/share/man $PKG/usr/man
+# Compress manual pages:
+find $PKG/usr/man -type f -exec gzip -9 {} \;
+for i in $( find $PKG/usr/man -type l ) ; do
+  ln -s $( readlink $i ).gz $i.gz
+  rm $i
+done
+
+mkdir -p $PKG/install
+cp -a $CWD/slack-* $CWD/doinst.sh \
+  $PKG/install
+
+mkdir -p $PKG/usr/share/doc/${PKGNAM}-${VERSION}/SlackBuild
+mv $PKG/usr/share/doc/${PRGNAM}/* $PKG/usr/share/doc/${PKGNAM}-${VERSION}
+rm -rf $PKG/usr/share/doc/${PRGNAM}
+cp -a $CWD/$PKGNAM.SlackBuild $CWD/pachca-updater $CWD/slack-* $CWD/doinst.sh \
+  $PKG/usr/share/doc/${PKGNAM}-${VERSION}/SlackBuild
+
+mkdir -p $PKG/etc/cron.daily
+cp $CWD/pachca-updater $PKG/etc/cron.daily/${PKGNAM}-updater.new
+
+
+cd $PKG
+
+/sbin/makepkg -l y -c n $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE
+

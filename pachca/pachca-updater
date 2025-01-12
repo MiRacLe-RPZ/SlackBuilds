@@ -1,0 +1,18 @@
+#!/bin/sh
+
+CURRENT=$(strings /opt/Pachca/resources/app.asar |grep '"name": "Pachca' -a1|grep "version"|cut -d'"' -f4)
+
+LATEST=$(curl -w '%header{Content-Disposition}' 'https://desktop.pachca.com/linux/deb/x64' -H "range: bytes=1-100" -o /dev/null -s |cut -d'-' -f2)
+
+if [ "x$LATEST" != "x$CURRENT" ]; then
+    BUILD="1"
+    TAG="_auto"
+    PKGNAM=$(basename $0 -updater)
+    VERSION=${LATEST}
+    ( cd /usr/share/doc/pachca-${CURRENT}/SlackBuild \
+      && source ./pachca.SlackBuild \
+      && /sbin/upgradepkg /tmp/pachca-$LATEST-$ARCH-$BUILD$TAG.txz \
+      && cd /usr/share/doc/pachca-${CURRENT}/SlackBuild \
+      && rm $(basename `ls pachca-${LATEST}.deb`)
+    )
+fi

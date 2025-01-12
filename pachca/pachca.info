@@ -1,0 +1,14 @@
+PKGNAM="pachca"
+PRGNAM="pachca"
+VERSION="2.5.0"
+HOMEPAGE="https://pachca.com/"
+DOWNLOAD="https://desktop.pachca.com/linux/deb/x64"
+MD5SUM="b9c37426205360bdfaf5cd7785a45892"
+REQUIRES=""
+MAINTAINER="MiRacLe.RPZ"
+EMAIL="miracle@rpz.name"
+
+
+
+
+
