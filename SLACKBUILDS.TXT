@@ -90,10 +90,10 @@ SLACKBUILD SHORT DESCRIPTION:  FreeTDS (free implementation of the Tabular Data 
 SLACKBUILD NAME: gearmand
 SLACKBUILD LOCATION: ./gearmand
 SLACKBUILD FILES: doinst.sh gearmand.SlackBuild gearmand.info rc.gearmand slack-desc slack-required
-SLACKBUILD VERSION: 1.1.21
-SLACKBUILD DOWNLOAD: https://github.com/gearman/gearmand/releases/download/1.1.21/gearmand-1.1.21.tar.gz
+SLACKBUILD VERSION: 1.1.22
+SLACKBUILD DOWNLOAD: https://github.com/gearman/gearmand/releases/download/1.1.22/gearmand-1.1.22.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 2d5f44915dd389350f58956ef1f1b552
+SLACKBUILD MD5SUM: 2abb13bbaad34ad78133728fbfb02c32
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  Gearman(A framework to farm out work)
