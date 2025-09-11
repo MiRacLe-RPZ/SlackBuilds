@@ -34,10 +34,10 @@ SLACKBUILD SHORT DESCRIPTION:  Web debugging proxy application (Built using the 
 SLACKBUILD NAME: davmail
 SLACKBUILD LOCATION: ./davmail
 SLACKBUILD FILES: davmail.SlackBuild davmail.desktop davmail.info davmail.sh doinst.sh slack-desc
-SLACKBUILD VERSION: 6.2.2
-SLACKBUILD DOWNLOAD: https://sourceforge.net/projects/davmail/files/davmail/6.2.2/davmail-6.2.2-3546.zip
+SLACKBUILD VERSION: 6.4.0
+SLACKBUILD DOWNLOAD: https://sourceforge.net/projects/davmail/files/davmail/6.4.0/davmail-6.4.0-3755.zip
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 9c017f41e43ff7d2df7c33a1e068d0da
+SLACKBUILD MD5SUM: a3a04fd33ecf70bc330f8e7784517cbd
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  DavMail is a POP/IMAP/SMTP/Caldav/Carddav/LDAP Exchange gateway
