@@ -1,0 +1,7 @@
+PRGNAM="pkcs11-helper"
+VERSION="1.31.0"
+HOMEPAGE="https://github.com/OpenSC/pkcs11-helper"
+DOWNLOAD="https://github.com/OpenSC/pkcs11-helper/releases/download/pkcs11-helper-1.31.0/pkcs11-helper-1.31.0.tar.bz2"
+MD5SUM="f43fd6305b765cabfed79cc8986593d7"
+MAINTAINER="MiRacLe.RPZ"
+EMAIL="miracle@rpz.name"

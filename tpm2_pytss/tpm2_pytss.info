@@ -1,0 +1,7 @@
+PRGNAM="tpm2-pytss"
+VERSION="2.3.0"
+HOMEPAGE="https://github.com/tpm2-software/tpm2-pytss"
+DOWNLOAD="https://github.com/tpm2-software/tpm2-pytss/archive/refs/tags/2.3.0.tar.gz"
+MD5SUM="2b599f0caf7ac5664815571f7bb4f0a5"
+MAINTAINER="MiRacLe.RPZ"
+EMAIL="miracle@rpz.name"

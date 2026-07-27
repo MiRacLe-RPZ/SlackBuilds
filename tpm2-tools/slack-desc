@@ -1,0 +1,22 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':'.
+        |-----handy-ruler------------------------------------------------------|
+tpm2-tools: tpm2-tools (TPM2 command line tools)
+tpm2-tools:
+tpm2-tools: The tpm2-tools project provides a set of command line tools for
+tpm2-tools: interacting with TPM 2.0 hardware and simulators. These tools
+tpm2-tools: wrap the TCG TSS 2.0 Enhanced System API (ESAPI) and provide
+tpm2-tools: access to TPM functionality including key management, encryption,
+tpm2-tools: attestation, sealing, signing, random number generation, and
+tpm2-tools: measurement.
+tpm2-tools:
+tpm2-tools: Tools include: tpm2_createprimary, tpm2_create, tpm2_sign,
+tpm2-tools: tpm2_encryptdecrypt, tpm2_attestation, tpm2_pcrread, and many
+tpm2-tools: more.
+tpm2-tools:
+tpm2-tools: Homepage: https://github.com/tpm2-software/tpm2-tools
+tpm2-tools:

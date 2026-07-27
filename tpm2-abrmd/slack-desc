@@ -1,0 +1,20 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':'.
+        |-----handy-ruler------------------------------------------------------|
+tpm2-abrmd: tpm2-abrmd (TPM2 Access Broker & Resource Manager)
+tpm2-abrmd:
+tpm2-abrmd: The TPM2 Access Broker and Resource Manager Daemon (tpm2-abrmd) is a
+tpm2-abrmd: system daemon providing access to TPM2 hardware and simulator
+tpm2-abrmd: resources through a D-Bus API. It implements the TCG TSS TCTI
+tpm2-abrmd: (TPM Command Transmission Interface) for the tabrmd (TPM Access
+tpm2-abrmd: Broker & Resource Manager Daemon).
+tpm2-abrmd:
+tpm2-abrmd: Features include transparent resource management of TPM objects,
+tpm2-abrmd: session handling, and concurrent access for multiple consumers.
+tpm2-abrmd:
+tpm2-abrmd: Homepage: https://github.com/tpm2-software/tpm2-abrmd
+tpm2-abrmd:

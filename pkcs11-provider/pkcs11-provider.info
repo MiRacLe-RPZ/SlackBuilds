@@ -1,0 +1,7 @@
+PRGNAM="pkcs11-provider"
+VERSION="1.2.0"
+HOMEPAGE="https://github.com/openssl-projects/pkcs11-provider"
+DOWNLOAD="https://github.com/openssl-projects/pkcs11-provider/releases/download/v1.2.0/pkcs11-provider-1.2.0.tar.xz"
+MD5SUM="1dfcb7bacb111ac3b3d08d5e54d63da4"
+MAINTAINER="MiRacLe.RPZ"
+EMAIL="miracle@rpz.name"

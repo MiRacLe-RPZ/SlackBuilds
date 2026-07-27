@@ -1,0 +1,25 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':'.
+
+        |-----handy-ruler-----------------------------------------------------|
+tpm2-tss: tpm2-tss (TPM2 software stack)
+tpm2-tss:
+tpm2-tss: TPM2 software stack, a port of the TCG TSS 2.0 (Trusted Software
+tpm2-tss: Stack) specification. It provides SAPI, ESAPI, and FAPI
+tpm2-tss: implementations along with utility libraries for communication
+tpm2-tss: with TPM2 devices and simulators.
+tpm2-tss:
+tpm2-tss: This includes:
+tpm2-tss:   * System API (SAPI)
+tpm2-tss:   * Enhanced System API (ESAPI)
+tpm2-tss:   * Feature API (FAPI)
+tpm2-tss:   * Marshalling/Unmarshalling (MU)
+tpm2-tss:   * TCTI and TCTILDR modules
+tpm2-tss:   * TSS2 Policy library
+tpm2-tss:
+tpm2-tss: Homepage: https://github.com/tpm2-software/tpm2-tss
+tpm2-tss:

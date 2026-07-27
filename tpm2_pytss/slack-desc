@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':'.
+        |-----handy-ruler------------------------------------------------------|
+tpm2-pytss: tpm2-pytss (TPM 2.0 TSS Bindings for Python)
+tpm2-pytss:
+tpm2-pytss: Python bindings for the TPM 2.0 TSS (Trusted Software Stack).
+tpm2-pytss: Provides Pythonic access to ESAPI, FAPI, policy, and TCTI
+tpm2-pytss: interfaces via CFFI bindings.
+tpm2-pytss:
+tpm2-pytss: Features include key generation, signing, encryption, attestation,
+tpm2-pytss: NV storage, and policy-based access control for TPM 2.0.
+tpm2-pytss:
+tpm2-pytss: Homepage: https://github.com/tpm2-software/tpm2-pytss
+tpm2-pytss:
+tpm2-pytss:

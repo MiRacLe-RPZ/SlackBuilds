@@ -1,0 +1,7 @@
+PRGNAM="tpm2-tools"
+VERSION="5.7"
+HOMEPAGE="https://github.com/tpm2-software/tpm2-tools"
+DOWNLOAD="https://github.com/tpm2-software/tpm2-tools/releases/download/5.7/tpm2-tools-5.7.tar.gz"
+MD5SUM="3acb6305070f064c28c5284d39aa0b04"
+MAINTAINER="MiRacLe.RPZ"
+EMAIL="miracle@rpz.name"

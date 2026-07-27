@@ -1,0 +1,20 @@
+.include /etc/ssl/openssl.cnf
+
+# OpenSSL configuration for TPM2 PKCS#11 provider
+# Installed by tpm2_requirements package
+openssl_conf = openssl_init
+
+[openssl_init]
+providers = provider_sect
+
+[provider_sect]
+default = default_sect
+pkcs11 = pkcs11_sect
+
+[default_sect]
+activate = 1
+
+[pkcs11_sect]
+module = /usr/lib@LIBDIRSUFFIX@/ossl-modules/pkcs11.so
+pkcs11-module-path = /usr/lib@LIBDIRSUFFIX@/libtpm2_pkcs11.so
+activate = 1

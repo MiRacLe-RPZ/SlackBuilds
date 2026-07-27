@@ -1,0 +1,24 @@
+   # HOW TO EDIT THIS FILE:
+   # The "handy ruler" below makes it easier to edit a package description.
+   # Line up the first '|' above the ':' following the base package name, and
+   # the '|' on the right side marks the last column you can put a character in.
+   # You must make exactly 11 lines for the "|" sides to align (line 1 has the
+   # package name, and lines 2-11 have the description).  Lines 12 and 13 are
+   # used to specify the package name and any dependencies.
+
+       |-----handy-ruler------------------------------------------------------|
+tpm2_requirements: tpm2_requirements (TPM2 udev rules and system requirements)
+tpm2_requirements:
+tpm2_requirements: This package installs udev rules to grant the 'tss' group
+tpm2_requirements: read-write access to TPM2 devices (/dev/tpm[0-9]* and
+tpm2_requirements: /dev/tpmrm[0-9]*). It also ensures the 'tss' group exists on
+tpm2_requirements: the system.
+tpm2_requirements:
+tpm2_requirements: Includes OpenSSL config for pkcs11-provider + tpm2-pkcs11
+tpm2_requirements: (/etc/ssl/openssl_tpm.cnf) and /usr/bin/tpm2_check_requirements
+tpm2_requirements: — a helper to verify and install TPM2 dependencies.
+tpm2_requirements:
+tpm2_requirements: Required by: tpm2-tss, tpm2-abrmd, tpm2-tools, tpm2-pkcs11,
+tpm2_requirements: pkcs11-provider, openvpn-pkcs11
+tpm2_requirements:
+tpm2_requirements:

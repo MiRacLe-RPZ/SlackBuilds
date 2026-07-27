@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':'.
+        |-----handy-ruler------------------------------------------------------|
+tpm2-pkcs11: tpm2-pkcs11 (PKCS#11 interface for TPM2 hardware)
+tpm2-pkcs11:
+tpm2-pkcs11: A PKCS#11 implementation for the Trusted Platform Module 2.0
+tpm2-pkcs11: (TPM 2.0). It allows applications using the PKCS#11 interface to
+tpm2-pkcs11: transparently use TPM 2.0 for cryptographic operations including
+tpm2-pkcs11: key generation, signing, encryption, and decryption.
+tpm2-pkcs11:
+tpm2-pkcs11: Features include token objects backed by TPM 2.0 keys, support
+tpm2-pkcs11: for multiple TPM 2.0 implementations, and FAPI-backed tokens.
+tpm2-pkcs11:
+tpm2-pkcs11: Homepage: https://github.com/tpm2-software/tpm2-pkcs11
+tpm2-pkcs11:

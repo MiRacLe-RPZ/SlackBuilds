@@ -1,0 +1,112 @@
+#!/bin/sh
+# tpm2_check_requirements — check and install TPM2 dependencies
+# Usage: sudo tpm2_check_requirements
+
+set -euo pipefail
+
+pkg_installed() {
+  ls /var/log/packages/${1}-[0-9]* >/dev/null 2>&1
+}
+
+SBOPKG_PKGS="
+python3-pkgconfig
+python3-asn1crypto
+python3-pyasn1
+"
+
+SLAPTSRC_PKGS="
+tpm2_pytss
+tpm2-tss
+tpm2-tools
+tpm2-pkcs11
+tpm2-abrmd
+python_pkcs11
+pkcs11-helper
+pkcs11-provider
+"
+
+missing_sbopkg=
+missing_slaptsrc=
+
+echo "=== Проверка sbopkg ==="
+if ! command -v sbopkg >/dev/null 2>&1; then
+  echo "sbopkg не найден — пропускаю sbopkg-пакеты"
+  echo "  Установите вручную: sbopkg -i $SBOPKG_PKGS"
+else
+  for pkg in $SBOPKG_PKGS; do
+    if pkg_installed "$pkg"; then
+      echo "  [OK] $pkg"
+    else
+      echo "  [--] $pkg — устанавливаю..."
+      if sbopkg -i "$pkg"; then
+        echo "  [OK] $pkg установлен"
+      else
+        echo "  [!!] $pkg — ошибка установки"
+        missing_sbopkg="$missing_sbopkg $pkg"
+      fi
+    fi
+  done
+fi
+
+echo
+echo "=== Проверка slapt-src ==="
+if ! command -v slapt-src >/dev/null 2>&1; then
+  echo "slapt-src не найден — пропускаю slapt-src-пакеты"
+  echo "  Установите вручную: slapt-src --install $SLAPTSRC_PKGS"
+else
+  for pkg in $SLAPTSRC_PKGS; do
+    if pkg_installed "$pkg"; then
+      echo "  [OK] $pkg"
+    else
+      echo "  [--] $pkg — устанавливаю..."
+      if slapt-src --install "$pkg"; then
+        echo "  [OK] $pkg установлен"
+      else
+        echo "  [!!] $pkg — ошибка установки"
+        missing_slaptsrc="$missing_slaptsrc $pkg"
+      fi
+    fi
+  done
+fi
+
+echo
+echo "=== Проверка tpm2-abrmd ==="
+if pgrep -x tpm2-abrmd >/dev/null 2>&1; then
+  echo "  [OK] tpm2-abrmd запущен"
+else
+  if [ -x /etc/rc.d/rc.tpm2-abrmd ]; then
+    echo "  [--] tpm2-abrmd не запущен"
+    echo "  Запустите: sudo /etc/rc.d/rc.tpm2-abrmd start"
+    echo "  Добавьте в /etc/rc.d/rc.local для автозапуска:"
+    echo "    if [ -x /etc/rc.d/rc.tpm2-abrmd ]; then"
+    echo "      /etc/rc.d/rc.tpm2-abrmd start"
+    echo "    fi"
+  else
+    echo "  [!!] /etc/rc.d/rc.tpm2-abrmd не найден"
+  fi
+fi
+
+echo
+echo "=== Проверка OpenSSL config для pkcs11-provider ==="
+if [ -f /etc/ssl/openssl_tpm.cnf ]; then
+  echo "  [OK] /etc/ssl/openssl_tpm.cnf"
+  if [ -f /usr/lib64/ossl-modules/pkcs11.so ] || [ -f /usr/lib/ossl-modules/pkcs11.so ]; then
+    echo "  [OK] pkcs11-provider module found"
+  else
+    echo "  [!!] pkcs11-provider module (ossl-modules/pkcs11.so) не найден"
+  fi
+else
+  echo "  [!!] /etc/ssl/openssl_tpm.cnf не найден"
+  echo "  Установите пакет: upgradepkg --install-new /tmp/tpm2_requirements-*.txz"
+fi
+
+echo
+if [ -z "$missing_sbopkg$missing_slaptsrc" ]; then
+  echo "Все TPM2-зависимости установлены."
+  exit 0
+else
+  echo "Некоторые пакеты не установлены:"
+  [ -n "$missing_sbopkg" ] && echo "  sbopkg: $missing_sbopkg"
+  [ -n "$missing_slaptsrc" ] && echo "  slapt-src: $missing_slaptsrc"
+  exit 1
+fi

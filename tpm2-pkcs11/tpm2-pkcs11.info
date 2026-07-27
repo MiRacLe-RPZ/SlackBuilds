@@ -1,0 +1,7 @@
+PRGNAM="tpm2-pkcs11"
+VERSION="1.9.2"
+HOMEPAGE="https://github.com/tpm2-software/tpm2-pkcs11"
+DOWNLOAD="https://github.com/tpm2-software/tpm2-pkcs11/releases/download/1.9.2/tpm2-pkcs11-1.9.2.tar.gz"
+MD5SUM="3ae742ac0dab78f093a3b097b855cdad"
+MAINTAINER="MiRacLe.RPZ"
+EMAIL="miracle@rpz.name"

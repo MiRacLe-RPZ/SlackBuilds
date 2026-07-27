@@ -1,0 +1,7 @@
+PRGNAM="tpm2-abrmd"
+VERSION="3.0.0"
+HOMEPAGE="https://github.com/tpm2-software/tpm2-abrmd"
+DOWNLOAD="https://github.com/tpm2-software/tpm2-abrmd/releases/download/3.0.0/tpm2-abrmd-3.0.0.tar.gz"
+MD5SUM="4fd91ea71a48c8ee4d63ab77eb1f17ac"
+MAINTAINER="MiRacLe.RPZ"
+EMAIL="miracle@rpz.name"

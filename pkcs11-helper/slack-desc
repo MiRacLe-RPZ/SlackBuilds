@@ -1,0 +1,22 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':'.
+        |-----handy-ruler------------------------------------------------------|
+pkcs11-helper: pkcs11-helper (PKCS#11 helper library)
+pkcs11-helper:
+pkcs11-helper: pkcs11-helper is a library that simplifies the interaction with
+pkcs11-helper: PKCS#11 providers for end-user applications using a simple API
+pkcs11-helper: and OpenSSL interface. It supports multiple PKCS#11 modules,
+pkcs11-helper: token and certificate enumeration, and various crypto engines.
+pkcs11-helper:
+pkcs11-helper: Features include threading support, certificate handling,
+pkcs11-helper: slot event handling, and crypto engines for OpenSSL.
+pkcs11-helper:
+pkcs11-helper: It is used by OpenVPN and other applications requiring PKCS#11
+pkcs11-helper: smart card / hardware token support.
+pkcs11-helper:
+pkcs11-helper: Homepage: https://github.com/OpenSC/pkcs11-helper
+pkcs11-helper:

@@ -1,0 +1,19 @@
+.include /etc/ssl/openssl.cnf
+
+# OpenSSL config for TPM2 PKCS#11 key access via pkcs11-provider
+openssl_conf = openssl_init
+
+[openssl_init]
+providers = provider_sect
+
+[provider_sect]
+default = default_sect
+pkcs11 = pkcs11_sect
+
+[default_sect]
+activate = 1
+
+[pkcs11_sect]
+module = /usr/lib64/ossl-modules/pkcs11.so
+pkcs11-module-path = /usr/lib64/libtpm2_pkcs11.so
+activate = 1

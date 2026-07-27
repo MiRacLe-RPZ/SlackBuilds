@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':'.
+          |-----handy-ruler------------------------------------------------------|
+python-pkcs11: python-pkcs11 (PKCS#11 support for Python)
+python-pkcs11:
+python-pkcs11: Python bindings for PKCS#11 (Cryptoki) smart card and HSM
+python-pkcs11: tokens. Provides a high-level Pythonic interface to PKCS#11
+python-pkcs11: modules, supporting key generation, signing, encryption, and
+python-pkcs11: certificate management via cryptographic tokens.
+python-pkcs11:
+python-pkcs11: Includes a Cython-based C extension for performance.
+python-pkcs11:
+python-pkcs11: Homepage: https://python-pkcs11.readthedocs.io/
+python-pkcs11:
+python-pkcs11:

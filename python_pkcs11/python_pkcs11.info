@@ -1,0 +1,7 @@
+PRGNAM="python-pkcs11"
+VERSION="0.9.4"
+HOMEPAGE="https://github.com/pyauth/python-pkcs11"
+DOWNLOAD="https://github.com/pyauth/python-pkcs11/releases/download/v0.9.4/python_pkcs11-0.9.4.tar.gz"
+MD5SUM="838de49c618686f126517e6b6f87cf06"
+MAINTAINER="MiRacLe.RPZ"
+EMAIL="miracle@rpz.name"

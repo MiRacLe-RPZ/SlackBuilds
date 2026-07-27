@@ -1,0 +1,6 @@
+# udev rules for TPM2 device access (group tss)
+# The tss group must exist for these rules to work.
+# See doinst.sh for group creation on package install.
+
+KERNEL=="tpm[0-9]*", SUBSYSTEM=="tpm", OWNER="root", GROUP="tss", MODE="0660"
+KERNEL=="tpmrm[0-9]*", SUBSYSTEM=="tpmrm", OWNER="root", GROUP="tss", MODE="0660"

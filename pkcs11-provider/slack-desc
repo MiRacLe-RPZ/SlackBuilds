@@ -1,0 +1,11 @@
+pkcs11-provider: pkcs11-provider (OpenSSL provider for PKCS#11 modules)
+pkcs11-provider:
+pkcs11-provider: The pkcs11-provider is an OpenSSL 3.x provider that wraps PKCS#11
+pkcs11-provider: modules, making them available as OpenSSL providers. This allows
+pkcs11-provider: OpenSSL-based applications to use hardware tokens, smart cards,
+pkcs11-provider: and TPM-backed keys through the standard OpenSSL provider interface.
+pkcs11-provider:
+pkcs11-provider: Homepage: https://github.com/openssl-projects/pkcs11-provider
+pkcs11-provider:
+pkcs11-provider:
+pkcs11-provider:
