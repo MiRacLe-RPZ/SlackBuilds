@@ -1,5 +1,5 @@
 #!/bin/sh
-# Copyright 2024 MiRacLe.RPZ
+# Copyright 2024-2016 MiRacLe.RPZ
 # All rights reserved.
 #
 # Redistribution and use of this script, with or without modification, is
@@ -30,7 +30,7 @@ if [ "x${VERSION}" == "x" ]; then
   fi
 fi
 
-VERSION=${VERSION:-2.5.0}
+VERSION=${VERSION:-2.10.0}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
@@ -60,17 +60,9 @@ chmod -R u+w,go+r-w,a-s .
 # Make sure top-level perms are correct:
 chmod 0755 .
 # This needs to be setuid root:
-chmod 4711 opt/pachca/chrome-sandbox
+chmod 4711 opt/Pachca/chrome-sandbox
 # The cron job is for Debian/Ubuntu only:
 rm -rf etc
-
-mv $PKG/usr/share/man $PKG/usr/man
-# Compress manual pages:
-find $PKG/usr/man -type f -exec gzip -9 {} \;
-for i in $( find $PKG/usr/man -type l ) ; do
-  ln -s $( readlink $i ).gz $i.gz
-  rm $i
-done
 
 mkdir -p $PKG/install
 cp -a $CWD/slack-* $CWD/doinst.sh \

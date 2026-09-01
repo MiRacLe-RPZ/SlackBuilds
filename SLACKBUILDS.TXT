@@ -188,13 +188,24 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  nginx (http/imap/pop3 proxy)
 
+SLACKBUILD NAME: openvpn-pkcs11
+SLACKBUILD LOCATION: ./openvpn-pkcs11
+SLACKBUILD FILES: README doinst.sh openssl_tpm.cnf openvpn-pkcs11.SlackBuild openvpn-pkcs11.info openvpn-wrapper.sh rc.openvpn slack-desc slackware.conf wrapper-plan.md
+SLACKBUILD VERSION: 2.7.5
+SLACKBUILD DOWNLOAD: https://github.com/OpenVPN/openvpn/releases/download/v2.7.5/openvpn-2.7.5.tar.gz
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: 163f1c2c946b32d15c9971219a5bff45
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  openvpn (secure IP tunnel daemon)
+
 SLACKBUILD NAME: pachca
 SLACKBUILD LOCATION: ./pachca
-SLACKBUILD FILES: doinst.sh pachca-updater pachca.SlackBuild pachca.info slack-desc
-SLACKBUILD VERSION: 2.5.0
+SLACKBUILD FILES: doinst.sh pachca-updater pachca.SlackBuild pachca.info slack-desc x64
+SLACKBUILD VERSION: 2.10.0
 SLACKBUILD DOWNLOAD: https://desktop.pachca.com/linux/deb/x64
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: b9c37426205360bdfaf5cd7785a45892
+SLACKBUILD MD5SUM: 17789eecd0e99191183d367d059d6206
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  pachca (instant messenger)
@@ -323,6 +334,39 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  PhpIDE based on JetBrain's IDEA
 
+SLACKBUILD NAME: pkcs11-helper
+SLACKBUILD LOCATION: ./pkcs11-helper
+SLACKBUILD FILES: pkcs11-helper.SlackBuild pkcs11-helper.info slack-desc
+SLACKBUILD VERSION: 1.31.0
+SLACKBUILD DOWNLOAD: https://github.com/OpenSC/pkcs11-helper/releases/download/pkcs11-helper-1.31.0/pkcs11-helper-1.31.0.tar.bz2
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: f43fd6305b765cabfed79cc8986593d7
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  pkcs11-helper (PKCS#11 helper library)
+
+SLACKBUILD NAME: pkcs11-provider
+SLACKBUILD LOCATION: ./pkcs11-provider
+SLACKBUILD FILES: pkcs11-provider.SlackBuild pkcs11-provider.info slack-desc
+SLACKBUILD VERSION: 1.2.0
+SLACKBUILD DOWNLOAD: https://github.com/openssl-projects/pkcs11-provider/releases/download/v1.2.0/pkcs11-provider-1.2.0.tar.xz
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: 1dfcb7bacb111ac3b3d08d5e54d63da4
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  pkcs11-provider (OpenSSL provider for PKCS#11 modules)
+
+SLACKBUILD NAME: python_pkcs11
+SLACKBUILD LOCATION: ./python_pkcs11
+SLACKBUILD FILES: python_pkcs11.SlackBuild python_pkcs11.info slack-desc
+SLACKBUILD VERSION: 0.9.4
+SLACKBUILD DOWNLOAD: https://github.com/pyauth/python-pkcs11/releases/download/v0.9.4/python_pkcs11-0.9.4.tar.gz
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: 838de49c618686f126517e6b6f87cf06
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION: 
+
 SLACKBUILD NAME: redis
 SLACKBUILD LOCATION: ./redis
 SLACKBUILD FILES: doinst.sh rc.redis redis.SlackBuild redis.info redis.logrotate slack-desc
@@ -344,6 +388,72 @@ SLACKBUILD MD5SUM: 5edde2720500a8f2a8f59bc3511194e9
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  RubyIDE based on JetBrain's IDEA
+
+SLACKBUILD NAME: tpm2-abrmd
+SLACKBUILD LOCATION: ./tpm2-abrmd
+SLACKBUILD FILES: doinst.sh rc.tpm2-abrmd slack-desc tpm2-abrmd.SlackBuild tpm2-abrmd.info
+SLACKBUILD VERSION: 3.0.0
+SLACKBUILD DOWNLOAD: https://github.com/tpm2-software/tpm2-abrmd/releases/download/3.0.0/tpm2-abrmd-3.0.0.tar.gz
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: 4fd91ea71a48c8ee4d63ab77eb1f17ac
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  tpm2-abrmd (TPM2 Access Broker & Resource Manager)
+
+SLACKBUILD NAME: tpm2-pkcs11
+SLACKBUILD LOCATION: ./tpm2-pkcs11
+SLACKBUILD FILES: slack-desc tpm2-pkcs11.SlackBuild tpm2-pkcs11.info
+SLACKBUILD VERSION: 1.9.2
+SLACKBUILD DOWNLOAD: https://github.com/tpm2-software/tpm2-pkcs11/releases/download/1.9.2/tpm2-pkcs11-1.9.2.tar.gz
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: 3ae742ac0dab78f093a3b097b855cdad
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  tpm2-pkcs11 (PKCS#11 interface for TPM2 hardware)
+
+SLACKBUILD NAME: tpm2-tools
+SLACKBUILD LOCATION: ./tpm2-tools
+SLACKBUILD FILES: slack-desc tpm2-tools.SlackBuild tpm2-tools.info
+SLACKBUILD VERSION: 5.7
+SLACKBUILD DOWNLOAD: https://github.com/tpm2-software/tpm2-tools/releases/download/5.7/tpm2-tools-5.7.tar.gz
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: 3acb6305070f064c28c5284d39aa0b04
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  tpm2-tools (TPM2 command line tools)
+
+SLACKBUILD NAME: tpm2-tss
+SLACKBUILD LOCATION: ./tpm2-tss
+SLACKBUILD FILES: doinst.sh rc.tpm2-tss slack-desc tpm2-tss.SlackBuild tpm2-tss.info
+SLACKBUILD VERSION: 4.1.3
+SLACKBUILD DOWNLOAD: https://github.com/tpm2-software/tpm2-tss/releases/download/4.1.3/tpm2-tss-4.1.3.tar.gz
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: 018e7f53a7c2d6385c7a76cf7699019c
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  tpm2-tss (TPM2 software stack)
+
+SLACKBUILD NAME: tpm2_pytss
+SLACKBUILD LOCATION: ./tpm2_pytss
+SLACKBUILD FILES: slack-desc tpm2_pytss.SlackBuild tpm2_pytss.info
+SLACKBUILD VERSION: 2.3.0
+SLACKBUILD DOWNLOAD: https://github.com/tpm2-software/tpm2-pytss/archive/refs/tags/2.3.0.tar.gz
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: 2b599f0caf7ac5664815571f7bb4f0a5
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION: 
+
+SLACKBUILD NAME: tpm2_requirements
+SLACKBUILD LOCATION: ./tpm2_requirements
+SLACKBUILD FILES: 70-tpm2-udev.rules doinst.sh openssl_tpm.cnf.in slack-desc tpm2_check_requirements tpm2_requirements.SlackBuild tpm2_requirements.info
+SLACKBUILD VERSION: 1.1
+SLACKBUILD DOWNLOAD: 
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: 
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  tpm2_requirements (TPM2 udev rules and system requirements)
 
 SLACKBUILD NAME: unixODBC
 SLACKBUILD LOCATION: ./unixODBC
