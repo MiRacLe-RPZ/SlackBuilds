@@ -1,0 +1,4 @@
+# Runtime dependencies (may need to be installed separately):
+# - GTK4 (libgtk-4.so.1)
+# - libadwaita (libadwaita-1.so.0)
+# - WebKitGTK 6.0 (libwebkitgtk-6.0.so.4)

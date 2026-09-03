@@ -1,0 +1,7 @@
+PRGNAM="limux"
+VERSION="0.1.26"
+HOMEPAGE="https://github.com/am-will/limux"
+DOWNLOAD="https://github.com/am-will/limux/releases/download/v0.1.26/limux-0.1.26-linux-x86_64.tar.gz"
+MD5SUM="ab04a34d7a46fa17727afde1fcc88804"
+MAINTAINER="MiRacLe.RPZ"
+EMAIL="miracle@rpz.name"

@@ -1,0 +1,138 @@
+#!/bin/bash
+
+# Slackware build script for limux
+
+# Copyright 2026 MiRacLe.RPZ <miracle@rpz.name>
+# All rights reserved.
+#
+# Redistribution and use of this script, with or without modification, is
+# permitted provided that the following conditions are met:
+#
+# 1. Redistributions of this script must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+#
+#  THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED
+#  WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+#  MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO
+#  EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+#  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+#  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+#  OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+#  WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+#  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+#  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+set -e
+
+PRGNAM=limux
+PKGNAM=$(basename $0 .SlackBuild)
+
+INFOFILE="$(pwd)/${PKGNAM}.info"
+if [ -f $INFOFILE ]; then
+    source $INFOFILE
+fi
+
+VERSION=${VERSION:-0.1.26}
+BUILD=${BUILD:-1}
+TAG=${TAG:-_rpz}
+PKGTYPE=${PKGTYPE:-txz}
+
+if [ -z "$ARCH" ]; then
+  case "$( uname -m )" in
+    i?86) ARCH=i586 ;;
+    arm*) ARCH=arm ;;
+       *) ARCH=$( uname -m ) ;;
+  esac
+fi
+
+CWD=$(pwd)
+TMP=${TMP:-/tmp/rpz}
+PKG=$TMP/package-$PKGNAM
+OUTPUT=${OUTPUT:-/tmp}
+
+SOURCE=${CWD}/$(basename $DOWNLOAD)
+
+rm -rf $PKG
+mkdir -p $TMP $PKG $OUTPUT
+cd $TMP
+rm -rf $PRGNAM-$VERSION
+
+# Avoid writing to /root/.cache during build
+export HOME=$TMP/home-$PKGNAM
+mkdir -p $HOME
+
+tar xvf $SOURCE
+
+# The tarball extracts to limux-$VERSION-linux-x86_64
+if [ -d $PRGNAM-$VERSION-linux-x86_64 ]; then
+  cd $PRGNAM-$VERSION-linux-x86_64
+else
+  cd $PRGNAM-*
+fi
+
+chown -R root:root .
+find -L . \
+ \( -perm 777 -o -perm 775 -o -perm 750 -o -perm 711 -o -perm 555 \
+  -o -perm 511 \) -exec chmod 755 {} \; -o \
+ \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
+  -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
+
+chmod 755 limux libexec/limux/limux-host
+
+# Install CLI binary
+install -Dm755 limux $PKG/usr/bin/limux
+
+# Install host binary
+install -Dm755 libexec/limux/limux-host $PKG/usr/libexec/limux/limux-host
+
+# Install shared library (upstream renamed libghostty.so → libghostty-internal.so)
+install -Dm755 lib/libghostty-internal.so $PKG/usr/lib/limux/libghostty-internal.so
+
+# Install library path config
+mkdir -p $PKG/etc/ld.so.conf.d
+echo "/usr/lib/limux" > $PKG/etc/ld.so.conf.d/limux.conf.new
+
+# Install terminfo and themes
+if [ -d share/limux ]; then
+  mkdir -p $PKG/usr/share/limux
+  cp -r share/limux/* $PKG/usr/share/limux/
+fi
+
+# Install desktop file
+if [ -f share/applications/dev.limux.linux.desktop ]; then
+  mkdir -p $PKG/usr/share/applications
+  sed -e "s|^Exec=.*|Exec=/usr/bin/limux|" \
+      -e "s|^TryExec=.*|TryExec=/usr/bin/limux|" \
+      share/applications/dev.limux.linux.desktop \
+      > $PKG/usr/share/applications/limux.desktop
+  chmod 644 $PKG/usr/share/applications/limux.desktop
+fi
+
+# Install AppStream metadata
+install -Dm644 share/metainfo/dev.limux.linux.metainfo.xml \
+  $PKG/usr/share/metainfo/dev.limux.linux.metainfo.xml 2>/dev/null || true
+
+# Install icons
+if [ -d share/icons/hicolor ]; then
+  mkdir -p $PKG/usr/share/icons
+  cp -r share/icons/hicolor $PKG/usr/share/icons/
+fi
+
+find $PKG | xargs file | grep -e "executable" -e "shared object" | grep ELF \
+  | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
+
+mkdir -p $PKG/usr/doc/$PKGNAM-$VERSION
+cat $CWD/$PKGNAM.SlackBuild > $PKG/usr/doc/$PKGNAM-$VERSION/$PKGNAM.SlackBuild
+cat $CWD/slack-desc > $PKG/usr/doc/$PKGNAM-$VERSION/slack-desc
+
+mkdir -p $PKG/install
+cat $CWD/slack-desc > $PKG/install/slack-desc
+cat $CWD/doinst.sh > $PKG/install/doinst.sh
+
+# Update icon cache and desktop database on install
+if [ -x /usr/bin/gtk-update-icon-cache ]; then
+  gtk-update-icon-cache -f -t $PKG/usr/share/icons/hicolor 2>/dev/null || true
+fi
+
+cd $PKG
+/sbin/makepkg -l y -c n $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE

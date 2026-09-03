@@ -1,0 +1,20 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" makes it easier to edit a package description.
+# Line up the first '|' above the ':' following the base package name, and
+# the '|' on the right side marks the last column you can put a character in.
+# You must make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':' except on otherwise blank lines.
+
+      |-----handy-ruler------------------------------------------------------|
+limux: limux (GPU-accelerated terminal multiplexer)
+limux:
+limux: Limux is a GPU-accelerated terminal workspace manager for Linux,
+limux: powered by Ghostty's rendering engine. Linux counterpart to cmux
+limux: with workspace management, split panes, tabs, built-in browser,
+limux: and AI coding agent integration (notifications, hooks, agent-team).
+limux:
+limux: Includes: limux (CLI), limux-host (helper binary), shell integration
+limux: for bash/zsh/fish/elvish/nushell, and 500+ themes.
+limux:
+limux: Homepage: https://github.com/am-will/limux
+limux:

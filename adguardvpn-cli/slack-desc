@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" makes it easier to edit a package description.
+# Line up the first '|' above the ':' following the base package name, and
+# the '|' on the right side marks the last column you can put a character in.
+# You must make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':' except on otherwise blank lines.
+
+              |-----handy-ruler------------------------------------------------------|
+adguardvpn-cli: adguardvpn-cli (AdGuard VPN command-line client)
+adguardvpn-cli:
+adguardvpn-cli: Command-line interface for managing an AdGuard VPN connection
+adguardvpn-cli: on Linux. Supports TUN and SOCKS modes, location selection,
+adguardvpn-cli: site exclusions, and post-quantum cryptography options.
+adguardvpn-cli:
+adguardvpn-cli: This package ships the upstream proprietary binary release.
+adguardvpn-cli: Update via SlackBuild rebuild, not "adguardvpn-cli update".
+adguardvpn-cli:
+adguardvpn-cli: Homepage: https://github.com/AdguardTeam/AdGuardVPNCLI
+adguardvpn-cli:

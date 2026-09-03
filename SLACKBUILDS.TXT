@@ -1,3 +1,14 @@
+SLACKBUILD NAME: adguardvpn-cli
+SLACKBUILD LOCATION: ./adguardvpn-cli
+SLACKBUILD FILES: adguardvpn-cli.SlackBuild adguardvpn-cli.info slack-desc
+SLACKBUILD VERSION: 1.7.12
+SLACKBUILD DOWNLOAD: https://github.com/AdguardTeam/AdGuardVPNCLI/releases/download/v1.7.12-release/adguardvpn-cli-1.7.12-linux-x86_64.tar.gz
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: 2301d3e456494deab461fe2e09f59e5b
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  adguardvpn-cli (AdGuard VPN command-line client)
+
 SLACKBUILD NAME: ansible
 SLACKBUILD LOCATION: ./ansible
 SLACKBUILD FILES: ansible.SlackBuild ansible.info doinst.sh slack-desc slack-required
@@ -131,6 +142,17 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  libfprint (library for support fingerprint reader devices)
 
+SLACKBUILD NAME: limux
+SLACKBUILD LOCATION: ./limux
+SLACKBUILD FILES: doinst.sh limux.SlackBuild limux.info slack-desc slack-required
+SLACKBUILD VERSION: 0.1.26
+SLACKBUILD DOWNLOAD: https://github.com/am-will/limux/releases/download/v0.1.26/limux-0.1.26-linux-x86_64.tar.gz
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: ab04a34d7a46fa17727afde1fcc88804
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  limux (GPU-accelerated terminal multiplexer)
+
 SLACKBUILD NAME: mkcert
 SLACKBUILD LOCATION: ./mkcert
 SLACKBUILD FILES: doinst.sh mkcert.SlackBuild mkcert.info slack-desc
@@ -190,7 +212,7 @@ SLACKBUILD SHORT DESCRIPTION:  nginx (http/imap/pop3 proxy)
 
 SLACKBUILD NAME: openvpn-pkcs11
 SLACKBUILD LOCATION: ./openvpn-pkcs11
-SLACKBUILD FILES: README doinst.sh openssl_tpm.cnf openvpn-pkcs11.SlackBuild openvpn-pkcs11.info openvpn-wrapper.sh rc.openvpn slack-desc slackware.conf wrapper-plan.md
+SLACKBUILD FILES: README doinst.sh openssl_tpm.cnf openvpn-pkcs11.SlackBuild openvpn-pkcs11.info openvpn-wrapper.sh rc.openvpn slack-desc slackware.conf
 SLACKBUILD VERSION: 2.7.5
 SLACKBUILD DOWNLOAD: https://github.com/OpenVPN/openvpn/releases/download/v2.7.5/openvpn-2.7.5.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
@@ -201,7 +223,7 @@ SLACKBUILD SHORT DESCRIPTION:  openvpn (secure IP tunnel daemon)
 
 SLACKBUILD NAME: pachca
 SLACKBUILD LOCATION: ./pachca
-SLACKBUILD FILES: doinst.sh pachca-updater pachca.SlackBuild pachca.info slack-desc x64
+SLACKBUILD FILES: doinst.sh pachca-updater pachca.SlackBuild pachca.info slack-desc
 SLACKBUILD VERSION: 2.10.0
 SLACKBUILD DOWNLOAD: https://desktop.pachca.com/linux/deb/x64
 SLACKBUILD DOWNLOAD_x86_64: 

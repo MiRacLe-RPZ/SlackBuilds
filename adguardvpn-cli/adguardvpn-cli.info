@@ -1,0 +1,7 @@
+PRGNAM="adguardvpn-cli"
+VERSION="1.7.12"
+HOMEPAGE="https://github.com/AdguardTeam/AdGuardVPNCLI"
+DOWNLOAD="https://github.com/AdguardTeam/AdGuardVPNCLI/releases/download/v1.7.12-release/adguardvpn-cli-1.7.12-linux-x86_64.tar.gz"
+MD5SUM="2301d3e456494deab461fe2e09f59e5b"
+MAINTAINER="MiRacLe.RPZ"
+EMAIL="miracle@rpz.name"
