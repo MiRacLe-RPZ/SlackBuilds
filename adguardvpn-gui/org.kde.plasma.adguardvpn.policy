@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE policyconfig PUBLIC
+ "-//freedesktop//DTD PolicyKit Policy Configuration 1.0//EN"
+ "http://www.freedesktop.org/standards/PolicyKit/1/policyconfig.dtd">
+<policyconfig>
+  <vendor>AdGuard VPN GUI (Slackware)</vendor>
+  <vendor_url>https://github.com/ineedmypills/adguardvpn-gui</vendor_url>
+  <icon_name>adguardvpn-gui</icon_name>
+
+  <action id="org.kde.plasma.adguardvpn.manage">
+    <description>Manage AdGuard VPN connections and network settings</description>
+    <description xml:lang="ru">Управление подключениями и сетевыми настройками AdGuard VPN</description>
+    <message>Authentication is required to manage AdGuard VPN connection</message>
+    <message xml:lang="ru">Требуется аутентификация для управления подключением AdGuard VPN</message>
+    <defaults>
+      <allow_any>auth_admin</allow_any>
+      <allow_inactive>auth_admin</allow_inactive>
+      <allow_active>auth_admin</allow_active>
+    </defaults>
+    <annotate key="org.freedesktop.policykit.exec.path">/usr/bin/adguardvpn-cli</annotate>
+    <annotate key="org.freedesktop.policykit.exec.allow_gui">true</annotate>
+  </action>
+</policyconfig>

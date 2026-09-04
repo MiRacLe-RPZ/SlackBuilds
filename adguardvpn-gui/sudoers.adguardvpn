@@ -1,0 +1,21 @@
+# Sudoers drop-in for AdGuard VPN CLI (used by adguardvpn-gui)
+#
+# Upstream elevates TUN mode as:
+#   sudo -b env HOME=... DISPLAY=... DBUS_SESSION_BUS_ADDRESS=... \
+#     /usr/bin/adguardvpn-cli connect --no-fork ...
+#
+# sudo uses last-match-wins. If `sudo -l` shows your
+#   (ALL) PASSWD: ALL
+# AFTER these NOPASSWD lines, this drop-in loses — append the same
+# NOPASSWD commands to that PASSWD: ALL rule (see README note / SlackBuild).
+#
+# Installed as /etc/sudoers.d/zz-adguardvpn (mode 0440).
+
+Defaults env_keep += "DISPLAY WAYLAND_DISPLAY XAUTHORITY DBUS_SESSION_BUS_ADDRESS"
+Defaults env_keep += "HOME LANG LC_ALL"
+
+Cmnd_Alias ADGUARDVPN_CLI = /usr/bin/adguardvpn-cli, /usr/bin/adguardvpn-cli *
+Cmnd_Alias ADGUARDVPN_ENV = /usr/bin/env HOME=* DISPLAY=* DBUS_SESSION_BUS_ADDRESS=* /usr/bin/adguardvpn-cli *, \
+                            /bin/env HOME=* DISPLAY=* DBUS_SESSION_BUS_ADDRESS=* /usr/bin/adguardvpn-cli *
+
+%wheel ALL=(root) NOPASSWD: ADGUARDVPN_CLI, ADGUARDVPN_ENV

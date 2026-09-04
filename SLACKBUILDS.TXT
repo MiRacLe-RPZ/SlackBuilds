@@ -9,6 +9,17 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  adguardvpn-cli (AdGuard VPN command-line client)
 
+SLACKBUILD NAME: adguardvpn-gui
+SLACKBUILD LOCATION: ./adguardvpn-gui
+SLACKBUILD FILES: 10-adguardvpn.rules adguardvpn-gui.SlackBuild adguardvpn-gui.info doinst.sh org.kde.plasma.adguardvpn.policy slack-desc slack-required sudoers.adguardvpn
+SLACKBUILD VERSION: 1.0.0
+SLACKBUILD DOWNLOAD: https://github.com/ineedmypills/adguardvpn-gui/archive/v1.0.0/adguardvpn-gui-1.0.0.tar.gz
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: 510fd2ae500db9ded0083d7111c56aa1
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  adguardvpn-gui (AdGuard VPN GUI client for Linux)
+
 SLACKBUILD NAME: ansible
 SLACKBUILD LOCATION: ./ansible
 SLACKBUILD FILES: ansible.SlackBuild ansible.info doinst.sh slack-desc slack-required

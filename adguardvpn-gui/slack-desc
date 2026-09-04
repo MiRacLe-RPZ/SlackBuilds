@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" makes it easier to edit a package description.
+# Line up the first '|' above the ':' following the base package name, and
+# the '|' on the right side marks the last column you can put a character in.
+# You must make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':' except on otherwise blank lines.
+
+              |-----handy-ruler------------------------------------------------------|
+adguardvpn-gui: adguardvpn-gui (AdGuard VPN GUI client for Linux)
+adguardvpn-gui:
+adguardvpn-gui: Modern lightweight GUI for the official AdGuard VPN CLI, built in
+adguardvpn-gui: Rust with Slint. Supports quick connect, server browser with latency,
+adguardvpn-gui: split tunneling, TUN/SOCKS5 modes, tray integration, and i18n.
+adguardvpn-gui:
+adguardvpn-gui: Requires a logged-in adguardvpn-cli daemon at runtime.
+adguardvpn-gui: Unofficial community project, not affiliated with AdGuard.
+adguardvpn-gui:
+adguardvpn-gui: Homepage: https://github.com/ineedmypills/adguardvpn-gui
+adguardvpn-gui:

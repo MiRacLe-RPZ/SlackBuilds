@@ -1,0 +1,16 @@
+/* Polkit rules for AdGuard VPN CLI via pkexec.
+ *
+ * Do NOT return YES for wheel/sudo — that skips the password dialog.
+ * AUTH_ADMIN_KEEP prompts once and caches for the session.
+ */
+polkit.addRule(function(action, subject) {
+    if (action.id === "org.kde.plasma.adguardvpn.manage" ||
+        (action.id === "org.freedesktop.policykit.exec" &&
+         (action.lookup("program") === "/usr/bin/adguardvpn-cli" ||
+          action.lookup("program") === "/usr/local/bin/adguardvpn-cli"))) {
+        if (subject.isInGroup("wheel") || subject.isInGroup("sudo") ||
+            subject.isInGroup("network") || subject.isInGroup("adm")) {
+            return polkit.Result.AUTH_ADMIN_KEEP;
+        }
+    }
+});
