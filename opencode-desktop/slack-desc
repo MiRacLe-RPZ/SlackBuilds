@@ -1,0 +1,19 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':'.
+                |-----handy-ruler---------------------------------------------|
+opencode-desktop: opencode-desktop (Open source AI coding agent)
+opencode-desktop:
+opencode-desktop: OpenCode is an open source agent that helps you write and run
+opencode-desktop: code with any AI model.  This is the desktop (Electron)
+opencode-desktop: application.
+opencode-desktop:
+opencode-desktop:
+opencode-desktop:
+opencode-desktop:
+opencode-desktop:
+opencode-desktop: Homepage:  https://opencode.ai/
+opencode-desktop:

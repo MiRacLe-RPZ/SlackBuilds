@@ -221,6 +221,17 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  nginx (http/imap/pop3 proxy)
 
+SLACKBUILD NAME: opencode-desktop
+SLACKBUILD LOCATION: ./opencode-desktop
+SLACKBUILD FILES: doinst.sh opencode-desktop-updater opencode-desktop.SlackBuild opencode-desktop.info slack-desc
+SLACKBUILD VERSION: 1.18.29
+SLACKBUILD DOWNLOAD: https://opencode.ai/download/stable/linux-x64-deb
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: a175214d2300194778b76e7e3c79939f
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  opencode-desktop (Open source AI coding agent)
+
 SLACKBUILD NAME: openvpn-pkcs11
 SLACKBUILD LOCATION: ./openvpn-pkcs11
 SLACKBUILD FILES: README doinst.sh openssl_tpm.cnf openvpn-pkcs11.SlackBuild openvpn-pkcs11.info openvpn-wrapper.sh rc.openvpn slack-desc slackware.conf

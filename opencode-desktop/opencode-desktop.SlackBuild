@@ -1,0 +1,113 @@
+#!/bin/sh
+
+# Copyright 2026  MiRacLe.RPZ
+# All rights reserved.
+#
+# Redistribution and use of this script, with or without modification, is
+# permitted provided that the following conditions are met:
+#
+# 1. Redistributions of this script must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+#
+# THIS SOFTWARE IS PROVIDED BY THE AUTHOR ''AS IS'' AND ANY EXPRESS OR IMPLIED
+# WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+# EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+# SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+# PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+# OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+# OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+# ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+PRGNAM=opencode-desktop
+PKGNAM=${PKGNAM:-$(basename $0 .SlackBuild)}
+
+if [ "x${VERSION}" == "x" ]; then
+
+  INFOFILE="$(pwd)/${PKGNAM}.info"
+  if [ -f $INFOFILE ]; then
+    source $INFOFILE
+  fi
+fi
+
+VERSION=${VERSION:-1.18.29}
+BUILD=${BUILD:-2}
+TAG=${TAG:-_rpz}
+PKGTYPE=${PKGTYPE:-txz}
+
+case "$(uname -m)" in
+  x86_64) DEBARCH="amd64" ; LIBDIRSUFFIX="64" ; ARCH=x86_64 ;;
+  *) echo "Package for $(uname -m) architecture is not available." ; exit 1 ;;
+esac
+
+CWD=$(pwd)
+TMP=${TMP:-/tmp/rpz}
+PKG=$TMP/package-$PKGNAM
+OUTPUT=${OUTPUT:-/tmp}
+
+SRCURL=${DOWNLOAD:-https://opencode.ai/download/stable/linux-x64-deb}
+SOURCE="${CWD}/$(basename $SRCURL)"
+if [ ! -e $SOURCE ]; then
+  # Fall back to the filename used by the official download page:
+  SOURCE="${CWD}/opencode-desktop-linux-amd64.deb"
+fi
+
+if [ ! -e $SOURCE ]; then
+   echo "Downloading '$(basename ${SOURCE})'."
+   wget --no-check-certificate -nv -T 30 -O "${SOURCE}" "${SRCURL}" || true
+   if [ $? -ne 0 -o ! -s "${SOURCE}" ]; then
+      echo "Downloading '$(basename ${SOURCE})' failed... aborting the build."
+      mv -f "${SOURCE}" "${SOURCE}.FAIL"
+      exit 1
+   fi
+fi
+
+rm -rf $PKG
+mkdir -p $TMP $PKG $OUTPUT
+cd $PKG
+ar p ${SOURCE} data.tar.xz | tar xJv || exit 1
+chown -R root:root .
+chmod -R u+w,go+r-w,a-s .
+
+# Make sure top-level perms are correct:
+chmod 0755 .
+
+# Debian-only bits we do not want:
+rm -rf usr/share/doc
+
+# Install a convenient launcher:
+mkdir -p $PKG/usr/bin
+ln -s /opt/OpenCode/ai.opencode.desktop $PKG/usr/bin/${PKGNAM}
+
+# Fix the visible .desktop launcher to use absolute paths:
+sed -i -e "s#Exec=/opt/OpenCode/ai.opencode.desktop %U#Exec=/usr/bin/${PKGNAM} %U#" \
+  -e "s#Icon=ai.opencode.desktop#Icon=/usr/share/icons/hicolor/128x128/apps/ai.opencode.desktop.png#" \
+  $PKG/usr/share/applications/ai.opencode.desktop.desktop
+
+# The NoDisplay launcher is not needed:
+rm -f $PKG/usr/share/applications/opencode-desktop.desktop
+
+mkdir -p $PKG/install
+cp -a $CWD/slack-desc $CWD/doinst.sh $PKG/install
+
+mkdir -p $PKG/usr/doc/${PKGNAM}-${VERSION}/SlackBuild
+cp -a $CWD/$PKGNAM.SlackBuild $CWD/opencode-desktop-updater $CWD/slack-desc \
+  $PKG/usr/doc/${PKGNAM}-${VERSION}/SlackBuild
+cp -a $PKG/opt/OpenCode/LICENSE.electron.txt \
+  $PKG/usr/doc/${PKGNAM}-${VERSION}/
+
+mkdir -p $PKG/etc/cron.daily
+cp $CWD/${PKGNAM}-updater $PKG/etc/cron.daily/${PKGNAM}-updater.new
+
+cat > $PKG/usr/doc/${PKGNAM}-${VERSION}/${PKGNAM}.SlackBuild.copyright <<EOF
+OpenCode is distributed under the MIT license.
+The bundled Electron binary is distributed under its own license
+(see LICENSE.electron.txt and LICENSES.chromium.html in /opt/OpenCode).
+EOF
+
+chmod 755 $PKG/etc/cron.daily/${PKGNAM}-updater.new
+
+cd $PKG
+
+/sbin/makepkg -l y -c n $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE

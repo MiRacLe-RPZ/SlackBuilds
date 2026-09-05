@@ -1,0 +1,22 @@
+#!/bin/sh
+
+case "$(uname -m)" in
+  x86_64) ARCH=x86_64 ;;
+  *) echo "Package for $(uname -m) architecture is not available." ; exit 1 ;;
+esac
+
+LATEST=$(curl -s https://api.github.com/repos/anomalyco/opencode/releases/latest | grep '"tag_name"' | head -1 | cut -d'"' -f4 | sed 's/^v//')
+CURRENT=$(ls /var/log/packages/ 2>/dev/null | grep "^opencode-desktop-" | cut -d"-" -f3)
+
+if [ -n "$LATEST" ] && [ "x$LATEST" != "x$CURRENT" ]; then
+    BUILD="1"
+    TAG="_auto"
+    PKGNAM=$(basename $0 -updater)
+    VERSION=${LATEST}
+    ( cd /usr/share/doc/opencode-desktop-${CURRENT}/SlackBuild \
+      && source ./opencode-desktop.SlackBuild \
+      && /sbin/upgradepkg /tmp/opencode-desktop-$LATEST-$ARCH-$BUILD$TAG.txz \
+      && cd /usr/share/doc/opencode-desktop-${CURRENT}/SlackBuild \
+      && rm -f opencode-desktop-linux-amd64.deb linux-x64-deb
+    )
+fi
