@@ -411,6 +411,17 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION: 
 
+SLACKBUILD NAME: rebased
+SLACKBUILD LOCATION: ./rebased
+SLACKBUILD FILES: doinst.sh rebased-updater rebased.SlackBuild rebased.info slack-desc
+SLACKBUILD VERSION: 1.1.15
+SLACKBUILD DOWNLOAD: https://github.com/DetachHead/rebased/releases/download/1.1.15/rebased.tar.gz
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: d21da935aef200dfb503da07a3f518b2
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  rebased (git client based on the IntelliJ platform)
+
 SLACKBUILD NAME: redis
 SLACKBUILD LOCATION: ./redis
 SLACKBUILD FILES: doinst.sh rc.redis redis.SlackBuild redis.info redis.logrotate slack-desc
