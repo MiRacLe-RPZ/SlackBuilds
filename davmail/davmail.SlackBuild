@@ -8,7 +8,7 @@ if [ -f $INFOFILE ]; then
 fi
 
 PRGNAM=davmail
-VERSION=${VERSION:-6.4.0}
+VERSION=${VERSION:-6.8.1}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}

@@ -56,10 +56,10 @@ SLACKBUILD SHORT DESCRIPTION:  Web debugging proxy application (Built using the 
 SLACKBUILD NAME: davmail
 SLACKBUILD LOCATION: ./davmail
 SLACKBUILD FILES: davmail.SlackBuild davmail.desktop davmail.info davmail.sh doinst.sh slack-desc
-SLACKBUILD VERSION: 6.4.0
-SLACKBUILD DOWNLOAD: https://sourceforge.net/projects/davmail/files/davmail/6.4.0/davmail-6.4.0-3755.zip
+SLACKBUILD VERSION: 6.8.1
+SLACKBUILD DOWNLOAD: https://sourceforge.net/projects/davmail/files/davmail/6.8.1/davmail-6.8.1-4210.zip
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: a3a04fd33ecf70bc330f8e7784517cbd
+SLACKBUILD MD5SUM: ffa3d03fa274c0d9db326ab3b8866aff
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  DavMail is a POP/IMAP/SMTP/Caldav/Carddav/LDAP Exchange gateway
@@ -101,10 +101,10 @@ SLACKBUILD SHORT DESCRIPTION:
 SLACKBUILD NAME: freetds
 SLACKBUILD LOCATION: ./freetds
 SLACKBUILD FILES: doinst.sh freetds.SlackBuild freetds.info slack-desc
-SLACKBUILD VERSION: 1.4.24
-SLACKBUILD DOWNLOAD: https://www.freetds.org/files/stable/freetds-1.4.24.tar.gz
+SLACKBUILD VERSION: 1.5.19
+SLACKBUILD DOWNLOAD: https://www.freetds.org/files/stable/freetds-1.5.19.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 40fa1bb19035139b42415bb8b0eb8525
+SLACKBUILD MD5SUM: 979c67c11779701c9bda7118628d4797
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  FreeTDS (free implementation of the Tabular Data Stream protocol)
@@ -112,10 +112,10 @@ SLACKBUILD SHORT DESCRIPTION:  FreeTDS (free implementation of the Tabular Data 
 SLACKBUILD NAME: gearmand
 SLACKBUILD LOCATION: ./gearmand
 SLACKBUILD FILES: doinst.sh gearmand.SlackBuild gearmand.info rc.gearmand slack-desc slack-required
-SLACKBUILD VERSION: 1.1.22
-SLACKBUILD DOWNLOAD: https://github.com/gearman/gearmand/releases/download/1.1.22/gearmand-1.1.22.tar.gz
+SLACKBUILD VERSION: 2.0.0
+SLACKBUILD DOWNLOAD: https://github.com/gearman/gearmand/releases/download/2.0.0/gearmand-2.0.0.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 2abb13bbaad34ad78133728fbfb02c32
+SLACKBUILD MD5SUM: ac69f89f5057afccc5f4992284fbaf64
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  Gearman(A framework to farm out work)
@@ -156,10 +156,10 @@ SLACKBUILD SHORT DESCRIPTION:  libfprint (library for support fingerprint reader
 SLACKBUILD NAME: limux
 SLACKBUILD LOCATION: ./limux
 SLACKBUILD FILES: doinst.sh limux.SlackBuild limux.info slack-desc slack-required
-SLACKBUILD VERSION: 0.1.26
-SLACKBUILD DOWNLOAD: https://github.com/am-will/limux/releases/download/v0.1.26/limux-0.1.26-linux-x86_64.tar.gz
+SLACKBUILD VERSION: 0.1.28
+SLACKBUILD DOWNLOAD: https://github.com/am-will/limux/releases/download/v0.1.28/limux-0.1.28-linux-x86_64.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: ab04a34d7a46fa17727afde1fcc88804
+SLACKBUILD MD5SUM: 258f0713ebec6b8f7b0ecab858d13c5e
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  limux (GPU-accelerated terminal multiplexer)
@@ -178,10 +178,10 @@ SLACKBUILD SHORT DESCRIPTION:  simple tool for making locally-trusted developmen
 SLACKBUILD NAME: monit
 SLACKBUILD LOCATION: ./monit
 SLACKBUILD FILES: doinst.sh monit.SlackBuild monit.info rc.monit slack-desc
-SLACKBUILD VERSION: 5.35.2
-SLACKBUILD DOWNLOAD: https://mmonit.com/monit/dist/monit-5.35.2.tar.gz
+SLACKBUILD VERSION: 6.0.0
+SLACKBUILD DOWNLOAD: https://mmonit.com/monit/dist/monit-6.0.0.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: d89fee3644f542156d42d99d93026d6e
+SLACKBUILD MD5SUM: 5ff8668b131e4b6bbf0f2c9246565f6c
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  monit (Unix System Management)
@@ -189,10 +189,10 @@ SLACKBUILD SHORT DESCRIPTION:  monit (Unix System Management)
 SLACKBUILD NAME: msodbcsql
 SLACKBUILD LOCATION: ./msodbcsql
 SLACKBUILD FILES: doinst.sh msodbcsql.SlackBuild msodbcsql.info slack-desc slack-required
-SLACKBUILD VERSION: 18.3.2.1
-SLACKBUILD DOWNLOAD: https://packages.microsoft.com/debian/10/prod/pool/main/m/msodbcsql18/msodbcsql18_18.3.2.1-1_amd64.deb
+SLACKBUILD VERSION: 18.7.1.1
+SLACKBUILD DOWNLOAD: https://packages.microsoft.com/debian/13/prod/pool/main/m/msodbcsql18/msodbcsql18_18.7.1.1-1_amd64.deb
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 0a50d0ef214626f007fbf15edae23a87
+SLACKBUILD MD5SUM: 283ee086ce36ade28edfb8e7b06881be
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD REQUIRES: unixODBC
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
@@ -257,10 +257,10 @@ SLACKBUILD SHORT DESCRIPTION:  pachca (instant messenger)
 SLACKBUILD NAME: php-apcu
 SLACKBUILD LOCATION: ./php-apcu
 SLACKBUILD FILES: apcu.ini doinst.sh php-apcu.SlackBuild php-apcu.info slack-conflicts slack-desc slack-required
-SLACKBUILD VERSION: 5.1.24
-SLACKBUILD DOWNLOAD: https://pecl.php.net/get/apcu-5.1.24.tgz
+SLACKBUILD VERSION: 5.1.28
+SLACKBUILD DOWNLOAD: https://pecl.php.net/get/apcu-5.1.28.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 65494e2af7c92bdef075030b9d9e2da4
+SLACKBUILD MD5SUM: 69e2063b28725aca0ce6cac087a5d2bc
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php-apcu (Advanced PHP Cache)
@@ -268,10 +268,10 @@ SLACKBUILD SHORT DESCRIPTION:  php-apcu (Advanced PHP Cache)
 SLACKBUILD NAME: php-gearman
 SLACKBUILD LOCATION: ./php-gearman
 SLACKBUILD FILES: doinst.sh gearman.ini php-gearman.SlackBuild php-gearman.info slack-desc slack-required
-SLACKBUILD VERSION: 2.1.4
-SLACKBUILD DOWNLOAD: https://pecl.php.net/get/gearman-2.1.4.tgz
+SLACKBUILD VERSION: 2.2.1
+SLACKBUILD DOWNLOAD: https://pecl.php.net/get/gearman-2.2.1.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 68b5f4fb2c80f1ee20e73f1c066b4ece
+SLACKBUILD MD5SUM: b6e00113ce1a3568b64bd0f6fa2173d1
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  The Gearman PHP Extension provides a wrapper to libgearma
@@ -287,40 +287,17 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php-memcache
 
-SLACKBUILD NAME: php-pdo-dblib
-SLACKBUILD LOCATION: ./php-pdo-dblib
-SLACKBUILD FILES: doinst.sh pdo-dblib.ini php-pdo-dblib.SlackBuild php-pdo-dblib.info slack-desc slack-required
-SLACKBUILD VERSION: 7.2.18
-SLACKBUILD DOWNLOAD: https://www.php.net/distributions/php-7.2.18.tar.bz2
-SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: b78af289ec31aa0186e588c58838e635
-SLACKBUILD MD5SUM_x86_64: 
-SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
-SLACKBUILD SHORT DESCRIPTION:  php-pdo-dblib (php DBLIB pdo driver)
-
 SLACKBUILD NAME: php-pdo-sqlsrv
 SLACKBUILD LOCATION: ./php-pdo-sqlsrv
 SLACKBUILD FILES: doinst.sh pdo-sqlsrv.ini php-pdo-sqlsrv.SlackBuild php-pdo-sqlsrv.info slack-desc slack-required
-SLACKBUILD VERSION: 5.12.0
-SLACKBUILD DOWNLOAD: https://pecl.php.net/get/pdo_sqlsrv-5.12.0.tgz
+SLACKBUILD VERSION: 5.13.3
+SLACKBUILD DOWNLOAD: https://pecl.php.net/get/pdo_sqlsrv-5.13.3.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 0c06402f30a7f6f0b758ad55277ad950
+SLACKBUILD MD5SUM: 9181c9534b71652dfe485614c08ef47d
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD REQUIRES: msodbcsql
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php-pdo-sqlsrv (binding for msodbcsqlrv)
-
-SLACKBUILD NAME: php-pinba
-SLACKBUILD LOCATION: ./php-pinba
-SLACKBUILD FILES: doinst.sh php-pinba.SlackBuild php-pinba.info pinba.ini slack-desc
-SLACKBUILD VERSION: 1.1.2
-SLACKBUILD DOWNLOAD: https://github.com/tony2001/pinba_extension/archive/RELEASE_1_1_2.tar.gz
-SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: ab3d665482677608d8f03fd548cad9b3
-SLACKBUILD MD5SUM_x86_64: 
-SLACKBUILD REQUIRES: protobuf
-SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
-SLACKBUILD SHORT DESCRIPTION:  php-pinba (Pinba Statistics Server - PHP part)
 
 SLACKBUILD NAME: php-readline
 SLACKBUILD LOCATION: ./php-readline
@@ -336,10 +313,10 @@ SLACKBUILD SHORT DESCRIPTION:  php-readline
 SLACKBUILD NAME: php-redis
 SLACKBUILD LOCATION: ./php-redis
 SLACKBUILD FILES: doinst.sh php-redis.SlackBuild php-redis.info redis.ini slack-desc slack-required
-SLACKBUILD VERSION: 6.1.0
-SLACKBUILD DOWNLOAD: https://pecl.php.net/get/redis-6.1.0.tgz
+SLACKBUILD VERSION: 6.3.0
+SLACKBUILD DOWNLOAD: https://pecl.php.net/get/redis-6.3.0.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: ca6277b27ee35e1f55f9ad7f0b4df29b
+SLACKBUILD MD5SUM: ac080d0329813bb1291d0697c6f539c4
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php-redis
@@ -347,10 +324,10 @@ SLACKBUILD SHORT DESCRIPTION:  php-redis
 SLACKBUILD NAME: php-sqlsrv
 SLACKBUILD LOCATION: ./php-sqlsrv
 SLACKBUILD FILES: doinst.sh php-sqlsrv.SlackBuild php-sqlsrv.info slack-desc slack-required sqlsrv.ini
-SLACKBUILD VERSION: 5.12.0
-SLACKBUILD DOWNLOAD: https://pecl.php.net/get/sqlsrv-5.12.0.tgz
+SLACKBUILD VERSION: 5.13.3
+SLACKBUILD DOWNLOAD: https://pecl.php.net/get/sqlsrv-5.13.3.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: e62485cbbcb564f4a55ab8eae40df6a6
+SLACKBUILD MD5SUM: e8fa61f9eb27e609b248d54083403ab1
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD REQUIRES: msodbcsql
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
@@ -359,10 +336,10 @@ SLACKBUILD SHORT DESCRIPTION:  php-sqlsrv (binding for msodbcsqlrv)
 SLACKBUILD NAME: php-xdebug
 SLACKBUILD LOCATION: ./php-xdebug
 SLACKBUILD FILES: doinst.sh php-xdebug.SlackBuild php-xdebug.info slack-desc slack-required xdebug.ini
-SLACKBUILD VERSION: 3.4.1
-SLACKBUILD DOWNLOAD: https://pecl.php.net/get/xdebug-3.4.1.tgz
+SLACKBUILD VERSION: 3.5.3
+SLACKBUILD DOWNLOAD: https://pecl.php.net/get/xdebug-3.5.3.tgz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 97a7f9c3559ecaa6d5a27e91dc26e3cf
+SLACKBUILD MD5SUM: 49430e5aae3e3e3b4d47a2b4c51a89d6
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  php-xdebug
@@ -425,10 +402,10 @@ SLACKBUILD SHORT DESCRIPTION:  rebased (git client based on the IntelliJ platfor
 SLACKBUILD NAME: redis
 SLACKBUILD LOCATION: ./redis
 SLACKBUILD FILES: doinst.sh rc.redis redis.SlackBuild redis.info redis.logrotate slack-desc
-SLACKBUILD VERSION: 7.2.4
-SLACKBUILD DOWNLOAD: https://github.com/redis/redis/archive/refs/tags/7.2.4.tar.gz
+SLACKBUILD VERSION: 8.10.1
+SLACKBUILD DOWNLOAD: https://github.com/redis/redis/archive/refs/tags/8.10.1.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: ee630d0e8b2a9092bd5c88af85630836
+SLACKBUILD MD5SUM: 33a1f331ded2012bb0e63458afde9dfe
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  redis (Key-Value Store)
@@ -513,10 +490,10 @@ SLACKBUILD SHORT DESCRIPTION:  tpm2_requirements (TPM2 udev rules and system req
 SLACKBUILD NAME: unixODBC
 SLACKBUILD LOCATION: ./unixODBC
 SLACKBUILD FILES: README doinst.sh slack-conflicts slack-desc unixODBC.SlackBuild unixODBC.info
-SLACKBUILD VERSION: 2.3.12
-SLACKBUILD DOWNLOAD: http://www.unixodbc.org/unixODBC-2.3.12.tar.gz
+SLACKBUILD VERSION: 2.3.14
+SLACKBUILD DOWNLOAD: http://www.unixodbc.org/unixODBC-2.3.14.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: d62167d85bcb459c200c0e4b5a63ee48
+SLACKBUILD MD5SUM: 316cede4896eb768fe4572d71dc04537
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  unixODBC (ODBC for Unix platforms)
