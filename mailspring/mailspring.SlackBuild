@@ -1,0 +1,139 @@
+#!/bin/bash
+
+# Slackware build script for mailspring
+#
+# Copyright (c) 2022-2026, MiRacLe.RPZ <miracle@rpz.name>
+# Copyright 2020 Muhammad Mahendra Subrata Depok, Indonesia
+# All rights reserved.
+#
+# Redistribution and use of this script, with or without modification, is
+# permitted provided that the following conditions are met:
+#
+# 1. Redistributions of this script must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+#
+#  THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR IMPLIED
+#  WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+#  MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO
+#  EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+#  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+#  PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+#  OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+#  WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+#  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+#  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+PRGNAM=mailspring
+PKGNAM=${PKGNAM:-$(basename $0 .SlackBuild)}
+
+cd $(dirname $0) ; CWD=$(pwd)
+
+INFOFILE="$(pwd)/${PKGNAM}.info"
+if [ -f $INFOFILE ]; then
+    source $INFOFILE
+fi
+
+VERSION=${VERSION:-1.24.0}
+BUILD=${BUILD:-1}
+TAG=${TAG:-_rpz}
+PKGTYPE=${PKGTYPE:-txz}
+
+if [ -z "$ARCH" ]; then
+  case "$( uname -m )" in
+    i?86) ARCH=i586 ;;
+    arm*) ARCH=arm ;;
+       *) ARCH=$( uname -m ) ;;
+  esac
+fi
+
+# If the variable PRINT_PACKAGE_NAME is set, then this script will report what
+# the name of the created package would be, and then exit. This information
+# could be useful to other scripts.
+if [ ! -z "${PRINT_PACKAGE_NAME}" ]; then
+  echo "$PRGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE"
+  exit 0
+fi
+
+TMP=${TMP:-/tmp/rpz}
+PKG=$TMP/package-$PKGNAM
+OUTPUT=${OUTPUT:-/tmp}
+
+if [ "$ARCH" = "i586" ]; then
+  echo "This package is currently only available for 64bit."
+  exit 1
+elif [ "$ARCH" = "x86_64" ]; then
+  DEBARCH="amd64"
+  LIBDIRSUFFIX="64"
+else
+  echo "Package for $(uname -m) architecture is not available."
+  exit 1
+fi
+
+set -eu
+
+check_installed() {
+    PACKAGE=${1}
+    ls -1 /var/log/packages | grep "^${PACKAGE}-[^-]*-[^-]*-[^-]*$" >/dev/null 2>&1
+    return $?
+}
+
+
+if [ -e $CWD/slack-required ]; then
+    IFS=$'\n'
+    for REQ in `cat $CWD/slack-required`; do
+        pkgs=(`echo $REQ| tr "|" "\n"`)
+        for pkg in "${!pkgs[@]}"; do
+            search_for=$(echo -n "${pkgs[pkg]}"|sed -e 's/^ *//' -e 's/ *$//'|awk '{print $1}')
+            check_installed ${search_for} || {
+                unset "pkgs[pkg]"
+            }
+        done
+        if [ 0 = ${#pkgs[@]} ]; then
+           echo "${0##*/}: Required package '$REQ' not installed."
+           exit 1
+        fi
+    done
+    unset IFS
+fi
+
+
+if [ -e $CWD/slack-conflicts ]; then
+    for REQ in `cat $CWD/slack-conflicts|cut -f 1 -d " "`;do
+        ! check_installed "$REQ" || {
+           echo "${0##*/}: Conflict package '$REQ' was installed."
+           exit 1
+       }
+    done
+fi
+
+rm -rf $PKG
+mkdir -p $TMP $PKG $OUTPUT
+cd $PKG
+ar p $CWD/${PRGNAM}-${VERSION}-${DEBARCH}.deb data.tar.zst | tar --use-compress-program=unzstd -xf -
+
+chown -R root:root .
+find -L . \
+ \( -perm 777 -o -perm 775 -o -perm 750 -o -perm 711 -o -perm 555 \
+  -o -perm 511 \) -exec chmod 755 {} \; -o \
+ \( -perm 666 -o -perm 664 -o -perm 640 -o -perm 600 -o -perm 444 \
+  -o -perm 440 -o -perm 400 \) -exec chmod 644 {} \;
+
+find $PKG -print0 | xargs -0 file | grep -e "executable" -e "shared object" | grep ELF \
+  | cut -f 1 -d : | xargs strip --strip-unneeded 2> /dev/null || true
+
+mkdir -p $PKG/usr/doc/$PKGNAM-$VERSION/SlackBuild/
+mv $PKG/usr/share/doc/${PKGNAM}/copyright $PKG/usr/doc/$PKGNAM-$VERSION
+
+
+cp -a $CWD/$PKGNAM.SlackBuild $CWD/slack-* $CWD/$PKGNAM.info \
+   $PKG/usr/doc/$PKGNAM-$VERSION/SlackBuild/
+
+# Don't need these:
+rm -rf $PKG/usr/share/doc $PKG/usr/share/lintian
+
+mkdir -p $PKG/install
+cat $CWD/slack-desc > $PKG/install/slack-desc
+cat $CWD/doinst.sh > $PKG/install/doinst.sh
+
+cd $PKG
+/sbin/makepkg -l y -c n $OUTPUT/$PKGNAM-$VERSION-$ARCH-$BUILD$TAG.$PKGTYPE

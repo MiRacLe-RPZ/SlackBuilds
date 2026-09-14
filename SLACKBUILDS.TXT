@@ -164,6 +164,17 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  limux (GPU-accelerated terminal multiplexer)
 
+SLACKBUILD NAME: mailspring
+SLACKBUILD LOCATION: ./mailspring
+SLACKBUILD FILES: README doinst.sh mailspring.SlackBuild mailspring.info slack-desc
+SLACKBUILD VERSION: 1.24.0
+SLACKBUILD DOWNLOAD: UNSUPPORTED
+SLACKBUILD DOWNLOAD_x86_64: https://github.com/Foundry376/Mailspring/releases/download/1.24.0/mailspring-1.24.0-amd64.deb
+SLACKBUILD MD5SUM: 
+SLACKBUILD MD5SUM_x86_64: b9b634e7dd7b2515cc89860e120790ed
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  mailspring (a beautiful, fast and maintained fork of Nylas Mail)
+
 SLACKBUILD NAME: mkcert
 SLACKBUILD LOCATION: ./mkcert
 SLACKBUILD FILES: doinst.sh mkcert.SlackBuild mkcert.info slack-desc
@@ -234,7 +245,7 @@ SLACKBUILD SHORT DESCRIPTION:  opencode-desktop (Open source AI coding agent)
 
 SLACKBUILD NAME: openvpn-pkcs11
 SLACKBUILD LOCATION: ./openvpn-pkcs11
-SLACKBUILD FILES: README doinst.sh openssl_tpm.cnf openvpn-pkcs11.SlackBuild openvpn-pkcs11.info openvpn-wrapper.sh rc.openvpn slack-desc slackware.conf
+SLACKBUILD FILES: README doinst.sh openssl_tpm.cnf openvpn-pkcs11.SlackBuild openvpn-pkcs11.info openvpn-wrapper.sh rc.openvpn slack-desc slackware.conf wrapper-plan.md
 SLACKBUILD VERSION: 2.7.5
 SLACKBUILD DOWNLOAD: https://github.com/OpenVPN/openvpn/releases/download/v2.7.5/openvpn-2.7.5.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
