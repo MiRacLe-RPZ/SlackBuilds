@@ -31,7 +31,7 @@ if [ "x${VERSION}" == "x" ]; then
   fi
 fi
 
-VERSION=${VERSION:-1.18.29}
+VERSION=${VERSION:-1.18.32}
 BUILD=${BUILD:-2}
 TAG=${TAG:-_rpz}
 PKGTYPE=${PKGTYPE:-txz}
@@ -46,7 +46,7 @@ TMP=${TMP:-/tmp/rpz}
 PKG=$TMP/package-$PKGNAM
 OUTPUT=${OUTPUT:-/tmp}
 
-SRCURL=${DOWNLOAD:-https://opencode.ai/download/stable/linux-x64-deb}
+SRCURL=${DOWNLOAD:-https://github.com/anomalyco/opencode/releases/download/v$VERSION/opencode-desktop-linux-amd64.deb}
 SOURCE="${CWD}/$(basename $SRCURL)"
 if [ ! -e $SOURCE ]; then
   # Fall back to the filename used by the official download page:
