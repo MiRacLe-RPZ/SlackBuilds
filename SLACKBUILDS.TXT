@@ -156,10 +156,10 @@ SLACKBUILD SHORT DESCRIPTION:  libfprint (library for support fingerprint reader
 SLACKBUILD NAME: limux
 SLACKBUILD LOCATION: ./limux
 SLACKBUILD FILES: doinst.sh limux.SlackBuild limux.info slack-desc slack-required
-SLACKBUILD VERSION: 0.1.28
-SLACKBUILD DOWNLOAD: https://github.com/am-will/limux/releases/download/v0.1.28/limux-0.1.28-linux-x86_64.tar.gz
+SLACKBUILD VERSION: 0.1.32
+SLACKBUILD DOWNLOAD: https://github.com/am-will/limux/releases/download/v0.1.32/limux-0.1.32-linux-x86_64.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 258f0713ebec6b8f7b0ecab858d13c5e
+SLACKBUILD MD5SUM: 59acb148b99bb0eb8e03dbef4a75c166
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  limux (GPU-accelerated terminal multiplexer)
