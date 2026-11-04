@@ -1,0 +1,18 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':'.
+                |-----handy-ruler---------------------------------------------|
+heavy: heavy (machine-wide semaphore for heavy commands)
+heavy:
+heavy: A counting semaphore that gives heavy commands (tests, linters,
+heavy: builds) a few shared slots on the machine, so many checkouts and
+heavy: agents take turns instead of starving each other.
+heavy:
+heavy:
+heavy:
+heavy:
+heavy: Homepage:  https://github.com/mokevnin/heavy
+heavy:

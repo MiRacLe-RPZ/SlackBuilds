@@ -131,6 +131,17 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  google-chrome (Google Chrome web browser)
 
+SLACKBUILD NAME: heavy
+SLACKBUILD LOCATION: ./heavy
+SLACKBUILD FILES: doinst.sh heavy-updater heavy.SlackBuild heavy.info slack-desc
+SLACKBUILD VERSION: 0.1.2
+SLACKBUILD DOWNLOAD: https://github.com/mokevnin/heavy/releases/download/v0.1.2/heavy-x86_64-unknown-linux-gnu.tar.xz
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: 957a85edaeb79b8cfb629a6108102841
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  heavy (machine-wide semaphore for heavy commands)
+
 SLACKBUILD NAME: jsl
 SLACKBUILD LOCATION: ./jsl
 SLACKBUILD FILES: js-lint jsl.SlackBuild jsl.info slack-desc
