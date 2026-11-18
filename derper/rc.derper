@@ -1,0 +1,87 @@
+#!/bin/sh
+#
+# /etc/rc.d/rc.derper: start/stop/restart Tailscale DERP relay
+#
+
+DAEMON=/usr/bin/derper
+CONF=/etc/default/derper
+PIDFILE=/var/run/derper.pid
+
+derper_start() {
+  if [ ! -x $DAEMON ]; then
+    echo "$DAEMON not found."
+    exit 1
+  fi
+
+  if [ -s $PIDFILE ] && kill -0 "$(cat $PIDFILE)" 2>/dev/null; then
+    echo "derper appears to be already running."
+    exit 1
+  fi
+
+  DERPER_ARGS=""
+  if [ -r $CONF ]; then
+    . $CONF
+  fi
+
+  mkdir -p /var/lib/derper
+  echo "Starting derper..."
+  $DAEMON $DERPER_ARGS &
+  echo $! > $PIDFILE
+}
+
+derper_stop() {
+  if [ ! -s $PIDFILE ]; then
+    echo "$PIDFILE does not exist or is empty."
+    killall derper 2>/dev/null && echo "Stopped derper." || true
+    return 0
+  fi
+
+  PID=$(cat $PIDFILE)
+  echo -n "Stopping derper ($PID)..."
+  kill $PID 2>/dev/null
+  for i in 1 2 3 4 5; do
+    if [ ! -d /proc/$PID ]; then
+      break
+    fi
+    sleep 1
+    echo -n "."
+  done
+  if [ -d /proc/$PID ]; then
+    kill -9 $PID 2>/dev/null
+  fi
+  rm -f $PIDFILE
+  echo " done"
+}
+
+derper_restart() {
+  derper_stop
+  sleep 1
+  derper_start
+}
+
+derper_status() {
+  if [ -s $PIDFILE ] && kill -0 "$(cat $PIDFILE)" 2>/dev/null; then
+    echo "derper is running (pid $(cat $PIDFILE))."
+  else
+    echo "derper is not running."
+    exit 3
+  fi
+}
+
+case "$1" in
+  start)
+    derper_start
+    ;;
+  stop)
+    derper_stop
+    ;;
+  restart)
+    derper_restart
+    ;;
+  status)
+    derper_status
+    ;;
+  *)
+    echo "Usage: $0 {start|stop|restart|status}"
+    exit 1
+esac

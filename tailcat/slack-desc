@@ -1,0 +1,18 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':'.
+                |-----handy-ruler---------------------------------------------|
+tailcat: tailcat (netcat over Tailscale data plane)
+tailcat:
+tailcat: Point-to-point WireGuard tunnels between two machines using
+tailcat: Tailscale's magicsock/DERP data plane, without the Tailscale
+tailcat: control plane or a Tailscale account. Userspace only.
+tailcat:
+tailcat:
+tailcat:
+tailcat:
+tailcat: Homepage:  https://github.com/tailscale/tailcat
+tailcat:

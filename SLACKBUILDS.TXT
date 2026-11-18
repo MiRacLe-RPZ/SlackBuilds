@@ -64,6 +64,17 @@ SLACKBUILD MD5SUM_x86_64:
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  DavMail is a POP/IMAP/SMTP/Caldav/Carddav/LDAP Exchange gateway
 
+SLACKBUILD NAME: derper
+SLACKBUILD LOCATION: ./derper
+SLACKBUILD FILES: derper.SlackBuild derper.conf derper.info doinst.sh rc.derper slack-desc
+SLACKBUILD VERSION: 1.104.7
+SLACKBUILD DOWNLOAD: https://github.com/tailscale/tailscale/archive/refs/tags/v1.104.7.tar.gz
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: 16d1d3ab2d02de74a7c67d484ddcac49
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  derper (Tailscale DERP relay server)
+
 SLACKBUILD NAME: eyefi-config
 SLACKBUILD LOCATION: ./eyefi-config
 SLACKBUILD FILES: eyefi-config.SlackBuild eyefi-config.info slack-desc
@@ -167,10 +178,10 @@ SLACKBUILD SHORT DESCRIPTION:  libfprint (library for support fingerprint reader
 SLACKBUILD NAME: limux
 SLACKBUILD LOCATION: ./limux
 SLACKBUILD FILES: doinst.sh limux.SlackBuild limux.info slack-desc slack-required
-SLACKBUILD VERSION: 0.1.32
-SLACKBUILD DOWNLOAD: https://github.com/am-will/limux/releases/download/v0.1.32/limux-0.1.32-linux-x86_64.tar.gz
+SLACKBUILD VERSION: 0.1.35
+SLACKBUILD DOWNLOAD: https://github.com/am-will/limux/releases/download/v0.1.35/limux-0.1.35-linux-x86_64.tar.gz
 SLACKBUILD DOWNLOAD_x86_64: 
-SLACKBUILD MD5SUM: 59acb148b99bb0eb8e03dbef4a75c166
+SLACKBUILD MD5SUM: dd44ab52255547a6a688ebf99915bf2b
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  limux (GPU-accelerated terminal multiplexer)
@@ -442,6 +453,17 @@ SLACKBUILD MD5SUM: 5edde2720500a8f2a8f59bc3511194e9
 SLACKBUILD MD5SUM_x86_64: 
 SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
 SLACKBUILD SHORT DESCRIPTION:  RubyIDE based on JetBrain's IDEA
+
+SLACKBUILD NAME: tailcat
+SLACKBUILD LOCATION: ./tailcat
+SLACKBUILD FILES: doinst.sh slack-desc tailcat-updater tailcat.SlackBuild tailcat.info
+SLACKBUILD VERSION: 0.7.0
+SLACKBUILD DOWNLOAD: https://github.com/tailscale/tailcat/releases/download/v0.7.0/tailcat_0.7.0_linux_amd64.tar.gz
+SLACKBUILD DOWNLOAD_x86_64: 
+SLACKBUILD MD5SUM: 5f4aa67ec7a545eb751b94b7827a3f6e
+SLACKBUILD MD5SUM_x86_64: 
+SLACKBUILD MAINTAINER: MiRacLe.RPZ <miracle@rpz.name>
+SLACKBUILD SHORT DESCRIPTION:  tailcat (netcat over Tailscale data plane)
 
 SLACKBUILD NAME: tpm2-abrmd
 SLACKBUILD LOCATION: ./tpm2-abrmd
